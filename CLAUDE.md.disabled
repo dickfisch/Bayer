@@ -1,0 +1,101 @@
+# Meine Beratung
+
+Digitale Beratungsplattform für Bayer Agrar Deutschland. Landwirte und Vertriebsberater können standort- und kulturspezifische Produktempfehlungen, Feldberichte, Termine und Diagnose-Tools abrufen.
+
+---
+
+## Tech Stack
+
+| Package | Version | Zweck |
+|---|---|---|
+| react | ^19.2.4 | UI-Framework |
+| react-dom | ^19.2.4 | DOM-Rendering |
+| react-router-dom | ^7.14.0 | Client-seitiges Routing |
+| framer-motion | ^12.38.0 | Animationen & Seitenübergänge |
+| tailwindcss | ^4.2.2 | Utility-first Styling (v4) |
+| @tailwindcss/vite | ^4.2.2 | Tailwind-Integration für Vite |
+| vite | ^8.0.4 | Build-Tool & Dev-Server |
+| 21st.dev Magic (MCP) | – | KI-Komponenten-Generator via MCP |
+| @vitejs/plugin-react | ^6.0.1 | Vite-Plugin für React/JSX |
+| eslint | ^9.39.4 | Linting |
+
+### Tailwind-Setup (v4)
+
+Tailwind v4 benötigt keine `tailwind.config.js`. Die Konfiguration erfolgt über:
+- `vite.config.js` – Plugin `tailwindcss()` von `@tailwindcss/vite`
+- `src/index.css` – `@import "tailwindcss"` als erste Zeile
+
+Bestehende CSS-Klassen in `index.css` bleiben erhalten. Das Setup ist vorhanden, wird aber aktuell nicht aktiv genutzt – Styling erfolgt weiterhin per plain CSS.
+
+---
+
+## Design-Regeln
+
+### Animationen
+- Alle Animationen mit **Framer Motion** (`motion.div`, `motion.section` etc.)
+- Seitenübergänge über `<AnimatePresence>` im Router-Wrapper
+- Standard-Transition: `ease-in-out`, Dauer `300–500 ms`
+- Keine CSS-Transitions für Seitenübergänge – ausschließlich Framer Motion
+
+### Styling
+- **Kein `style`-Attribut** auf JSX-Elementen (Ausnahme: dynamische Werte, die sich nicht als Klasse abbilden lassen)
+- Styling bleibt wie bisher: bestehende CSS-Klassen in `index.css` verwenden und erweitern
+- Neue Komponenten mit **plain CSS** in `index.css` stylen – kein Tailwind für neue Komponenten
+- **21st.dev Magic vorerst nicht verwenden**
+
+### Allgemein
+- **Keine neuen Libraries** ohne explizite Absprache installieren
+- Bayer Corporate Design: Primärfarbe `--bayer-blue: #10384f`, Akzent `--bayer-teal: #00617f`
+- Schriftart: `Open Sans` (Google Fonts, bereits eingebunden)
+
+---
+
+## Projektstruktur
+
+```
+meine-beratung/
+├── public/                  # Statische Assets (Logos, Icon-SVGs)
+│   ├── Corp-Logo_BG_Bayer-Cross_Basic_on-screen_RGB.svg
+│   ├── icons_website_dummy_magazin.svg
+│   ├── icons_website_dummy_video.svg
+│   └── icons_website_dummy_wetter.svg
+├── src/
+│   ├── components/          # Wiederverwendbare Layout-Komponenten
+│   │   ├── MainNav.jsx      # Primäre Navigation mit Mega-Dropdown
+│   │   └── SubNav.jsx       # Sticky Kontext-Navigation (PLZ, Kultur, Sub-Links)
+│   ├── pages/               # Eine Komponente pro Route
+│   │   ├── Home.jsx         # Startseite (/)  – nur Navbar, weißer Hintergrund
+│   │   ├── BeratungStart.jsx# Einstieg (/beratung-start) – PLZ + Kultur-Auswahl
+│   │   ├── Produkte.jsx     # Produktempfehlungen mit Gantt-Timeline
+│   │   ├── Feldbericht.jsx  # Meldungen & Feldberichte
+│   │   ├── Videos.jsx       # Video-Analyse
+│   │   ├── Termine.jsx      # Termine & Veranstaltungen
+│   │   └── Tools.jsx        # Diagnose & Tools
+│   ├── App.jsx              # Beratungsseite-Layout (/beratung) –
+│   │                        #   MainNav + SubNav + alle Sektionen
+│   ├── main.jsx             # Router-Konfiguration & React-Root
+│   ├── index.css            # Globale Styles & CSS Custom Properties
+│   └── App.css              # (leer, reserviert)
+└── CLAUDE.md
+```
+
+### Routing-Übersicht
+
+| Route | Komponente | Beschreibung |
+|---|---|---|
+| `/` | `Home` | Leere Startseite mit Navbar |
+| `/beratung-start` | `BeratungStart` | PLZ + Kultur eingeben, navigiert weiter |
+| `/beratung` | `App` | Vollständige Beratungsseite, liest PLZ/Kultur aus Router-State |
+| `/feldbericht` | `App` | Wie `/beratung`, SubNav-Link "Meldungen" aktiv |
+| `/termine` | `App` | Wie `/beratung`, SubNav-Link "Termine" aktiv |
+| `/tools` | `App` | Wie `/beratung`, SubNav-Link "Diagnose" aktiv |
+
+### Datenfluss PLZ & Kultur
+
+```
+BeratungStart → navigate('/beratung', { state: { plz, kultur } })
+                                              ↓
+                              App rendert SubNav
+                              SubNav liest useLocation().state
+                              → PLZ-Pill und Kultur-Select werden vorbelegt
+```

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #263b4f;
+        stroke-width: 5px;
+      }
+
+      .cls-3 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="newspaper">
+    <path id="Pfad_52" data-name="Pfad 52" class="cls-3" d="M20.62,15.21h49.87c5,0,9.06,4.91,9.06,10.97v54.85H20.62c-5,0-9.06-4.91-9.06-10.95V26.19c0-6.06,4.07-10.97,9.06-10.97Z"/>
+    <path id="Pfad_53" data-name="Pfad 53" class="cls-3" d="M25.57,56.39h18.13"/>
+    <path id="Pfad_54" data-name="Pfad 54" class="cls-3" d="M25.57,68.31h39.49"/>
+    <path id="Pfad_55" data-name="Pfad 55" class="cls-3" d="M77.3,81.04c6.25,0,11.32-6.13,11.32-13.71V31.75h-9.06"/>
+    <path id="Pfad_56" data-name="Pfad 56" class="cls-1" d="M4.76-7.51h95.19v115.02H4.76V-7.51Z"/>
+  </g>
+  <g id="Rechteck_20" data-name="Rechteck 20">
+    <rect class="cls-1" x="21.08" y="24.22" width="48.65" height="23.27" rx="4" ry="4"/>
+    <rect class="cls-2" x="24.26" y="27.39" width="42.31" height="16.92" rx="2.5" ry="2.5"/>
+  </g>
+</svg>

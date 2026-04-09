@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        opacity: .3;
+      }
+
+      .cls-2 {
+        stroke: #263b4f;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+      }
+    </style>
+  </defs>
+  <g id="sun">
+    <g id="Gruppe_7" data-name="Gruppe 7" class="cls-3">
+      <path id="Pfad_28" data-name="Pfad 28" class="cls-2" d="M49.66,71.43c10.68,0,19.34-8.66,19.34-19.34s-8.66-19.34-19.34-19.34-19.34,8.66-19.34,19.34h0c-.07,10.61,8.47,19.27,19.08,19.34.09,0,.18,0,.26,0Z"/>
+      <path id="Pfad_29" data-name="Pfad 29" class="cls-2" d="M18.89,21.31l6.84,6.84"/>
+      <path id="Pfad_30" data-name="Pfad 30" class="cls-2" d="M73.59,76.03l6.84,6.84"/>
+      <path id="Pfad_31" data-name="Pfad 31" class="cls-2" d="M6.13,52.08h9.67"/>
+      <path id="Pfad_32" data-name="Pfad 32" class="cls-2" d="M83.51,52.08h9.67"/>
+      <path id="Pfad_33" data-name="Pfad 33" class="cls-2" d="M18.87,82.86l6.84-6.84"/>
+      <path id="Pfad_34" data-name="Pfad 34" class="cls-2" d="M73.59,28.16l6.84-6.84"/>
+      <path id="Pfad_35" data-name="Pfad 35" class="cls-2" d="M49.64,95.62v-9.67"/>
+      <path id="Pfad_36" data-name="Pfad 36" class="cls-2" d="M49.64,18.24v-9.67"/>
+    </g>
+    <path id="Pfad_37" data-name="Pfad 37" class="cls-2" d="M49.66,8.56v9.69"/>
+    <path id="Pfad_38" data-name="Pfad 38" class="cls-2" d="M81.09,20.66l-7.26,7.26"/>
+    <path id="Pfad_39" data-name="Pfad 39" class="cls-2" d="M68.99,52.09c-.01,10.68-8.68,19.33-19.36,19.31-10.68-.01-19.33-8.68-19.31-19.36.01-10.67,8.66-19.31,19.33-19.31,10.67,0,19.33,8.65,19.33,19.32v.03Z"/>
+    <path id="Pfad_40" data-name="Pfad 40" class="cls-2" d="M18.22,20.66l7.26,7.26"/>
+    <path id="Pfad_41" data-name="Pfad 41" class="cls-2" d="M49.66,95.61v-9.67"/>
+    <path id="Pfad_42" data-name="Pfad 42" class="cls-2" d="M81.09,83.51l-7.26-7.26"/>
+    <path id="Pfad_43" data-name="Pfad 43" class="cls-2" d="M18.22,83.51l7.26-7.26"/>
+    <path id="Pfad_44" data-name="Pfad 44" class="cls-2" d="M6.14,52.09h9.67"/>
+    <path id="Pfad_45" data-name="Pfad 45" class="cls-2" d="M83.5,52.09h9.67"/>
+    <path id="Pfad_46" data-name="Pfad 46" class="cls-1" d="M-1.11,1.32h101.54v101.54H-1.11V1.32Z"/>
+  </g>
+</svg>

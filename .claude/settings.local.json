@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Read(//usr/local/bin/**)",
+      "Read(//Users/raphaelschneider/.nvm/versions/**)",
+      "Bash(command -v npm)"
+    ]
+  }
+}
