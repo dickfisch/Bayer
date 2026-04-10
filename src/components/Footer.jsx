@@ -1,74 +1,40 @@
 import { useState } from 'react'
 
-const kulturItems = ['Ackerbau', 'Gemüse', 'Obstbau', 'Weinbau', 'Sonderkulturen']
-const produktgruppeItems = ['Fungizide', 'Herbizide', 'Insektizide', 'Saatgutbeizung', 'Wachstumsregler']
+const KULTUREN = [
+  { value: 'winterweizen', label: 'Winterweizen' },
+  { value: 'triticale',    label: 'Triticale' },
+  { value: 'winterroggen', label: 'Winterroggen' },
+  { value: 'sommerweizen', label: 'Sommerweizen' },
+  { value: 'wintergerste', label: 'Wintergerste' },
+  { value: 'sommergerste', label: 'Sommergerste' },
+  { value: 'raps',         label: 'Raps' },
+  { value: 'mais',         label: 'Mais' },
+  { value: 'zuckerrueben', label: 'Zuckerrüben' },
+]
 
 function Footer() {
-  const [kulturOpen, setKulturOpen] = useState(false)
-  const [produktOpen, setProduktOpen] = useState(false)
+  const [kultur, setKultur] = useState('')
 
   return (
     <footer style={{ background: '#edf0f4', marginTop: '60px' }}>
 
-      {/* ── Dreigestirn: Kultur | Produktgruppe | A–Z ── */}
+      {/* ── Kultur-Dropdown ── */}
       <div style={{
         background: '#edf0f4',
-        padding: '64px 90px 32px',
+        padding: '110px 90px 32px',
       }}>
-        <div style={{ maxWidth: '1800px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '24px', fontSize: '36px', fontWeight: 300, color: '#1c374d', letterSpacing: '0.01em' }}>
-            Finden Sie Ihr Produkt
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', justifyContent: 'center' }}>
-            {/* Dropdown Kultur */}
-            <div style={{ position: 'relative' }}>
-              <button
-                onClick={() => { setKulturOpen(o => !o); setProduktOpen(false) }}
-                style={navDropdownBtnStyle}
-              >
-                Kultur
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ marginLeft: '8px', transform: kulturOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>
-                  <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" strokeLinejoin="miter"/>
-                </svg>
-              </button>
-              {kulturOpen && (
-                <div style={dropdownMenuStyle}>
-                  {kulturItems.map(item => (
-                    <a key={item} href="#" style={dropdownItemStyle}
-                      onClick={e => { e.preventDefault(); setKulturOpen(false) }}>
-                      {item}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Dropdown Produktgruppe */}
-            <div style={{ position: 'relative' }}>
-              <button
-                onClick={() => { setProduktOpen(o => !o); setKulturOpen(false) }}
-                style={navDropdownBtnStyle}
-              >
-                Produktgruppe
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ marginLeft: '8px', transform: produktOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>
-                  <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" strokeLinejoin="miter"/>
-                </svg>
-              </button>
-              {produktOpen && (
-                <div style={dropdownMenuStyle}>
-                  {produktgruppeItems.map(item => (
-                    <a key={item} href="#" style={dropdownItemStyle}
-                      onClick={e => { e.preventDefault(); setProduktOpen(false) }}>
-                      {item}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-
-          {/* A–Z Button */}
-          <a href="#" style={azBtnStyle}>A – Z</a>
-        </div>
+        <div style={{ maxWidth: '1800px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
+          <select
+            className="sub-nav-kultur-select !text-2xl !py-5 !pl-9 !pr-16"
+            style={{ minWidth: '540px', fontSize: '22px', boxShadow: '0 2px 12px rgba(0,0,0,0.10)' }}
+            value={kultur}
+            onChange={e => setKultur(e.target.value)}
+          >
+            <option value="" disabled>Produkte A – Z</option>
+            {KULTUREN.map(k => (
+              <option key={k.value} value={k.value}>{k.label}</option>
+            ))}
+          </select>
         </div>
       </div>
 
@@ -107,7 +73,7 @@ function Footer() {
             <span style={{ fontWeight: 700, background: 'linear-gradient(to right, #3d7a2e, #2a7ab5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Fragen?</span>{' '}
             Wir sind für Sie da.
           </h2>
-          <a href="#" style={ctaLinkStyle}>Beratung auf WhatsApp &rsaquo;</a>
+          <a href="#" style={ctaLinkStyle}>Ihren Vertriebsberater finden &rsaquo;</a>
           <a href="#" style={ctaLinkStyle}>Kontakt &rsaquo;</a>
         </div>
       </div>
@@ -311,62 +277,5 @@ const bottomLinkStyle = {
   whiteSpace: 'nowrap',
 }
 
-const navDropdownBtnStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: '220px',
-  background: 'transparent',
-  border: '2px solid #10384f',
-  borderRadius: 0,
-  color: '#1c374d',
-  fontSize: '14px',
-  fontWeight: 600,
-  letterSpacing: '0.06em',
-  textTransform: 'uppercase',
-  padding: '12px 20px',
-  cursor: 'pointer',
-  whiteSpace: 'nowrap',
-  boxSizing: 'border-box',
-}
-
-const dropdownMenuStyle = {
-  position: 'absolute',
-  top: '100%',
-  left: 0,
-  width: '100%',
-  background: '#10384f',
-  borderTop: '2px solid #4a9439',
-  zIndex: 100,
-  boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
-}
-
-const dropdownItemStyle = {
-  display: 'block',
-  padding: '13px 24px',
-  fontSize: '15px',
-  fontWeight: 400,
-  color: '#ffffff',
-  textDecoration: 'none',
-  borderBottom: '1px solid rgba(255,255,255,0.08)',
-}
-
-const azBtnStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: '220px',
-  background: 'transparent',
-  border: '2px solid #10384f',
-  color: '#1c374d',
-  fontSize: '14px',
-  fontWeight: 700,
-  letterSpacing: '0.1em',
-  padding: '12px 20px',
-  textDecoration: 'none',
-  borderRadius: 0,
-  boxSizing: 'border-box',
-  transition: 'border-color 0.15s, background 0.15s',
-}
 
 export default Footer

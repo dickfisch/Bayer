@@ -14,7 +14,7 @@ function App() {
     function onScroll() {
       const subNavWrap = document.querySelector('.sub-nav-wrap')
       if (!subNavWrap) return
-      subNavWrap.style.top = window.scrollY > 10 ? '10px' : '100px'
+      subNavWrap.classList.toggle('is-visible', window.scrollY > 10)
     }
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)

@@ -23,21 +23,57 @@ body {
    TEIL 1 – MAIN NAV  (weiß, scrollt weg)
 ══════════════════════════════════════════ */
 .main-nav {
-    background: #ffffff;
-    border-bottom: 1px solid var(--border);
-    height: 64px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
     display: flex;
     align-items: center;
-    padding: 0 40px;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 40px;
+    background: transparent;
+    pointer-events: none;
+}
+
+/* White pill */
+/* ── Liquid Glass – Nav Pill ── */
+.nav-pill {
+    display: flex;
+    align-items: center;
     position: relative;
-    z-index: 200;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    padding: 0 6px 0 8px;
+    height: 76px;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.10),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    pointer-events: all;
+}
+
+/* Liquid-Glass-Hintergrund: blur + Sättigungsboost + Refraktionsgradient */
+.nav-pill::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+        155deg,
+        rgba(255, 255, 255, 0.97) 0%,
+        rgba(235, 242, 255, 0.75) 35%,
+        rgba(225, 235, 255, 0.45) 70%,
+        rgba(215, 228, 255, 0.45) 100%
+    );
+    backdrop-filter: blur(28px) saturate(200%) brightness(1.12);
+    -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.12);
+    z-index: -1;
 }
 
 .nav-logo {
     display: flex; align-items: center; gap: 10px;
     text-decoration: none; color: #1a1a1a;
-    margin-right: 36px; flex-shrink: 0;
+    padding: 0 12px; flex-shrink: 0;
 }
 
 .nav-logo-circle {
@@ -47,19 +83,18 @@ body {
     justify-content: center; overflow: hidden; flex-shrink: 0;
 }
 
-.nav-logo-top    { font-size: 12px; color: #6e6e73; line-height: 1.5; }
-.nav-logo-bottom { font-size: 16px; font-weight: 700; color: #1a1a1a; line-height: 1.5; }
+.nav-logo-top    { font-size: 11px; color: #6e6e73; line-height: 1.4; }
+.nav-logo-bottom { font-size: 15px; font-weight: 600; color: #1a1a1a; line-height: 1.4; }
 
 .main-nav-links {
     display: flex; align-items: center;
-    flex: 1; height: 64px;
-    justify-content: center; gap: 0;
+    height: 76px; gap: 0;
 }
 
 .main-nav-links a, .nav-dropdown-btn {
     color: #1a1a1a; text-decoration: none;
     font-size: 15px; font-weight: 500;
-    padding: 0 18px; height: 64px;
+    padding: 0 16px; height: 76px;
     display: flex; align-items: center; gap: 5px;
     border-bottom: 2px solid transparent;
     white-space: nowrap; cursor: pointer;
@@ -76,9 +111,109 @@ body {
 .main-nav-links a:hover,
 .nav-dropdown-btn:hover { color: var(--bayer-blue); }
 
-.nav-right {
-    display: flex; align-items: center; gap: 4px;
-    margin-left: auto; flex-shrink: 0;
+/* ── Logo text (fades out on expand) ── */
+.nav-logo-text {
+    overflow: hidden;
+    max-width: 130px;
+    opacity: 1;
+    transition: max-width 0.38s ease, opacity 0.22s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.nav-pill--expanded .nav-logo-text {
+    max-width: 0;
+    opacity: 0;
+}
+
+/* ── Extra items (hidden → visible on expand) ── */
+.nav-extra-item {
+    overflow: hidden;
+    max-width: 0;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    transition: max-width 0.38s ease, opacity 0.25s ease 0.08s;
+    flex-shrink: 0;
+}
+.nav-pill--expanded .nav-extra-item {
+    max-width: 180px;
+    opacity: 1;
+}
+
+/* Plain link inside extra items */
+.nav-plain-link {
+    color: #1a1a1a; text-decoration: none;
+    font-size: 15px; font-weight: 500;
+    padding: 0 16px; height: 76px;
+    display: flex; align-items: center;
+    white-space: nowrap; cursor: pointer;
+    transition: color 0.18s;
+}
+.nav-plain-link:hover { color: var(--bayer-blue); }
+
+/* ── Hamburger (visible → hidden on expand) ── */
+.nav-hamburger-btn {
+    overflow: hidden;
+    max-width: 52px;
+    opacity: 1;
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border: none; background: none; cursor: pointer;
+    border-radius: 8px; color: #1a1a1a; margin-left: 4px; margin-right: 8px;
+    flex-shrink: 0;
+    transition: max-width 0.3s ease, opacity 0.2s ease, background 0.15s;
+}
+.nav-hamburger-btn:hover { background: rgba(0,0,0,0.06); }
+.nav-pill--expanded .nav-hamburger-btn {
+    max-width: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Invisible mirror spacer – same width as .nav-actions so pill is truly centered */
+.nav-spacer {
+    width: 160px; /* 76px + 8px gap + 76px */
+    flex-shrink: 0;
+    visibility: hidden;
+}
+
+/* Teal action buttons (outside pill) */
+.nav-actions {
+    display: flex; align-items: center; gap: 8px;
+    pointer-events: all;
+    flex-shrink: 0;
+}
+
+.nav-teal-btn {
+    width: 76px; height: 76px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #101b29 0%, #54baf9 100%);
+    border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    transition: filter 0.15s, transform 0.15s;
+}
+.nav-teal-btn:hover { filter: brightness(1.1); transform: scale(1.06); }
+.nav-teal-btn svg { width: 32px; height: 32px; }
+
+/* legacy – keep for any remaining references */
+.nav-right { display: none; }
+
+/* Pill ohne Schatten wenn Layer offen – geht in weiße Fläche über */
+.nav-pill--open {
+    box-shadow: none !important;
+}
+
+/* Weißer Bereich oberhalb des Mega-Menus wenn Layer offen */
+.nav-top-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 96px;
+    background: #ffffff;
+    z-index: 195;
+    pointer-events: none;
 }
 
 .nav-weather {
@@ -126,23 +261,34 @@ body {
 ══════════════════════════════════════════ */
 .nav-dropdown { position: relative; }
 
+/* Trigger-Span – nur Text + Pfeil, kein extra Hover-Bereich */
+.nav-dropdown-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 .mega-menu {
     display: none;
     position: fixed;
-    top: 80px; left: 0; right: 0;
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-    border-top: 1px solid #e2e4e8;
+    top: 96px; left: 0; right: 0;
+    background: #ffffff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    border-top: none;
     z-index: 2000;
     padding: 40px 80px 48px;
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.25s ease, transform 0.25s ease;
     pointer-events: none;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 320px));
     gap: 48px;
+    justify-content: center;
 }
 .mega-col-title {
     font-size: 15px; font-weight: 700;
@@ -180,9 +326,15 @@ body {
     padding: 10px 0;
     background: transparent;
     position: sticky;
-    top: 100px;
-    transition: top 0.6s ease;
+    top: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
     z-index: 100;
+}
+.sub-nav-wrap.is-visible {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .sub-nav {
@@ -1766,13 +1918,9 @@ body, button, input, select, textarea {
 }
 .gantt-wrap::-webkit-scrollbar { display: none !important; }
 
-/* ── Overrides: Nav height, icons, mega-menu ── */
-.main-nav { height: 80px !important; }
-.main-nav-links a, .nav-dropdown-btn { height: 80px !important; }
-
-.nav-icon-btn { width: 44px !important; height: 44px !important; background: transparent !important; border: none !important; }
-.nav-icon-btn img { width: 28px !important; height: 28px !important; object-fit: contain !important; }
-.nav-icon-btn svg { width: 24px !important; height: 24px !important; }
+/* ── Overrides: Nav pill height, mega-menu ── */
+.nav-pill { height: 76px !important; }
+.main-nav-links a, .nav-dropdown-btn { height: 76px !important; }
 
 /* Fix: Mega-Dropdown Links – globale .main-nav-links a Regel überschreiben */
 .mega-menu .mega-col a {
@@ -1906,7 +2054,7 @@ body, button, input, select, textarea {
 
 .hero {
   position: relative;
-  height: 80vh;
+  height: 90vh;
   overflow: hidden;
 }
 
@@ -2209,11 +2357,11 @@ body, button, input, select, textarea {
 
 .home-cta-title {
   font-family: 'Open Sans', sans-serif;
-  font-size: 52px;
+  font-size: 54px;
   font-weight: 700;
   color: #ffffff;
   text-align: center;
-  margin: 0 0 4px;
+  margin: 0 0 32px;
 }
 
 .home-cta-title-meine {
@@ -2231,7 +2379,7 @@ body, button, input, select, textarea {
   color: rgba(255, 255, 255, 0.75);
   font-size: 24px;
   font-weight: 400;
-  margin: 0 0 48px;
+  margin: 32px 0 48px;
   width: 70%;
   max-width: 860px;
   text-align: center;
@@ -2268,34 +2416,84 @@ body, button, input, select, textarea {
   align-self: center;
 }
 
+.home-cta-portraits {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.home-cta-portrait {
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.home-cta-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
 /* ══════════════════════════════════════════
    STICKY BERATUNGS-BAR (Glass Effect)
 ══════════════════════════════════════════ */
 .cta-sticky-wrapper {
   position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0; left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
   z-index: 1000;
+  pointer-events: none;
 }
 
+/* ── Liquid Glass – CTA Bar ── */
 .cta-sticky-glass {
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 60px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.28);
+  height: 76px;
+  display: flex;
+  align-items: stretch;
+  padding: 15px;
+  position: relative;
+  background: linear-gradient(
+      155deg,
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(255, 255, 255, 0.52) 40%,
+      rgba(255, 255, 255, 0.38) 70%,
+      rgba(210, 225, 255, 0.45) 100%
+  );
+  backdrop-filter: blur(28px) saturate(200%) brightness(1.12);
+  -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.12);
+  border: none;
+  border-radius: 999px;
+  box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.10),
+      0 2px 8px rgba(0, 0, 0, 0.05);
+  pointer-events: all;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .cta-sticky-inner {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  gap: 12px;
-  width: 720px;
-  zoom: 0.8;
+  gap: 10px;
+  width: 100%;
+}
+
+.cta-sticky-inner .sub-nav-kultur-select,
+.cta-sticky-inner .pill {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 100%;
+  align-self: stretch;
 }
 
 /* ══════════════════════════════════════════
@@ -2537,7 +2735,7 @@ body, button, input, select, textarea {
 }
 
 .themen-heading {
-  font-size: 52px;
+  font-size: 54px;
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 24px;
@@ -2754,7 +2952,7 @@ body, button, input, select, textarea {
 }
 
 .agrar-heading {
-  font-size: 52px;
+  font-size: 54px;
   font-weight: 700;
   color: #1d1d1f;
   text-align: center;
@@ -3179,11 +3377,282 @@ body, button, input, select, textarea {
 }
 
 /* ══════════════════════════════════════════
+   PRODUKTE IM FOKUS
+══════════════════════════════════════════ */
+.produkte-fokus-section {
+  background: #ffffff;
+  padding: 200px 40px 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.produkte-fokus-heading {
+  font-size: 54px;
+  font-weight: 700;
+  color: #10384f;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.produkte-fokus-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  position: relative;
+}
+
+/* ---- Visual (circles + product) ---- */
+.produkte-fokus-visual {
+  position: relative;
+  width: 840px;
+  height: 840px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+@keyframes ring-pulse {
+  0%   { transform: scale(1);    opacity: 0.6; }
+  60%  { transform: scale(1.06); opacity: 0.25; }
+  100% { transform: scale(1);    opacity: 0.6; }
+}
+
+.produkte-fokus-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ring-pulse 4s ease-in-out infinite;
+}
+
+.produkte-fokus-ring--pulse3 {
+  width: 820px;
+  height: 820px;
+  border: 1.5px solid #4dd4cb;
+  opacity: 0.35;
+  animation-delay: 0s;
+}
+
+.produkte-fokus-ring--outer {
+  width: 680px;
+  height: 680px;
+  border: 3px solid #4dd4cb;
+  opacity: 0.55;
+  animation-delay: 0.7s;
+}
+
+.produkte-fokus-ring--inner {
+  width: 520px;
+  height: 520px;
+  border: 5px solid #00c48c;
+  opacity: 1;
+  animation-delay: 1.4s;
+}
+
+.produkte-fokus-product-img {
+  position: relative;
+  z-index: 2;
+  height: 620px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ---- Bonus Badge ---- */
+.produkte-fokus-bonus {
+  position: absolute;
+  top: 250px;
+  left: 160px;
+  z-index: 3;
+  width: 130px;
+  height: auto;
+}
+
+/* ---- Info Panel ---- */
+.produkte-fokus-info {
+  flex: 1;
+  max-width: 600px;
+  padding-left: 10px;
+  padding-right: 60px;
+}
+
+.produkte-fokus-tag {
+  display: inline-block;
+  background: #e85d1a;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 5px 20px;
+  border-radius: 20px 0 20px 0;
+  margin-bottom: 14px;
+}
+
+.produkte-fokus-name {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: #e85d1a;
+  margin-bottom: 18px;
+  line-height: 1.1;
+}
+
+.produkte-fokus-desc {
+  font-size: 24px;
+  color: #374151;
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+.produkte-fokus-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+  border: 1px solid #10384f;
+  background: transparent;
+  color: #10384f;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  font-style: italic;
+  padding: 10px 24px;
+  cursor: pointer;
+  min-width: 180px;
+  overflow: hidden;
+  transition: min-width 0.3s ease, padding 0.3s ease;
+}
+
+.produkte-fokus-btn:hover {
+  min-width: 185px;
+  padding-right: 20px;
+}
+
+.produkte-fokus-btn-text {
+  transition: transform 0.3s ease;
+}
+
+.produkte-fokus-btn:hover .produkte-fokus-btn-text {
+  transform: translateX(-6px);
+}
+
+.produkte-fokus-btn-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #e0284f;
+  font-style: normal;
+}
+
+.produkte-fokus-btn-slash {
+  font-size: 34px;
+  font-weight: 100;
+  line-height: 1;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.25s ease, transform 0.3s ease;
+}
+
+.produkte-fokus-btn:hover .produkte-fokus-btn-slash {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.produkte-fokus-btn-arrow {
+  font-size: 34px;
+  font-weight: 100;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -1px;
+  transition: transform 0.3s ease;
+}
+
+.produkte-fokus-btn:hover .produkte-fokus-btn-arrow {
+  transform: translateX(6px);
+}
+
+/* ---- Nav Arrows ---- */
+.produkte-fokus-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: transparent;
+  border: 1.5px solid transparent;
+  color: #10384f;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.produkte-fokus-nav:hover {
+  border-color: #10384f;
+}
+
+.produkte-fokus-nav--prev {
+  left: 16px;
+}
+
+.produkte-fokus-nav--next {
+  right: 16px;
+}
+
+/* ---- Dots ---- */
+.produkte-fokus-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: -60px;
+}
+
+.produkte-fokus-dot {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  background: #d1d5db;
+  width: 8px;
+  cursor: pointer;
+  transition: background 0.2s, width 0.25s;
+}
+
+.produkte-fokus-dot--active {
+  background: rgba(232, 93, 26, 0.3);
+  width: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes dot-progress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+.produkte-fokus-dot-progress {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 0%;
+  background: #e85d1a;
+  border-radius: inherit;
+  animation: dot-progress 5s linear forwards;
+}
+
+/* ══════════════════════════════════════════
    MARKTNOTIERUNGEN TICKER
 ══════════════════════════════════════════ */
 .markt-section {
   background: #ffffff;
-  padding: 40px 0 44px;
+  padding: 100px 0 100px;
   overflow: hidden;
 }
 

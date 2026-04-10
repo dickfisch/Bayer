@@ -48,7 +48,7 @@ const KULTUREN = [
 
 const HERO_SLIDES = [
   {
-    image: '/demo_header.jpg',
+    image: '/key_header_02.jpg',
     boxColor: '#0d1b2a',
     label: 'Wissenschaft & Innovation',
     title: (<><span className="cyan">Inspiring the next</span><br /><span className="cyan">generation </span><span className="white">of</span><br /><span className="white">young scientists</span></>),
@@ -86,6 +86,22 @@ const MARKT_DATA = [
 ]
 const MARKT_LOOP = [...MARKT_DATA, ...MARKT_DATA]
 
+const ADVISORS = [
+  '/selmayer_portrait.png',
+  '/Berater1.png',
+  '/Berater2.png',
+  '/Berater3.png',
+  '/Berater4.png',
+]
+
+const PORTRAIT_SLOTS = [
+  { size: 72,  z: 1 },
+  { size: 96,  z: 3 },
+  { size: 124, z: 5 },
+  { size: 96,  z: 3 },
+  { size: 72,  z: 1 },
+]
+
 const PREMEO_SLIDES = [
   {
     headline: 'Doppelte Punkte für MaisTer power Flexx und Merlin Duo Pack',
@@ -94,6 +110,145 @@ const PREMEO_SLIDES = [
     headline: '222 Extra-Punkte pro Liter (= 2 €/L) für Getreidefungizide',
   },
 ]
+
+const PRODUKTE_SLIDES = [
+  {
+    image: '/Husar_Plus.png',
+    tag: 'HERBIZID',
+    name: 'Husar® Plus',
+    desc: 'Herbizid zur Bekämpfung von Gemeinem Windhalm, Weidelgras-Arten, Rispen-Arten und einjährigen zweikeimblättrigen Unkräutern in Wintergetreide (Winterweichweizen, -triticale, -roggen und Dinkel) und Sommergetreide (Sommerweichweizen, -gerste und -hartweizen)',
+    bonus: true,
+    color: '#e85d1a',
+  },
+  {
+    image: '/Prosaro.png',
+    tag: 'FUNGIZID',
+    name: 'Prosaro®',
+    desc: 'Fungizid gegen pilzliche Krankheiten in Getreide, Raps und Mais',
+    bonus: false,
+    color: '#2e7d32',
+  },
+  {
+    image: '/Movento.png',
+    tag: 'INSEKTIZID',
+    name: 'Movento® SC 100',
+    desc: 'Insektizid/Akarizid zur Bekämpfung von Erdbeermilben an Erdbeeren und div. Gemüsekulturen im Gewächshaus',
+    bonus: false,
+    color: '#1565c0',
+  },
+  {
+    image: '/Adengo.png',
+    tag: 'HERBIZID',
+    name: 'Adengo®',
+    desc: 'Herbizid zur Bekämpfung von Einjährigen ein- und zweikeimblättrigen Unkräutern in Mais im Vorauflauf bzw. frühen Nachauflauf sowie in Baumschulgehölzpflanzen',
+    bonus: false,
+    color: '#e85d1a',
+  },
+]
+
+function ProdukteSlider() {
+  const [active, setActive] = useState(0)
+  const [dir, setDir] = useState(1)
+  const [paused, setPaused] = useState(false)
+  const slide = PRODUKTE_SLIDES[active]
+
+  const goTo = (i) => {
+    setDir(i > active ? 1 : -1)
+    setActive(i)
+  }
+
+  const prev = () => goTo((active - 1 + PRODUKTE_SLIDES.length) % PRODUKTE_SLIDES.length)
+  const next = () => goTo((active + 1) % PRODUKTE_SLIDES.length)
+
+  useEffect(() => {
+    if (paused) return
+    const id = setTimeout(() => {
+      setDir(1)
+      setActive(a => (a + 1) % PRODUKTE_SLIDES.length)
+    }, 5000)
+    return () => clearTimeout(id)
+  }, [active, paused])
+
+  return (
+    <section className="produkte-fokus-section">
+      <h2 className="produkte-fokus-heading">Produkte im Fokus</h2>
+      <div className="produkte-fokus-stage">
+        <button className="produkte-fokus-nav produkte-fokus-nav--prev" onClick={prev} aria-label="Vorheriges Produkt">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M14 4L7 11L14 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </button>
+
+        {/* Circles + Product Image */}
+        <div className="produkte-fokus-visual">
+          <div className="produkte-fokus-ring produkte-fokus-ring--pulse3" />
+          <div className="produkte-fokus-ring produkte-fokus-ring--outer" />
+          <div className="produkte-fokus-ring produkte-fokus-ring--inner" />
+          <AnimatePresence mode="wait" custom={dir}>
+            <motion.img
+              key={active + '-img'}
+              src={slide.image}
+              alt={slide.name}
+              className="produkte-fokus-product-img"
+              custom={dir}
+              initial={{ opacity: 0, x: dir * 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: dir * -60 }}
+              transition={{ duration: 0.38, ease: [0.32, 0, 0.18, 1] }}
+            />
+          </AnimatePresence>
+          {slide.bonus && (
+            <img src="/icons_bonus.svg" alt="Bonus" className="produkte-fokus-bonus" />
+          )}
+        </div>
+
+        {/* Info Panel */}
+        <AnimatePresence mode="wait" custom={dir}>
+          <motion.div
+            key={active + '-info'}
+            className="produkte-fokus-info"
+            custom={dir}
+            initial={{ opacity: 0, x: dir * 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: dir * -40 }}
+            transition={{ duration: 0.38, ease: [0.32, 0, 0.18, 1] }}
+          >
+            <span className="produkte-fokus-tag" style={{ background: slide.color }}>{slide.tag}</span>
+            <h3 className="produkte-fokus-name" style={{ color: slide.color }}>
+              {slide.name.includes('®')
+                ? <>{slide.name.split('®')[0]}<sup>®</sup>{slide.name.split('®')[1]}</>
+                : slide.name}
+            </h3>
+            <p className="produkte-fokus-desc">{slide.desc}</p>
+            <button className="produkte-fokus-btn" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+              <span className="produkte-fokus-btn-text">ZUM PRODUKT</span>
+              <span className="produkte-fokus-btn-right">
+                <span className="produkte-fokus-btn-slash">/</span>
+                <span className="produkte-fokus-btn-arrow">›</span>
+              </span>
+            </button>
+          </motion.div>
+        </AnimatePresence>
+
+        <button className="produkte-fokus-nav produkte-fokus-nav--next" onClick={next} aria-label="Nächstes Produkt">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M8 4L15 11L8 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </button>
+      </div>
+
+      {/* Dots */}
+      <div className="produkte-fokus-dots">
+        {PRODUKTE_SLIDES.map((_, i) => (
+          <span
+            key={i}
+            className={`produkte-fokus-dot${i === active ? ' produkte-fokus-dot--active' : ''}`}
+            style={i === active ? { animationPlayState: paused ? 'paused' : 'running' } : {}}
+            onClick={() => goTo(i)}
+          >
+            {i === active && <span key={active} className="produkte-fokus-dot-progress" style={{ animationPlayState: paused ? 'paused' : 'running' }} />}
+          </span>
+        ))}
+      </div>
+    </section>
+  )
+}
 
 function Home() {
   const navigate = useNavigate()
@@ -152,6 +307,9 @@ function Home() {
   const ctaDecoBrRef = useRef(null)
   const ctaRowRef = useRef(null)
   const [stickyBar, setStickyBar] = useState(false)
+  const [pillWidth, setPillWidth] = useState(null)
+  const lastScrollY = useRef(0)
+  const pastCtaRow  = useRef(false)
 
   useEffect(() => {
     const speeds  = [0.05, 0.16, 0.28]
@@ -171,14 +329,27 @@ function Home() {
       }
       if (ctaRowRef.current) {
         const r = ctaRowRef.current.getBoundingClientRect()
-        setStickyBar(r.bottom < 0)
+        pastCtaRow.current = r.bottom < 0
       }
+      const pill = document.querySelector('.nav-pill')
+      if (pill) setPillWidth(pill.offsetWidth)
+
+      const scrollingDown = window.scrollY > lastScrollY.current
+      lastScrollY.current = window.scrollY
+      setStickyBar(pastCtaRow.current && scrollingDown)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
   const [kultur, setKultur] = useState('')
+  const [portraitRot, setPortraitRot] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => setPortraitRot(r => (r + 1) % ADVISORS.length), 2500)
+    return () => clearInterval(id)
+  }, [])
 
   function handlePlzChange(e) {
     setPlz(e.target.value.replace(/\D/g, '').slice(0, 5))
@@ -294,15 +465,14 @@ function Home() {
     if (sloganInView) animate(sloganEntrance, 1, { duration: 0.9, ease: [0.32, 0, 0.18, 1] })
   }, [sloganInView, sloganEntrance])
 
-  // Oben: Einflug von links, ab 60% Scroll-Exit nach rechts
+  // Einflug von links/rechts beim ersten Erscheinen + kontinuierliche Parallax
   const sloganLeftX = useTransform(
     [sloganEntrance, sloganProgress],
-    ([ent, prog]) => (1 - ent) * -160 + (prog > 0.6 ? ((prog - 0.6) / 0.4) * 400 : 0)
+    ([ent, prog]) => (1 - ent) * -120 + (-60 + 120 * prog)
   )
-  // Unten: Einflug von rechts, ab 60% Scroll-Exit nach links
   const sloganRightX = useTransform(
     [sloganEntrance, sloganProgress],
-    ([ent, prog]) => (1 - ent) * 160 + (prog > 0.6 ? ((prog - 0.6) / 0.4) * -400 : 0)
+    ([ent, prog]) => (1 - ent) * 120 + (60 - 120 * prog)
   )
   // Opacity: fade-in mit Entrance, fade-out beim Scroll-Exit
   const sloganOpacity = useTransform(
@@ -342,14 +512,15 @@ function Home() {
           <div className="cta-sticky-wrapper">
           <motion.div
             className="cta-sticky-glass"
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
+            style={pillWidth ? { width: pillWidth } : {}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.35, ease: 'easeOut' }}
           >
             <div className="cta-sticky-inner">
               <select
-                className="sub-nav-kultur-select !text-xl !py-4 !pl-7 !pr-12 flex-1"
+                className="sub-nav-kultur-select flex-1"
                 value={kultur}
                 onChange={e => setKultur(e.target.value)}
               >
@@ -358,8 +529,8 @@ function Home() {
                   <option key={k.value} value={k.value}>{k.label}</option>
                 ))}
               </select>
-              <div className="pill !text-xl !py-4 !px-7 !gap-3 flex-1">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="shrink-0">
+              <div className="pill flex-1">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="shrink-0">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
                   <circle cx="12" cy="9" r="2.5" fill="currentColor" stroke="none"/>
                 </svg>
@@ -371,7 +542,7 @@ function Home() {
                   onChange={handlePlzChange}
                   maxLength={5}
                   autoComplete="postal-code"
-                  className="bg-transparent border-none outline-none text-xl text-[#333] placeholder-[#aaa] min-w-0 w-full"
+                  className="bg-transparent border-none outline-none text-[#333] placeholder-[#aaa] min-w-0 w-full"
                 />
               </div>
               <motion.button
@@ -506,6 +677,40 @@ function Home() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         ><span className="home-cta-title-meine">Meine</span> <span className="home-cta-title-beratung">Beratung</span></motion.p>
+
+        {/* Berater-Portraits */}
+        <motion.div
+          className="home-cta-portraits"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.18 }}
+        >
+          {ADVISORS
+            .map((src, j) => ({
+              src,
+              j,
+              slotIdx: (j - portraitRot + ADVISORS.length) % ADVISORS.length,
+            }))
+            .sort((a, b) => a.slotIdx - b.slotIdx)
+            .map((p) => {
+              const slot = PORTRAIT_SLOTS[p.slotIdx]
+              return (
+                <motion.div
+                  key={p.j}
+                  layoutId={`portrait-${p.j}`}
+                  layout
+                  animate={{ width: slot.size, height: slot.size }}
+                  transition={{ duration: 0.55, ease: 'easeInOut' }}
+                  className="home-cta-portrait"
+                  style={{ zIndex: slot.z, marginLeft: p.slotIdx === 0 ? 0 : -28 }}
+                >
+                  <img src={p.src} alt={`Berater ${p.j + 1}`} />
+                </motion.div>
+              )
+            })}
+        </motion.div>
+
         <motion.p
           className="home-cta-subtitle"
           initial={{ opacity: 0, y: 30 }}
@@ -710,6 +915,9 @@ function Home() {
       </section>
 
       </div>{/* end dark-gradient-wrap */}
+
+      {/* Produkte im Fokus */}
+      <ProdukteSlider />
 
       {/* Agrar Magazin – Apple TV Style */}
       <section className="agrar-section">
