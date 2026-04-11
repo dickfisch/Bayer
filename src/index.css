@@ -3,6 +3,9 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html {
+    overflow-x: hidden;
+}
 
 body {
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -96,20 +99,41 @@ body {
     font-size: 15px; font-weight: 500;
     padding: 0 16px; height: 76px;
     display: flex; align-items: center; gap: 5px;
-    border-bottom: 2px solid transparent;
+    border: none;
     white-space: nowrap; cursor: pointer;
-    background: none; border-top: none; border-left: none; border-right: none;
-    transition: color 0.18s, border-color 0.18s;
+    background: none;
+    position: relative;
+    transition: color 0.18s;
     font-family: inherit;
 }
 
+.main-nav-links a::after, .nav-dropdown-btn::after, .nav-plain-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 16px;
+    width: 0; height: 2px;
+    background: #5bbfee;
+    transition: width 0.28s ease;
+}
+
+.main-nav-links a.active::after {
+    width: calc(100% - 32px);
+    background: #1a1a1a;
+}
+
+.main-nav-links a:hover::after,
+.nav-plain-link:hover::after { width: calc(100% - 32px); }
+
+.nav-dropdown-btn:hover::after,
+.nav-dropdown-btn--open::after { width: calc(100% - 32px); }
+
 .main-nav-links a.active {
     color: #1a1a1a; font-weight: 700;
-    border-bottom: 2px solid #1a1a1a;
 }
 
 .main-nav-links a:hover,
-.nav-dropdown-btn:hover { color: var(--bayer-blue); }
+.nav-dropdown-btn:hover,
+.nav-dropdown-btn--open { color: #5bbfee; }
 
 /* ── Logo text (fades out on expand) ── */
 .nav-logo-text {
@@ -147,9 +171,10 @@ body {
     padding: 0 16px; height: 76px;
     display: flex; align-items: center;
     white-space: nowrap; cursor: pointer;
+    position: relative;
     transition: color 0.18s;
 }
-.nav-plain-link:hover { color: var(--bayer-blue); }
+.nav-plain-link:hover { color: #5bbfee; }
 
 /* ── Hamburger (visible → hidden on expand) ── */
 .nav-hamburger-btn {
@@ -266,7 +291,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    padding: 4px 6px;
+    padding: 4px 0;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -377,6 +402,15 @@ body {
 }
 .sub-nav-kultur-select:hover { border-color: #888; }
 .sub-nav-kultur-select:focus { border-color: rgba(0,0,0,0.3); }
+
+.footer-kultur-select {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 20px center / 28px 28px,
+                linear-gradient(90deg, #00bcff 0%, #7ecf6e 60%, #c8e06b 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 999px !important;
+}
+.footer-kultur-select option { color: #333; background: #ffffff; }
 
 .sub-links { display: flex; gap: 2px; }
 
@@ -1936,6 +1970,9 @@ body, button, input, select, textarea {
     line-height: 1.4 !important;
     margin: 0 !important;
 }
+.mega-menu .mega-col a::after {
+    left: 0 !important;
+}
 .mega-menu .mega-col a:hover {
     color: #10384f !important;
     background: none !important;
@@ -2218,30 +2255,259 @@ body, button, input, select, textarea {
   background: #ffffff;
   color: #000000;
   border: none;
-  padding: 14px 22px;
-  font-size: 13px;
+  padding: 10px 24px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
+  font-style: italic;
   text-transform: uppercase;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  overflow: hidden;
+  transition: padding 0.3s ease;
+  text-decoration: none;
+}
+
+.hero-btn-primary:hover {
+  padding-right: 29px;
+}
+
+.hero-btn-primary .hero-btn-text {
+  transition: transform 0.3s ease;
+}
+
+.hero-btn-primary:hover .hero-btn-text {
+  transform: translateX(-6px);
+}
+
+.hero-btn-primary .hero-btn-right {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
+  color: #e0284f;
+  font-style: normal;
+}
+
+.hero-btn-primary .hero-btn-slash {
+  font-size: 34px;
+  font-weight: 100;
+  line-height: 1;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.25s ease, transform 0.3s ease;
+}
+
+.hero-btn-primary:hover .hero-btn-slash {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-btn-primary .hero-btn-arrow {
+  font-size: 34px;
+  font-weight: 100;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -1px;
+  transition: transform 0.3s ease;
+  color: #e0284f;
+  font-style: normal;
+}
+
+.hero-btn-primary:hover .hero-btn-arrow {
+  transform: translateX(6px);
 }
 
 .hero-btn-secondary {
   background: transparent;
   color: #ffffff;
-  border: 2px solid #ffffff;
-  padding: 14px 22px;
-  font-size: 13px;
+  border: 1px solid #ffffff;
+  padding: 10px 24px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
+  font-style: italic;
   text-transform: uppercase;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  overflow: hidden;
+  transition: padding 0.3s ease;
+  text-decoration: none;
+}
+
+.hero-btn-secondary:hover {
+  padding-right: 29px;
+}
+
+.hero-btn-secondary .hero-btn-text {
+  transition: transform 0.3s ease;
+}
+
+.hero-btn-secondary:hover .hero-btn-text {
+  transform: translateX(-6px);
+}
+
+.hero-btn-secondary .hero-btn-right {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
+  color: #e0284f;
+  font-style: normal;
+}
+
+.hero-btn-secondary .hero-btn-slash {
+  font-size: 34px;
+  font-weight: 100;
+  line-height: 1;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.25s ease, transform 0.3s ease;
+}
+
+.hero-btn-secondary:hover .hero-btn-slash {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-btn-secondary .hero-btn-arrow {
+  font-size: 34px;
+  font-weight: 100;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -1px;
+  transition: transform 0.3s ease;
+  color: #e0284f;
+  font-style: normal;
+}
+
+.hero-btn-secondary:hover .hero-btn-arrow {
+  transform: translateX(6px);
+}
+
+/* ══════════════════════════════════════════
+   HERO – MOBILE  (bis 767 px)
+══════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  .hero {
+    height: 100svh;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    display: none;
+  }
+
+  /* Bild oben – feste Höhe */
+  .hero-parallax-wrap {
+    position: relative;
+    inset: auto;
+    height: 68vw;
+    width: 100%;
+    flex-shrink: 0;
+    transform: none !important; /* kein JS-Parallax auf Touch */
+    clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%);
+    z-index: 1;
+  }
+
+  .hero-placeholder {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* Box hinter dem Bild – Schräge liegt darüber */
+  .hero-box-wrap {
+    position: relative;
+    width: 100%;
+    right: auto;
+    top: auto;
+    transform: none;
+    flex: 1;
+    margin-top: -12vw;
+    z-index: 0;
+  }
+
+  .hero-box-clip-outer {
+    clip-path: none;
+    width: 100%;
+    overflow: visible;
+    height: 100%;
+  }
+
+  .hero-box {
+    width: 100%;
+    height: 100%;
+    padding: 22vw 20px 80px;
+  }
+
+  .hero-box h1 {
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .hero-box p {
+    font-size: 17px;
+    line-height: 1.75;
+    margin-bottom: 36px;
+  }
+
+  /* Beide Buttons nebeneinander, gleiche Breite */
+  .hero-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    flex: 1;
+    padding: 14px 14px;
+    font-size: 12px;
+    justify-content: space-between;
+  }
+
+  /* Dots unten in der Box */
+  .hero-dots {
+    bottom: 28px;
+    right: 20px;
+  }
+
+  /* Ticker unten links, unter den Buttons */
+  .hero-ticker-viewport {
+    top: auto;
+    bottom: 32px;
+    left: 20px;
+  }
+
+  /* Ticker-Text auf Mobile dunkler (weißer Hintergrund dahinter) */
+  .hero-ticker-active,
+  .hero-ticker-dim {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  /* SVG auf Mobile weglassen */
+  .hero-code-svg {
+    display: none;
+  }
 }
 
 /* Restinhalt Startseite */
@@ -3647,6 +3913,86 @@ body, button, input, select, textarea {
   animation: dot-progress 5s linear forwards;
 }
 
+/* ---- Mobile: Produkte im Fokus ---- */
+@media (max-width: 768px) {
+  .produkte-fokus-section {
+    padding: 40px 20px 30px;
+  }
+
+  .produkte-fokus-heading {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+
+  .produkte-fokus-stage {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .produkte-fokus-visual {
+    width: 250px;
+    height: 250px;
+  }
+
+  .produkte-fokus-ring--pulse3 {
+    width: 244px;
+    height: 244px;
+  }
+
+  .produkte-fokus-ring--outer {
+    width: 202px;
+    height: 202px;
+  }
+
+  .produkte-fokus-ring--inner {
+    width: 155px;
+    height: 155px;
+  }
+
+  .produkte-fokus-product-img {
+    height: 185px;
+  }
+
+  .produkte-fokus-bonus {
+    top: 76px;
+    left: 48px;
+    width: 40px;
+  }
+
+  .produkte-fokus-info {
+    max-width: 100%;
+    padding: 0 8px;
+    text-align: center;
+  }
+
+  .produkte-fokus-name {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .produkte-fokus-desc {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  .produkte-fokus-nav {
+    top: 125px; /* center of visual (250px / 2) */
+  }
+
+  .produkte-fokus-nav--prev {
+    left: 6px;
+  }
+
+  .produkte-fokus-nav--next {
+    right: 6px;
+  }
+
+  .produkte-fokus-dots {
+    margin-top: 16px;
+  }
+}
+
 /* ══════════════════════════════════════════
    MARKTNOTIERUNGEN TICKER
 ══════════════════════════════════════════ */
@@ -3780,3 +4126,559 @@ body, button, input, select, textarea {
 .markt-change-down   { color: #dc2626; }
 .markt-change-stable { color: #3b82f6; }
 
+/* ══════════════════════════════════════════
+   MOBILE – Slogan
+   Nur max-width: 768px – Desktop unverändert
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .slogan-left,
+  .slogan-right {
+    font-size: clamp(2rem, 8.5vw, 3rem);
+  }
+}
+
+/* ══════════════════════════════════════════
+   MOBILE – Beratungs-Einstieg (home-cta)
+   Nur max-width: 768px – Desktop unverändert
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .home-cta {
+    height: 100svh;
+    padding: 96px 20px 20px;
+    gap: 20px;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* "Scroll Down"-Hinweis auf Mobile ausblenden */
+  .home-cta-scroll-hint {
+    display: none;
+  }
+
+  /* ── 1. Überschrift ── */
+  .home-cta-title {
+    font-size: 30px;
+    margin: 0;
+    line-height: 1.15;
+  }
+
+  /* ── 2. Karousel (Portraits) ── */
+  .home-cta-portraits {
+    margin-bottom: 0;
+  }
+
+  /* ── 3. Mittlerer Text ── */
+  .home-cta-subtitle {
+    font-size: 13px;
+    line-height: 1.5;
+    width: 92%;
+    margin: 0;
+  }
+
+  /* ── 4. Eingabefelder + Button untereinander ── */
+  .home-cta-row {
+    flex-direction: column;
+    width: 92%;
+    gap: 10px;
+    align-items: center;
+  }
+
+  /* Eingabefelder kompakter */
+  .home-cta-row .sub-nav-kultur-select {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    font-size: 15px !important;
+    width: 100%;
+  }
+
+  .home-cta-row .pill {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    font-size: 15px !important;
+    width: 100%;
+  }
+
+  /* ── 5. Kleiner Hinweis-Text ── */
+  .home-cta-hint {
+    font-size: 11px;
+    width: 92%;
+  }
+}
+
+/* ══════════════════════════════════════════
+   MOBILE – Kachel-Grid
+   Nur max-width: 768px – Desktop unverändert
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Section: Höhe auto, kompaktes Padding */
+  .tile-grid-section {
+    height: auto;
+    padding: 32px 20px 48px;
+  }
+
+  /* Grid → eine Spalte */
+  .tile-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Linke Spalte: transparent im Grid – Kinder direkt als Grid-Items */
+  .tile-col-left {
+    display: contents;
+  }
+
+  /* Reihenfolge: Termine → Premeo → Wetter */
+  .tile-col-left > div:nth-child(2)      { order: 1; } /* Termine  */
+  .tile-grid > div:not(.tile-col-left)   { order: 2; } /* Premeo   */
+  .tile-col-left > div:nth-child(1)      { order: 3; } /* Wetter   */
+
+  /* Wrapper-Divs: feste Höhe */
+  .tile-col-left > div {
+    flex: none !important;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Einzelne Tiles: feste Höhe, volle Breite */
+  .tile-col-left .tile {
+    flex: none !important;
+    height: 440px !important;
+    width: 100% !important;
+    align-self: stretch !important;
+  }
+
+  /* Termine: Desktop-Offsets (90%/80%/align-end) zurücksetzen */
+  .tile-termine {
+    height: 440px !important;
+    width: 100% !important;
+    align-self: stretch !important;
+  }
+
+  /* Premeo-Kachel: Zeilen-Layout – Text links, Pfeile rechts */
+  .tile-premeo-card {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    /* Oben Platz für Titel (18px Padding + 22px Font ≈ 50px), unten für Footer */
+    padding: 52px 18px 52px !important;
+    gap: 12px !important;
+    height: 440px !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+    align-self: stretch !important;
+  }
+
+  /* Titel: exakt gleiche Position wie andere Kacheln */
+  .premeo-title-abs {
+    top: 18px !important;
+    left: 18px !important;
+    font-size: 22px !important;
+    padding: 0 !important;
+  }
+
+  /* Logo oben rechts: kleiner */
+  .premeo-logo-tr svg {
+    height: 36px !important;
+    width: auto !important;
+  }
+
+  /* Text-Wrap: linksbündig, füllt den verfügbaren Platz */
+  .tile-premeo-card .premeo-text-wrap {
+    flex: 1 !important;
+    text-align: left !important;
+    padding: 0 !important;
+    z-index: 2;
+    position: relative;
+  }
+
+  .premeo-subtitle {
+    font-size: 12px;
+  }
+
+  .premeo-headline {
+    font-size: 17px;
+    line-height: 1.35;
+  }
+
+  /* Pfeile: Spalte rechts neben dem Text */
+  .tile-premeo-card .premeo-nav {
+    flex-direction: column !important;
+    gap: 8px;
+    z-index: 2;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  /* Kachel-Typografie anpassen */
+  .tile-title {
+    font-size: 22px;
+    padding: 18px 18px 0;
+  }
+
+  .tile-sub {
+    font-size: 14px;
+  }
+
+  .tile-footer {
+    padding: 0 18px 18px;
+  }
+
+  .tile-arrow {
+    font-size: 36px;
+  }
+}
+
+/* ══════════════════════════════════════════
+   MOBILE – Agrar Magazin
+   Nur max-width: 768px – Desktop unverändert
+══════════════════════════════════════════ */
+
+/* Mobile Slider: auf Desktop ausblenden */
+.agrar-mobile-wrap,
+.agrar-mobile-controls {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Desktop-Elemente im Agrar-Abschnitt ausblenden */
+  .agrar-featured-wrap,
+  .agrar-scroll-wrap,
+  .agrar-controls {
+    display: none !important;
+  }
+
+  /* Section-Abstände anpassen */
+  .agrar-section {
+    padding: 60px 0 24px;
+  }
+
+  .agrar-heading {
+    font-size: 30px;
+    padding: 0 20px 5px;
+  }
+
+  .agrar-subheading {
+    font-size: 14px;
+    padding: 0 20px 24px;
+  }
+
+  /* Mobiler Slider – motion-value Wrapper */
+  .agrar-mobile-wrap {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 80svh;
+    touch-action: pan-y;
+  }
+
+  /* Track: absolute positioniert, motion-value verschiebt ihn */
+  .agrar-mobile-track {
+    display: flex;
+    gap: 14px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80svh;
+    will-change: transform;
+  }
+
+  /* Einzelne Karte: 76vw breit, 80svh hoch */
+  .agrar-mobile-card {
+    flex: 0 0 76vw;
+    width: 76vw;
+    height: 80svh;
+  }
+
+  /* Titel oben links */
+  .agrar-mobile-card .agrar-scroll-tit-tl {
+    font-size: 20px;
+    top: 20px;
+    left: 20px;
+  }
+
+  /* Beschreibungstext */
+  .agrar-mobile-card .agrar-card-desc {
+    font-size: 14px;
+    max-width: 100%;
+    line-height: 1.45;
+  }
+
+  /* Footer-Padding */
+  .agrar-mobile-card .agrar-scroll-foot.agrar-feat-foot {
+    padding: 20px 20px 28px 20px;
+    align-items: flex-end;
+  }
+
+  /* Pfeil */
+  .agrar-mobile-card .agrar-scroll-arrow {
+    font-size: 34px;
+  }
+
+  /* Icon oben rechts */
+  .agrar-mobile-card .agrar-icon {
+    height: 24px;
+  }
+
+  /* Mobile Dots-Reihe */
+  .agrar-mobile-controls {
+    display: flex;
+    justify-content: center;
+    padding: 14px 0 20px;
+  }
+}
+
+/* ══════════════════════════════════════════
+   MOBILE – Haupt-Navigation
+   Nur max-width: 768px – Desktop unverändert
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Nav-Container: links ausrichten, kein Centering */
+  .main-nav {
+    justify-content: flex-start;
+    padding: 12px 16px;
+    gap: 8px;
+  }
+
+  /* Spacer ausblenden (nur für Desktop-Zentrierung nötig) */
+  .nav-spacer {
+    display: none;
+  }
+
+  /* Pill füllt verfügbaren Platz */
+  .nav-pill {
+    flex: 1;
+    height: 60px !important;
+  }
+
+  /* Links-Container: Hamburger nach rechts schieben */
+  .main-nav-links {
+    height: 60px !important;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  /* Alle Nav-Links und Dropdowns ausblenden */
+  .main-nav-links > a,
+  .main-nav-links .nav-dropdown {
+    display: none !important;
+  }
+
+  /* Hamburger immer sichtbar – auch im expanded-Zustand */
+  .nav-hamburger-btn,
+  .nav-pill--expanded .nav-hamburger-btn {
+    max-width: 52px !important;
+    opacity: 1 !important;
+    margin-left: 0 !important;
+    margin-right: 8px !important;
+    padding: 0 !important;
+  }
+
+  /* Logo-Text immer sichtbar – auch im expanded-Zustand */
+  .nav-pill--expanded .nav-logo-text {
+    max-width: 130px !important;
+    opacity: 1 !important;
+  }
+
+  /* Teal-Buttons an Pill-Höhe anpassen */
+  .nav-teal-btn {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* CTA Sticky-Bar: gleiche Position und Höhe wie die Nav */
+  .cta-sticky-wrapper {
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 16px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .cta-sticky-glass {
+    height: 60px;
+    flex: 1;
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Button: 10px Abstand zum Rand oben/unten → 40px hoch */
+  .cta-sticky-inner .home-cta-circle-btn {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  /* Eingabefelder: gleicher 10px Abstand oben/unten */
+  .cta-sticky-inner .sub-nav-kultur-select,
+  .cta-sticky-inner .pill {
+    height: 40px;
+    align-self: center;
+  }
+}
+
+/* ══════════════════════════════════════════
+   MOBILE DRAWER – Slide-in Navigation
+══════════════════════════════════════════ */
+
+.mobile-drawer-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 290;
+  pointer-events: none;
+  transition: background 0.35s ease;
+}
+.mobile-drawer-backdrop--open {
+  pointer-events: all;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.mobile-drawer {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 100vw;
+  background: #ffffff;
+  z-index: 300;
+  transform: translateX(-100%);
+  transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .mobile-drawer-backdrop { display: block; }
+  .mobile-drawer          { display: flex; }
+  .mobile-drawer--open    { transform: translateX(0); }
+}
+
+/* ── Header: Logo + Close ── */
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36px 28px 20px;
+  flex-shrink: 0;
+}
+
+.mobile-drawer-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.mobile-drawer-close {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: #ebebeb;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.mobile-drawer-close:hover { background: #ddd; }
+
+/* ── Panel-Container (relativ, clips die Panels) ── */
+.mobile-drawer-panels {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Einzelne Panels (absolut gestapelt) ── */
+.mobile-drawer-panel {
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  overflow-y: auto;
+  padding-bottom: 48px;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Main-Panel startet sichtbar */
+.mobile-drawer-panel:first-child {
+  transform: translateX(0);
+}
+
+/* Aktives Panel: sichtbar */
+.mobile-drawer-panel--active {
+  transform: translateX(0) !important;
+}
+
+/* Eltern-Panel: leicht nach links verschoben (Tiefenwirkung) */
+.mobile-drawer-panel--behind {
+  transform: translateX(-25%) !important;
+}
+
+/* ── Zurück-Button ── */
+.mobile-drawer-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 28px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #10384f;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+.mobile-drawer-back svg {
+  color: #e8000d;
+}
+
+/* ── Trennlinie ── */
+.mobile-drawer-divider {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 8px 28px;
+}
+
+/* ── Liste ── */
+.mobile-drawer-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+/* ── Items ── */
+.mobile-drawer-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 28px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #10384f;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  box-sizing: border-box;
+  transition: color 0.15s;
+}
+.mobile-drawer-item:active { color: #5bbfee; }
+
+/* Items ohne Chevron (plain links) */
+.mobile-drawer-item--plain {
+  color: #10384f;
+}

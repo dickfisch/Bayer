@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValue, useInView, animate } from 'framer-motion'
 import MainNav from '../components/MainNav'
@@ -33,6 +33,9 @@ const AGRAR_SCROLL = [
 ]
 
 const AGRAR_SCROLL_LOOP = [...AGRAR_SCROLL, ...AGRAR_SCROLL, ...AGRAR_SCROLL]
+
+const AGRAR_MOBILE_ALL  = [...AGRAR_FEATURED, ...AGRAR_SCROLL.slice(0, 3)]
+const AGRAR_MOBILE_LOOP = [...AGRAR_MOBILE_ALL, ...AGRAR_MOBILE_ALL, ...AGRAR_MOBILE_ALL]
 
 const KULTUREN = [
   { value: 'winterweizen', label: 'Winterweizen' },
@@ -102,6 +105,14 @@ const PORTRAIT_SLOTS = [
   { size: 72,  z: 1 },
 ]
 
+const PORTRAIT_SLOTS_MOBILE = [
+  { size: 40, z: 1 },
+  { size: 54, z: 3 },
+  { size: 68, z: 5 },
+  { size: 54, z: 3 },
+  { size: 40, z: 1 },
+]
+
 const PREMEO_SLIDES = [
   {
     headline: 'Doppelte Punkte für MaisTer power Flexx und Merlin Duo Pack',
@@ -150,6 +161,7 @@ function ProdukteSlider() {
   const [active, setActive] = useState(0)
   const [dir, setDir] = useState(1)
   const [paused, setPaused] = useState(false)
+  const touchStartX = useRef(null)
   const slide = PRODUKTE_SLIDES[active]
 
   const goTo = (i) => {
@@ -169,10 +181,25 @@ function ProdukteSlider() {
     return () => clearTimeout(id)
   }, [active, paused])
 
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return
+    const dx = e.changedTouches[0].clientX - touchStartX.current
+    if (Math.abs(dx) > 40) dx < 0 ? next() : prev()
+    touchStartX.current = null
+  }
+
   return (
     <section className="produkte-fokus-section">
       <h2 className="produkte-fokus-heading">Produkte im Fokus</h2>
-      <div className="produkte-fokus-stage">
+      <div
+        className="produkte-fokus-stage"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <button className="produkte-fokus-nav produkte-fokus-nav--prev" onClick={prev} aria-label="Vorheriges Produkt">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M14 4L7 11L14 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </button>
@@ -252,11 +279,38 @@ function ProdukteSlider() {
 
 function Home() {
   const navigate = useNavigate()
-  const [plz, setPlz] = useState('')
+  const [plz, setPlz] = useState(() => sessionStorage.getItem('nav_plz') || '')
   const [premeoIdx, setPremeoIdx] = useState(0)
   const [heroCount, setHeroCount] = useState(0)
+  const [heroDir, setHeroDir]     = useState(1) // 1 = vorwärts, -1 = rückwärts
   const heroIdx = heroCount % HERO_SLIDES.length
   const TICKER_H = 28
+
+  const heroTouchStartX = useRef(null)
+  const heroTouchStartY = useRef(null)
+
+  function handleHeroTouchStart(e) {
+    heroTouchStartX.current = e.touches[0].clientX
+    heroTouchStartY.current = e.touches[0].clientY
+  }
+  function handleHeroTouchEnd(e) {
+    if (heroTouchStartX.current === null) return
+    const dx = e.changedTouches[0].clientX - heroTouchStartX.current
+    const dy = e.changedTouches[0].clientY - heroTouchStartY.current
+    heroTouchStartX.current = null
+    heroTouchStartY.current = null
+    if (Math.abs(dx) < Math.abs(dy) || Math.abs(dx) < 50) return // vertikal oder zu kurz → ignorieren
+    if (dx < 0) { setHeroDir(1);  setHeroCount(c => c + 1) }                          // links → nächste
+    else        { setHeroDir(-1); setHeroCount(c => c + HERO_SLIDES.length - 1) }     // rechts → vorherige
+  }
+
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)')
+    const handler = (e) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
   useEffect(() => {
     const t = setInterval(() => {
@@ -267,6 +321,7 @@ function Home() {
 
   useEffect(() => {
     const t = setInterval(() => {
+      setHeroDir(1)
       setHeroCount(c => c + 1)
     }, 9000)
     return () => clearInterval(t)
@@ -343,13 +398,19 @@ function Home() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const [kultur, setKultur] = useState('')
+  const [kultur, setKultur] = useState(() => sessionStorage.getItem('nav_kultur') || '')
   const [portraitRot, setPortraitRot] = useState(0)
 
   useEffect(() => {
     const id = setInterval(() => setPortraitRot(r => (r + 1) % ADVISORS.length), 2500)
     return () => clearInterval(id)
   }, [])
+
+  useEffect(() => {
+    sessionStorage.setItem('nav_plz', plz)
+    sessionStorage.setItem('nav_kultur', kultur)
+    window.dispatchEvent(new CustomEvent('nav-context-update', { detail: { plz, kultur } }))
+  }, [plz, kultur])
 
   function handlePlzChange(e) {
     setPlz(e.target.value.replace(/\D/g, '').slice(0, 5))
@@ -443,6 +504,50 @@ function Home() {
     setAgrFeatIdx(idx)
   }, [featXMotion])
 
+  // Drag-to-scroll for featured carousel
+  const featDragRef    = useRef({ dragging: false, startX: 0, startMotionX: 0 })
+  const [featDragging, setFeatDragging] = useState(false)
+
+  const snapFeat = useCallback(() => {
+    const step    = getFeatStep()
+    const padding = getFeatPadding()
+    const n       = AGRAR_FEATURED.length
+    const floatPos = -(featXMotion.get() - padding) / step
+    let pos = Math.round(floatPos)
+
+    // Wrap pos into middle copy [n, 2n) while adjusting x by the same amount
+    // so the teleport is invisible (same visual card, different copy)
+    let adjustedX = featXMotion.get()
+    while (pos < n)      { pos += n; adjustedX -= n * step }
+    while (pos >= n * 2) { pos -= n; adjustedX += n * step }
+
+    if (adjustedX !== featXMotion.get()) featXMotion.set(adjustedX)
+
+    agrAbsPosRef.current = pos
+    animate(featXMotion, -(pos * step) + padding, { duration: 0.45, ease: [0.32, 0, 0.18, 1] })
+    setAgrFeatIdx(pos % n)
+  }, [featXMotion])
+
+  const onFeatMouseDown = useCallback((e) => {
+    featDragRef.current = { dragging: true, startX: e.clientX, startMotionX: featXMotion.get() }
+    setFeatDragging(true)
+    agrPausedRef.current = true
+  }, [featXMotion])
+
+  const onFeatMouseMove = useCallback((e) => {
+    if (!featDragRef.current.dragging) return
+    const delta = e.clientX - featDragRef.current.startX
+    featXMotion.set(featDragRef.current.startMotionX + delta)
+  }, [featXMotion])
+
+  const onFeatMouseUp = useCallback(() => {
+    if (!featDragRef.current.dragging) return
+    featDragRef.current.dragging = false
+    setFeatDragging(false)
+    agrPausedRef.current = false
+    snapFeat()
+  }, [snapFeat])
+
   // Auto-advance every 5 s
   useEffect(() => {
     const t = setInterval(() => {
@@ -450,6 +555,115 @@ function Home() {
     }, 5000)
     return () => clearInterval(t)
   }, [advanceFeat])
+
+  // ── Mobile Agrar Slider (motion-value, infinite loop, Touch-Swipe) ──
+  const MOB_N             = AGRAR_MOBILE_ALL.length   // 6
+  // Dimensionen werden einmalig nach dem Mount gemessen (useLayoutEffect),
+  // damit step und padding immer konsistent sind.
+  const mobStepRef        = useRef(window.innerWidth * 0.76 + 14)
+  const mobPaddingRef     = useRef(window.innerWidth * 0.12)
+  const getMobStep        = () => mobStepRef.current
+  const getMobPadding     = () => mobPaddingRef.current
+  const [mobIdx, setMobIdx]         = useState(0)
+  const mobPausedRef                = useRef(false)
+  const mobAbsPosRef                = useRef(MOB_N)   // starte in mittlerer Kopie
+  const mobXMotion                  = useMotionValue(
+    -(MOB_N * (window.innerWidth * 0.76 + 14)) + window.innerWidth * 0.12
+  )
+  const mobDragRef                  = useRef({ dragging: false, startX: 0, startY: 0, startMX: 0, isHorizontal: null })
+  const [mobDragging, setMobDragging] = useState(false)
+  const mobWrapRef                  = useRef(null)
+
+  // Exakte Dimensionen nach DOM-Layout messen und initiale Position korrigieren
+  useLayoutEffect(() => {
+    const w = window.innerWidth
+    mobStepRef.current    = w * 0.76 + 14
+    mobPaddingRef.current = w * 0.12
+    mobXMotion.set(-(MOB_N * mobStepRef.current) + mobPaddingRef.current)
+  }, [mobXMotion])
+
+  const snapMob = useCallback(() => {
+    const step    = getMobStep()
+    const padding = getMobPadding()
+    const floatPos = -(mobXMotion.get() - padding) / step
+    let pos = Math.round(floatPos)
+    // Stiller Sprung in die mittlere Kopie, damit Loop unendlich wirkt
+    let adjX = mobXMotion.get()
+    while (pos < MOB_N)         { pos += MOB_N; adjX -= MOB_N * step }
+    while (pos >= MOB_N * 2)    { pos -= MOB_N; adjX += MOB_N * step }
+    if (adjX !== mobXMotion.get()) mobXMotion.set(adjX)
+    mobAbsPosRef.current = pos
+    animate(mobXMotion, -(pos * step) + padding, { duration: 0.45, ease: [0.32, 0, 0.18, 1] })
+    setMobIdx(pos % MOB_N)
+  }, [mobXMotion])
+
+  const jumpToMob = useCallback((idx) => {
+    const step    = getMobStep()
+    const padding = getMobPadding()
+    const pos     = MOB_N + idx   // immer mittlere Kopie
+    mobAbsPosRef.current = pos
+    animate(mobXMotion, -(pos * step) + padding, { duration: 0.7, ease: [0.32, 0, 0.18, 1] })
+    setMobIdx(idx)
+  }, [mobXMotion])
+
+  const advanceMob = useCallback(() => {
+    const step    = getMobStep()
+    const padding = getMobPadding()
+    let pos = mobAbsPosRef.current
+    if (pos >= MOB_N * 2) { pos -= MOB_N; mobAbsPosRef.current = pos; mobXMotion.set(-(pos * step) + padding) }
+    pos += 1
+    mobAbsPosRef.current = pos
+    animate(mobXMotion, -(pos * step) + padding, { duration: 0.7, ease: [0.32, 0, 0.18, 1] })
+    setMobIdx(pos % MOB_N)
+  }, [mobXMotion])
+
+  const onMobTouchStart = useCallback((e) => {
+    const t = e.touches[0]
+    mobDragRef.current = { dragging: true, startX: t.clientX, startY: t.clientY, startMX: mobXMotion.get(), isHorizontal: null }
+    setMobDragging(true)
+    mobPausedRef.current = true
+  }, [mobXMotion])
+
+  const onMobTouchMove = useCallback((e) => {
+    if (!mobDragRef.current.dragging) return
+    const dx = e.touches[0].clientX - mobDragRef.current.startX
+    const dy = e.touches[0].clientY - mobDragRef.current.startY
+    // Richtung beim ersten signifikanten Move festlegen
+    if (mobDragRef.current.isHorizontal === null && (Math.abs(dx) > 4 || Math.abs(dy) > 4)) {
+      mobDragRef.current.isHorizontal = Math.abs(dx) >= Math.abs(dy)
+    }
+    if (!mobDragRef.current.isHorizontal) return
+    e.preventDefault()
+    mobXMotion.set(mobDragRef.current.startMX + dx)
+  }, [mobXMotion])
+
+  const onMobTouchEnd = useCallback(() => {
+    if (!mobDragRef.current.dragging) return
+    mobDragRef.current.dragging = false
+    setMobDragging(false)
+    mobPausedRef.current = false
+    // Nur snappen wenn horizontal gewischt wurde (oder kurzer Tap)
+    if (mobDragRef.current.isHorizontal !== false) snapMob()
+  }, [snapMob])
+
+  // Native Event Listener (passive:false) – damit preventDefault() im Move funktioniert
+  useEffect(() => {
+    const el = mobWrapRef.current
+    if (!el) return
+    el.addEventListener('touchstart', onMobTouchStart, { passive: true })
+    el.addEventListener('touchmove',  onMobTouchMove,  { passive: false })
+    el.addEventListener('touchend',   onMobTouchEnd,   { passive: true })
+    return () => {
+      el.removeEventListener('touchstart', onMobTouchStart)
+      el.removeEventListener('touchmove',  onMobTouchMove)
+      el.removeEventListener('touchend',   onMobTouchEnd)
+    }
+  }, [onMobTouchStart, onMobTouchMove, onMobTouchEnd])
+
+  useEffect(() => {
+    const t = setInterval(() => { if (!mobPausedRef.current) advanceMob() }, 5000)
+    return () => clearInterval(t)
+  }, [advanceMob])
 
 
   const sloganRef = useRef(null)
@@ -512,7 +726,7 @@ function Home() {
           <div className="cta-sticky-wrapper">
           <motion.div
             className="cta-sticky-glass"
-            style={pillWidth ? { width: pillWidth } : {}}
+            style={pillWidth && window.innerWidth > 768 ? { width: pillWidth } : {}}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -568,7 +782,7 @@ function Home() {
       </AnimatePresence>
 
       {/* Hero */}
-      <section className="hero">
+      <section className="hero" onTouchStart={handleHeroTouchStart} onTouchEnd={handleHeroTouchEnd}>
 
         {/* Parallax-Wrapper für Maus-Effekt */}
         <div ref={heroImgRef} className="hero-parallax-wrap">
@@ -589,21 +803,43 @@ function Home() {
         {/* Box-Slider */}
         <div className="hero-box-wrap">
           <div className="hero-box-clip-outer">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" custom={heroDir}>
               <motion.div
                 key={heroIdx}
+                custom={heroDir}
                 className="hero-box"
                 style={{ background: HERO_SLIDES[heroIdx].boxColor }}
-                initial={{ y: '100%', opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: '-100%', opacity: 0 }}
+                variants={isMobile ? {
+                  enter:  (d) => ({ x: d === 1 ? '100%' : '-100%', opacity: 0 }),
+                  center: { x: 0, opacity: 1 },
+                  exit:   (d) => ({ x: d === 1 ? '-100%' : '100%', opacity: 0 }),
+                } : {
+                  enter:  { y: '100%', opacity: 0 },
+                  center: { y: 0, opacity: 1 },
+                  exit:   { y: '-100%', opacity: 0 },
+                }}
+                initial="enter"
+                animate="center"
+                exit="exit"
                 transition={{ duration: 1.0, ease: [0.32, 0, 0.18, 1] }}
               >
                 <h1>{HERO_SLIDES[heroIdx].title}</h1>
                 <p>{HERO_SLIDES[heroIdx].desc}</p>
                 <div className="hero-buttons">
-                  <a href="/beratung-start" className="hero-btn-primary">MEINE Produkt BERATUNG ›</a>
-                  <a href="/beratung" className="hero-btn-secondary">MEHR ERFAHREN ›</a>
+                  <a href="/beratung-start" className="hero-btn-primary">
+                    <span className="hero-btn-text">MEINE Produkt BERATUNG</span>
+                    <span className="hero-btn-right">
+                      <span className="hero-btn-slash">/</span>
+                      <span className="hero-btn-arrow">›</span>
+                    </span>
+                  </a>
+                  <a href="/beratung" className="hero-btn-secondary">
+                    <span className="hero-btn-text">MEHR ERFAHREN</span>
+                    <span className="hero-btn-right">
+                      <span className="hero-btn-slash">/</span>
+                      <span className="hero-btn-arrow">›</span>
+                    </span>
+                  </a>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -616,7 +852,10 @@ function Home() {
             <button
               key={i}
               className={`hero-dot${i === heroIdx ? ' hero-dot-active' : ''}`}
-              onClick={() => setHeroCount(c => c + ((i - (c % HERO_SLIDES.length) + HERO_SLIDES.length) % HERO_SLIDES.length) || HERO_SLIDES.length)}
+              onClick={() => {
+                setHeroDir(i > heroIdx ? 1 : -1)
+                setHeroCount(c => c + ((i - (c % HERO_SLIDES.length) + HERO_SLIDES.length) % HERO_SLIDES.length) || HERO_SLIDES.length)
+              }}
             />
           ))}
         </div>
@@ -694,7 +933,9 @@ function Home() {
             }))
             .sort((a, b) => a.slotIdx - b.slotIdx)
             .map((p) => {
-              const slot = PORTRAIT_SLOTS[p.slotIdx]
+              const isMob = typeof window !== 'undefined' && window.innerWidth <= 768
+              const slot = (isMob ? PORTRAIT_SLOTS_MOBILE : PORTRAIT_SLOTS)[p.slotIdx]
+              const overlap = isMob ? -16 : -28
               return (
                 <motion.div
                   key={p.j}
@@ -703,7 +944,7 @@ function Home() {
                   animate={{ width: slot.size, height: slot.size }}
                   transition={{ duration: 0.55, ease: 'easeInOut' }}
                   className="home-cta-portrait"
-                  style={{ zIndex: slot.z, marginLeft: p.slotIdx === 0 ? 0 : -28 }}
+                  style={{ zIndex: slot.z, marginLeft: p.slotIdx === 0 ? 0 : overlap }}
                 >
                   <img src={p.src} alt={`Berater ${p.j + 1}`} />
                 </motion.div>
@@ -803,6 +1044,28 @@ function Home() {
               >
                 <img src="wetter_back_2.jpg" alt="" className="tile-img" />
                 <div className="tile-overlay" />
+
+                {/* code_2 SVG – outline watermark */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 615.12 723.89"
+                  style={{
+                    position: 'absolute',
+                    bottom: '-5%',
+                    right: '-8%',
+                    width: '70%',
+                    height: 'auto',
+                    opacity: 0.12,
+                    pointerEvents: 'none',
+                  }}
+                >
+                  <path fill="none" stroke="white" strokeWidth="1" d="M396.92,484c-27.59,0-51.43,19.3-57.17,46.3l-39.96,187.99h36.47c27.6,0,51.45-19.3,57.19-46.3l39.95-187.99h-36.48Z"/>
+                  <path fill="none" stroke="white" strokeWidth="1" d="M128.41,366.99c-27.6,0-51.44,19.3-57.17,46.3L6.41,718.29h36.46c27.61,0,51.45-19.3,57.2-46.3l64.82-305h-36.48Z"/>
+                  <path fill="none" stroke="white" strokeWidth="1" d="M568.53,366.99c-27.59,0-51.44,19.3-57.17,46.3l-64.83,305h36.46c27.61,0,51.46-19.3,57.19-46.3l64.82-305h-36.47Z"/>
+                  <path fill="none" stroke="white" strokeWidth="1" d="M300.06,249.74c-27.59,0-51.43,19.3-57.18,46.3l-39.95,188.01h36.47c27.6,0,51.44-19.32,57.19-46.31l39.94-188h-36.47Z"/>
+                  <path fill="none" stroke="white" strokeWidth="1" d="M532.96,15.64c-52-3-87.98,19.62-93.64,46.31l-64.83,305.01h36.47c27.6,0,51.45-19.32,57.19-46.31L532.96,15.64"/>
+                </svg>
+
                 <span className="tile-title">Wetter</span>
                 <div className="tile-footer">
                   <span className="tile-sub">Aktuelles Wetter für Ihren Standort</span>
@@ -846,6 +1109,24 @@ function Home() {
 
             <img src="premeo_back_1.jpg" alt="" className="tile-img" />
             <div className="tile-overlay" />
+
+            {/* code_1 SVG – outline watermark */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 400 495.64"
+              style={{
+                position: 'absolute',
+                bottom: '-5%',
+                right: '-8%',
+                width: '70%',
+                height: 'auto',
+                opacity: 0.12,
+                pointerEvents: 'none',
+              }}
+            >
+              <path fill="none" stroke="white" strokeWidth="1" d="M142.02,9.9c-37.09.62-68.97,26.78-76.69,63.21L10.78,329.71h49.76c37.69,0,70.24-26.36,78.06-63.2L193.13,9.9h-51.11Z"/>
+              <path fill="none" stroke="white" strokeWidth="1" d="M342.06,9.9c-37.09.62-68.95,26.78-76.69,63.21l-88.49,416.32h49.76c37.69,0,70.24-26.37,78.07-63.21L393.19,9.9h-51.13Z"/>
+            </svg>
 
             {/* Logo oben rechts */}
             <div className="premeo-logo-tr">
@@ -925,11 +1206,18 @@ function Home() {
         <p className="agrar-subheading">Artikel / Videos / Podcast / Märkte</p>
 
         {/* Featured Carousel – infinite loop via triple copy */}
-        <div className="agrar-featured-wrap" onMouseEnter={() => { agrPausedRef.current = true }} onMouseLeave={() => { agrPausedRef.current = false }}>
+        <div
+          className="agrar-featured-wrap"
+          style={{ cursor: featDragging ? 'grabbing' : 'grab', userSelect: 'none' }}
+          onMouseDown={onFeatMouseDown}
+          onMouseMove={onFeatMouseMove}
+          onMouseUp={onFeatMouseUp}
+          onMouseLeave={onFeatMouseUp}
+        >
           <motion.div className="agrar-featured" style={{ x: featXMotion }}>
             {AGRAR_LOOP.map((card, i) => (
               <div className="agrar-card agrar-card-feat" key={i}>
-                <img src={card.image} alt="" className="agrar-card-img" />
+                <img src={card.image} alt="" className="agrar-card-img" draggable={false} />
                 <div className="agrar-card-grad" />
                 <div className="agrar-card-label-tr">
                   <img src={card.icon} alt="" className="agrar-icon" />
@@ -971,6 +1259,47 @@ function Home() {
                   <span className="agrar-scroll-arrow">/ <span className="agrar-arrow-chevron">›</span></span>
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile Slider – motion-value, infinite loop */}
+        <div
+          ref={mobWrapRef}
+          className="agrar-mobile-wrap"
+          style={{ cursor: mobDragging ? 'grabbing' : 'grab', userSelect: 'none' }}
+        >
+          <motion.div className="agrar-mobile-track" style={{ x: mobXMotion }}>
+            {AGRAR_MOBILE_LOOP.map((card, i) => (
+              <div className="agrar-card agrar-mobile-card" key={i}>
+                <img src={card.image} alt="" className="agrar-card-img" draggable={false} />
+                <div className="agrar-card-grad" />
+                <div className="agrar-card-label-tr">
+                  <img src={card.icon} alt="" className="agrar-icon" />
+                </div>
+                <span className="agrar-scroll-tit-tl">{card.title}</span>
+                <div className="agrar-scroll-foot agrar-feat-foot">
+                  <div className="agrar-feat-left">
+                    <p className="agrar-card-desc">{card.text}</p>
+                  </div>
+                  <span className="agrar-scroll-arrow">/ <span className="agrar-arrow-chevron">›</span></span>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Mobile Controls – Dots */}
+        <div className="agrar-mobile-controls">
+          <div className="agrar-dots">
+            {AGRAR_MOBILE_ALL.map((_, i) => (
+              <button
+                key={i}
+                className={`agrar-dot${i === mobIdx ? ' agrar-dot-active' : ''}`}
+                onClick={() => jumpToMob(i)}
+              >
+                {i === mobIdx && <span key={mobIdx} className="agrar-dot-progress" />}
+              </button>
             ))}
           </div>
         </div>

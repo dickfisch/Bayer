@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
+
 const TICKER_ITEMS = [
   { type: 'icon' },
   { type: 'temp', label: '15°' },
@@ -23,13 +24,66 @@ function WeatherIcon() {
   )
 }
 
+function ChevronRight() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ flexShrink: 0 }}>
+      <polyline points="9 18 15 12 9 6" />
+    </svg>
+  )
+}
+
 function MainNav() {
   const { pathname } = useLocation()
   const beratungActive = pathname === '/beratung-start' || pathname === '/beratung'
 
-  const [menuOpen, setMenuOpen]     = useState(false)
-  const [premeoOpen, setPremeoOpen] = useState(false)
-  const [expanded, setExpanded]     = useState(false)
+  const [menuOpen, setMenuOpen]         = useState(false)
+  const [premeoOpen, setPremeoOpen]     = useState(false)
+  const [expanded, setExpanded]         = useState(false)
+  const [mobileOpen, setMobileOpen]   = useState(false)
+  const [activePanel, setActivePanel] = useState('main') // 'main' | 'produkt' | 'pflanzenschutzmittel' | 'premeo'
+
+  // Eltern-Panel je Sub-Panel (für Zurück-Button)
+  const PANEL_PARENT = {
+    produkt:              'main',
+    kulturen:             'produkt',
+    pflanzenschutzmittel: 'produkt',
+    saatgut:              'produkt',
+    premeo:               'main',
+  }
+
+  function goBack() { setActivePanel(PANEL_PARENT[activePanel] ?? 'main') }
+
+  function closeMobileMenu() {
+    setMobileOpen(false)
+    setTimeout(() => setActivePanel('main'), 380)
+  }
+
+  // CSS-Klasse je Panel abhängig vom aktiven Panel
+  function panelCls(id) {
+    if (id === activePanel) return 'mobile-drawer-panel mobile-drawer-panel--active'
+    const ancestors = []
+    let cur = activePanel
+    while (PANEL_PARENT[cur]) { cur = PANEL_PARENT[cur]; ancestors.push(cur) }
+    if (ancestors.includes(id)) return 'mobile-drawer-panel mobile-drawer-panel--behind'
+    return 'mobile-drawer-panel'
+  }
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [mobileOpen])
+
+  const [navPlz,    setNavPlz]    = useState(() => sessionStorage.getItem('nav_plz')    || '')
+  const [navKultur, setNavKultur] = useState(() => sessionStorage.getItem('nav_kultur') || '')
+
+  useEffect(() => {
+    function onUpdate(e) {
+      setNavPlz(e.detail.plz)
+      setNavKultur(e.detail.kultur)
+    }
+    window.addEventListener('nav-context-update', onUpdate)
+    return () => window.removeEventListener('nav-context-update', onUpdate)
+  }, [])
 
   const [tickerIdx, setTickerIdx] = useState(0)
   const [tickerVisible, setTickerVisible] = useState(true)
@@ -138,13 +192,27 @@ function MainNav() {
 
           <div className="main-nav-links">
             {/* Meine Beratung */}
-            <Link to="/beratung-start" className={beratungActive ? 'active' : ''}>
-              Meine Beratung
+            <Link to="/beratung-start" className={beratungActive ? 'active' : ''} style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
+              <span className="nav-link-text">Meine Beratung</span>
+              {navPlz && navKultur && (
+                <span style={{
+                  position: 'absolute',
+                  bottom: 5,
+                  left: 16,
+                  right: 16,
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  pointerEvents: 'none',
+                }}>
+                  <span style={{ fontSize: '9px', fontWeight: 500, color: '#7dd3fc', letterSpacing: '0.04em', lineHeight: 1 }}>{navPlz}</span>
+                  <span style={{ fontSize: '9px', fontWeight: 500, color: '#7dd3fc', letterSpacing: '0.04em', lineHeight: 1 }}>{navKultur}</span>
+                </span>
+              )}
             </Link>
 
             {/* Produkte */}
             <div className="nav-dropdown">
-              <button className="nav-dropdown-btn" onClick={toggleMenu}>
+              <button className={`nav-dropdown-btn${menuOpen ? ' nav-dropdown-btn--open' : ''}`} onClick={toggleMenu}>
                 <span className="nav-dropdown-trigger">
                   Produkt
                   <Arrow open={menuOpen} />
@@ -203,7 +271,7 @@ function MainNav() {
 
             {/* Premeo – immer sichtbar, eigener Layer */}
             <div className="nav-dropdown">
-              <button className="nav-dropdown-btn" onClick={togglePremeo}>
+              <button className={`nav-dropdown-btn${premeoOpen ? ' nav-dropdown-btn--open' : ''}`} onClick={togglePremeo}>
                 <span className="nav-dropdown-trigger">
                   Premeo
                   <Arrow open={premeoOpen} />
@@ -245,7 +313,7 @@ function MainNav() {
             {/* Regionales – nur im expanded State */}
             <div className="nav-extra-item">
               <div className="nav-dropdown">
-                <button className="nav-dropdown-btn" onClick={toggleMenu}>
+                <button className={`nav-dropdown-btn${menuOpen ? ' nav-dropdown-btn--open' : ''}`} onClick={toggleMenu}>
                   <span className="nav-dropdown-trigger">
                     Regionales
                     <Arrow open={menuOpen} />
@@ -256,16 +324,21 @@ function MainNav() {
 
             {/* Digital Farming – nur im expanded State */}
             <div className="nav-extra-item">
-              <a href="#" className="nav-plain-link">Digital Farming</a>
+              <a href="#" className="nav-plain-link"><span className="nav-link-text">Digital Farming</span></a>
             </div>
 
             {/* Agrar Magazin – nur im expanded State */}
             <div className="nav-extra-item">
-              <a href="#" className="nav-plain-link">Agrar Magazin</a>
+              <a href="#" className="nav-plain-link"><span className="nav-link-text">Agrar Magazin</span></a>
             </div>
 
-            {/* Hamburger – verschwindet beim Expand */}
-            <button className="nav-hamburger-btn" aria-label="Menü" onMouseEnter={handlePillEnter}>
+            {/* Hamburger – verschwindet beim Expand (Desktop) / öffnet Drawer (Mobile) */}
+            <button
+              className="nav-hamburger-btn"
+              aria-label="Menü"
+              onPointerEnter={(e) => { if (e.pointerType !== 'touch') handlePillEnter() }}
+              onClick={() => setMobileOpen(true)}
+            >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <line x1="3" y1="12" x2="21" y2="12" />
@@ -292,7 +365,11 @@ function MainNav() {
               )}
             </span>
           </button>
-          <button className="nav-teal-btn" title="Suche">
+          <button className="nav-teal-btn" title="Suche" onClick={() => {
+            sessionStorage.removeItem('nav_plz')
+            sessionStorage.removeItem('nav_kultur')
+            window.dispatchEvent(new CustomEvent('nav-context-update', { detail: { plz: '', kultur: '' } }))
+          }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -300,6 +377,179 @@ function MainNav() {
           </button>
         </div>
       </header>
+
+      {/* Mobile Drawer */}
+      <div
+        className={`mobile-drawer-backdrop${mobileOpen ? ' mobile-drawer-backdrop--open' : ''}`}
+        onClick={closeMobileMenu}
+      />
+      <nav className={`mobile-drawer${mobileOpen ? ' mobile-drawer--open' : ''}`} aria-hidden={!mobileOpen}>
+
+        {/* Header: Logo + Schließen */}
+        <div className="mobile-drawer-header">
+          <img
+            src="/Corp-Logo_BG_Bayer-Cross_Basic_on-screen_RGB.svg"
+            alt="Bayer"
+            className="mobile-drawer-logo"
+          />
+          <button className="mobile-drawer-close" aria-label="Schließen" onClick={closeMobileMenu}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Panel-Container: absolut gestapelt, schieben von rechts */}
+        <div className="mobile-drawer-panels">
+
+          {/* Panel: Haupt-Navigation */}
+          <div className={panelCls('main')}>
+            <ul className="mobile-drawer-list">
+              <li>
+                <Link className="mobile-drawer-item mobile-drawer-item--plain" to="/beratung-start" onClick={closeMobileMenu}>
+                  Meine Beratung
+                </Link>
+              </li>
+              <li>
+                <button className="mobile-drawer-item" onClick={() => setActivePanel('produkt')}>
+                  Produkt
+                  <ChevronRight />
+                </button>
+              </li>
+              <li>
+                <button className="mobile-drawer-item" onClick={() => setActivePanel('premeo')}>
+                  Premeo
+                  <ChevronRight />
+                </button>
+              </li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Regionales</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Digital Farming</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Agrar Magazin</a></li>
+            </ul>
+          </div>
+
+          {/* Panel: Produkt */}
+          <div className={panelCls('produkt')}>
+            <button className="mobile-drawer-back" onClick={goBack}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+              Zurück
+            </button>
+            <hr className="mobile-drawer-divider" />
+            <ul className="mobile-drawer-list">
+              <li>
+                <button className="mobile-drawer-item" onClick={() => setActivePanel('kulturen')}>
+                  Produkte nach Kulturen
+                  <ChevronRight />
+                </button>
+              </li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Produkte A-Z</a></li>
+              <li>
+                <button className="mobile-drawer-item" onClick={() => setActivePanel('pflanzenschutzmittel')}>
+                  Pflanzenschutzmittel
+                  <ChevronRight />
+                </button>
+              </li>
+              <li>
+                <button className="mobile-drawer-item" onClick={() => setActivePanel('saatgut')}>
+                  Saatgut
+                  <ChevronRight />
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Panel: Produkte nach Kulturen */}
+          <div className={panelCls('kulturen')}>
+            <button className="mobile-drawer-back" onClick={goBack}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+              Zurück
+            </button>
+            <hr className="mobile-drawer-divider" />
+            <ul className="mobile-drawer-list">
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Mais</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Getreide</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Raps</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Rübe</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Kartoffel</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Obst</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Gemüse</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Weinbau</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Hopfen</a></li>
+            </ul>
+          </div>
+
+          {/* Panel: Pflanzenschutzmittel */}
+          <div className={panelCls('pflanzenschutzmittel')}>
+            <button className="mobile-drawer-back" onClick={goBack}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+              Zurück
+            </button>
+            <hr className="mobile-drawer-divider" />
+            <ul className="mobile-drawer-list">
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Akarizide</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Fungizide</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Insektizide</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Molluskizide</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Saatschutz</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Wachstumsregler</a></li>
+              <li><hr className="mobile-drawer-divider" /></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Produktlisten</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Broschüren</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Produktfinder</a></li>
+            </ul>
+          </div>
+
+          {/* Panel: Saatgut */}
+          <div className={panelCls('saatgut')}>
+            <button className="mobile-drawer-back" onClick={goBack}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+              Zurück
+            </button>
+            <hr className="mobile-drawer-divider" />
+            <ul className="mobile-drawer-list">
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Raps-Saatgut</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Mais-Saatgut</a></li>
+              <li><hr className="mobile-drawer-divider" /></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Broschüren</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Produktfinder</a></li>
+              <li><hr className="mobile-drawer-divider" /></li>
+              <li>
+                <a className="mobile-drawer-item mobile-drawer-item--plain" href="https://www.vegetables.bayer.com/de/de-de.html" target="_blank" rel="noopener noreferrer">
+                  Gemüsesaatgut / Vegetables Bayer
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Panel: Premeo */}
+          <div className={panelCls('premeo')}>
+            <button className="mobile-drawer-back" onClick={goBack}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+              Zurück
+            </button>
+            <hr className="mobile-drawer-divider" />
+            <ul className="mobile-drawer-list">
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Saatgut</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Pflanzenschutzmittel</a></li>
+              <li><hr className="mobile-drawer-divider" /></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Broschüren</a></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Produktfinder</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
     </>
   )
 }
