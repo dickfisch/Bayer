@@ -73,6 +73,14 @@ const HERO_SLIDES = [
   },
 ]
 
+// Klon von letztem Slide vorne + Klon von erstem Slide hinten → infinite loop in beide Richtungen
+// [klon_letzter, slide0, slide1, slide2, klon_erster]  →  Startposition: Index 1
+const HERO_SLIDES_MOBILE = [
+  HERO_SLIDES[HERO_SLIDES.length - 1],
+  ...HERO_SLIDES,
+  HERO_SLIDES[0],
+]
+
 const MARKT_DATA = [
   { name: 'Jonagold, 70-90mm, lose', kategorie: 'Tafeläpfel',    preis: '105,63', einheit: 'EUR/dt', trend: 'stable', change: '0,00' },
   { name: 'Conference, 65-75mm',     kategorie: 'Tafelbirnen',   preis: '145,00', einheit: 'EUR/dt', trend: 'stable', change: '0,00' },
@@ -98,19 +106,19 @@ const ADVISORS = [
 ]
 
 const PORTRAIT_SLOTS = [
-  { size: 72,  z: 1 },
-  { size: 96,  z: 3 },
-  { size: 124, z: 5 },
-  { size: 96,  z: 3 },
-  { size: 72,  z: 1 },
+  { size: 100, z: 1 },
+  { size: 136, z: 3 },
+  { size: 174, z: 5 },
+  { size: 136, z: 3 },
+  { size: 100, z: 1 },
 ]
 
 const PORTRAIT_SLOTS_MOBILE = [
-  { size: 40, z: 1 },
-  { size: 54, z: 3 },
-  { size: 68, z: 5 },
-  { size: 54, z: 3 },
-  { size: 40, z: 1 },
+  { size: 64, z: 1 },
+  { size: 86, z: 3 },
+  { size: 108, z: 5 },
+  { size: 86, z: 3 },
+  { size: 64, z: 1 },
 ]
 
 const PREMEO_SLIDES = [
@@ -194,7 +202,7 @@ function ProdukteSlider() {
 
   return (
     <section className="produkte-fokus-section">
-      <h2 className="produkte-fokus-heading">Produkte im Fokus</h2>
+      <h2 className="produkte-fokus-heading"><span className="produkte-gradient">Produkte</span> im Fokus</h2>
       <div
         className="produkte-fokus-stage"
         onTouchStart={handleTouchStart}
@@ -284,6 +292,13 @@ function Home() {
   const [heroCount, setHeroCount] = useState(0)
   const [heroDir, setHeroDir]     = useState(1) // 1 = vorwärts, -1 = rückwärts
   const heroIdx = heroCount % HERO_SLIDES.length
+
+  // Mobile infinite-loop: separater Track-Index
+  // Track: [klon_letzter, slide0, slide1, slide2, klon_erster]
+  // Reale Slides: Index 1..3 → Startposition: 1
+  const [mobileTrackIdx, setMobileTrackIdx] = useState(1)
+  const [mobileAnimated, setMobileAnimated] = useState(true)
+  const prevHeroCountRef = useRef(0)
   const TICKER_H = 28
 
   const heroTouchStartX = useRef(null)
@@ -302,6 +317,7 @@ function Home() {
     if (Math.abs(dx) < Math.abs(dy) || Math.abs(dx) < 50) return // vertikal oder zu kurz → ignorieren
     if (dx < 0) { setHeroDir(1);  setHeroCount(c => c + 1) }                          // links → nächste
     else        { setHeroDir(-1); setHeroCount(c => c + HERO_SLIDES.length - 1) }     // rechts → vorherige
+    startHeroTimer() // Timer nach manuellem Swipe neu starten
   }
 
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768)
@@ -319,13 +335,32 @@ function Home() {
     return () => clearInterval(t)
   }, [])
 
-  useEffect(() => {
-    const t = setInterval(() => {
+  const heroIntervalRef = useRef(null)
+  function startHeroTimer() {
+    if (heroIntervalRef.current) clearInterval(heroIntervalRef.current)
+    heroIntervalRef.current = setInterval(() => {
       setHeroDir(1)
       setHeroCount(c => c + 1)
     }, 9000)
-    return () => clearInterval(t)
-  }, [])
+  }
+  useEffect(() => {
+    startHeroTimer()
+    return () => clearInterval(heroIntervalRef.current)
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Sync mobileTrackIdx mit heroCount (infinite loop in beide Richtungen)
+  useEffect(() => {
+    if (heroCount === prevHeroCountRef.current) return
+    prevHeroCountRef.current = heroCount
+    setMobileAnimated(true)
+    if (heroDir === 1) {
+      // Vorwärts: +1, max = letzter Klon (Index 4)
+      setMobileTrackIdx(idx => Math.min(idx + 1, HERO_SLIDES_MOBILE.length - 1))
+    } else {
+      // Rückwärts: -1, min = vorderer Klon (Index 0)
+      setMobileTrackIdx(idx => Math.max(idx - 1, 0))
+    }
+  }, [heroCount]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const heroImgRef = useRef(null)
 
@@ -367,8 +402,10 @@ function Home() {
   const pastCtaRow  = useRef(false)
 
   useEffect(() => {
-    const speeds  = [0.05, 0.16, 0.28]
-    const offsets = [0,    0,    -80]
+    const isMobile = window.innerWidth <= 768
+    // Mobile: Wetter(0) langsam, Premeo(2) mittel, Termine(1) schnell
+    const speeds  = isMobile ? [0.08, 0.22, 0.12] : [0.05, 0.16, 0.28]
+    const offsets = isMobile ? [0,    0,    0]     : [0,    0,    -80]
     const handleScroll = () => {
       parallaxRefs.current.forEach((el, i) => {
         if (!el) return
@@ -437,15 +474,17 @@ function Home() {
     const step = card ? card.offsetWidth + 24 : 360
     const start = el.scrollLeft
     const target = Math.max(0, Math.min(start + dir * step, el.scrollWidth - el.clientWidth))
-    const duration = 900
+    const duration = 1200
     const startTime = performance.now()
 
     // disable snap while animating
     el.style.scrollSnapType = 'none'
 
+    const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4)
+
     const tick = (now) => {
       const elapsed = now - startTime
-      const progress = Math.min(elapsed / duration, 1)
+      const progress = easeOutQuart(Math.min(elapsed / duration, 1))
       el.scrollLeft = start + (target - start) * progress
       if (progress < 1) {
         scrollAnimRef.current = requestAnimationFrame(tick)
@@ -672,22 +711,34 @@ function Home() {
     offset: ['start end', 'end start'],
   })
 
-  // Einmal-Entrance per IntersectionObserver (nicht scroll-getrieben)
-  const sloganEntrance   = useMotionValue(0)
-  const sloganInView     = useInView(sloganRef, { once: true, amount: 0.35 })
+  // Desktop: originale Entrance-Animation (2 Zeilen)
+  const sloganEntrance = useMotionValue(0)
+  // Mobile: 4 individuelle Entrance-Animationen mit unterschiedlichen Geschwindigkeiten
+  const sloganEnt1 = useMotionValue(0)
+  const sloganEnt2 = useMotionValue(0)
+  const sloganEnt3 = useMotionValue(0)
+  const sloganEnt4 = useMotionValue(0)
+  const sloganInView = useInView(sloganRef, { once: true, amount: 0.35 })
   useEffect(() => {
-    if (sloganInView) animate(sloganEntrance, 1, { duration: 0.9, ease: [0.32, 0, 0.18, 1] })
-  }, [sloganInView, sloganEntrance])
+    if (sloganInView) {
+      animate(sloganEntrance, 1, { duration: 0.9, ease: [0.32, 0, 0.18, 1] })
+      animate(sloganEnt1, 1, { duration: 0.7,  ease: [0.32, 0, 0.18, 1] })
+      animate(sloganEnt2, 1, { duration: 1.05, delay: 0.1,  ease: [0.32, 0, 0.18, 1] })
+      animate(sloganEnt3, 1, { duration: 0.85, ease: [0.32, 0, 0.18, 1] })
+      animate(sloganEnt4, 1, { duration: 1.2,  delay: 0.15, ease: [0.32, 0, 0.18, 1] })
+    }
+  }, [sloganInView, sloganEntrance, sloganEnt1, sloganEnt2, sloganEnt3, sloganEnt4])
 
-  // Einflug von links/rechts beim ersten Erscheinen + kontinuierliche Parallax
-  const sloganLeftX = useTransform(
-    [sloganEntrance, sloganProgress],
-    ([ent, prog]) => (1 - ent) * -120 + (-60 + 120 * prog)
-  )
-  const sloganRightX = useTransform(
-    [sloganEntrance, sloganProgress],
-    ([ent, prog]) => (1 - ent) * 120 + (60 - 120 * prog)
-  )
+  // Desktop: original links/rechts
+  const sloganLeftX  = useTransform([sloganEntrance, sloganProgress], ([ent, prog]) => (1 - ent) * -120 + (-60 + 120 * prog))
+  const sloganRightX = useTransform([sloganEntrance, sloganProgress], ([ent, prog]) => (1 - ent) *  120 + ( 60 - 120 * prog))
+
+  // Mobile: 4 Zeilen mit unterschiedlicher Geschwindigkeit
+  const sloganLine1X = useTransform([sloganEnt1, sloganProgress], ([ent, prog]) => (1 - ent) * -280 + (-120 + 240 * prog))
+  const sloganLine2X = useTransform([sloganEnt2, sloganProgress], ([ent, prog]) => (1 - ent) * -100 + (-45 +  90 * prog))
+  const sloganLine3X = useTransform([sloganEnt3, sloganProgress], ([ent, prog]) => (1 - ent) *  130 + ( 55 - 110 * prog))
+  const sloganLine4X = useTransform([sloganEnt4, sloganProgress], ([ent, prog]) => (1 - ent) *  160 + ( 70 - 140 * prog))
+
   // Opacity: fade-in mit Entrance, fade-out beim Scroll-Exit
   const sloganOpacity = useTransform(
     [sloganEntrance, sloganProgress],
@@ -714,6 +765,42 @@ function Home() {
   const onDragEnd = useCallback(() => {
     dragState.current.active = false
     themenScrollRef.current?.classList.remove('is-dragging')
+  }, [])
+
+  // Markt-Ticker Touch-Swipe
+  const marktTrackRef = useRef(null)
+  const marktTouch    = useRef({ active: false, startX: 0, startTranslate: 0 })
+
+  const onMarktTouchStart = useCallback((e) => {
+    const el = marktTrackRef.current
+    if (!el) return
+    const matrix = new DOMMatrix(getComputedStyle(el).transform)
+    const currentX = matrix.m41
+    el.style.animation = 'none'
+    el.style.transform = `translateX(${currentX}px)`
+    marktTouch.current = { active: true, startX: e.touches[0].clientX, startTranslate: currentX }
+  }, [])
+
+  const onMarktTouchMove = useCallback((e) => {
+    if (!marktTouch.current.active) return
+    const el = marktTrackRef.current
+    if (!el) return
+    const delta = e.touches[0].clientX - marktTouch.current.startX
+    el.style.transform = `translateX(${marktTouch.current.startTranslate + delta}px)`
+  }, [])
+
+  const onMarktTouchEnd = useCallback(() => {
+    const el = marktTrackRef.current
+    if (!el || !marktTouch.current.active) return
+    marktTouch.current.active = false
+    const match = el.style.transform.match(/-?[\d.]+/)
+    const currentX = match ? parseFloat(match[0]) : 0
+    const halfWidth = el.scrollWidth / 2
+    let normalized = ((currentX % halfWidth) - halfWidth) % (-halfWidth)
+    if (normalized > 0) normalized -= halfWidth
+    const delay = (normalized / halfWidth) * 60
+    el.style.transform = ''
+    el.style.animation = `markt-scroll 60s linear ${delay}s infinite`
   }, [])
 
   return (
@@ -785,7 +872,7 @@ function Home() {
       <section className="hero" onTouchStart={handleHeroTouchStart} onTouchEnd={handleHeroTouchEnd}>
 
         {/* Parallax-Wrapper für Maus-Effekt */}
-        <div ref={heroImgRef} className="hero-parallax-wrap">
+        <div ref={heroImgRef} className="hero-parallax-wrap" style={isMobile ? { background: HERO_SLIDES[heroIdx].boxColor } : {}}>
           <AnimatePresence mode="sync">
             <motion.img
               key={heroIdx}
@@ -801,48 +888,88 @@ function Home() {
         </div>
 
         {/* Box-Slider */}
-        <div className="hero-box-wrap">
+        <div className="hero-box-wrap" style={isMobile ? { background: HERO_SLIDES[heroIdx].boxColor } : {}}>
           <div className="hero-box-clip-outer">
-            <AnimatePresence mode="wait" custom={heroDir}>
+            {isMobile ? (
+              /* Mobile: Track-Slider – infinite loop mit Klon von Slide 0 am Ende */
               <motion.div
-                key={heroIdx}
-                custom={heroDir}
-                className="hero-box"
-                style={{ background: HERO_SLIDES[heroIdx].boxColor }}
-                variants={isMobile ? {
-                  enter:  (d) => ({ x: d === 1 ? '100%' : '-100%', opacity: 0 }),
-                  center: { x: 0, opacity: 1 },
-                  exit:   (d) => ({ x: d === 1 ? '-100%' : '100%', opacity: 0 }),
-                } : {
-                  enter:  { y: '100%', opacity: 0 },
-                  center: { y: 0, opacity: 1 },
-                  exit:   { y: '-100%', opacity: 0 },
+                className="hero-box-track"
+                animate={{ x: `-${(mobileTrackIdx / HERO_SLIDES_MOBILE.length) * 100}%` }}
+                transition={mobileAnimated ? { duration: 1.0, ease: [0.32, 0, 0.18, 1] } : { duration: 0 }}
+                onAnimationComplete={() => {
+                  if (mobileTrackIdx === HERO_SLIDES_MOBILE.length - 1) {
+                    // Klon von Slide 1 am Ende → snap zu realem Slide 1 (Index 1)
+                    setMobileAnimated(false)
+                    setMobileTrackIdx(1)
+                  } else if (mobileTrackIdx === 0) {
+                    // Klon von letztem Slide vorne → snap zu realem letzten Slide (Index 3)
+                    setMobileAnimated(false)
+                    setMobileTrackIdx(HERO_SLIDES.length)
+                  }
                 }}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 1.0, ease: [0.32, 0, 0.18, 1] }}
               >
-                <h1>{HERO_SLIDES[heroIdx].title}</h1>
-                <p>{HERO_SLIDES[heroIdx].desc}</p>
-                <div className="hero-buttons">
-                  <a href="/beratung-start" className="hero-btn-primary">
-                    <span className="hero-btn-text">MEINE Produkt BERATUNG</span>
-                    <span className="hero-btn-right">
-                      <span className="hero-btn-slash">/</span>
-                      <span className="hero-btn-arrow">›</span>
-                    </span>
-                  </a>
-                  <a href="/beratung" className="hero-btn-secondary">
-                    <span className="hero-btn-text">MEHR ERFAHREN</span>
-                    <span className="hero-btn-right">
-                      <span className="hero-btn-slash">/</span>
-                      <span className="hero-btn-arrow">›</span>
-                    </span>
-                  </a>
-                </div>
+                {HERO_SLIDES_MOBILE.map((slide, i) => (
+                  <div key={i} className="hero-box" style={{ background: slide.boxColor }}>
+                    <h1>{slide.title}</h1>
+                    <p>{slide.desc}</p>
+                    <div className="hero-buttons">
+                      <a href="/beratung-start" className="hero-btn-primary">
+                        <span className="hero-btn-text">MEINE Produkt BERATUNG</span>
+                        <span className="hero-btn-right">
+                          <span className="hero-btn-slash">/</span>
+                          <span className="hero-btn-arrow">›</span>
+                        </span>
+                      </a>
+                      <a href="/beratung" className="hero-btn-secondary">
+                        <span className="hero-btn-text">MEHR ERFAHREN</span>
+                        <span className="hero-btn-right">
+                          <span className="hero-btn-slash">/</span>
+                          <span className="hero-btn-arrow">›</span>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </motion.div>
-            </AnimatePresence>
+            ) : (
+              /* Desktop: original AnimatePresence */
+              <AnimatePresence mode="wait" custom={heroDir}>
+                <motion.div
+                  key={heroIdx}
+                  custom={heroDir}
+                  className="hero-box"
+                  style={{ background: HERO_SLIDES[heroIdx].boxColor }}
+                  variants={{
+                    enter:  { y: '100%', opacity: 0 },
+                    center: { y: 0, opacity: 1 },
+                    exit:   { y: '-100%', opacity: 0 },
+                  }}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 1.0, ease: [0.32, 0, 0.18, 1] }}
+                >
+                  <h1>{HERO_SLIDES[heroIdx].title}</h1>
+                  <p>{HERO_SLIDES[heroIdx].desc}</p>
+                  <div className="hero-buttons">
+                    <a href="/beratung-start" className="hero-btn-primary">
+                      <span className="hero-btn-text">MEINE Produkt BERATUNG</span>
+                      <span className="hero-btn-right">
+                        <span className="hero-btn-slash">/</span>
+                        <span className="hero-btn-arrow">›</span>
+                      </span>
+                    </a>
+                    <a href="/beratung" className="hero-btn-secondary">
+                      <span className="hero-btn-text">MEHR ERFAHREN</span>
+                      <span className="hero-btn-right">
+                        <span className="hero-btn-slash">/</span>
+                        <span className="hero-btn-arrow">›</span>
+                      </span>
+                    </a>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            )}
           </div>
         </div>
 
@@ -935,7 +1062,7 @@ function Home() {
             .map((p) => {
               const isMob = typeof window !== 'undefined' && window.innerWidth <= 768
               const slot = (isMob ? PORTRAIT_SLOTS_MOBILE : PORTRAIT_SLOTS)[p.slotIdx]
-              const overlap = isMob ? -16 : -28
+              const overlap = isMob ? -32 : -40
               return (
                 <motion.div
                   key={p.j}
@@ -1055,7 +1182,7 @@ function Home() {
                     right: '-8%',
                     width: '70%',
                     height: 'auto',
-                    opacity: 0.12,
+                    opacity: 0.35,
                     pointerEvents: 'none',
                   }}
                 >
@@ -1181,18 +1308,14 @@ function Home() {
       {/* Slogan */}
       <section className="slogan-section" ref={sloganRef}>
         <motion.div className="slogan-bg-overlay" style={{ opacity: sloganBgOpacity }} />
-        <motion.p
-          className="slogan-left"
-          style={{ x: sloganLeftX, opacity: sloganOpacity }}
-        >
-          Health for All,
-        </motion.p>
-        <motion.p
-          className="slogan-right"
-          style={{ x: sloganRightX, opacity: sloganOpacity }}
-        >
-          Hunger for None
-        </motion.p>
+        {/* Desktop: 2 Zeilen original */}
+        <motion.p className="slogan-line slogan-line--left  slogan-desktop" style={{ x: sloganLeftX,  opacity: sloganOpacity }}>Health for All,</motion.p>
+        <motion.p className="slogan-line slogan-line--right slogan-desktop" style={{ x: sloganRightX, opacity: sloganOpacity }}>Hunger for None</motion.p>
+        {/* Mobile: 4 einzeln animierte Zeilen */}
+        <motion.p className="slogan-line slogan-line--left  slogan-mobile" style={{ x: sloganLine1X, opacity: sloganOpacity }}>Health</motion.p>
+        <motion.p className="slogan-line slogan-line--left  slogan-mobile" style={{ x: sloganLine2X, opacity: sloganOpacity }}>for All,</motion.p>
+        <motion.p className="slogan-line slogan-line--right slogan-mobile" style={{ x: sloganLine3X, opacity: sloganOpacity }}>Hunger</motion.p>
+        <motion.p className="slogan-line slogan-line--right slogan-mobile" style={{ x: sloganLine4X, opacity: sloganOpacity }}>for None</motion.p>
       </section>
 
       </div>{/* end dark-gradient-wrap */}
@@ -1202,7 +1325,7 @@ function Home() {
 
       {/* Agrar Magazin – Apple TV Style */}
       <section className="agrar-section">
-        <p className="agrar-heading">Agrar Magazin</p>
+        <p className="agrar-heading">Agrar <span className="produkte-gradient">Magazin</span></p>
         <p className="agrar-subheading">Artikel / Videos / Podcast / Märkte</p>
 
         {/* Featured Carousel – infinite loop via triple copy */}
@@ -1338,7 +1461,13 @@ function Home() {
           <span className="markt-label">Stand: {new Date().toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}</span>
         </div>
         <div className="markt-ticker-outer">
-          <div className="markt-ticker-track">
+          <div
+            className="markt-ticker-track"
+            ref={marktTrackRef}
+            onTouchStart={onMarktTouchStart}
+            onTouchMove={onMarktTouchMove}
+            onTouchEnd={onMarktTouchEnd}
+          >
             {MARKT_LOOP.map((item, i) => (
               <div className="markt-item" key={i}>
                 <p className="markt-item-name">{item.name}</p>

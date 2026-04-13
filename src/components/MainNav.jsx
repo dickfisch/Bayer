@@ -194,18 +194,16 @@ function MainNav() {
             {/* Meine Beratung */}
             <Link to="/beratung-start" className={beratungActive ? 'active' : ''} style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
               <span className="nav-link-text">Meine Beratung</span>
-              {navPlz && navKultur && (
+              {navKultur && (
                 <span style={{
                   position: 'absolute',
                   bottom: 5,
                   left: 16,
-                  right: 16,
-                  display: 'flex',
-                  justifyContent: 'space-between',
                   pointerEvents: 'none',
                 }}>
-                  <span style={{ fontSize: '9px', fontWeight: 500, color: '#7dd3fc', letterSpacing: '0.04em', lineHeight: 1 }}>{navPlz}</span>
-                  <span style={{ fontSize: '9px', fontWeight: 500, color: '#7dd3fc', letterSpacing: '0.04em', lineHeight: 1 }}>{navKultur}</span>
+                  <span style={{ fontSize: '11px', fontWeight: 600, color: '#426b8f', letterSpacing: '0.04em', lineHeight: 1 }}>
+                    {navKultur.charAt(0).toUpperCase() + navKultur.slice(1)}
+                  </span>
                 </span>
               )}
             </Link>
@@ -214,7 +212,7 @@ function MainNav() {
             <div className="nav-dropdown">
               <button className={`nav-dropdown-btn${menuOpen ? ' nav-dropdown-btn--open' : ''}`} onClick={toggleMenu}>
                 <span className="nav-dropdown-trigger">
-                  Produkt
+                  Produkte
                   <Arrow open={menuOpen} />
                 </span>
               </button>
@@ -413,7 +411,7 @@ function MainNav() {
               </li>
               <li>
                 <button className="mobile-drawer-item" onClick={() => setActivePanel('produkt')}>
-                  Produkt
+                  Produkte
                   <ChevronRight />
                 </button>
               </li>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const KULTUREN = [
   { value: 'winterweizen', label: 'Winterweizen' },
@@ -40,9 +40,33 @@ function MobileNavSection({ header, links }) {
 
 function Footer() {
   const [kultur, setKultur] = useState('')
+  const svgMobileRef = useRef(null)
+  const svgDesktopRef = useRef(null)
+  const footerRef = useRef(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!footerRef.current) return
+      const rect = footerRef.current.getBoundingClientRect()
+      const viewportHeight = window.innerHeight
+      // progress: 0 when footer enters viewport bottom, 1 when it leaves at top
+      const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height)
+      const clampedProgress = Math.max(0, Math.min(1, progress))
+      const offset = (clampedProgress - 0.5) * 400
+      if (svgMobileRef.current) {
+        svgMobileRef.current.style.transform = `translateY(${offset}px)`
+      }
+      if (svgDesktopRef.current) {
+        svgDesktopRef.current.style.transform = `translateY(${offset}px)`
+      }
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <footer style={{
+    <footer ref={footerRef} style={{
       backgroundColor: '#edf0f4',
       marginTop: '60px',
       position: 'relative',
@@ -52,26 +76,43 @@ function Footer() {
       {/* ══════════════════════════════════════
           MOBILE FOOTER  (versteckt ab md)
       ══════════════════════════════════════ */}
-      <div className="md:hidden" style={{ padding: '36px 20px 0', position: 'relative', overflow: 'hidden' }}>
+      <div className="md:hidden" style={{ padding: '64px 20px 0', position: 'relative', overflow: 'clip' }}>
 
         {/* SVG Hintergrund */}
         <img
+          ref={svgMobileRef}
           src="/code_1.svg"
           aria-hidden="true"
           style={{
             position: 'absolute',
-            top: '40px',
+            top: '160px',
             left: '-40px',
             width: '480px',
             pointerEvents: 'none',
             zIndex: 0,
             mixBlendMode: 'linear-light',
             opacity: 0.6,
+            willChange: 'transform',
           }}
         />
 
         {/* Alle Inhalte über dem SVG */}
         <div style={{ position: 'relative', zIndex: 1 }}>
+
+        {/* Kultur-Dropdown */}
+        <div style={{ marginBottom: '56px' }}>
+          <select
+            className="sub-nav-kultur-select footer-kultur-select"
+            style={{ width: '100%', fontSize: '18px', padding: '22px 56px 22px 24px', boxShadow: '0 2px 12px rgba(0,0,0,0.10)' }}
+            value={kultur}
+            onChange={e => setKultur(e.target.value)}
+          >
+            <option value="" disabled>Produkte A – Z</option>
+            {KULTUREN.map(k => (
+              <option key={k.value} value={k.value}>{k.label}</option>
+            ))}
+          </select>
+        </div>
 
         {/* Logo */}
         <img
@@ -203,6 +244,7 @@ function Footer() {
       ══════════════════════════════════════ */}
       <div className="hidden md:block" style={{ position: 'relative', overflow: 'visible' }}>
         <img
+          ref={svgDesktopRef}
           src="/code_1.svg"
           aria-hidden="true"
           style={{
@@ -214,6 +256,7 @@ function Footer() {
             zIndex: 0,
             mixBlendMode: 'linear-light',
             opacity: 0.6,
+            willChange: 'transform',
           }}
         />
 
