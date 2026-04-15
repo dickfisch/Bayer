@@ -6,7 +6,7 @@ import Lenis from 'lenis'
 import './index.css'
 import Home from './pages/Home'
 import BeratungStart from './pages/BeratungStart'
-import App from './App'
+import Beratung from './pages/Beratung'
 
 function LenisProvider() {
   useEffect(() => {
@@ -29,10 +29,7 @@ function AppRoutes() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/beratung-start" element={<BeratungStart />} />
-          <Route path="/beratung" element={<App />} />
-          <Route path="/feldbericht" element={<App />} />
-          <Route path="/termine" element={<App />} />
-          <Route path="/tools" element={<App />} />
+          <Route path="/beratung" element={<Beratung />} />
         </Routes>
       </AnimatePresence>
     </LayoutGroup>

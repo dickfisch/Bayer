@@ -3,6 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValue, useInView, animate } from 'framer-motion'
 import MainNav from '../components/MainNav'
 import Footer from '../components/Footer'
+import Button from '../components/ui/Button'
+import Card from '../components/ui/Card'
+import Label from '../components/ui/Label'
+import PageHeader from '../components/ui/PageHeader'
+import TileCard from '../components/ui/TileCard'
 
 const THEMEN_CARDS = [
   { title: 'Winterweizen',        icon: '/icons_website_dummy_video.svg',   sub: 'Mehr erfahren', image: '/wetter_back_2.jpg',  text: 'Flufencet-Verbot: Letzte Chance für Cadou SC und neue Lösungen für Landwirte.' },
@@ -202,7 +207,7 @@ function ProdukteSlider() {
 
   return (
     <section className="produkte-fokus-section">
-      <h2 className="produkte-fokus-heading"><span className="produkte-gradient">Produkte</span> im Fokus</h2>
+      <PageHeader highlight="Produkte" title="im Fokus" variant="produkte" />
       <div
         className="produkte-fokus-stage"
         onTouchStart={handleTouchStart}
@@ -246,20 +251,14 @@ function ProdukteSlider() {
             exit={{ opacity: 0, x: dir * -40 }}
             transition={{ duration: 0.38, ease: [0.32, 0, 0.18, 1] }}
           >
-            <span className="produkte-fokus-tag" style={{ background: slide.color }}>{slide.tag}</span>
+            <Label color={slide.color}>{slide.tag}</Label>
             <h3 className="produkte-fokus-name" style={{ color: slide.color }}>
               {slide.name.includes('®')
                 ? <>{slide.name.split('®')[0]}<sup>®</sup>{slide.name.split('®')[1]}</>
                 : slide.name}
             </h3>
             <p className="produkte-fokus-desc">{slide.desc}</p>
-            <button className="produkte-fokus-btn" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-              <span className="produkte-fokus-btn-text">ZUM PRODUKT</span>
-              <span className="produkte-fokus-btn-right">
-                <span className="produkte-fokus-btn-slash">/</span>
-                <span className="produkte-fokus-btn-arrow">›</span>
-              </span>
-            </button>
+            <Button variant="produkte" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>ZUM PRODUKT</Button>
           </motion.div>
         </AnimatePresence>
 
@@ -913,20 +912,8 @@ function Home() {
                     <h1>{slide.title}</h1>
                     <p>{slide.desc}</p>
                     <div className="hero-buttons">
-                      <a href="/beratung-start" className="hero-btn-primary">
-                        <span className="hero-btn-text">MEINE Produkt BERATUNG</span>
-                        <span className="hero-btn-right">
-                          <span className="hero-btn-slash">/</span>
-                          <span className="hero-btn-arrow">›</span>
-                        </span>
-                      </a>
-                      <a href="/beratung" className="hero-btn-secondary">
-                        <span className="hero-btn-text">MEHR ERFAHREN</span>
-                        <span className="hero-btn-right">
-                          <span className="hero-btn-slash">/</span>
-                          <span className="hero-btn-arrow">›</span>
-                        </span>
-                      </a>
+                      <Button href="/beratung-start" variant="primary">MEINE Produkt BERATUNG</Button>
+                      <Button href="/beratung" variant="secondary">MEHR ERFAHREN</Button>
                     </div>
                   </div>
                 ))}
@@ -952,20 +939,8 @@ function Home() {
                   <h1>{HERO_SLIDES[heroIdx].title}</h1>
                   <p>{HERO_SLIDES[heroIdx].desc}</p>
                   <div className="hero-buttons">
-                    <a href="/beratung-start" className="hero-btn-primary">
-                      <span className="hero-btn-text">MEINE Produkt BERATUNG</span>
-                      <span className="hero-btn-right">
-                        <span className="hero-btn-slash">/</span>
-                        <span className="hero-btn-arrow">›</span>
-                      </span>
-                    </a>
-                    <a href="/beratung" className="hero-btn-secondary">
-                      <span className="hero-btn-text">MEHR ERFAHREN</span>
-                      <span className="hero-btn-right">
-                        <span className="hero-btn-slash">/</span>
-                        <span className="hero-btn-arrow">›</span>
-                      </span>
-                    </a>
+                    <Button href="/beratung-start" variant="primary">MEINE Produkt BERATUNG</Button>
+                    <Button href="/beratung" variant="secondary">MEHR ERFAHREN</Button>
                   </div>
                 </motion.div>
               </AnimatePresence>
@@ -1161,113 +1136,76 @@ function Home() {
 
             {/* Wetter */}
             <div ref={el => parallaxRefs.current[0] = el} style={{ willChange: 'transform' }}>
-              <motion.div
-                className="tile tile-premeo"
+              <TileCard
+                className="tile-premeo"
+                image="wetter_back_2.jpg"
+                title="Wetter"
+                sub="Aktuelles Wetter für Ihren Standort"
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.02 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.7, ease: 'easeOut' }}
-              >
-                <img src="wetter_back_2.jpg" alt="" className="tile-img" />
-                <div className="tile-overlay" />
-
-                {/* code_2 SVG – outline watermark */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 615.12 723.89"
-                  style={{
-                    position: 'absolute',
-                    bottom: '-5%',
-                    right: '-8%',
-                    width: '70%',
-                    height: 'auto',
-                    opacity: 0.35,
-                    pointerEvents: 'none',
-                  }}
-                >
-                  <path fill="none" stroke="white" strokeWidth="1" d="M396.92,484c-27.59,0-51.43,19.3-57.17,46.3l-39.96,187.99h36.47c27.6,0,51.45-19.3,57.19-46.3l39.95-187.99h-36.48Z"/>
-                  <path fill="none" stroke="white" strokeWidth="1" d="M128.41,366.99c-27.6,0-51.44,19.3-57.17,46.3L6.41,718.29h36.46c27.61,0,51.45-19.3,57.2-46.3l64.82-305h-36.48Z"/>
-                  <path fill="none" stroke="white" strokeWidth="1" d="M568.53,366.99c-27.59,0-51.44,19.3-57.17,46.3l-64.83,305h36.46c27.61,0,51.46-19.3,57.19-46.3l64.82-305h-36.47Z"/>
-                  <path fill="none" stroke="white" strokeWidth="1" d="M300.06,249.74c-27.59,0-51.43,19.3-57.18,46.3l-39.95,188.01h36.47c27.6,0,51.44-19.32,57.19-46.31l39.94-188h-36.47Z"/>
-                  <path fill="none" stroke="white" strokeWidth="1" d="M532.96,15.64c-52-3-87.98,19.62-93.64,46.31l-64.83,305.01h36.47c27.6,0,51.45-19.32,57.19-46.31L532.96,15.64"/>
-                </svg>
-
-                <span className="tile-title">Wetter</span>
-                <div className="tile-footer">
-                  <span className="tile-sub">Aktuelles Wetter für Ihren Standort</span>
-                  <span className="tile-arrow">/ <span className="agrar-arrow-chevron">›</span></span>
-                </div>
-              </motion.div>
+                header={
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 615.12 723.89" style={{ position: 'absolute', bottom: '-5%', right: '-8%', width: '70%', height: 'auto', opacity: 0.35, pointerEvents: 'none' }}>
+                    <path fill="none" stroke="white" strokeWidth="1" d="M396.92,484c-27.59,0-51.43,19.3-57.17,46.3l-39.96,187.99h36.47c27.6,0,51.45-19.3,57.19-46.3l39.95-187.99h-36.48Z"/>
+                    <path fill="none" stroke="white" strokeWidth="1" d="M128.41,366.99c-27.6,0-51.44,19.3-57.17,46.3L6.41,718.29h36.46c27.61,0,51.45-19.3,57.2-46.3l64.82-305h-36.48Z"/>
+                    <path fill="none" stroke="white" strokeWidth="1" d="M568.53,366.99c-27.59,0-51.44,19.3-57.17,46.3l-64.83,305h36.46c27.61,0,51.46-19.3,57.19-46.3l64.82-305h-36.47Z"/>
+                    <path fill="none" stroke="white" strokeWidth="1" d="M300.06,249.74c-27.59,0-51.43,19.3-57.18,46.3l-39.95,188.01h36.47c27.6,0,51.44-19.32,57.19-46.31l39.94-188h-36.47Z"/>
+                    <path fill="none" stroke="white" strokeWidth="1" d="M532.96,15.64c-52-3-87.98,19.62-93.64,46.31l-64.83,305.01h36.47c27.6,0,51.45-19.32,57.19-46.31L532.96,15.64"/>
+                  </svg>
+                }
+              />
             </div>
 
             {/* Termine */}
             <div ref={el => parallaxRefs.current[1] = el} style={{ willChange: 'transform' }}>
-              <motion.div
-                className="tile tile-termine"
+              <TileCard
+                className="tile-termine"
+                image="/image_beratung.jpg"
+                title="Termine"
+                sub="Alle Termine im Überblick"
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.02 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
-              >
-                <img src="/image_beratung.jpg" alt="" className="tile-img" />
-                <div className="tile-overlay" />
-                <span className="tile-title">Termine</span>
-                <div className="tile-footer">
-                  <span className="tile-sub">Ihre Beratungstermine im Überblick</span>
-                  <span className="tile-arrow">/ <span className="agrar-arrow-chevron">›</span></span>
-                </div>
-              </motion.div>
+              />
             </div>
 
           </div>
 
           {/* Rechte Spalte – Premeo */}
           <div ref={el => parallaxRefs.current[2] = el} style={{ willChange: 'transform' }}>
-          <motion.div
-            className="tile tile-premeo-card"
+          <TileCard
+            className="tile-premeo-card"
+            image="premeo_back_1.jpg"
+            title="Premeo"
+            titleClassName="premeo-title-abs"
+            sub="Alle Aktionen"
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.02 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+            header={
+              <>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 495.64" style={{ position: 'absolute', bottom: '-5%', right: '-8%', width: '70%', height: 'auto', opacity: 0.12, pointerEvents: 'none' }}>
+                  <path fill="none" stroke="white" strokeWidth="1" d="M142.02,9.9c-37.09.62-68.97,26.78-76.69,63.21L10.78,329.71h49.76c37.69,0,70.24-26.36,78.06-63.2L193.13,9.9h-51.11Z"/>
+                  <path fill="none" stroke="white" strokeWidth="1" d="M342.06,9.9c-37.09.62-68.95,26.78-76.69,63.21l-88.49,416.32h49.76c37.69,0,70.24-26.37,78.07-63.21L393.19,9.9h-51.13Z"/>
+                </svg>
+                <div className="premeo-logo-tr">
+                  <svg viewBox="0 0 1000 1000" height="72" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="white" d="M229.4,516.6h-18.2v36.2h19.2c6.3,0.5,12.6-1.1,17.9-4.7c4.1-3.6,6.2-8.8,5.8-14.2C254.1,522.3,245.8,516.6,229.4,516.6"/>
+                    <path fill="white" d="M245.6,489.5c3.8-2.9,5.8-7.5,5.4-12.2c0.4-4.6-1.9-9-5.8-11.4c-5.8-2.7-12.1-3.9-18.5-3.5h-15.5v30.8h17.1C234.3,493.7,240.3,492.4,245.6,489.5"/>
+                    <path fill="white" d="M370.5,460.6c-10.2-0.7-20.1,3.7-26.5,11.8c-11.9,21.8-11.9,48.2-0.1,70.1c6.3,8.1,16.2,12.5,26.4,11.8c23.5,0,35.2-15.6,35.2-46.8C405.5,476.3,393.8,460.6,370.5,460.6"/>
+                    <path fill="white" d="M982.7,449.5c-9.1-39.1-44-66.8-84.2-66.8H99.5c-47.7,0-86.4,38.7-86.4,86.4v75.6c0,47.7,38.7,86.4,86.4,86.4h799.1c47.7,0,86.4-38.6,86.4-86.3c0,0,0,0,0-0.1V469C985,462.5,984.3,455.9,982.7,449.5z M270.9,566.4c-10.9,7.6-24,11.4-37.2,10.6h-51.9V438.3h43.1c14.8-1.1,29.6,1.8,42.9,8.4c9,5.8,14.1,16,13.3,26.7c0.3,7.3-1.7,14.4-5.8,20.4c-3.7,5.2-9.3,8.6-15.5,9.5v0.9c7.5,1.2,14.3,5.1,19.1,11.1c4.2,6.4,6.2,13.9,5.8,21.4C285.1,548.3,280,559.4,270.9,566.4z M419.3,560.4c-12.9,12.9-30.7,19.7-49,18.5c-18.2,1.2-36.1-5.6-49-18.5c-12.3-14.9-18.4-33.9-17.1-53.1c-1.3-19.2,4.8-38.2,17.1-52.9c13-12.8,30.9-19.4,49.1-18.2c18.2-1.2,36,5.5,48.9,18.4C442,486.2,442,528.8,419.3,560.4z M586.3,577h-37.4l-60.4-104.9h-0.9c1.2,18.5,1.8,31.7,1.8,39.7V577h-26.3V438.3h37.1l60.3,103.9h0.7c-0.9-18-1.4-30.8-1.4-38.2v-65.7h26.5V577z M732.2,528c0.2,9.4-2.2,18.8-6.9,27c-4.7,7.8-11.6,14-19.9,17.8c-9.7,4.3-20.2,6.4-30.8,6.2c-15.1,0.9-30-4-41.6-13.7c-10.1-9.8-15.5-23.5-14.8-37.5v-89.4h29.3v85c-0.7,8.4,1.6,16.7,6.4,23.5c5.7,5.5,13.5,8.3,21.4,7.5c7.7,0.7,15.4-2,20.9-7.5c4.9-6.9,7.2-15.3,6.5-23.7v-84.8h29.3L732.2,528z M832.6,568.1c-10.9,7.8-24.2,11.6-37.6,10.8c-13.6,0.3-27-2.6-39.3-8.4v-27.3c7.7,3.6,15.6,6.5,23.8,8.8c5.8,1.6,11.8,2.5,17.8,2.6c5.2,0.3,10.4-1,14.9-3.7c3.5-2.5,5.5-6.7,5.2-11c0-2.6-0.8-5.1-2.3-7.3c-1.8-2.4-4.1-4.5-6.7-6.1c-5.8-3.5-11.8-6.6-18-9.4c-6.8-3-13.3-6.8-19.1-11.5c-4.2-3.6-7.6-7.9-10.2-12.8c-2.6-5.3-3.9-11.2-3.8-17.1c-0.5-11.1,4.1-21.7,12.5-28.9c9.9-7.5,22.1-11.3,34.5-10.5c7,0,13.9,0.9,20.6,2.6c7,1.9,13.9,4.3,20.5,7.2l-9.5,22.8c-6-2.5-12.1-4.7-18.4-6.4c-4.7-1.2-9.5-1.8-14.3-1.8c-4.6-0.3-9.2,1.1-12.8,3.9c-2.9,2.5-4.6,6.3-4.5,10.2c-0.1,2.4,0.6,4.7,1.8,6.8c1.5,2.2,3.5,4.1,5.7,5.6c6,3.6,12.2,6.9,18.7,9.7c10.2,4.2,19.3,10.5,26.7,18.7c4.9,6.6,7.5,14.7,7.2,22.9C846.6,550,841.6,561,832.6,568.1z"/>
+                    <path fill="none" stroke="white" strokeWidth="43" d="M886.1,726.1V279.8L499.6,56.6L113,279.8v446.3l386.5,223.1L886.1,726.1z"/>
+                  </svg>
+                </div>
+              </>
+            }
           >
-
-            <img src="premeo_back_1.jpg" alt="" className="tile-img" />
-            <div className="tile-overlay" />
-
-            {/* code_1 SVG – outline watermark */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 400 495.64"
-              style={{
-                position: 'absolute',
-                bottom: '-5%',
-                right: '-8%',
-                width: '70%',
-                height: 'auto',
-                opacity: 0.12,
-                pointerEvents: 'none',
-              }}
-            >
-              <path fill="none" stroke="white" strokeWidth="1" d="M142.02,9.9c-37.09.62-68.97,26.78-76.69,63.21L10.78,329.71h49.76c37.69,0,70.24-26.36,78.06-63.2L193.13,9.9h-51.11Z"/>
-              <path fill="none" stroke="white" strokeWidth="1" d="M342.06,9.9c-37.09.62-68.95,26.78-76.69,63.21l-88.49,416.32h49.76c37.69,0,70.24-26.37,78.07-63.21L393.19,9.9h-51.13Z"/>
-            </svg>
-
-            {/* Logo oben rechts */}
-            <div className="premeo-logo-tr">
-              <svg viewBox="0 0 1000 1000" height="72" xmlns="http://www.w3.org/2000/svg">
-                <path fill="white" d="M229.4,516.6h-18.2v36.2h19.2c6.3,0.5,12.6-1.1,17.9-4.7c4.1-3.6,6.2-8.8,5.8-14.2C254.1,522.3,245.8,516.6,229.4,516.6"/>
-                <path fill="white" d="M245.6,489.5c3.8-2.9,5.8-7.5,5.4-12.2c0.4-4.6-1.9-9-5.8-11.4c-5.8-2.7-12.1-3.9-18.5-3.5h-15.5v30.8h17.1C234.3,493.7,240.3,492.4,245.6,489.5"/>
-                <path fill="white" d="M370.5,460.6c-10.2-0.7-20.1,3.7-26.5,11.8c-11.9,21.8-11.9,48.2-0.1,70.1c6.3,8.1,16.2,12.5,26.4,11.8c23.5,0,35.2-15.6,35.2-46.8C405.5,476.3,393.8,460.6,370.5,460.6"/>
-                <path fill="white" d="M982.7,449.5c-9.1-39.1-44-66.8-84.2-66.8H99.5c-47.7,0-86.4,38.7-86.4,86.4v75.6c0,47.7,38.7,86.4,86.4,86.4h799.1c47.7,0,86.4-38.6,86.4-86.3c0,0,0,0,0-0.1V469C985,462.5,984.3,455.9,982.7,449.5z M270.9,566.4c-10.9,7.6-24,11.4-37.2,10.6h-51.9V438.3h43.1c14.8-1.1,29.6,1.8,42.9,8.4c9,5.8,14.1,16,13.3,26.7c0.3,7.3-1.7,14.4-5.8,20.4c-3.7,5.2-9.3,8.6-15.5,9.5v0.9c7.5,1.2,14.3,5.1,19.1,11.1c4.2,6.4,6.2,13.9,5.8,21.4C285.1,548.3,280,559.4,270.9,566.4z M419.3,560.4c-12.9,12.9-30.7,19.7-49,18.5c-18.2,1.2-36.1-5.6-49-18.5c-12.3-14.9-18.4-33.9-17.1-53.1c-1.3-19.2,4.8-38.2,17.1-52.9c13-12.8,30.9-19.4,49.1-18.2c18.2-1.2,36,5.5,48.9,18.4C442,486.2,442,528.8,419.3,560.4z M586.3,577h-37.4l-60.4-104.9h-0.9c1.2,18.5,1.8,31.7,1.8,39.7V577h-26.3V438.3h37.1l60.3,103.9h0.7c-0.9-18-1.4-30.8-1.4-38.2v-65.7h26.5V577z M732.2,528c0.2,9.4-2.2,18.8-6.9,27c-4.7,7.8-11.6,14-19.9,17.8c-9.7,4.3-20.2,6.4-30.8,6.2c-15.1,0.9-30-4-41.6-13.7c-10.1-9.8-15.5-23.5-14.8-37.5v-89.4h29.3v85c-0.7,8.4,1.6,16.7,6.4,23.5c5.7,5.5,13.5,8.3,21.4,7.5c7.7,0.7,15.4-2,20.9-7.5c4.9-6.9,7.2-15.3,6.5-23.7v-84.8h29.3L732.2,528z M832.6,568.1c-10.9,7.8-24.2,11.6-37.6,10.8c-13.6,0.3-27-2.6-39.3-8.4v-27.3c7.7,3.6,15.6,6.5,23.8,8.8c5.8,1.6,11.8,2.5,17.8,2.6c5.2,0.3,10.4-1,14.9-3.7c3.5-2.5,5.5-6.7,5.2-11c0-2.6-0.8-5.1-2.3-7.3c-1.8-2.4-4.1-4.5-6.7-6.1c-5.8-3.5-11.8-6.6-18-9.4c-6.8-3-13.3-6.8-19.1-11.5c-4.2-3.6-7.6-7.9-10.2-12.8c-2.6-5.3-3.9-11.2-3.8-17.1c-0.5-11.1,4.1-21.7,12.5-28.9c9.9-7.5,22.1-11.3,34.5-10.5c7,0,13.9,0.9,20.6,2.6c7,1.9,13.9,4.3,20.5,7.2l-9.5,22.8c-6-2.5-12.1-4.7-18.4-6.4c-4.7-1.2-9.5-1.8-14.3-1.8c-4.6-0.3-9.2,1.1-12.8,3.9c-2.9,2.5-4.6,6.3-4.5,10.2c-0.1,2.4,0.6,4.7,1.8,6.8c1.5,2.2,3.5,4.1,5.7,5.6c6,3.6,12.2,6.9,18.7,9.7c10.2,4.2,19.3,10.5,26.7,18.7c4.9,6.6,7.5,14.7,7.2,22.9C846.6,550,841.6,561,832.6,568.1z"/>
-                <path fill="none" stroke="white" strokeWidth="43" d="M886.1,726.1V279.8L499.6,56.6L113,279.8v446.3l386.5,223.1L886.1,726.1z"/>
-              </svg>
-            </div>
-
-            <span className="tile-title premeo-title-abs">Premeo</span>
-
             {/* Text */}
             <div className="premeo-text-wrap">
               <p className="premeo-subtitle">Premeo Bonusaktion 01.03.–30.09.2026</p>
@@ -1276,30 +1214,14 @@ function Home() {
 
             {/* Nav arrows */}
             <div className="premeo-nav">
-              <button
-                className="premeo-arrow-btn"
-                onClick={() => setPremeoIdx(i => (i - 1 + PREMEO_SLIDES.length) % PREMEO_SLIDES.length)}
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="20" height="20">
-                  <polyline points="18 15 12 9 6 15"/>
-                </svg>
+              <button className="premeo-arrow-btn" onClick={() => setPremeoIdx(i => (i - 1 + PREMEO_SLIDES.length) % PREMEO_SLIDES.length)}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
               </button>
-              <button
-                className="premeo-arrow-btn"
-                onClick={() => setPremeoIdx(i => (i + 1) % PREMEO_SLIDES.length)}
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="20" height="20">
-                  <polyline points="6 9 12 15 18 9"/>
-                </svg>
+              <button className="premeo-arrow-btn" onClick={() => setPremeoIdx(i => (i + 1) % PREMEO_SLIDES.length)}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
             </div>
-
-            <div className="tile-footer">
-              <span className="tile-sub">Ihr persönlicher Beratungsbereich</span>
-              <span className="tile-arrow">/ <span className="agrar-arrow-chevron">›</span></span>
-            </div>
-
-          </motion.div>
+          </TileCard>
           </div>
 
         </div>
@@ -1325,8 +1247,7 @@ function Home() {
 
       {/* Agrar Magazin – Apple TV Style */}
       <section className="agrar-section">
-        <p className="agrar-heading">Agrar <span className="produkte-gradient">Magazin</span></p>
-        <p className="agrar-subheading">Artikel / Videos / Podcast / Märkte</p>
+        <PageHeader title="Agrar" highlight="Magazin" sub="Artikel / Videos / Podcast / Märkte" variant="agrar" />
 
         {/* Featured Carousel – infinite loop via triple copy */}
         <div
@@ -1339,20 +1260,15 @@ function Home() {
         >
           <motion.div className="agrar-featured" style={{ x: featXMotion }}>
             {AGRAR_LOOP.map((card, i) => (
-              <div className="agrar-card agrar-card-feat" key={i}>
-                <img src={card.image} alt="" className="agrar-card-img" draggable={false} />
-                <div className="agrar-card-grad" />
-                <div className="agrar-card-label-tr">
-                  <img src={card.icon} alt="" className="agrar-icon" />
-                </div>
-                <span className="agrar-scroll-tit-tl">{card.title}</span>
-                <div className="agrar-scroll-foot agrar-feat-foot">
-                  <div className="agrar-feat-left">
-                    <p className="agrar-card-desc">{card.text}</p>
-                  </div>
-                  <span className="agrar-scroll-arrow">/ <span className="agrar-arrow-chevron">›</span></span>
-                </div>
-              </div>
+              <Card
+                key={i}
+                className="agrar-card agrar-card-feat"
+                image={card.image}
+                icon={card.icon}
+                title={card.title}
+                text={card.text}
+                draggable={false}
+              />
             ))}
           </motion.div>
         </div>
@@ -1361,27 +1277,19 @@ function Home() {
         <div className="agrar-scroll-wrap">
           <div className="agrar-scroll-row">
             {AGRAR_SCROLL.slice(0, 3).map((card, i) => (
-              <motion.div
-                className="agrar-scroll-card"
+              <Card
                 key={i}
+                as={motion.div}
+                className="agrar-scroll-card"
+                image={card.image}
+                icon={card.icon}
+                title={card.title}
+                text={card.text}
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: i * 0.18 }}
-              >
-                <img src={card.image} alt="" className="agrar-card-img" />
-                <div className="agrar-card-grad" />
-                <div className="agrar-card-label-tr">
-                  <img src={card.icon} alt="" className="agrar-icon" />
-                </div>
-                <span className="agrar-scroll-tit-tl">{card.title}</span>
-                <div className="agrar-scroll-foot agrar-feat-foot">
-                  <div className="agrar-feat-left">
-                    <p className="agrar-card-desc">{card.text}</p>
-                  </div>
-                  <span className="agrar-scroll-arrow">/ <span className="agrar-arrow-chevron">›</span></span>
-                </div>
-              </motion.div>
+              />
             ))}
           </div>
         </div>
@@ -1394,20 +1302,15 @@ function Home() {
         >
           <motion.div className="agrar-mobile-track" style={{ x: mobXMotion }}>
             {AGRAR_MOBILE_LOOP.map((card, i) => (
-              <div className="agrar-card agrar-mobile-card" key={i}>
-                <img src={card.image} alt="" className="agrar-card-img" draggable={false} />
-                <div className="agrar-card-grad" />
-                <div className="agrar-card-label-tr">
-                  <img src={card.icon} alt="" className="agrar-icon" />
-                </div>
-                <span className="agrar-scroll-tit-tl">{card.title}</span>
-                <div className="agrar-scroll-foot agrar-feat-foot">
-                  <div className="agrar-feat-left">
-                    <p className="agrar-card-desc">{card.text}</p>
-                  </div>
-                  <span className="agrar-scroll-arrow">/ <span className="agrar-arrow-chevron">›</span></span>
-                </div>
-              </div>
+              <Card
+                key={i}
+                className="agrar-card agrar-mobile-card"
+                image={card.image}
+                icon={card.icon}
+                title={card.title}
+                text={card.text}
+                draggable={false}
+              />
             ))}
           </motion.div>
         </div>
