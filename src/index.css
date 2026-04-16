@@ -1046,6 +1046,7 @@ body {
     transform: translateY(100%);
     transition: transform 0.28s cubic-bezier(0.32,1.1,0.6,1);
     max-height: 85vh; overflow-y: auto;
+    overscroll-behavior: contain;
     padding: 0 24px 48px;
 }
 .g-sheet.on { transform: translateY(0); }
@@ -1066,7 +1067,7 @@ body {
 .g-badge {
     display: inline-flex; align-items: center;
     font-size: 10px; font-weight: 700; letter-spacing: 0.6px;
-    text-transform: uppercase; padding: 3px 9px; border-radius: 4px;
+    text-transform: uppercase; padding: 3px 9px; border-radius: 8px 0 8px 0;
     margin-bottom: 8px;
 }
 .g-badge-herbizid { background: rgba(232,89,12,0.1); color: #E8590C; }
@@ -1289,7 +1290,7 @@ body {
 .g-sheet-close:hover { background: rgba(0,0,0,0.14); }
 
 .g-badge {
-    border-radius: 999px; padding: 4px 12px;
+    border-radius: 8px 0 8px 0; padding: 4px 12px;
     font-size: 11px; font-weight: 700; letter-spacing: 0.3px;
     margin-bottom: 8px;
 }
@@ -2183,7 +2184,7 @@ body, button, input, select, textarea {
     justify-content: space-between;
     gap: 16px;
     margin: 4px 0 24px;
-    padding: 16px 0;
+    padding: 10px 20px;
     border-radius: 18px;
     background: transparent;
     backdrop-filter: none;
@@ -2200,17 +2201,17 @@ body, button, input, select, textarea {
 .g-sticky-header.g-sticky-scrolled {
     padding: 10px 20px;
     background: linear-gradient(
-        135deg,
-        rgba(240,237,231,0.97) 0%,
-        rgba(232,228,220,0.92) 50%,
-        rgba(220,215,205,0.85) 100%
+        155deg,
+        rgba(255,255,255,0.97) 0%,
+        rgba(235,242,255,0.75) 35%,
+        rgba(225,235,255,0.45) 70%,
+        rgba(215,228,255,0.45) 100%
     );
     backdrop-filter: blur(28px) saturate(200%) brightness(1.12);
     -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.12);
     box-shadow:
-        0 6px 28px rgba(0,0,0,0.10),
-        0 1px 4px rgba(0,0,0,0.06),
-        inset 0 1px 0 rgba(255,255,255,0.85);
+        0 8px 32px rgba(0,0,0,0.10),
+        0 2px 8px rgba(0,0,0,0.05);
     border-color: rgba(255,255,255,0.68);
 }
 .g-sticky-header .g-sheet-close {
@@ -2238,12 +2239,12 @@ body, button, input, select, textarea {
     min-width: 0;
 }
 .gsh-badge {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 0.3px;
     text-transform: uppercase;
-    border-radius: 4px;
-    padding: 2px 9px;
+    border-radius: 25px 0 25px 0;
+    padding: 5px 24px;
     display: inline-block;
     align-self: flex-start;
     transition: font-size 0.28s, padding 0.28s;
@@ -2253,16 +2254,13 @@ body, button, input, select, textarea {
     padding: 1px 7px;
 }
 .gsh-title {
-    font-size: 34px;
-    font-weight: 800;
+    font-size: 54px;
+    font-weight: 600;
     line-height: 1.1;
     letter-spacing: -0.5px;
     white-space: nowrap;
     margin: 10px 0;
-    background: linear-gradient(90deg, #00bcff 0%, #7ecf6e 60%, #c8e06b 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #101b29;
     transition: font-size 0.28s cubic-bezier(0.4,0,0.2,1), margin 0.28s cubic-bezier(0.4,0,0.2,1);
 }
 .g-sticky-scrolled .gsh-title {

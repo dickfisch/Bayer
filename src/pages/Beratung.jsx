@@ -659,15 +659,14 @@ function Beratung() {
           /* ══ OBEN: VOLLE BREITE – Info-Karten ══ */
 
           /* 3-Spalten-Info: Wirkt gegen | BBCH | Einsatzhinweis */
-          '<div style="display:grid;grid-template-columns:1fr 190px 1fr;gap:20px;margin-bottom:32px;">' +
+          '<div style="display:grid;grid-template-columns:1fr 240px 0.7fr;gap:20px;margin-bottom:32px;">' +
             '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:14px;padding:16px;">' +
               '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:10px;">Wirkt gegen</div>' +
               '<div style="display:flex;flex-wrap:wrap;gap:5px;">' + tagsHtml + '</div>' +
             '</div>' +
             '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:14px;padding:16px;">' +
-              '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Anwendungsfenster</div>' +
-              '<div style="font-size:42px;font-weight:800;letter-spacing:-2px;color:#1d1d1f;line-height:1;">' + d.from + '\u2013' + d.to + '</div>' +
-              '<div style="font-size:11px;color:#8e8e93;margin-top:6px;">BBCH Fenster der Kultur</div>' +
+              '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Anwendungsfenster BBCH</div>' +
+              '<div style="font-size:54px;font-weight:600;letter-spacing:-2px;color:#1d1d1f;line-height:1;">' + d.from + '\u2013' + d.to + '</div>' +
             '</div>' +
             '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:14px;padding:16px;">' +
               '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Einsatzhinweis</div>' +
@@ -871,6 +870,16 @@ function Beratung() {
         sheet.addEventListener('scroll', sheetScrollHandler, { passive: true });
         window._ganttSheetScrollHandler = sheetScrollHandler;
 
+        function sheetWheelHandler(e) {
+          e.stopPropagation();
+          var atTop    = sheet.scrollTop === 0 && e.deltaY < 0;
+          var atBottom = sheet.scrollTop + sheet.clientHeight >= sheet.scrollHeight - 1 && e.deltaY > 0;
+          if (!atTop && !atBottom) e.preventDefault();
+          sheet.scrollTop += e.deltaY;
+        }
+        sheet.addEventListener('wheel', sheetWheelHandler, { passive: false });
+        window._ganttSheetWheelHandler = sheetWheelHandler;
+
         document.getElementById('ganttOv').classList.add('on');
         document.getElementById('ganttSheet').classList.add('on');
       };
@@ -902,6 +911,10 @@ function Beratung() {
         if (window._ganttSheetScrollHandler) {
           sheet.removeEventListener('scroll', window._ganttSheetScrollHandler);
           window._ganttSheetScrollHandler = null;
+        }
+        if (window._ganttSheetWheelHandler) {
+          sheet.removeEventListener('wheel', window._ganttSheetWheelHandler);
+          window._ganttSheetWheelHandler = null;
         }
         var sh = document.getElementById('ganttStickyHeader');
         var si = document.getElementById('ganttStickyInfo');
