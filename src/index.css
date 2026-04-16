@@ -1041,7 +1041,7 @@ body {
 
 .g-sheet {
     position: fixed; bottom: 0; left: 0; right: 0; z-index: 910;
-    background: white; border-radius: 20px 20px 0 0;
+    background: #f0ede7; border-radius: 20px 20px 0 0;
     box-shadow: 0 -6px 40px rgba(0,0,0,0.13);
     transform: translateY(100%);
     transition: transform 0.28s cubic-bezier(0.32,1.1,0.6,1);
@@ -1264,7 +1264,7 @@ body {
 /* ══ BOTTOM SHEET – Apple HIG ══ */
 .g-sheet {
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: rgba(255,255,255,0.96);
+    background: #f0ede7;
     backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
     border-radius: 24px 24px 0 0;
     box-shadow: 0 -4px 48px rgba(0,0,0,0.12);
@@ -1303,7 +1303,7 @@ body {
 .g-sub { font-size: 14px; color: #6e6e73; margin-bottom: 20px; }
 
 .g-bbch-box {
-    background: #f5f5f7; border-radius: 12px;
+    background: #f0ede7; border-radius: 12px;
     padding: 14px 18px; margin-bottom: 20px;
     display: flex; align-items: center; gap: 12px;
 }
@@ -2173,15 +2173,124 @@ body, button, input, select, textarea {
 .gantt-tick { display: flex !important; flex-direction: column !important; align-items: flex-start !important; }
 .gantt-tick-dot { align-self: center !important; }
 
+/* ── Sticky Liquid-Glass Header inside g-sheet ── */
+.g-sticky-header {
+    position: sticky;
+    top: 12px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 4px 0 24px;
+    padding: 16px 0;
+    border-radius: 18px;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    border: 1px solid transparent;
+    transition:
+        padding 0.28s cubic-bezier(0.4,0,0.2,1),
+        background 0.28s cubic-bezier(0.4,0,0.2,1),
+        box-shadow 0.28s cubic-bezier(0.4,0,0.2,1),
+        border-color 0.28s cubic-bezier(0.4,0,0.2,1),
+        backdrop-filter 0.28s;
+}
+.g-sticky-header.g-sticky-scrolled {
+    padding: 10px 20px;
+    background: linear-gradient(
+        135deg,
+        rgba(240,237,231,0.97) 0%,
+        rgba(232,228,220,0.92) 50%,
+        rgba(220,215,205,0.85) 100%
+    );
+    backdrop-filter: blur(28px) saturate(200%) brightness(1.12);
+    -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.12);
+    box-shadow:
+        0 6px 28px rgba(0,0,0,0.10),
+        0 1px 4px rgba(0,0,0,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.85);
+    border-color: rgba(255,255,255,0.68);
+}
+.g-sticky-header .g-sheet-close {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    flex-shrink: 0;
+    background: rgba(0,0,0,0.07);
+}
+.g-sticky-header .g-sheet-close:hover {
+    background: rgba(0,0,0,0.13);
+}
+
+/* Info-Block (badge + title + crop) */
+#ganttStickyInfo {
+    display: flex;
+    align-items: flex-start;
+    min-width: 0;
+    flex: 1;
+}
+.gsh-block {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+.gsh-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 2px 9px;
+    display: inline-block;
+    align-self: flex-start;
+    transition: font-size 0.28s, padding 0.28s;
+}
+.g-sticky-scrolled .gsh-badge {
+    font-size: 9px;
+    padding: 1px 7px;
+}
+.gsh-title {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    margin: 10px 0;
+    background: linear-gradient(90deg, #00bcff 0%, #7ecf6e 60%, #c8e06b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: font-size 0.28s cubic-bezier(0.4,0,0.2,1), margin 0.28s cubic-bezier(0.4,0,0.2,1);
+}
+.g-sticky-scrolled .gsh-title {
+    margin: 3px 0;
+    font-size: 24px;
+}
+.gsh-crop {
+    font-size: 13px;
+    color: #6e6e73;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition: font-size 0.28s cubic-bezier(0.4,0,0.2,1);
+}
+.g-sticky-scrolled .gsh-crop {
+    font-size: 11px;
+}
+
 /* Sheet: 80vw centered */
 .g-sheet {
     left: 10vw !important;
     right: 10vw !important;
     max-width: 80vw !important;
     padding: 0 32px 48px !important;
-    max-height: 85vh !important;
+    height: 92vh !important;
+    max-height: 92vh !important;
+    overflow-y: auto !important;
     border-radius: 24px 24px 0 0 !important;
-    background: rgba(255,255,255,0.97) !important;
+    background: #f0ede7 !important;
     backdrop-filter: blur(24px) !important;
 }
 @media (max-width: 768px) {

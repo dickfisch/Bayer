@@ -471,9 +471,12 @@ function Beratung() {
               note: '** Kein Zusatz von Mero bei AHL-Anwendung!' },
         h6: { cat: 'herbizid', plant: 'tiller', img: 'productimage.image.png', crop: 'WW \u00b7 Roggen \u00b7 Triticale', label: 'Windhalm \u2014 Standardbehandlung',
               from: 29, to: 37,
-              products: [{n:'Husar Plus', d:'0,2 l/ha + Mero 1,0 l/ha'}],
+              products: [{n:'Husar Plus', d:'0,2 l/ha'},{n:'Metro', d:'1,0 l/ha'},{n:'Pointer SK 35 g/ha', d:'bei Kornblume'}],
               targets: ['Windhalm','Rispe','Weidelgr\u00e4ser','Klettenlabkraut','Kamille','Kerbel','Kornblume'],
-              note: 'Bei Kornblume: + Pointer SX 35 g/ha' }
+              note: 'F\u00fcr Winterweizen, Winterroggen und Wintertriticale auf Windhalm-Standorten.',
+              formulierung: 'Emulsionskonzentrat / \u00d6lige Dispersion',
+              wirkstoffe: ['81\u00a0% Rapsp\u00f6lmethylester','50\u00a0g/l Iodosulfuron-methyl-natrium','7,5\u00a0g/l Mesosulfuron-methyl','250\u00a0g/l Mefenpyr-diethyl (Safener)'],
+              chart: { title: 'Wirkung gegen Einj\u00e4hrige Rispe', b1: { val: 70.5, label: 'VGM 0,13\u00a0kg/ha\nNetzmittel VGM\u00a01\u00a05,6\u00a0l/ha' }, b2: { val: 94.8, label: 'Husar\u00a0Plus\u00a00,2\u00a0l/ha\nMero\u00a01,0\u00a0l/ha' }, source: 'Husar Plus, n=16 Versuche (2012\u20132023)' } }
       };
 
       var ROWS = ['f1','f2','f3','h1','h2','h3','h4','h5','h6'];
@@ -580,82 +583,293 @@ function Beratung() {
             ? d.note.replace(/\n/g, '<br>')
             : '\u2013';
 
+        /* ── Bar chart HTML ── */
+        var chartHtml = '';
+        if (d.chart) {
+          var cH = 130;
+          var b1h = Math.round(d.chart.b1.val / 100 * cH);
+          var b2h = Math.round(d.chart.b2.val / 100 * cH);
+          var cHFull = 200;
+          var b1hFull = Math.round(d.chart.b1.val / 100 * cHFull);
+          var b2hFull = Math.round(d.chart.b2.val / 100 * cHFull);
+          chartHtml =
+            /* beige Outer-Box */
+            '<div style="background:#f0ede7;border-radius:14px;padding:16px 20px;margin-top:20px;">' +
+              '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:12px;">Versuchsergebnis</div>' +
+              /* weisses Inner-Card */
+              '<div style="background:#fff;border-radius:10px;padding:20px 20px 16px;">' +
+                '<div style="font-size:18px;font-weight:700;color:#c8a050;margin-bottom:20px;">' + d.chart.title + '</div>' +
+                /* Chart */
+                '<div style="display:flex;align-items:flex-end;gap:10px;height:' + cHFull + 'px;">' +
+                  /* Y-Achse */
+                  '<div style="display:flex;flex-direction:column;justify-content:space-between;height:100%;padding-right:6px;text-align:right;">' +
+                    '<span style="font-size:10px;color:#bbb;">100</span>' +
+                    '<span style="font-size:10px;color:#bbb;">80</span>' +
+                    '<span style="font-size:10px;color:#bbb;">60</span>' +
+                    '<span style="font-size:10px;color:#bbb;">40</span>' +
+                    '<span style="font-size:10px;color:#bbb;">20</span>' +
+                    '<span style="font-size:10px;color:#bbb;">0</span>' +
+                  '</div>' +
+                  /* Balken */
+                  '<div style="flex:1;display:flex;align-items:flex-end;gap:14px;height:100%;border-bottom:1px solid rgba(0,0,0,0.08);">' +
+                    /* Bar 1 */
+                    '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">' +
+                      '<span style="font-size:16px;font-weight:700;color:#fff;background:#aaa;border-radius:8px 8px 0 0;width:100%;text-align:center;padding:8px 0;height:' + b1hFull + 'px;display:flex;align-items:center;justify-content:center;">' + d.chart.b1.val + '</span>' +
+                      '<div style="font-size:10px;color:#6e6e73;text-align:center;margin-top:8px;line-height:1.5;">' + d.chart.b1.label.replace(/\n/g,'<br>') + '</div>' +
+                    '</div>' +
+                    /* Badge Mitte */
+                    '<div style="display:flex;align-items:center;padding-bottom:40px;flex-shrink:0;">' +
+                      '<div style="background:' + accentColor + ';border-radius:20px;padding:8px 14px;text-align:center;white-space:nowrap;">' +
+                        '<span style="font-size:11px;font-weight:700;color:#fff;">&gt;20% mehr Wirkung</span>' +
+                      '</div>' +
+                    '</div>' +
+                    /* Bar 2 */
+                    '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">' +
+                      '<span style="font-size:16px;font-weight:700;color:#fff;background:#c8a050;border-radius:8px 8px 0 0;width:100%;text-align:center;padding:8px 0;height:' + b2hFull + 'px;display:flex;align-items:center;justify-content:center;">' + d.chart.b2.val + '</span>' +
+                      '<div style="font-size:10px;color:#6e6e73;text-align:center;margin-top:8px;line-height:1.5;">' + d.chart.b2.label.replace(/\n/g,'<br>') + '</div>' +
+                    '</div>' +
+                  '</div>' +
+                '</div>' +
+                /* Quelle */
+                '<div style="font-size:10px;color:#8e8e93;margin-top:14px;line-height:1.5;">' + d.chart.source + '<br>Quelle: Deutschlandweite Bayer-eigene Versuche</div>' +
+              '</div>' + /* end weisses Inner-Card */
+            '</div>'; /* end beige Outer-Box */
+        }
+
+        /* ── Action buttons ── */
+        var buttonsHtml =
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px;">' +
+            '<button style="padding:13px 8px;background:#10384f;color:#fff;border:none;border-radius:12px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;">' +
+              '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>' +
+              'Produkt jetzt bestellen' +
+            '</button>' +
+            '<button style="padding:13px 8px;background:#1d1d1f;color:#fff;border:none;border-radius:12px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;">Zur Produktdetailseite \u2197</button>' +
+            '<button style="padding:13px 8px;background:#fff;color:#1d1d1f;border:none;border-radius:12px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;">' +
+              '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>' +
+              'Produkt vergleichen' +
+            '</button>' +
+            '<button style="padding:13px 8px;background:#fff;color:#1d1d1f;border:none;border-radius:12px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;">' +
+              '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>' +
+              'Produkt merken' +
+            '</button>' +
+          '</div>';
+
         document.getElementById('ganttSheetContent').innerHTML =
-            /* ── HEAD ── */
-            '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">' +
+
+          /* ══ OBEN: VOLLE BREITE – Info-Karten ══ */
+
+          /* 3-Spalten-Info: Wirkt gegen | BBCH | Einsatzhinweis */
+          '<div style="display:grid;grid-template-columns:1fr 190px 1fr;gap:20px;margin-bottom:32px;">' +
+            '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:14px;padding:16px;">' +
+              '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:10px;">Wirkt gegen</div>' +
+              '<div style="display:flex;flex-wrap:wrap;gap:5px;">' + tagsHtml + '</div>' +
+            '</div>' +
+            '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:14px;padding:16px;">' +
+              '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Anwendungsfenster</div>' +
+              '<div style="font-size:42px;font-weight:800;letter-spacing:-2px;color:#1d1d1f;line-height:1;">' + d.from + '\u2013' + d.to + '</div>' +
+              '<div style="font-size:11px;color:#8e8e93;margin-top:6px;">BBCH Fenster der Kultur</div>' +
+            '</div>' +
+            '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:14px;padding:16px;">' +
+              '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Einsatzhinweis</div>' +
+              '<div style="font-size:13px;color:#3a3a3c;line-height:1.6;">' + noteText + '</div>' +
+            '</div>' +
+          '</div>' +
+
+          /* ══ PRODUKTKARTE – weisse Outer-Card ══ */
+          '<div style="background:#fff;border-radius:16px;padding:24px;border:1px solid rgba(0,0,0,0.07);margin-bottom:20px;">' +
+
+            /* Heading oben links */
+            '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">' +
+              '<div>' +
+                '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:2px;">Produktkarte</div>' +
+                '<div style="font-size:18px;font-weight:700;color:#1d1d1f;">Produkt, Details &amp; Downloads</div>' +
+              '</div>' +
+              '<span style="color:#8e8e93;font-size:18px;">\u2197</span>' +
+            '</div>' +
+
+            /* 2-SPALTEN: Produktbild (links, beige) | Info-Rechts ══ */
+            '<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;">' +
+
+              /* LINKS: beige Box */
+              '<div style="position:sticky;top:120px;align-self:start;background:#f0ede7;border-radius:14px;padding:20px;">' +
+                /* PREMEO-Badge – weiße Mini-Card oben rechts */
+                '<div style="display:flex;justify-content:flex-end;margin-bottom:16px;">' +
+                  '<div style="display:inline-flex;align-items:center;gap:10px;background:#fff;border-radius:14px;padding:10px 14px 10px 16px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">' +
+                    '<div style="text-align:left;line-height:1.4;">' +
+                      '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:#6e6e73;">Premeo</div>' +
+                      '<div style="font-size:14px;font-weight:600;color:#1d1d1f;">Bonusprogramm</div>' +
+                    '</div>' +
+                    '<img src="/icons_bonus.svg" style="width:52px;height:auto;flex-shrink:0;" />' +
+                  '</div>' +
+                '</div>' +
+                /* Produktbild */
+                '<div style="display:flex;align-items:center;justify-content:center;min-height:510px;">' +
+                  (d.img ? '<img src="/' + d.img + '" style="max-width:95%;max-height:460px;object-fit:contain;">' : '') +
+                '</div>' +
+                /* Buttons direkt darunter */
+                buttonsHtml +
+              '</div>' +
+
+              /* RECHTS: kein eigenes Card-Wrapper, sitzt auf weissem Hintergrund */
+              '<div>' +
+
+              /* Aufwandmengen – beige Outer-Box */
+              '<div style="background:#f0ede7;border-radius:14px;padding:16px 20px;margin-bottom:20px;">' +
+                '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:12px;">Aufwandmengen je Kombination</div>' +
+                /* weisses Inner-Card */
+                '<div style="background:#fff;border-radius:10px;overflow:hidden;">' +
+                  /* Column headers */
+                  '<div style="display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px 14px;border-bottom:1px solid rgba(0,0,0,0.06);">' +
+                    '<span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;">Produkt</span>' +
+                    '<span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;">Aufwandmenge</span>' +
+                  '</div>' +
+                  d.products.map(function(pr) {
+                    return '<div style="display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:12px 14px;border-bottom:1px solid rgba(0,0,0,0.05);">' +
+                      '<span style="font-size:14px;color:#1d1d1f;">' + pr.n + '</span>' +
+                      '<span style="font-size:13px;font-weight:600;color:#1d1d1f;background:#f0ede7;border-radius:20px;padding:4px 12px;white-space:nowrap;">' + pr.d + '</span>' +
+                    '</div>';
+                  }).join('') +
+                '</div>' + /* end weisses Inner-Card */
+              '</div>' + /* end beige Outer-Box Aufwandmengen */
+
+              /* Formulierung & Wirkstoff – Akkordeon */
+              '<div style="background:#f0ede7;border-radius:14px;margin-top:12px;overflow:hidden;">' +
+                '<div onclick="window.toggleAccordion(\'fw\')" style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;cursor:pointer;">' +
+                  '<span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">Formulierung &amp; Wirkstoff</span>' +
+                  '<span id="fw-icon" style="font-size:18px;color:#8e8e93;line-height:1;font-weight:300;">' + (d.formulierung ? '\u2212' : '+') + '</span>' +
+                '</div>' +
+                '<div id="fw-body" style="display:' + (d.formulierung ? 'block' : 'none') + ';padding:0 12px 12px;">' +
+                  '<div style="background:#fff;border-radius:10px;padding:16px 18px;">' +
+                    (d.formulierung ? (
+                      '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:6px;">Formulierung</div>' +
+                      '<div style="font-size:15px;font-weight:600;color:#1d1d1f;margin-bottom:16px;">' + d.formulierung + '</div>'
+                    ) : '') +
+                    (d.wirkstoffe ? (
+                      '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Wirkstoff</div>' +
+                      '<div style="display:flex;flex-direction:column;gap:6px;">' +
+                        d.wirkstoffe.map(function(w) {
+                          return '<div style="background:#f0ede7;border-radius:8px;padding:11px 14px;font-size:13px;color:#1d1d1f;">' + w + '</div>';
+                        }).join('') +
+                      '</div>'
+                    ) : '<div style="font-size:13px;color:#8e8e93;">Keine Daten verf\u00fcgbar</div>') +
+                  '</div>' +
+                '</div>' +
+              '</div>' + /* end Formulierung Akkordeon */
+
+              /* Downloads – beige Outer-Box */
+              '<div style="background:#f0ede7;border-radius:14px;padding:16px 20px;margin-top:12px;">' +
+                '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:12px;">Downloads</div>' +
+                '<div style="display:flex;flex-direction:column;gap:6px;">' +
+                  ['Sicherheitsdatenblatt','Gebrauchsanleitung','Leistungsprofil','L\u00fcckenindikationen','Abst\u00e4nde Gew\u00e4sser, Saumstrukturen und Hangneigung'].map(function(dl) {
+                    return '<div style="display:flex;justify-content:space-between;align-items:center;padding:13px 16px;background:#fff;border-radius:10px;cursor:pointer;">' +
+                      '<span style="font-size:14px;color:#1d1d1f;">' + dl + '</span>' +
+                      '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3v7" stroke="#8e8e93" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+                    '</div>';
+                  }).join('') +
+                '</div>' +
+              '</div>' + /* end Downloads beige box */
+
+              /* Artikel & Logistik – Akkordeon */
+              '<div style="background:#f0ede7;border-radius:14px;margin-top:12px;overflow:hidden;">' +
+                '<div onclick="window.toggleAccordion(\'al\')" style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;cursor:pointer;">' +
+                  '<span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">Artikel &amp; Logistik</span>' +
+                  '<span id="al-icon" style="font-size:18px;color:#8e8e93;line-height:1;font-weight:300;">+</span>' +
+                '</div>' +
+                '<div id="al-body" style="display:none;padding:0 12px 12px;">' +
+                  '<div style="background:#fff;border-radius:10px;padding:16px 18px;">' +
+                    '<div style="font-size:13px;color:#8e8e93;">Keine Daten verf\u00fcgbar</div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>' + /* end Artikel Akkordeon */
+
+              chartHtml +
+
+            '</div>' + /* end rechte Spalte */
+
+          '</div>' + /* end 2-Spalten */
+
+        '</div>' + /* end weisse Outer-Card Produktkarte */
+
+          /* ══ UNTEN: VOLLE BREITE – Einsatzprognose ══ */
+
+          /* Einsatzprognose */
+          '<div style="background:#fff;border-radius:16px;padding:20px;border:1px solid rgba(0,0,0,0.07);margin-top:24px;">' +
+            '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">' +
+              '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">Standort \u00b7 Windheim</div>' +
+              '<div style="font-size:12px;color:' + accentColor + ';font-weight:700;">Freitag</div>' +
+            '</div>' +
+            '<div style="font-size:22px;font-weight:800;color:#1d1d1f;margin-bottom:16px;">Einsatzprognose</div>' +
+            '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Einsatzparameter laut Produktleitfaden</div>' +
+            '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">' +
+              ['Wind: \u2265\u202f15\u00a0km/h','B\u00f6en: \u2265\u202f25\u00a0km/h','8\u201325\u00b0C','rf \u2265\u202f65\u00a0%','mind. 3\u20135 trocken'].map(function(p) {
+                return '<span style="background:#f0ede7;border-radius:8px;padding:5px 10px;font-size:12px;font-weight:500;color:#3a3a3c;">' + p + '</span>';
+              }).join('') +
+            '</div>' +
+            '<div style="font-size:14px;color:#3a3a3c;line-height:1.65;margin-bottom:20px;">Heute zu kritisch f\u00fcr einen sicheren Einsatz. Morgen wird das Fenster technisch deutlich besser. Am Mittwoch zeigt die Wochenlage eine stabile Verbesserung mit sinkender Abdriftgefahr, geringerer Niederschlagswahrscheinlichkeit und besseren Bedingungen f\u00fcr Antrocknung und Wirkstoffaufnahme.</div>' +
+
+            /* Heute */
+            '<div style="border:1px solid rgba(0,0,0,0.09);border-radius:14px;overflow:hidden;margin-bottom:12px;">' +
+              '<div style="background:#f0ede7;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">' +
                 '<div style="display:flex;align-items:center;gap:10px;">' +
-                    '<span style="border:1.5px solid ' + accentColor + ';color:' + accentColor + ';border-radius:999px;padding:3px 12px;font-size:12px;font-weight:600;">' + badgeLabel + '</span>' +
-                    '<span style="font-size:13px;color:#6e6e73;">BBCH ' + d.from + '\u2013' + d.to + '</span>' +
+                  '<span style="font-size:12px;font-weight:700;color:#1d1d1f;">Heute \u00b7 08.04.</span>' +
+                  '<span style="background:#ff3b30;color:#fff;border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.3px;">UNGEEIGNET</span>' +
                 '</div>' +
-            '</div>' +
-            '<div style="font-size:32px;font-weight:800;letter-spacing:-0.5px;color:#1d1d1f;margin:0 0 4px;line-height:1.1;">' + d.label + '</div>' +
-            '<div style="font-size:15px;color:#6e6e73;margin-bottom:24px;">' + d.crop + '</div>' +
-
-            /* ── 3 INFO CARDS ── */
-            '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px;">' +
-
-                /* Card 1 – Wirkt gegen */
-                '<div style="background:#fff;border-radius:14px;border:1px solid rgba(0,0,0,0.08);padding:18px;">' +
-                    '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#6e6e73;margin-bottom:12px;">Wirkt gegen</div>' +
-                    '<div style="display:flex;flex-wrap:wrap;gap:6px;">' + tagsHtml + '</div>' +
+                '<span style="font-size:11px;color:#8e8e93;">64 Kriterien erf\u00fcllt</span>' +
+              '</div>' +
+              '<div style="padding:14px 16px;">' +
+                '<div style="font-size:12px;color:#ff3b30;font-weight:600;margin-bottom:14px;">Zu windig, feucht und mit Blattn\u00e4sse. Hohe Abdrift- und Wirkungsunsicherheit.</div>' +
+                '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">' +
+                  [['Temperatur','6\u201310\u00a0\u00b0C','1\u00b0C unterm Ziel','#ff3b30'],['Wind','22\u00a0km/h','+19\u00a0km/h zu hoch','#ff3b30'],['B\u00f6en','36\u00a0km/h','+19\u00a0km/h \u00fcber Limit','#ff3b30'],['Luftfeuchte','92\u00a0%','17\u00a0% zu feucht','#ff3b30'],['Trockenstd.','0\u00a0h','Antrockn. mind. 2\u00a0h','#ff3b30'],['Niederschlag','2,8\u00a0mm','2,8\u00a0mm ung\u00fcnstig','#ff3b30']].map(function(c) {
+                    return '<div><div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;margin-bottom:3px;">' + c[0] + '</div>' +
+                      '<div style="font-size:16px;font-weight:700;color:#1d1d1f;">' + c[1] + '</div>' +
+                      '<div style="height:3px;background:' + c[3] + ';border-radius:2px;margin:4px 0;"></div>' +
+                      '<div style="font-size:11px;color:#8e8e93;">' + c[2] + '</div></div>';
+                  }).join('') +
                 '</div>' +
-
-                /* Card 2 – Anwendungsfenster */
-                '<div style="background:#fff;border-radius:14px;border:1px solid rgba(0,0,0,0.08);padding:18px;">' +
-                    '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#6e6e73;margin-bottom:12px;">Anwendungsfenster</div>' +
-                    '<div style="font-size:44px;font-weight:800;letter-spacing:-1px;color:#1d1d1f;line-height:1;">' + d.from + '\u2013' + d.to + '</div>' +
-                    '<div style="font-size:13px;color:#6e6e73;margin-top:6px;">BBCH-Fenster der Kultur</div>' +
-                '</div>' +
-
-                /* Card 3 – Einsatzhinweis */
-                '<div style="background:#fff;border-radius:14px;border:1px solid rgba(0,0,0,0.08);padding:18px;">' +
-                    '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">' +
-                        '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#6e6e73;">Einsatzhinweis</div>' +
-                        '<span style="font-size:14px;color:#6e6e73;">\u2197</span>' +
-                    '</div>' +
-                    '<div style="font-size:14px;color:#3a3a3c;line-height:1.6;">' + noteText + '</div>' +
-                '</div>' +
-
+              '</div>' +
             '</div>' +
 
-            /* ── PRODUKTKARTE ── */
-            '<div style="border-top:1px solid rgba(0,0,0,0.08);margin:0 0 20px;"></div>' +
-            '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">' +
-                '<div>' +
-                    '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#6e6e73;margin-bottom:4px;">Produktkarte</div>' +
-                    '<div style="font-size:18px;font-weight:700;color:#1d1d1f;">Produkt, Details &amp; Downloads</div>' +
+            /* Morgen */
+            '<div style="border:1px solid rgba(0,0,0,0.09);border-radius:14px;overflow:hidden;margin-bottom:12px;">' +
+              '<div style="background:#f0ede7;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">' +
+                '<div style="display:flex;align-items:center;gap:10px;">' +
+                  '<span style="font-size:12px;font-weight:700;color:#1d1d1f;">Morgen \u00b7 09.04.</span>' +
+                  '<span style="background:#34c759;color:#fff;border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.3px;">BESSER</span>' +
                 '</div>' +
-                '<span style="font-size:18px;color:#6e6e73;">\u2197</span>' +
+                '<span style="font-size:11px;color:#8e8e93;">6/8 Kriterien aktiv</span>' +
+              '</div>' +
+              '<div style="padding:14px 16px;">' +
+                '<div style="font-size:12px;color:#34c759;font-weight:600;margin-bottom:14px;">Deutlich ruhigeres Fenster. Ab sp\u00e4tem Vormittag technisch deutlich geeigneter.</div>' +
+                '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">' +
+                  [['Temperatur','11\u201317\u00a0\u00b0C','im Einzel-Bereich','#34c759'],['Wind','9\u00a0km/h','technisch m\u00f6glich','#34c759'],['B\u00f6en','18\u00a0km/h','technisch m\u00f6glich','#f39c12'],['Luftfeuchte','68\u00a0%','g\u00fcnstig f\u00fcr Aufnahme','#34c759'],['Trockenstd.','0\u00a0h','Antrockn. mind. 2\u00a0h','#f39c12'],['Niederschlag','0\u00a0mm','trockenes Fenster','#34c759']].map(function(c) {
+                    return '<div><div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;margin-bottom:3px;">' + c[0] + '</div>' +
+                      '<div style="font-size:16px;font-weight:700;color:#1d1d1f;">' + c[1] + '</div>' +
+                      '<div style="height:3px;background:' + c[3] + ';border-radius:2px;margin:4px 0;"></div>' +
+                      '<div style="font-size:11px;color:#8e8e93;">' + c[2] + '</div></div>';
+                  }).join('') +
+                '</div>' +
+              '</div>' +
             '</div>' +
-            '<div style="display:grid;grid-template-columns:60% 40%;gap:16px;">' +
+          '</div>'; /* end Einsatzprognose */
 
-                /* Left: product mockup */
-                '<div style="background:#f5f5f7;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:16px;">' +
-                    '<span style="border:1.5px solid ' + accentColor + ';color:' + accentColor + ';border-radius:999px;padding:3px 10px;font-size:11px;font-weight:600;width:fit-content;">' + badgeLabel + '</span>' +
-                    (d.img ? '<img src="/' + d.img + '" style="display:block;width:70%;max-height:260px;object-fit:contain;margin:0 auto;padding:16px;background:#f5f5f7;border-radius:10px;">' : '') +
-                    '<div>' +
-                        '<div style="font-size:16px;font-weight:700;color:#1d1d1f;line-height:1.3;">' + d.products[0].n + '</div>' +
-                        '<div style="font-size:11px;color:#6e6e73;margin-top:8px;">Bayer CropScience Deutschland GmbH</div>' +
-                    '</div>' +
-                '</div>' +
+        /* ── Sticky liquid-glass header befüllen ── */
+        var stickyInfo = document.getElementById('ganttStickyInfo');
+        var stickyHeader = document.getElementById('ganttStickyHeader');
+        stickyInfo.innerHTML =
+          '<div class="gsh-block">' +
+            '<span class="gsh-badge" style="background:' + accentColor + ';color:#fff;">' + badgeLabel + '</span>' +
+            '<span class="gsh-title">' + d.products[0].n + '</span>' +
+            '<span class="gsh-crop">' + d.crop + '</span>' +
+          '</div>';
 
-                /* Right: downloads + dosage */
-                '<div>' +
-                    '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#6e6e73;margin-bottom:4px;">Downloads</div>' +
-                    ['Sicherheitsdatenblatt','Gebrauchsanleitung','Leistungsprofil','L\u00fcckenindikationen','Abst\u00e4nde Gew\u00e4sser &amp; Hangneigung'].map(function(dl) {
-                        return '<div style="padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.07);display:flex;justify-content:space-between;font-size:14px;color:#1d1d1f;cursor:pointer;">' + dl + '<span style="color:#6e6e73;">\u2197</span></div>';
-                    }).join('') +
-                    '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#6e6e73;margin:16px 0 8px;">Aufwandmengen</div>' +
-                    '<table style="width:100%;border-collapse:collapse;">' +
-                        '<tr><th style="font-size:11px;text-transform:uppercase;color:#6e6e73;font-weight:700;text-align:left;padding-bottom:6px;">Produkt</th>' +
-                            '<th style="font-size:11px;text-transform:uppercase;color:#6e6e73;font-weight:700;text-align:right;padding-bottom:6px;">Aufwandmenge</th></tr>' +
-                        prodRows +
-                    '</table>' +
-                '</div>' +
-            '</div>' +
-
-            /* ── FOOTER BUTTON ── */
-            '<button onclick="ganttClose()" style="width:100%;margin-top:24px;padding:16px 24px;background:#1d1d1f;color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:background 0.15s;" onmouseover="this.style.background=\'#3a3a3c\'" onmouseout="this.style.background=\'#1d1d1f\'">Zur Produktdetailseite \u2197</button>';
+        var sheet = document.getElementById('ganttSheet');
+        sheet.scrollTop = 0;
+        stickyHeader.classList.remove('g-sticky-scrolled');
+        function sheetScrollHandler() {
+          stickyHeader.classList.toggle('g-sticky-scrolled', sheet.scrollTop > 70);
+        }
+        sheet.addEventListener('scroll', sheetScrollHandler, { passive: true });
+        window._ganttSheetScrollHandler = sheetScrollHandler;
 
         document.getElementById('ganttOv').classList.add('on');
         document.getElementById('ganttSheet').classList.add('on');
@@ -684,6 +898,25 @@ function Beratung() {
       window.ganttClose = function() {
         document.getElementById('ganttOv').classList.remove('on');
         document.getElementById('ganttSheet').classList.remove('on');
+        var sheet = document.getElementById('ganttSheet');
+        if (window._ganttSheetScrollHandler) {
+          sheet.removeEventListener('scroll', window._ganttSheetScrollHandler);
+          window._ganttSheetScrollHandler = null;
+        }
+        var sh = document.getElementById('ganttStickyHeader');
+        var si = document.getElementById('ganttStickyInfo');
+        if (sh) sh.classList.remove('g-sticky-scrolled');
+        if (si) si.classList.remove('g-sticky-info-visible');
+        sheet.scrollTop = 0;
+      };
+
+      window.toggleAccordion = function(id) {
+        var body = document.getElementById(id + '-body');
+        var icon = document.getElementById(id + '-icon');
+        if (!body || !icon) return;
+        var open = body.style.display !== 'none';
+        body.style.display = open ? 'none' : 'block';
+        icon.textContent   = open ? '+' : '\u2212';
       };
 
       window.applyDropdownFilter = function() {
@@ -1149,7 +1382,10 @@ function Beratung() {
           <div className="g-overlay" id="ganttOv" onClick={() => window.ganttClose && window.ganttClose()}></div>
           <div className="g-sheet" id="ganttSheet">
             <div className="g-drag-handle"></div>
-            <button className="g-sheet-close" onClick={() => window.ganttClose && window.ganttClose()}>&#x2715;</button>
+            <div className="g-sticky-header" id="ganttStickyHeader">
+              <div id="ganttStickyInfo"></div>
+              <button className="g-sheet-close" onClick={() => window.ganttClose && window.ganttClose()}>&#x2715;</button>
+            </div>
             <div id="ganttSheetContent"></div>
           </div>
         </>
