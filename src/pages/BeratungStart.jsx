@@ -23,6 +23,9 @@ function BeratungStart() {
   function handleSubmit(e) {
     e.preventDefault()
     if (plz.length !== 5 || !kultur) return
+    sessionStorage.setItem('nav_plz', plz)
+    sessionStorage.setItem('nav_kultur', kultur)
+    window.dispatchEvent(new CustomEvent('nav-context-update', { detail: { plz, kultur } }))
     navigate('/beratung', { state: { plz, kultur } })
   }
 

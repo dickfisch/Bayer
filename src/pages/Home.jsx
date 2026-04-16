@@ -1097,7 +1097,7 @@ function Home() {
               onChange={handlePlzChange}
               maxLength={5}
               autoComplete="postal-code"
-              className="bg-transparent border-none outline-none text-xl text-[#333] placeholder-[#aaa] flex-1 min-w-0"
+              className="bg-transparent border-none outline-none text-xl text-white placeholder-[rgba(255,255,255,0.5)] flex-1 min-w-0"
             />
           </div>
 

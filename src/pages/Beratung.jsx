@@ -1,8 +1,204 @@
 import { useState, useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useLocation, useNavigate } from 'react-router-dom'
 import MainNav from '../components/MainNav'
-import SubNav from '../components/SubNav'
 import Footer from '../components/Footer'
+
+/* ══════════════════════════════════════════
+   SUB NAV (nur auf Beratung-Seite)
+══════════════════════════════════════════ */
+const KULTUREN = [
+  { value: 'mais',         label: 'Mais' },
+  { value: 'getreide',     label: 'Getreide' },
+  { value: 'raps',         label: 'Raps' },
+  { value: 'ruebe',        label: 'Rübe' },
+  { value: 'kartoffel',    label: 'Kartoffel' },
+  { value: 'hopfen',       label: 'Hopfen' },
+  { value: 'winterweizen', label: 'Winterweizen' },
+  { value: 'triticale',    label: 'Triticale' },
+  { value: 'winterroggen', label: 'Winterroggen' },
+  { value: 'sommerweizen', label: 'Sommerweizen' },
+  { value: 'wintergerste', label: 'Wintergerste' },
+  { value: 'sommergerste', label: 'Sommergerste' },
+  { value: 'zuckerrueben', label: 'Zuckerrüben' },
+]
+
+function BeratungNav() {
+  const location = useLocation()
+  const navigate = useNavigate()
+  const routeState = location.state || {}
+
+  function scrollTo(e, sectionId) {
+    e.preventDefault()
+    if (location.pathname === '/beratung') {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/beratung')
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
+      }, 150)
+    }
+  }
+
+  const [plz, setPlz] = useState(
+    routeState.plz || sessionStorage.getItem('nav_plz') || ''
+  )
+  const [kultur, setKultur] = useState(
+    routeState.kultur || sessionStorage.getItem('nav_kultur') || 'mais'
+  )
+  // mode: 'inline' = in document flow | 'floating' = fixed+glass | 'hidden' = fixed+off-screen
+  const [mode, setMode] = useState('inline')
+  const [wrapHeight, setWrapHeight] = useState(0)
+  const [activeSection, setActiveSection] = useState(null)
+  const wrapRef    = useRef(null)
+  const subNavRef  = useRef(null) // ref on actual .sub-nav element to measure real doc position
+  const threshold  = useRef(0)   // scrollY at which nav content naturally reaches top: 16px
+  const lastY      = useRef(0)
+  const STICKY_TOP = 16
+
+  const SECTIONS = ['feldbericht-slider', 'produkte', 'videos', 'termine', 'tools']
+
+  function fireNavUpdate(p, k) {
+    sessionStorage.setItem('nav_plz', p)
+    sessionStorage.setItem('nav_kultur', k)
+    window.dispatchEvent(new CustomEvent('nav-context-update', { detail: { plz: p, kultur: k } }))
+  }
+
+  useEffect(() => {
+    fireNavUpdate(plz, kultur)
+  }, [])
+
+  useEffect(() => {
+    if (!wrapRef.current || !subNavRef.current) return
+    setWrapHeight(wrapRef.current.offsetHeight)
+    // Document-offset of the actual nav pill (subNavRef), not the wrapper with its big padding
+    const docTop = subNavRef.current.getBoundingClientRect().top + window.scrollY
+    threshold.current = docTop - STICKY_TOP
+  }, [])
+
+  useEffect(() => {
+    function onScroll() {
+      const y   = window.scrollY
+      const dir = y > lastY.current ? 'down' : 'up'
+      lastY.current = y
+
+      if (y < threshold.current) {
+        setMode('inline')
+      } else if (dir === 'down') {
+        setMode('hidden')
+      } else {
+        setMode('floating')
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    if (location.pathname !== '/beratung') { setActiveSection(null); return }
+
+    const observers = []
+    const visible = new Set()
+
+    function update() {
+      const active = SECTIONS.find(id => visible.has(id)) ?? null
+      setActiveSection(active)
+    }
+
+    SECTIONS.forEach(id => {
+      const el = document.getElementById(id)
+      if (!el) return
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) visible.add(id)
+          else visible.delete(id)
+          update()
+        },
+        { threshold: 0.15 }
+      )
+      obs.observe(el)
+      observers.push(obs)
+    })
+
+    return () => observers.forEach(o => o.disconnect())
+  }, [location.pathname])
+
+  const isFloating = mode !== 'inline'
+
+  const navContent = (
+    <div ref={subNavRef} className={`sub-nav${isFloating ? ' sub-nav--scrolled' : ''}`}>
+      <div className="user-widget">
+        <div className="user-avatar">
+          <img
+            src="https://static.wixstatic.com/media/8a20aa_d72e844801ba41b68a8bc0d71264ad51~mv2.png"
+            alt="A. Selmayer"
+            onError={(e) => { e.target.parentElement.style.background = '#aaa' }}
+          />
+        </div>
+        <div>
+          <div className="user-name">A. Selmayer</div>
+          <div className="user-role">Vertriebsberater</div>
+        </div>
+      </div>
+      <div className="pill">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ flexShrink: 0 }}>
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <input
+          className="pill-plz-input"
+          type="text"
+          inputMode="numeric"
+          placeholder="PLZ"
+          value={plz}
+          maxLength={5}
+          onChange={e => {
+            const val = e.target.value.replace(/\D/g, '').slice(0, 5)
+            setPlz(val)
+            fireNavUpdate(val, kultur)
+          }}
+        />
+      </div>
+      <select
+        className="sub-nav-kultur-select"
+        value={kultur}
+        onChange={e => {
+          setKultur(e.target.value)
+          fireNavUpdate(plz, e.target.value)
+        }}
+      >
+        {KULTUREN.map(k => (
+          <option key={k.value} value={k.value}>{k.label}</option>
+        ))}
+      </select>
+      <nav className="sub-links">
+        <a href="/beratung#feldbericht-slider" className={activeSection === 'feldbericht-slider' ? 'active' : ''} onClick={e => scrollTo(e, 'feldbericht-slider')}>Feldbericht</a>
+        <a href="/beratung#produkte"           className={activeSection === 'produkte'           ? 'active' : ''} onClick={e => scrollTo(e, 'produkte')}>Einsatzempfehlungen</a>
+        <a href="/beratung#videos"             className={activeSection === 'videos'             ? 'active' : ''} onClick={e => scrollTo(e, 'videos')}>Videos</a>
+        <a href="/beratung#termine"            className={activeSection === 'termine'            ? 'active' : ''} onClick={e => scrollTo(e, 'termine')}>Termine</a>
+        <a href="/beratung#tools"              className={activeSection === 'tools'              ? 'active' : ''} onClick={e => scrollTo(e, 'tools')}>Diagnose</a>
+        <a href="/beratung#tools"              className={activeSection === 'tools'              ? 'active' : ''} onClick={e => scrollTo(e, 'tools')}>Resistenz</a>
+      </nav>
+    </div>
+  )
+
+  if (mode !== 'inline') {
+    return (
+      <>
+        <div style={{ height: wrapHeight }} />
+        <div className={`sub-nav-wrap sub-nav-wrap--scrolled${mode === 'hidden' ? ' sub-nav-wrap--hidden' : ''}`}>
+          {navContent}
+        </div>
+      </>
+    )
+  }
+
+  return (
+    <div ref={wrapRef} className="sub-nav-wrap">
+      {navContent}
+    </div>
+  )
+}
 
 /* ── Produkte: Module-level constants (shared between main setup + cursor hooks) ── */
 const ST = [10, 13, 21, 25, 29, 30, 31, 32, 37, 39, 49, 51, 59, 61, 69, 89]
@@ -18,8 +214,8 @@ const cards = [
     plz: '85665',
     title: 'Das leistungsstarken Getreidefungizid Delaro® Forte informieren.',
     tags: [
-      { label: 'FUNGIZID', cls: 'fb-tag--fungizid' },
-      { label: 'WICHTIG!', cls: 'fb-tag--wichtig' },
+      { label: 'Fungizid', cls: 'fb-tag--fungizid' },
+      { label: 'Wichtig!', cls: 'fb-tag--wichtig' },
     ],
     desc: 'Mit der innovativen Kombination aus drei Wirkstoffen und unterschiedlichen Wirkungsweisen sorgt das neue Fungizid Delaro® Forte für gesunde Pflanzen und bekämpft effektiv Blatt- und Abreifekrankheiten ...',
   },
@@ -30,9 +226,9 @@ const cards = [
     plz: '85665',
     title: 'Das leistungsstarken Getreidefungizid Delaro® Forte informieren.',
     tags: [
-      { label: 'FUNGIZID', cls: 'fb-tag--fungizid' },
-      { label: 'WACHSTUMSSIEGER', cls: 'fb-tag--wachstum' },
-      { label: 'HERBIZID', cls: 'fb-tag--herbizid' },
+      { label: 'Fungizid', cls: 'fb-tag--fungizid' },
+      { label: 'Wachstumssieger', cls: 'fb-tag--wachstum' },
+      { label: 'Herbizid', cls: 'fb-tag--herbizid' },
     ],
     desc: 'Mit der innovativen Kombination aus drei Wirkstoffen und unterschiedlichen Wirkungsweisen sorgt das neue Fungizid Delaro® Forte für gesunde Pflanzen und bekämpft effektiv Blatt- und Abreifekrankheiten ...',
   },
@@ -43,8 +239,8 @@ const cards = [
     plz: '85665',
     title: 'Septoria-Druck in Ihrer Region erhöht – jetzt handeln.',
     tags: [
-      { label: 'FUNGIZID', cls: 'fb-tag--fungizid' },
-      { label: 'WICHTIG!', cls: 'fb-tag--wichtig' },
+      { label: 'Fungizid', cls: 'fb-tag--fungizid' },
+      { label: 'Wichtig!', cls: 'fb-tag--wichtig' },
     ],
     desc: 'Septoria-Druck in Ihrer Region erhöht. Fungizidmaßnahmen ab BBCH 32 unbedingt einplanen – besonders bei anfälligen Sorten. Frühzeitige Behandlung sichert den Ertrag.',
   },
@@ -55,8 +251,8 @@ const cards = [
     plz: '85665',
     title: 'Resistenzentwicklung bei Ackerfuchsschwanz: Mittelwechsel einplanen.',
     tags: [
-      { label: 'HERBIZID', cls: 'fb-tag--herbizid' },
-      { label: 'WACHSTUMSSIEGER', cls: 'fb-tag--wachstum' },
+      { label: 'Herbizid', cls: 'fb-tag--herbizid' },
+      { label: 'Wachstumssieger', cls: 'fb-tag--wachstum' },
     ],
     desc: 'Neue Situation bei Ackerfuchsschwanz: Resistenzentwicklung schreitet fort. Bitte Mittelwechsel einplanen und frühzeitig behandeln.',
   },
@@ -67,8 +263,15 @@ function Beratung() {
   const [activeTab, setActiveTab] = useState(0)
   const [cursorIdx, setCursorIdx] = useState(ST.indexOf(32)) // BBCH 32 = index 7
 
-  const ticksRef  = useRef(null)
-  const bubbleRef = useRef(null)
+  const ticksRef    = useRef(null)
+  const bubbleRef   = useRef(null)
+  const gradFadeRef = useRef(null)
+
+  const { scrollYProgress: gradFadeProgress } = useScroll({
+    target: gradFadeRef,
+    offset: ['end 0.55', 'end 0.2'],
+  })
+  const gradFadeOpacity = useTransform(gradFadeProgress, [0, 1], [0, 1])
 
   /* Derived positioning values */
   const TICK_INSET = 16 // px – must match the JS constant below
@@ -76,6 +279,15 @@ function Beratung() {
   const cursorLeft = cursorIdx === 0 ? `${TICK_INSET}px` : cursorIdx === N ? `calc(100% - ${TICK_INSET}px)` : `${cursorPct}%`
   /* Left of the vertical line inside gantt-inner (200px label col + proportional track) */
   const lineLeft  = `calc(${(200 * (1 - cursorIdx / N)).toFixed(2)}px + ${cursorPct.toFixed(2)}%)`
+
+  /* ── Aktuelle Kultur + PLZ aus Nav-Kontext ── */
+  const [navKultur, setNavKultur] = useState(() => sessionStorage.getItem('nav_kultur') || '')
+  const [navPlz, setNavPlz] = useState(() => sessionStorage.getItem('nav_plz') || '')
+  useEffect(() => {
+    function onUpdate(e) { setNavKultur(e.detail.kultur); setNavPlz(e.detail.plz) }
+    window.addEventListener('nav-context-update', onUpdate)
+    return () => window.removeEventListener('nav-context-update', onUpdate)
+  }, [])
 
   /* ── Feldbericht-Slider state ── */
   const fbsTrackRef = useRef(null)
@@ -86,6 +298,46 @@ function Beratung() {
     const step = card ? card.offsetWidth + 20 : 320
     track.scrollBy({ left: dir * step, behavior: 'smooth' })
   }
+
+  /* ── Feldbericht-Slider: Mouse drag-to-scroll ── */
+  useEffect(() => {
+    const el = fbsTrackRef.current
+    if (!el) return
+    let isDragging = false
+    let startX = 0
+    let startScrollLeft = 0
+
+    function onMouseDown(e) {
+      isDragging = true
+      startX = e.clientX
+      startScrollLeft = el.scrollLeft
+      el.style.cursor = 'grabbing'
+      el.style.userSelect = 'none'
+    }
+
+    function onMouseMove(e) {
+      if (!isDragging) return
+      const delta = e.clientX - startX
+      el.scrollLeft = startScrollLeft - delta
+    }
+
+    function onMouseUp() {
+      isDragging = false
+      el.style.cursor = 'grab'
+      el.style.userSelect = ''
+    }
+
+    el.style.cursor = 'grab'
+    el.addEventListener('mousedown', onMouseDown)
+    window.addEventListener('mousemove', onMouseMove)
+    window.addEventListener('mouseup', onMouseUp)
+
+    return () => {
+      el.removeEventListener('mousedown', onMouseDown)
+      window.removeEventListener('mousemove', onMouseMove)
+      window.removeEventListener('mouseup', onMouseUp)
+    }
+  }, [])
 
   /* ── Termine state ── */
   const [activeChip, setActiveChip] = useState(0)
@@ -470,20 +722,21 @@ function Beratung() {
   useEffect(() => {
     let bbchFixed = false
 
-    function applyFixed() {
+    function applyFixed(topPx = 0) {
       const head = document.getElementById('ganttStickyHead')
       const wrap = document.getElementById('ganttWrap')
-      if (!head || bbchFixed) return
-      bbchFixed = true
-      const rect = head.getBoundingClientRect()
-      // setProperty mit 'important' schlägt !important im Stylesheet
-      head.style.setProperty('position', 'fixed',              'important')
-      head.style.setProperty('top',      '0',                  'important')
-      head.style.setProperty('left',     rect.left + 'px',     'important')
-      head.style.setProperty('width',    rect.width + 'px',    'important')
-      head.style.setProperty('z-index',  '100',                'important')
-      head.style.setProperty('overflow', 'visible',            'important')
-      if (wrap) wrap.style.marginTop = rect.height + 'px'
+      if (!head) return
+      if (!bbchFixed) {
+        bbchFixed = true
+        const rect = head.getBoundingClientRect()
+        head.style.setProperty('position', 'fixed',          'important')
+        head.style.setProperty('left',     rect.left + 'px', 'important')
+        head.style.setProperty('width',    rect.width + 'px','important')
+        head.style.setProperty('z-index',  '100',            'important')
+        head.style.setProperty('overflow', 'visible',        'important')
+        if (wrap) wrap.style.marginTop = rect.height + 'px'
+      }
+      head.style.setProperty('top', topPx + 'px', 'important')
     }
 
     function removeFixed() {
@@ -501,50 +754,66 @@ function Beratung() {
     }
 
     let lastScrollY = window.scrollY
+    let subNavHasAppeared = false
+
+    function showSubNav(subNavWrap) {
+      if (!subNavWrap) return
+      subNavWrap.classList.remove('sub-nav-wrap--hidden')
+      // Nach erster Einblendung auf Slide-Modus umschalten
+      if (!subNavHasAppeared) {
+        subNavHasAppeared = true
+        // Kurz warten bis Fade-In durch ist, dann --slide setzen
+        setTimeout(() => subNavWrap.classList.add('sub-nav-wrap--slide'), 320)
+      }
+    }
+
+    function hideSubNav(subNavWrap) {
+      if (!subNavWrap) return
+      subNavWrap.classList.add('sub-nav-wrap--hidden')
+    }
 
     function onScroll() {
       const trigger  = document.getElementById('bbch-trigger')
-      const produkte = document.getElementById('produkte')
       const nav      = document.querySelector('.main-nav')
-      if (!trigger || !produkte || !nav) return
+      if (!trigger || !nav) return
 
       const currentScrollY  = window.scrollY
       const scrollingDown   = currentScrollY > lastScrollY
       lastScrollY           = currentScrollY
 
-      const triggerTop    = trigger.getBoundingClientRect().top
-      const sectionBottom = produkte.getBoundingClientRect().bottom
+      const triggerTop   = trigger.getBoundingClientRect().top
+      const ganttOuter   = document.getElementById('ganttOuterContainer')
+      const ganttBottom  = ganttOuter ? ganttOuter.getBoundingClientRect().bottom : 0
 
       // Im BBCH-Gantt-Bereich: beide Navis verstecken
-      const inGanttZone = triggerTop <= 115 && sectionBottom > 0
+      const inGanttZone = triggerTop <= 115 && ganttBottom > 0
 
       if (inGanttZone) {
-        // Weder MainNav noch SubNav
+        // Weder MainNav noch BeratungNav
         nav.classList.add('main-nav--hidden')
-        const subNavWrap = document.querySelector('.sub-nav-wrap--scrolled')
-        if (subNavWrap) subNavWrap.classList.add('sub-nav-wrap--hidden')
+        hideSubNav(document.querySelector('.sub-nav-wrap--scrolled'))
       } else if (currentScrollY <= 10) {
         // Ganz oben: MainNav immer sichtbar
         nav.classList.remove('main-nav--hidden')
-        const subNavWrap = document.querySelector('.sub-nav-wrap--scrolled')
-        if (subNavWrap) subNavWrap.classList.add('sub-nav-wrap--hidden')
+        hideSubNav(document.querySelector('.sub-nav-wrap--scrolled'))
       } else if (scrollingDown) {
-        // Nach unten scrollen → SubNav
+        // Nach unten scrollen → BeratungNav
         nav.classList.add('main-nav--hidden')
-        const subNavWrap = document.querySelector('.sub-nav-wrap--scrolled')
-        if (subNavWrap) subNavWrap.classList.remove('sub-nav-wrap--hidden')
+        showSubNav(document.querySelector('.sub-nav-wrap--scrolled'))
       } else {
         // Nach oben scrollen → MainNav
         nav.classList.remove('main-nav--hidden')
-        const subNavWrap = document.querySelector('.sub-nav-wrap--scrolled')
-        if (subNavWrap) subNavWrap.classList.add('sub-nav-wrap--hidden')
+        hideSubNav(document.querySelector('.sub-nav-wrap--scrolled'))
       }
 
-      // BBCH-Bar fixieren: wenn Trigger oben raus und Abschnitt noch sichtbar
+      // BBCH-Bar fixieren: wenn Trigger oben raus
       const head = document.getElementById('ganttStickyHead')
       const headH = head ? head.offsetHeight : 60
-      if (triggerTop <= 0 && sectionBottom > headH) {
-        applyFixed()
+      if (triggerTop <= 0 && ganttBottom > 0) {
+        // Normaler Fall: Bar oben fixiert
+        // Wenn Chart-Boden näher als Bar-Höhe → Bar hochschieben (ganttBottom - headH wird negativ)
+        const topOffset = Math.min(0, ganttBottom - headH)
+        applyFixed(topOffset)
       } else {
         removeFixed()
       }
@@ -577,7 +846,6 @@ function Beratung() {
   return (
     <>
       <MainNav />
-      <SubNav />
       <motion.div
         className="beratung-content"
         initial={{ opacity: 0 }}
@@ -585,12 +853,16 @@ function Beratung() {
         transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
       >
 
+        {/* ── GRADIENT WRAP (BeratungNav + Feldbericht + Produkte) ── */}
+        <div className="dark-gradient-wrap" ref={gradFadeRef}>
+        <BeratungNav />
+
         {/* ── FELDBERICHT SLIDER ── */}
         <section className="screen-section" id="feldbericht-slider">
           <div className="section-inner">
             <div className="section-header-row">
               <div>
-                <div className="section-tag">85665, Mais</div>
+                <div className="section-tag">{[navPlz, navKultur ? navKultur.charAt(0).toUpperCase() + navKultur.slice(1) : ''].filter(Boolean).join(', ')}</div>
                 <div className="section-heading">Feldbericht</div>
               </div>
               <button className="btn-outline">
@@ -706,57 +978,41 @@ function Beratung() {
               <div id="bbch-trigger" />
 
               {/* Gantt Chart – outer container */}
-              <div className="gantt-outer-container">
+              <div className="gantt-outer-container" id="ganttOuterContainer">
 
                 {/* Sticky BBCH Header (scale + phases) */}
                 <div className="gantt-sticky-head" id="ganttStickyHead">
                   <div className="gantt-inner-head" id="ganttInnerHead">
                     {/* Scale row */}
                     <div className="gantt-scale" style={{overflow:'visible',position:'relative'}}>
-                      <div className="gantt-scale-label">BBCH</div>
+                      <div className="gantt-scale-label" style={{ flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center' }}>
+                        <span>BBCH</span>
+                      </div>
                       <div className="gantt-scale-ticks" id="ganttTicks" ref={ticksRef}>
                         {/* React-controlled cursor bubble */}
                         <div
                           className="bbch-cursor"
-                          style={{
-                            position: 'absolute',
-                            top: '50%',
-                            left: cursorLeft,
-                            transform: 'translateX(-50%) translateY(-50%)',
-                            zIndex: 200,
-                            pointerEvents: 'none',
-                          }}
+                          style={{ left: cursorLeft }}
                         >
-                          <div
-                            ref={bubbleRef}
-                            className="bbch-cursor-bubble"
-                            style={{
-                              display: 'flex',
-                              flexDirection: 'column',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              background: '#007AFF',
-                              color: '#fff',
-                              borderRadius: '12px',
-                              padding: '6px 12px',
-                              minWidth: '52px',
-                              cursor: 'grab',
-                              userSelect: 'none',
-                              pointerEvents: 'auto',
-                              boxShadow: '0 4px 16px rgba(0,122,255,0.45)',
-                              gap: '1px',
-                            }}
-                          >
-                            <span className="bbch-cursor-label" style={{fontSize:'9px',fontWeight:600,letterSpacing:'0.5px',opacity:0.85,lineHeight:1}}>BBCH</span>
-                            <strong className="bbch-cursor-val" style={{fontSize:'18px',fontWeight:800,lineHeight:1}}>{ST[cursorIdx]}</strong>
+                          <div ref={bubbleRef} className="bbch-cursor-bubble">
+                            <span className="bbch-cursor-label">BBCH</span>
+                            <strong className="bbch-cursor-val">{ST[cursorIdx]}</strong>
                           </div>
                         </div>
                       </div>
                     </div>
                     {/* Phase Labels Row */}
                     <div className="gantt-phases" id="ganttPhases">
-                      <div className="gantt-phases-spacer"></div>
+                      <div className="gantt-phases-spacer" style={{ display: 'flex', alignItems: 'flex-start', paddingTop: '19px', paddingLeft: '18px' }}>
+                        {navKultur && (
+                          <span style={{ fontSize: '11px', fontWeight: 600, color: '#ffffff', letterSpacing: '0.04em', textTransform: 'capitalize' }}>
+                            {navKultur.charAt(0).toUpperCase() + navKultur.slice(1)}
+                          </span>
+                        )}
+                      </div>
                       <div className="gantt-phases-track" id="ganttPhasesTrack"></div>
+                      {/* Cursor line – inside gantt-phases so JS won't clear it */}
+                      <div className="bbch-phase-cursor-line" style={{ left: lineLeft }} />
                     </div>
                   </div>
                 </div>
@@ -765,30 +1021,13 @@ function Beratung() {
                 <div className="gantt-wrap" id="ganttWrap">
                   <div className="gantt-inner" id="ganttInner">
                     {/* React-controlled vertical cursor line */}
-                    <div
-                      className="bbch-cursor-line"
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        bottom: 0,
-                        left: lineLeft,
-                        width: '2px',
-                        background: '#007AFF',
-                        opacity: 0.6,
-                        pointerEvents: 'none',
-                        zIndex: 4,
-                      }}
-                    />
+                    <div className="bbch-cursor-line" style={{ left: lineLeft }} />
 
                     {/* FUNGIZIDE GROUP */}
                     <div className="gantt-group gantt-group-fungizid">
                       <div className="gantt-group-hd">
                         <div className="gantt-group-hd-left">
-                          <span className="gantt-group-dot" style={{color:'#2D7D3A'}}>●</span>
-                          <div>
-                            <div className="gantt-group-title">Fungizid</div>
-                            <div className="gantt-group-sub">Krankheitsbekämpfung</div>
-                          </div>
+                          <div className="gantt-group-title">Fungizid, <span className="gantt-group-sub">Krankheitsbekämpfung</span></div>
                         </div>
                         <span className="gantt-group-count">3 MASSNAHMEN</span>
                       </div>
@@ -824,11 +1063,7 @@ function Beratung() {
                     <div className="gantt-group gantt-group-herbizid">
                       <div className="gantt-group-hd">
                         <div className="gantt-group-hd-left">
-                          <span className="gantt-group-dot" style={{color:'#E8590C'}}>●</span>
-                          <div>
-                            <div className="gantt-group-title">Herbizid</div>
-                            <div className="gantt-group-sub">Gräser- und Unkrautkontrolle</div>
-                          </div>
+                          <div className="gantt-group-title">Herbizid, <span className="gantt-group-sub">Gräser- und Unkrautkontrolle</span></div>
                         </div>
                         <span className="gantt-group-count">6 MASSNAHMEN</span>
                       </div>
@@ -888,6 +1123,23 @@ function Beratung() {
                 </div>{/* /gantt-wrap */}
               </div>{/* /gantt-outer-container */}
 
+              {/* Season View CTA */}
+              <motion.div
+                style={{ display: 'flex', justifyContent: 'center', marginTop: '132px', marginBottom: '96px' }}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true, amount: 0.8 }}
+              >
+                <button className="season-view-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                  </svg>
+                  Season View abonnieren
+                </button>
+              </motion.div>
+
               {/* Legende */}
 
             </div>
@@ -901,6 +1153,16 @@ function Beratung() {
             <div id="ganttSheetContent"></div>
           </div>
         </>
+
+          {/* ── FADE TO WHITE OVERLAY ── */}
+          <motion.div style={{
+            position: 'absolute', inset: 0,
+            background: '#ffffff',
+            pointerEvents: 'none',
+            opacity: gradFadeOpacity,
+          }} />
+
+        </div>{/* end dark-gradient-wrap */}
 
         {/* ── VIDEOS ── */}
         <section className="screen-section" id="videos">

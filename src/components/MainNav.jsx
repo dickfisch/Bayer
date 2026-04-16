@@ -192,7 +192,7 @@ function MainNav() {
 
           <div className="main-nav-links">
             {/* Meine Beratung */}
-            <Link to="/beratung-start" className={beratungActive ? 'active' : ''} style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
+            <Link to={navKultur ? '/beratung' : '/beratung-start'} state={navKultur ? { plz: navPlz, kultur: navKultur } : undefined} className={beratungActive ? 'active' : ''} style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
               <span className="nav-link-text">Meine Beratung</span>
               {navKultur && (
                 <span style={{
@@ -405,7 +405,7 @@ function MainNav() {
           <div className={panelCls('main')}>
             <ul className="mobile-drawer-list">
               <li>
-                <Link className="mobile-drawer-item mobile-drawer-item--plain" to="/beratung-start" onClick={closeMobileMenu}>
+                <Link className="mobile-drawer-item mobile-drawer-item--plain" to={navKultur ? '/beratung' : '/beratung-start'} state={navKultur ? { plz: navPlz, kultur: navKultur } : undefined} onClick={closeMobileMenu}>
                   Meine Beratung
                 </Link>
               </li>

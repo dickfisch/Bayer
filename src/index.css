@@ -123,7 +123,7 @@ body {
 
 .main-nav-links a.active::after {
     width: calc(100% - 32px);
-    background: #1a1a1a;
+    background: #426b8f;
 }
 
 .main-nav-links a:hover::after,
@@ -133,7 +133,7 @@ body {
 .nav-dropdown-btn--open::after { width: calc(100% - 32px); }
 
 .main-nav-links a.active {
-    color: #1a1a1a; font-weight: 700;
+    color: #426b8f; font-weight: 700;
 }
 
 .main-nav-links a:hover,
@@ -354,7 +354,7 @@ body {
 ══════════════════════════════════════════ */
 .sub-nav-wrap {
     padding: 140px 0 20px;
-    background: transparent;
+    background: var(--bayer-blue);
 }
 
 .sub-nav {
@@ -384,10 +384,19 @@ body {
     justify-content: center;
     pointer-events: none;
     background: transparent;
-    transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.3s ease, transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
 }
 
+/* Erste Einblendung: nur Fade (kein Slide) */
 .sub-nav-wrap--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Nach erster Einblendung: Slide wie main-nav, kein Fade */
+.sub-nav-wrap--slide.sub-nav-wrap--hidden {
+    opacity: 1;
     transform: translateY(-130%);
 }
 
@@ -424,26 +433,50 @@ body {
 
 .pill {
     display: flex; align-items: center; gap: 6px;
-    border: 1px solid rgba(0,0,0,0.12); border-radius: 50px;
-    padding: 9px 13px; font-size: 15px; color: #333;
-    cursor: pointer; white-space: nowrap; background: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.4); border-radius: 50px;
+    padding: 9px 13px; font-size: 15px; color: #ffffff;
+    cursor: pointer; white-space: nowrap; background: rgba(255,255,255,0.12);
     transition: border-color 0.15s;
 }
 
-.pill:hover { border-color: #888; }
+.pill:hover { border-color: rgba(255,255,255,0.8); }
+
+.pill-plz-input {
+    border: none; outline: none; background: transparent;
+    font-size: 15px; color: #ffffff; width: 5.5ch; min-width: 5.5ch;
+    padding: 0; font-family: inherit;
+}
+.pill-plz-input::placeholder { color: rgba(255,255,255,0.5); }
+
+/* Im Scrolled-Zustand: helle Pill zurück */
+.sub-nav--scrolled .pill {
+    border-color: rgba(0,0,0,0.12); color: #333; background: rgba(255,255,255,0.8);
+}
+.sub-nav--scrolled .pill:hover { border-color: #888; }
+.sub-nav--scrolled .pill-plz-input { color: #333; }
+.sub-nav--scrolled .pill-plz-input::placeholder { color: #aaa; }
 
 .sub-nav-kultur-select {
     appearance: none; -webkit-appearance: none;
     display: flex; align-items: center;
-    border: 1px solid rgba(0,0,0,0.12); border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.4); border-radius: 999px;
     padding: 9px 28px 9px 13px; font-size: 15px; font-weight: 500;
-    color: #333; background: rgba(255,255,255,0.8)
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 14px center;
+    color: #ffffff; background: rgba(255,255,255,0.12)
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 14px center;
     cursor: pointer; outline: none; font-family: 'Open Sans', sans-serif;
     transition: border-color 0.15s; white-space: nowrap;
 }
-.sub-nav-kultur-select:hover { border-color: #888; }
-.sub-nav-kultur-select:focus { border-color: rgba(0,0,0,0.3); }
+.sub-nav-kultur-select:hover { border-color: rgba(255,255,255,0.8); }
+.sub-nav-kultur-select:focus { border-color: rgba(255,255,255,0.6); }
+
+/* Im Scrolled-Zustand: helles Select zurück */
+.sub-nav--scrolled .sub-nav-kultur-select {
+    border-color: rgba(0,0,0,0.12); color: #333;
+    background-color: rgba(255,255,255,0.8);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+.sub-nav--scrolled .sub-nav-kultur-select:hover { border-color: #888; }
+.sub-nav--scrolled .sub-nav-kultur-select:focus { border-color: rgba(0,0,0,0.3); }
 
 .footer-kultur-select {
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 20px center / 28px 28px,
@@ -457,13 +490,30 @@ body {
 .sub-links { display: flex; gap: 2px; }
 
 .sub-links a {
-    padding: 5px 12px; text-decoration: none; color: #333;
-    font-size: 18px; border-radius: 50px; white-space: nowrap;
-    transition: background 0.15s, color 0.15s;
+    padding: 5px 12px; text-decoration: none; color: #ffffff;
+    font-size: 18px; font-weight: 400; white-space: nowrap;
+    position: relative;
+    transition: color 0.18s;
 }
 
-.sub-links a:hover  { background: rgba(0,0,0,0.06); }
-.sub-links a.active { color: var(--bayer-blue); font-weight: 600; }
+.sub-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 12px;
+    width: 0; height: 2px;
+    background: #ffffff;
+    transition: width 0.28s ease;
+}
+
+.sub-links a:hover         { color: #ffffff; }
+.sub-links a:hover::after  { width: calc(100% - 24px); }
+.sub-links a.active        { color: #ffffff; font-weight: 600; }
+
+/* Im Scrolled-Zustand (Glassmorphism): originaler blauer Hover-Effekt */
+.sub-nav--scrolled .sub-links a         { color: #1a1a1a; }
+.sub-nav--scrolled .sub-links a::after  { background: #426b8f; }
+.sub-nav--scrolled .sub-links a:hover   { color: #426b8f; }
+.sub-nav--scrolled .sub-links a.active  { color: #426b8f; font-weight: 600; }
 
 .user-widget { display: flex; align-items: center; gap: 10px; padding: 0 24px 0 12px; }
 
@@ -473,8 +523,12 @@ body {
 }
 
 .user-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.user-name { font-size: 15px; font-weight: 600; color: #1a1a1a; line-height: 1.4; }
-.user-role { font-size: 11px; color: #6e6e73; line-height: 1.4; }
+.user-name { font-size: 15px; font-weight: 600; color: #ffffff; line-height: 1.4; }
+.user-role { font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.4; }
+
+/* Im Scrolled-Zustand: dunkle Farben zurück */
+.sub-nav--scrolled .user-name { color: #1a1a1a; }
+.sub-nav--scrolled .user-role { color: #6e6e73; }
 
 /* ══════════════════════════════════════════
    SHARED SECTION RULES
@@ -1087,7 +1141,7 @@ body {
 }
 #produkte .page-title {
     font-size: 54px; font-weight: 700; letter-spacing: -0.5px;
-    color: #1d1d1f; margin-bottom: 4px;
+    color: #ffffff; margin-bottom: 4px;
 }
 #produkte .page-subtitle {
     font-size: 15px; color: #6e6e73; margin-bottom: 28px; font-weight: 400;
@@ -1366,13 +1420,14 @@ body {
 .bbch-cursor-line {
     position: absolute; top: 38px; bottom: 0;
     width: 2px; background: #007AFF;
-    opacity: 0.6; pointer-events: none; z-index: 15;
+    opacity: 0.6; pointer-events: none; z-index: 70;
     transform: translateX(-1px);
 }
 
 /* Phase labels row */
 .gantt-phases {
     display: flex; min-height: 64px;
+    position: relative;
     background: #101b29;
     border-bottom: 1px solid rgba(255,255,255,0.07);
 }
@@ -1403,7 +1458,7 @@ body, button, input, select, textarea {
 
 /* Dashboard layout */
 #produkte .section-inner {
-    padding: 48px 80px;
+    padding: 48px 2% 96px;
 }
 
 /* Gantt container width – full width */
@@ -1477,6 +1532,41 @@ body, button, input, select, textarea {
     text-align: center;
 }
 
+/* Season View Subscribe Button */
+.season-view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 14px;
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.12),
+        0 1px 4px rgba(0, 0, 0, 0.08);
+    font-size: 15px;
+    font-weight: 600;
+    color: #1d1d1f;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    transition: box-shadow 0.18s, transform 0.18s;
+}
+.season-view-btn:hover {
+    box-shadow:
+        0 8px 28px rgba(0, 0, 0, 0.16),
+        0 2px 6px rgba(0, 0, 0, 0.10);
+    transform: translateY(-1px);
+}
+.season-view-btn:active {
+    transform: translateY(0);
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
 /* Dropdown filter row – Hero-Card-Style */
 .filter-dropdowns {
     display: grid;
@@ -1485,16 +1575,27 @@ body, button, input, select, textarea {
     margin-bottom: 20px;
 }
 .fc-card {
-    background: #fff;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.88) 0%,
+        rgba(235, 242, 255, 0.72) 35%,
+        rgba(225, 235, 255, 0.52) 70%,
+        rgba(215, 228, 255, 0.52) 100%
+    );
+    backdrop-filter: blur(28px) saturate(200%) brightness(1.12);
+    -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 28px;
-    box-shadow: 0 20px 60px rgba(0,0,0,.05);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.18),
+        0 2px 8px rgba(0, 0, 0, 0.10);
     padding: 24px;
 }
 .fc-eyebrow {
     font-size: clamp(.72rem,.8vw,.78rem);
     text-transform: uppercase;
     letter-spacing: .22em;
-    color: #8a8a8a;
+    color: #101b29;
     font-weight: 500;
 }
 .fc-cardtitle {
@@ -1687,16 +1788,17 @@ body, button, input, select, textarea {
 .fb-tag {
     font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.08em;
-    padding: 5px 20px;
-    border-radius: 20px 0 20px 0;
-    color: #ffffff;
+    letter-spacing: 0.04em;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: transparent;
     white-space: nowrap;
+    text-transform: none;
 }
-.fb-tag--fungizid  { background: #10384f; }
-.fb-tag--wachstum  { background: #10384f; }
-.fb-tag--herbizid  { background: #10384f; }
-.fb-tag--wichtig   { background: #e6006e; }
+.fb-tag--fungizid  { border: 1.5px solid #10384f; color: #10384f; }
+.fb-tag--wachstum  { border: 1.5px solid #10384f; color: #10384f; }
+.fb-tag--herbizid  { border: 1.5px solid #10384f; color: #10384f; }
+.fb-tag--wichtig   { border: 1.5px solid #e6006e; color: #e6006e; }
 
 /* Beschreibung */
 .fb-card-desc {
@@ -1747,8 +1849,16 @@ body, button, input, select, textarea {
     z-index: 50;
     overflow-x: hidden;
     scrollbar-width: none;
-    background: #101b29;
-    border-bottom: 2px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    background: linear-gradient(
+        135deg,
+        rgba(16, 27, 41, 0.78) 0%,
+        rgba(20, 38, 68, 0.70) 50%,
+        rgba(14, 28, 52, 0.68) 100%
+    );
+    backdrop-filter: blur(28px) saturate(200%) brightness(0.9);
+    -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .gantt-sticky-head::-webkit-scrollbar { display: none; }
 .gantt-inner-head { min-width: 680px; position: relative; }
@@ -1757,7 +1867,7 @@ body, button, input, select, textarea {
 .gantt-wrap {
     overflow-x: auto;
     border: none !important;
-    border-radius: 0 !important;
+    border-radius: 0 0 16px 16px !important;
     box-shadow: none !important;
     margin-bottom: 0 !important;
 }
@@ -1765,8 +1875,8 @@ body, button, input, select, textarea {
 /* Scale row inside sticky header */
 .gantt-scale {
     height: 52px !important;
-    background: #101b29 !important;
-    border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255,255,255,0.07) !important;
     box-shadow: none !important;
     position: static !important;  /* sticky is on parent now */
 }
@@ -1790,8 +1900,8 @@ body, button, input, select, textarea {
 
 /* Phase labels – static now (inside sticky head) */
 .gantt-phases {
-    background: #101b29;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: transparent;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 .gantt-phases-spacer { width: 200px; min-width: 200px; }
 
@@ -1802,9 +1912,9 @@ body, button, input, select, textarea {
     font-size: 12px !important;
     font-weight: 700 !important;
     letter-spacing: 0.6px !important;
-    background: #101b29 !important;
-    border-top: 2px solid rgba(0,0,0,0.06) !important;
-    border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+    background: transparent !important;
+    border-top: 1px solid rgba(255,255,255,0.07) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.07) !important;
 }
 .gantt-sec-div:first-child { border-top: none !important; }
 
@@ -1817,14 +1927,14 @@ body, button, input, select, textarea {
     display: flex; flex-direction: column; justify-content: center; gap: 2px;
 }
 .gantt-row-bbch {
-    font-size: 11px; font-weight: 700;
+    font-size: 14px; font-weight: 700;
     color: #6e6e73; letter-spacing: 0.3px;
     text-transform: uppercase; margin-bottom: 2px;
 }
 .gantt-row[data-cat="fungizid"] .gantt-row-bbch { color: #2D7D3A; }
 .gantt-row[data-cat="herbizid"] .gantt-row-bbch { color: #C04A00; }
-.gantt-row-name { font-size: 14px !important; font-weight: 700 !important; color: #1d1d1f; line-height: 1.3; }
-.gantt-row-cat  { font-size: 12px !important; color: #6e6e73 !important; margin-top: 2px; }
+.gantt-row-name { font-size: 18px !important; font-weight: 700 !important; color: #1d1d1f; line-height: 1.3; }
+.gantt-row-cat  { font-size: 15px !important; color: #6e6e73 !important; margin-top: 2px; }
 
 /* Taller bars */
 .gantt-bar { height: 40px !important; border-radius: 16px 0 16px 0 !important; }
@@ -1864,7 +1974,7 @@ body, button, input, select, textarea {
     font-size: 18px; font-weight: 700; color: #1d1d1f; line-height: 1.2;
 }
 .gantt-group-sub {
-    font-size: 13px; color: #6e6e73; margin-top: 2px;
+    font-size: 18px; font-weight: 700; color: #1d1d1f;
 }
 .gantt-group-count {
     font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
@@ -1903,11 +2013,19 @@ body, button, input, select, textarea {
     position: sticky !important;
     top: 115px !important;
     z-index: 60 !important;
-    background: #101b29 !important;
+    border-radius: 16px !important;
+    background: linear-gradient(
+        135deg,
+        rgba(16, 27, 41, 0.78) 0%,
+        rgba(20, 38, 68, 0.70) 50%,
+        rgba(14, 28, 52, 0.68) 100%
+    ) !important;
+    backdrop-filter: blur(28px) saturate(200%) brightness(0.9) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(0.9) !important;
     overflow-x: visible !important;
     overflow-y: visible !important;
-    border-bottom: 2px solid rgba(0,0,0,0.09) !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.07) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
     scrollbar-width: none !important;
 }
 .gantt-wrap {
@@ -1957,7 +2075,7 @@ body, button, input, select, textarea {
     border-right: 1px solid rgba(0,0,0,0.07) !important;
 }
 .gantt-row-bbch {
-    font-size: 11px !important;
+    font-size: 14px !important;
     font-weight: 700 !important;
     letter-spacing: 0.3px !important;
     margin-bottom: 2px !important;
@@ -1966,13 +2084,13 @@ body, button, input, select, textarea {
 .gantt-row[data-cat="herbizid"] .gantt-row-bbch { color: #C04A00 !important; }
 .gantt-row[data-cat="fungizid"] .gantt-row-bbch { color: #2D7D3A !important; }
 .gantt-row-name {
-    font-size: 14px !important;
-    font-weight: 700 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
     color: #1d1d1f !important;
     line-height: 1.3 !important;
 }
 .gantt-row-cat {
-    font-size: 12px !important;
+    font-size: 15px !important;
     color: #6e6e73 !important;
     margin-top: 2px !important;
     white-space: nowrap !important;
@@ -2017,10 +2135,18 @@ body, button, input, select, textarea {
     position: sticky !important;
     top: 115px !important;
     z-index: 60 !important;
-    background: #101b29 !important;
+    border-radius: 16px !important;
+    background: linear-gradient(
+        135deg,
+        rgba(16, 27, 41, 0.78) 0%,
+        rgba(20, 38, 68, 0.70) 50%,
+        rgba(14, 28, 52, 0.68) 100%
+    ) !important;
+    backdrop-filter: blur(28px) saturate(200%) brightness(0.9) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(0.9) !important;
     overflow: visible !important;
-    border-bottom: 2px solid rgba(0,0,0,0.09) !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.07) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
 }
 .gantt-sticky-head .gantt-scale {
     position: static !important;
@@ -2086,9 +2212,9 @@ body, button, input, select, textarea {
     top: 0 !important;
     bottom: 0 !important;
     width: 2px !important;
-    background: rgba(0,122,255,0.5) !important;
+    background: #007AFF !important;
     pointer-events: none !important;
-    z-index: 15 !important;
+    z-index: 70 !important;
     transform: translateX(-1px) !important;
 }
 
@@ -2911,6 +3037,31 @@ body, button, input, select, textarea {
   padding-bottom: 0;
   height: 100%;
   align-self: stretch;
+  flex: 1;
+}
+
+.cta-sticky-inner .sub-nav-kultur-select {
+  border-color: rgba(0,0,0,0.12);
+  color: #333;
+  background-color: rgba(255,255,255,0.8);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+
+.cta-sticky-inner .pill {
+  border-color: rgba(0,0,0,0.12);
+  color: #333;
+  background: rgba(255,255,255,0.8);
+}
+.cta-sticky-inner .pill:hover {
+  border-color: #888;
+}
+.cta-sticky-inner .pill .pill-plz-input,
+.cta-sticky-inner .pill input {
+  color: #333;
+}
+.cta-sticky-inner .pill .pill-plz-input::placeholder,
+.cta-sticky-inner .pill input::placeholder {
+  color: #aaa;
 }
 
 /* ══════════════════════════════════════════
@@ -3820,6 +3971,14 @@ body, button, input, select, textarea {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+#produkte .produkte-gradient {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
 }
 
 .produkte-fokus-stage {
@@ -4860,7 +5019,7 @@ body, button, input, select, textarea {
 
 /* ══ Feldbericht Slider (nach Produkte) ══ */
 #feldbericht-slider {
-  background: #ffffff;
+  background: transparent;
 }
 #feldbericht-slider .section-inner {
   padding: 48px 80px 60px;
@@ -4871,6 +5030,9 @@ body, button, input, select, textarea {
 }
 #feldbericht-slider .section-heading {
   font-size: 54px;
+  font-weight: 700;
+  color: #ffffff;
+  padding-bottom: 32px;
 }
 
 /* Scroll-Reihe */
@@ -4878,20 +5040,20 @@ body, button, input, select, textarea {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  margin: -40px -24px;
-  padding: 40px 24px;
+  margin: -40px -80px;
+  padding: 40px 0;
 }
 .fbs-scroll-outer::-webkit-scrollbar { display: none; }
 .fbs-track {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  padding: 0;
+  padding: 0 0 0 80px;
 }
 .fbs-track::after {
   content: '';
-  flex: 0 0 24px;
-  min-width: 24px;
+  flex: 0 0 80px;
+  min-width: 80px;
 }
 
 /* Karte: 70vh hoch, etwas schmaler (3 + Anschnitt) */
@@ -4976,6 +5138,18 @@ body, button, input, select, textarea {
 .fbs-nav-btn:hover {
   border-color: rgba(0,0,0,0.7);
   color: rgba(0,0,0,0.9);
+}
+
+#feldbericht-slider .section-tag {
+  color: #fff;
+}
+#feldbericht-slider .fbs-nav-btn {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
+#feldbericht-slider .fbs-nav-btn:hover {
+  border-color: #fff;
+  color: #fff;
 }
 
 /* ══════════════════════════════════════════
@@ -5147,16 +5321,16 @@ body, button, input, select, textarea {
     pointer-events: none;
 }
 
-/* ── BBCH Sticky Head: Dark Background Override ── */
+/* ── BBCH Sticky Head: Transparent inner elements (glass shows through) ── */
 .gantt-sticky-head .gantt-scale,
 .gantt-sticky-head .gantt-scale-label {
-    background: #101b29 !important;
+    background: transparent !important;
     border-color: rgba(255,255,255,0.08) !important;
     color: rgba(255,255,255,0.6) !important;
 }
 .gantt-sticky-head .gantt-phases,
 .gantt-sticky-head .gantt-phases-spacer {
-    background: #101b29 !important;
+    background: transparent !important;
     border-color: rgba(255,255,255,0.08) !important;
 }
 .gantt-sticky-head .gantt-phase-box {
@@ -5194,8 +5368,82 @@ body, button, input, select, textarea {
     top: 8px !important;
 }
 
-/* ── Beratung Seite: Dark Background ── */
+/* ── BBCH Cursor: immer vor den Tick-Labels ── */
+.gantt-scale-ticks .bbch-cursor {
+    z-index: 500 !important;
+}
+.gantt-scale-ticks .gantt-tick {
+    z-index: 1 !important;
+}
+
+/* ── BBCH Cursor bubble: statische Stile (left kommt per inline aus React) ── */
+.bbch-cursor {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateX(-50%) translateY(-50%) !important;
+    pointer-events: none !important;
+}
+.bbch-cursor-bubble {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #007AFF !important;
+    color: #fff !important;
+    border-radius: 12px !important;
+    padding: 6px 12px !important;
+    min-width: 52px !important;
+    cursor: grab !important;
+    user-select: none !important;
+    pointer-events: auto !important;
+    box-shadow: 0 4px 16px rgba(0,122,255,0.45) !important;
+    gap: 1px !important;
+    position: relative !important;
+    top: 0 !important;
+    width: auto !important;
+    height: auto !important;
+}
+.bbch-cursor-bubble:active { cursor: grabbing !important; }
+.bbch-cursor-label {
+    font-size: 9px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    opacity: 0.85 !important;
+    line-height: 1 !important;
+}
+.bbch-cursor-val {
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+}
+
+/* ── Cursor-Strich in der Phasen-Zeile ── */
+.bbch-phase-cursor-line {
+    position: absolute;
+    top: -4px;
+    bottom: -20px;
+    width: 2px;
+    background: #007AFF;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 70;
+    transform: translateX(-1px);
+}
+
+/* ── Beratung Seite: Background ── */
 .beratung-content,
-.beratung-content .screen-section {
-    background: #101b29 !important;
+.beratung-content .screen-section,
+.beratung-content .tools-section {
+    background: #ffffff !important;
+}
+
+/* Sections inside gradient wrap: show the gradient through */
+.beratung-content .dark-gradient-wrap .screen-section {
+    background: transparent !important;
+}
+
+
+/* BeratungNav inside gradient wrap: remove its own background */
+.dark-gradient-wrap .sub-nav-wrap {
+    background: transparent;
 }
