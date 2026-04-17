@@ -2727,6 +2727,14 @@ body, button, input, select, textarea {
   text-decoration: none;
 }
 
+.hero-buttons .sheet-btn--white {
+  transition: padding 0.3s ease, transform 0.3s ease;
+}
+
+.hero-buttons:has(.sheet-btn--inverted:hover) .sheet-btn--white {
+  transform: translateX(5px);
+}
+
 .hero-btn-secondary:hover {
   padding-right: 29px;
 }
@@ -5634,9 +5642,9 @@ body, button, input, select, textarea {
 .sheet-btn--outline .sheet-btn-right { color: #e0284f; }
 .sheet-btn--outline .sheet-btn-arrow { color: #e0284f; }
 .sheet-btn--inverted { background: #fff; color: #10384f; border: 1px solid #fff; }
-.sheet-btn--inverted .sheet-btn-right { color: #10384f; }
-.sheet-btn--inverted .sheet-btn-arrow { color: #10384f; }
-.sheet-btn--inverted .sheet-btn-slash  { color: rgba(16,56,79,0.35); }
+.sheet-btn--inverted .sheet-btn-right { color: #e0284f; }
+.sheet-btn--inverted .sheet-btn-arrow { color: #e0284f; }
+.sheet-btn--inverted .sheet-btn-slash  { color: rgba(224,40,79,0.35); }
 .sheet-btn--white { background: transparent; color: #fff; border: 1px solid #fff; }
 .sheet-btn--white .sheet-btn-right { color: #e0284f; }
 .sheet-btn--white .sheet-btn-arrow { color: #e0284f; }

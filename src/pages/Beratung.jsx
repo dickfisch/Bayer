@@ -674,6 +674,169 @@ function Beratung() {
             '</div>' +
           '</div>';
 
+        /* ── Wetter-Prognosedaten ── */
+        var WX_DAYS = [
+          { abbr:'MO', date:'14.04.', score:91, st:'optimal',
+            sum:'Heute ideale Bedingungen. Temperatur, Wind und Luftfeuchte im Optimalbereich. Blattoberfläche seit 5\u00a0h trocken \u2013 maximale Wirkstoffhaftung. Kein Regen in Sicht. Breites Fenster von 8 bis 18\u00a0Uhr nutzbar.',
+            badge:'OPTIMALE BEDINGUNGEN', crit:'6\u00a0/\u00a06 Kriterien erf\u00fcllt', critNote:'Alle Parameter im sicheren Bereich.',
+            m:[
+              {l:'TEMP.',        v:'16\u00a0\u00b0C', lim:'zul.\u00a08\u201325\u00a0\u00b0C',  pill:'im Einsatzfenster',           pct:47,  pc:'#3a7a2f'},
+              {l:'WIND',         v:'6\u00a0km/h',     lim:'zul.\u00a0\u2264\u00a015\u00a0km/h', pill:'sicherer Bereich',            pct:40,  pc:'#3a7a2f'},
+              {l:'B\u00d6EN',    v:'11\u00a0km/h',    lim:'zul.\u00a0\u2264\u00a025\u00a0km/h', pill:'technisch tragf\u00e4hig',    pct:44,  pc:'#3a7a2f'},
+              {l:'REL. FEUCHTE', v:'62\u00a0%',       lim:'zul.\u00a0\u2264\u00a085\u00a0%',    pill:'innerhalb Leitfaden',         pct:73,  pc:'#3a7a2f'},
+              {l:'TROCKEN VOR',  v:'5\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'Minimum erf\u00fcllt \u2713', pct:85,  pc:'#3a7a2f'},
+              {l:'REGEN NACH',   v:'0\u00a0mm',       lim:'0\u00a0mm empfohlen',                pill:'trockenes Fenster',           pct:5,   pc:'#3a7a2f'},
+            ],
+            prof:[2,1,0,0,0,0,0,0,0,0,0,1,0],
+            winT:'08:00\u00a0\u2013\u00a018:00\u00a0Uhr', winN:'Idealtag\u00a0\u00b7 Blattn\u00e4sse fr\u00fch morgens pr\u00fcfen'
+          },
+          { abbr:'DI', date:'15.04.', score:58, st:'bedingt',
+            sum:'Brauchbares Fenster am Nachmittag. Wind am Vormittag noch zu hoch, sinkt ab 12\u00a0Uhr auf Limitniveau. Temperatur und Luftfeuchte g\u00fcnstig. Trockenfenster ab Mittag nutzbar.',
+            badge:'EINGESCHR\u00c4NKT GEEIGNET', crit:'4\u00a0/\u00a06 Kriterien erf\u00fcllt', critNote:'Wind vm. noch zu stark. Nachmittagsfenster ab 12\u00a0Uhr nutzbar.',
+            m:[
+              {l:'TEMP.',        v:'14\u00a0\u00b0C', lim:'zul.\u00a08\u201325\u00a0\u00b0C',  pill:'im Einsatzfenster',                  pct:35,  pc:'#3a7a2f'},
+              {l:'WIND',         v:'17\u00a0km/h',    lim:'zul.\u00a0\u2264\u00a015\u00a0km/h', pill:'+2\u00a0km/h \u00b7 f\u00e4llt ab 12h', pct:100, pc:'#e8a020'},
+              {l:'B\u00d6EN',    v:'22\u00a0km/h',    lim:'zul.\u00a0\u2264\u00a025\u00a0km/h', pill:'knapp im Limit',                     pct:88,  pc:'#e8a020'},
+              {l:'REL. FEUCHTE', v:'68\u00a0%',       lim:'zul.\u00a0\u2264\u00a085\u00a0%',    pill:'innerhalb Leitfaden',                pct:80,  pc:'#3a7a2f'},
+              {l:'TROCKEN VOR',  v:'3\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'Minimum erf\u00fcllt \u2713',        pct:60,  pc:'#3a7a2f'},
+              {l:'REGEN NACH',   v:'0\u00a0mm',       lim:'0\u00a0mm empfohlen',                pill:'trockenes Fenster',                  pct:5,   pc:'#3a7a2f'},
+            ],
+            prof:[2,2,2,2,1,1,1,1,0,0,0,0,1],
+            winT:'12:00\u00a0\u2013\u00a017:00\u00a0Uhr', winN:'Wind f\u00e4llt ab 12h\u00a0\u00b7 Nachmittagsfenster nutzen'
+          },
+          { abbr:'MI', date:'16.04.', score:14, st:'nogo',
+            sum:'Nicht ausfahren. Temperatur unter Minimum, Wind weit \u00fcber Limit, Dauerregen ganztags. K\u00e4ltestress blockiert Stomata \u2013 Wirkstoffaufnahme auch bei trockenem Blatt stark reduziert. Pflanzenstoffwechsel eingestellt.',
+            badge:'NICHT GEEIGNET', crit:'0\u00a0/\u00a06 Kriterien erf\u00fcllt', critNote:'Dauerregen + Wind + K\u00e4lte. Alle Grenzwerte \u00fcberschritten.',
+            m:[
+              {l:'TEMP.',        v:'7\u00a0\u00b0C',  lim:'zul.\u00a08\u201325\u00a0\u00b0C',  pill:'\u22121\u00a0\u00b0C zu kalt',        pct:30,  pc:'#cc2200'},
+              {l:'WIND',         v:'21\u00a0km/h',    lim:'zul.\u00a0\u2264\u00a015\u00a0km/h', pill:'+6\u00a0km/h \u00fcber Limit',       pct:100, pc:'#cc2200'},
+              {l:'B\u00d6EN',    v:'38\u00a0km/h',    lim:'zul.\u00a0\u2264\u00a025\u00a0km/h', pill:'+13\u00a0km/h \u00fcber Limit',      pct:100, pc:'#cc2200'},
+              {l:'REL. FEUCHTE', v:'94\u00a0%',       lim:'zul.\u00a0\u2264\u00a085\u00a0%',    pill:'+9\u00a0% zu feucht',               pct:100, pc:'#cc2200'},
+              {l:'TROCKEN VOR',  v:'0\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'3\u00a0h fehlen',                    pct:10,  pc:'#cc2200'},
+              {l:'REGEN NACH',   v:'22\u00a0mm',      lim:'0\u00a0mm empfohlen',                pill:'Auswaschung sicher',                 pct:100, pc:'#cc2200'},
+            ],
+            prof:[2,2,2,2,2,2,2,2,2,2,2,2,2],
+            winT:'Nicht m\u00f6glich', winN:'Triple-No-Go: Temperatur + Wind + Dauerregen'
+          },
+          { abbr:'DO', date:'17.04.', score:52, st:'bedingt',
+            sum:'Nachmittag abwarten. Windgeschwindigkeit f\u00e4llt erst ab 14:00\u00a0Uhr unter Limit. Boden nach gestrigem Regen noch feucht \u2013 Trockenperiode vor Applikation ab 14\u00a0Uhr erf\u00fcllt. Fenster 14\u201318\u00a0Uhr technisch nutzbar.',
+            badge:'EINGESCHR\u00c4NKT GEEIGNET', crit:'3\u00a0/\u00a06 Kriterien erf\u00fcllt', critNote:'Wind vm. zu stark. Nachmittagsfenster ab 14\u00a0Uhr nutzbar.',
+            m:[
+              {l:'TEMP.',        v:'13\u00a0\u00b0C', lim:'zul.\u00a08\u201325\u00a0\u00b0C',  pill:'im Einsatzfenster',                  pct:29,  pc:'#3a7a2f'},
+              {l:'WIND',         v:'16\u00a0km/h',    lim:'zul.\u00a0\u2264\u00a015\u00a0km/h', pill:'+1\u00a0km/h \u00b7 f\u00e4llt ab 14h', pct:100, pc:'#e8a020'},
+              {l:'B\u00d6EN',    v:'27\u00a0km/h',    lim:'zul.\u00a0\u2264\u00a025\u00a0km/h', pill:'+2\u00a0km/h \u00fcber Limit',       pct:100, pc:'#e8a020'},
+              {l:'REL. FEUCHTE', v:'66\u00a0%',       lim:'zul.\u00a0\u2264\u00a085\u00a0%',    pill:'innerhalb Leitfaden',                pct:78,  pc:'#3a7a2f'},
+              {l:'TROCKEN VOR',  v:'4\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'Minimum erf\u00fcllt \u2713',        pct:70,  pc:'#3a7a2f'},
+              {l:'REGEN NACH',   v:'0\u00a0mm',       lim:'0\u00a0mm empfohlen',                pill:'trockenes Fenster',                  pct:5,   pc:'#3a7a2f'},
+            ],
+            prof:[2,2,2,2,2,2,2,2,1,1,0,0,1],
+            winT:'14:00\u00a0\u2013\u00a018:00\u00a0Uhr', winN:'Wind f\u00e4llt ab 14h\u00a0\u00b7 Trockenheit nachmittags sicher'
+          },
+          { abbr:'FR', date:'18.04.', score:90, st:'optimal',
+            sum:'Ausgezeichnetes Fenster. Alle 6 Kriterien erf\u00fcllt. Optimale Bedingungen den ganzen Tag \u2013 windstill, trocken, Temperatur perfekt f\u00fcr Wirkstoffaufnahme und Antrocknung.',
+            badge:'OPTIMALE BEDINGUNGEN', crit:'6\u00a0/\u00a06 Kriterien erf\u00fcllt', critNote:'Alle Parameter im sicheren Bereich.',
+            m:[
+              {l:'TEMP.',        v:'17\u00a0\u00b0C', lim:'zul.\u00a08\u201325\u00a0\u00b0C',  pill:'im Einsatzfenster',           pct:53,  pc:'#3a7a2f'},
+              {l:'WIND',         v:'7\u00a0km/h',     lim:'zul.\u00a0\u2264\u00a015\u00a0km/h', pill:'sicherer Bereich',            pct:47,  pc:'#3a7a2f'},
+              {l:'B\u00d6EN',    v:'13\u00a0km/h',    lim:'zul.\u00a0\u2264\u00a025\u00a0km/h', pill:'technisch tragf\u00e4hig',    pct:52,  pc:'#3a7a2f'},
+              {l:'REL. FEUCHTE', v:'59\u00a0%',       lim:'zul.\u00a0\u2264\u00a085\u00a0%',    pill:'innerhalb Leitfaden',         pct:69,  pc:'#3a7a2f'},
+              {l:'TROCKEN VOR',  v:'6\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'Minimum erf\u00fcllt \u2713', pct:90,  pc:'#3a7a2f'},
+              {l:'REGEN NACH',   v:'0\u00a0mm',       lim:'0\u00a0mm empfohlen',                pill:'trockenes Fenster',           pct:5,   pc:'#3a7a2f'},
+            ],
+            prof:[2,2,0,0,0,0,0,0,0,0,0,1,0],
+            winT:'08:00\u00a0\u2013\u00a018:00\u00a0Uhr', winN:'Bestes Fenster der Woche\u00a0\u00b7 Fr\u00fch starten empfohlen'
+          },
+        ];
+        var WX_ACTIVE = 3;
+        var buildWxTabsHtml = function(ai) {
+          var out = '<div style="display:flex;gap:8px;margin-bottom:16px;">';
+          for (var i = 0; i < WX_DAYS.length; i++) {
+            var w = WX_DAYS[i];
+            var sc  = w.st==='optimal' ? '#3a7a2f' : w.st==='bedingt' ? '#b85c00' : '#cc2200';
+            var bg  = w.st==='optimal' ? 'rgba(58,122,47,0.08)' : w.st==='bedingt' ? 'rgba(232,160,32,0.10)' : 'rgba(204,34,0,0.08)';
+            var isSel = i === ai;
+            out += '<div class="wx-tab" onclick="window.switchWeatherDay(' + i + ')" ' +
+              'style="flex:1;padding:14px 8px;border-radius:12px;cursor:pointer;text-align:center;' +
+              'background:' + (isSel ? '#fff' : bg) + ';' +
+              'border:2px solid ' + (isSel ? 'rgba(0,0,0,0.2)' : 'transparent') + ';' +
+              'user-select:none;-webkit-tap-highlight-color:transparent;">' +
+              '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">' + w.abbr + '</div>' +
+              '<div style="font-size:13px;color:#3a3a3c;margin-top:2px;">' + w.date + '</div>' +
+              '<div style="font-size:34px;font-weight:800;color:' + sc + ';line-height:1.1;margin:6px 0;">' + w.score + '</div>' +
+              '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:' + sc + ';">' +
+                (w.st==='optimal' ? 'OPTIMAL' : w.st==='bedingt' ? 'BEDINGT' : 'NO-GO') +
+              '</div>' +
+            '</div>';
+          }
+          return out + '</div>';
+        };
+        var buildWxDetailHtml = function(w) {
+          var sc      = w.st==='optimal' ? '#3a7a2f' : w.st==='bedingt' ? '#b85c00' : '#cc2200';
+          var badgeBg = w.st==='optimal' ? 'rgba(58,122,47,0.12)' : w.st==='bedingt' ? 'rgba(232,160,32,0.14)' : 'rgba(204,34,0,0.10)';
+          var profColors = ['#3a7a2f', '#e8a020', '#cc2200'];
+          var metricsHtml = '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">' +
+            w.m.map(function(m) {
+              var pillBg = m.pc==='#3a7a2f' ? 'rgba(58,122,47,0.12)' : m.pc==='#e8a020' ? 'rgba(232,160,32,0.14)' : 'rgba(204,34,0,0.10)';
+              return '<div style="background:#fff;border-radius:12px;padding:14px;">' +
+                '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;margin-bottom:4px;">' + m.l + '</div>' +
+                '<div style="font-size:24px;font-weight:800;color:#1d1d1f;line-height:1;">' + m.v + '</div>' +
+                '<div style="font-size:11px;color:#8e8e93;margin:4px 0 8px;">' + m.lim + '</div>' +
+                '<div style="display:inline-block;background:' + pillBg + ';color:' + m.pc + ';border-radius:999px;padding:3px 10px;font-size:11px;font-weight:600;margin-bottom:8px;">' + m.pill + '</div>' +
+                '<div style="height:4px;background:rgba(0,0,0,0.08);border-radius:2px;">' +
+                  '<div style="height:4px;width:' + Math.min(m.pct, 100) + '%;background:' + m.pc + ';border-radius:2px;"></div>' +
+                '</div>' +
+              '</div>';
+            }).join('') +
+          '</div>';
+          var profHours = ['6h','','','9h','','','12h','','','15h','','','18h'];
+          var profBars =
+            '<div style="display:flex;gap:3px;height:32px;">' +
+              w.prof.map(function(s) {
+                return '<div style="flex:1;height:32px;background:' + profColors[s] + ';border-radius:3px;"></div>';
+              }).join('') +
+            '</div>' +
+            '<div style="display:flex;margin-top:4px;">' +
+              profHours.map(function(lbl) {
+                return '<div style="flex:1;text-align:center;font-size:10px;color:#aaa;">' + lbl + '</div>';
+              }).join('') +
+            '</div>';
+          return '<div style="background:#eef0f4;border-radius:16px;padding:18px;">' +
+            '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">' +
+              '<div>' +
+                '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">' + w.abbr + '</div>' +
+                '<div style="font-size:24px;font-weight:800;color:#1d1d1f;">' + w.date + '</div>' +
+              '</div>' +
+              '<div style="text-align:right;">' +
+                '<div style="display:inline-block;background:' + badgeBg + ';color:' + sc + ';border-radius:999px;padding:5px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:6px;">' + w.badge + '</div>' +
+                '<div style="font-size:13px;color:#3a3a3c;">' + w.crit + '</div>' +
+                '<div style="font-size:12px;color:#6e6e73;margin-top:2px;">' + w.critNote + '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div style="margin-bottom:12px;">' +
+              '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">' +
+                '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;">24-Stunden-Profil</div>' +
+                '<div style="display:flex;gap:10px;align-items:center;">' +
+                  ['Ausbringen', 'Eingeschr\u00e4nkt', 'Nicht'].map(function(lbl, li) {
+                    return '<div style="display:flex;align-items:center;gap:4px;">' +
+                      '<div style="width:8px;height:8px;border-radius:2px;background:' + profColors[li] + ';"></div>' +
+                      '<span style="font-size:10px;color:#8e8e93;">' + lbl + '</span>' +
+                    '</div>';
+                  }).join('') +
+                '</div>' +
+              '</div>' +
+              profBars +
+            '</div>' +
+            metricsHtml +
+            '<div style="display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:12px;padding:14px 16px;margin-top:12px;">' +
+              '<div>' +
+                '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;margin-bottom:2px;">Ausbringungsfenster</div>' +
+                '<div style="font-size:18px;font-weight:800;color:#1d1d1f;">' + w.winT + '</div>' +
+              '</div>' +
+              '<div style="font-size:12px;color:#6e6e73;text-align:right;">' + w.winN + '</div>' +
+            '</div>' +
+          '</div>';
+        };
+
         document.getElementById('ganttSheetContent').innerHTML =
 
           /* ══ OBEN: VOLLE BREITE – Info-Karten ══ */
@@ -819,64 +982,49 @@ function Beratung() {
 
           /* ══ UNTEN: VOLLE BREITE – Einsatzprognose ══ */
 
-          /* Einsatzprognose */
           '<div style="background:#fff;border-radius:16px;padding:32px;border:1px solid rgba(0,0,0,0.07);margin-top:32px;">' +
-            '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;">' +
-              '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">Standort \u00b7 Windheim</div>' +
-              '<div style="font-size:14px;color:' + accentColor + ';font-weight:700;">Freitag</div>' +
-            '</div>' +
-            '<div style="font-size:24px;font-weight:800;color:#1d1d1f;margin-bottom:24px;">Einsatzprognose</div>' +
-            '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Einsatzparameter laut Produktleitfaden</div>' +
-            '<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">' +
-              ['Wind: \u2265\u202f15\u00a0km/h','B\u00f6en: \u2265\u202f25\u00a0km/h','8\u201325\u00b0C','rf \u2265\u202f65\u00a0%','mind. 3\u20135 trocken'].map(function(p) {
-                return '<span style="background:#eef0f4;border-radius:8px;padding:8px 12px;font-size:14px;font-weight:500;color:#3a3a3c;">' + p + '</span>';
-              }).join('') +
-            '</div>' +
-            '<div style="font-size:16px;color:#3a3a3c;line-height:1.65;margin-bottom:24px;">Heute zu kritisch f\u00fcr einen sicheren Einsatz. Morgen wird das Fenster technisch deutlich besser. Am Mittwoch zeigt die Wochenlage eine stabile Verbesserung mit sinkender Abdriftgefahr, geringerer Niederschlagswahrscheinlichkeit und besseren Bedingungen f\u00fcr Antrocknung und Wirkstoffaufnahme.</div>' +
-
-            /* Heute */
-            '<div style="border:1px solid rgba(0,0,0,0.09);border-radius:16px;overflow:hidden;margin-bottom:16px;">' +
-              '<div style="background:#eef0f4;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;">' +
-                '<div style="display:flex;align-items:center;gap:8px;">' +
-                  '<span style="font-size:14px;font-weight:700;color:#1d1d1f;">Heute \u00b7 08.04.</span>' +
-                  '<span style="background:#ff3b30;color:#fff;border-radius:4px;padding:4px 8px;font-size:12px;font-weight:700;letter-spacing:0.3px;">UNGEEIGNET</span>' +
-                '</div>' +
-                '<span style="font-size:13px;color:#8e8e93;">64 Kriterien erf\u00fcllt</span>' +
-              '</div>' +
-              '<div style="padding:14px 16px;">' +
-                '<div style="font-size:14px;color:#ff3b30;font-weight:600;margin-bottom:16px;">Zu windig, feucht und mit Blattn\u00e4sse. Hohe Abdrift- und Wirkungsunsicherheit.</div>' +
-                '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">' +
-                  [['Temperatur','6\u201310\u00a0\u00b0C','1\u00b0C unterm Ziel','#ff3b30'],['Wind','22\u00a0km/h','+19\u00a0km/h zu hoch','#ff3b30'],['B\u00f6en','36\u00a0km/h','+19\u00a0km/h \u00fcber Limit','#ff3b30'],['Luftfeuchte','92\u00a0%','17\u00a0% zu feucht','#ff3b30'],['Trockenstd.','0\u00a0h','Antrockn. mind. 2\u00a0h','#ff3b30'],['Niederschlag','2,8\u00a0mm','2,8\u00a0mm ung\u00fcnstig','#ff3b30']].map(function(c) {
-                    return '<div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;margin-bottom:4px;">' + c[0] + '</div>' +
-                      '<div style="font-size:18px;font-weight:700;color:#1d1d1f;">' + c[1] + '</div>' +
-                      '<div style="height:3px;background:' + c[3] + ';border-radius:2px;margin:4px 0;"></div>' +
-                      '<div style="font-size:13px;color:#8e8e93;">' + c[2] + '</div></div>';
-                  }).join('') +
-                '</div>' +
-              '</div>' +
+            '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px;">' +
+              '<div style="font-size:24px;font-weight:800;color:#1d1d1f;">Einsatzprognose</div>' +
+              '<div style="font-size:12px;color:#8e8e93;">PLZ\u00a030519 Hannover\u00a0\u00b7\u00a014.\u201318.\u00a0April 2025</div>' +
             '</div>' +
 
-            /* Morgen */
-            '<div style="border:1px solid rgba(0,0,0,0.09);border-radius:16px;overflow:hidden;margin-bottom:16px;">' +
-              '<div style="background:#eef0f4;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;">' +
-                '<div style="display:flex;align-items:center;gap:8px;">' +
-                  '<span style="font-size:14px;font-weight:700;color:#1d1d1f;">Morgen \u00b7 09.04.</span>' +
-                  '<span style="background:#34c759;color:#fff;border-radius:4px;padding:4px 8px;font-size:12px;font-weight:700;letter-spacing:0.3px;">BESSER</span>' +
-                '</div>' +
-                '<span style="font-size:13px;color:#8e8e93;">6/8 Kriterien aktiv</span>' +
+            /* Ausbringungskriterien */
+            '<div style="border:1px solid rgba(37,99,235,0.18);border-radius:14px;padding:20px;margin-bottom:24px;background:rgba(37,99,235,0.03);">' +
+              '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:#2563eb;margin-bottom:14px;">Ausbringungskriterien ' + d.products[0].n + ' \u2014 Grenzwerte laut Produktleitfaden</div>' +
+              '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px;">' +
+                [
+                  ['Temperatur', '8\u00a0\u2013\u00a025\u00a0\u00b0C', 'Aktiver Pflanzenstoffwechsel n\u00f6tig\u00a0\u00b7 Kein Wachstumsstress'],
+                  ['Wind', '\u2264\u00a015\u00a0km/h', 'Abdriftrisiko\u00a0\u00b7 Gew\u00e4sserabstand\u00a0\u00b7 Nachbarkulturen'],
+                  ['B\u00f6en', '\u2264\u00a025\u00a0km/h', 'Spitzen bestimmen effektiven Abdrifteintrag'],
+                  ['Rel. Luftfeuchte', '\u2264\u00a085\u00a0%', 'H\u00f6her: Blattn\u00e4sse, verd\u00fannte Spritzbrühe\u00a0\u00b7 Niedriger: Antrocknung'],
+                ].map(function(c) {
+                  return '<div style="background:#fff;border-radius:10px;padding:14px;">' +
+                    '<div style="font-size:13px;font-weight:700;color:#1d1d1f;margin-bottom:4px;">' + c[0] + '</div>' +
+                    '<div style="font-size:15px;font-weight:700;color:#2563eb;margin-bottom:6px;">' + c[1] + '</div>' +
+                    '<div style="font-size:12px;color:#6e6e73;line-height:1.5;">' + c[2] + '</div>' +
+                  '</div>';
+                }).join('') +
               '</div>' +
-              '<div style="padding:14px 16px;">' +
-                '<div style="font-size:14px;color:#34c759;font-weight:600;margin-bottom:16px;">Deutlich ruhigeres Fenster. Ab sp\u00e4tem Vormittag technisch deutlich geeigneter.</div>' +
-                '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">' +
-                  [['Temperatur','11\u201317\u00a0\u00b0C','im Einzel-Bereich','#34c759'],['Wind','9\u00a0km/h','technisch m\u00f6glich','#34c759'],['B\u00f6en','18\u00a0km/h','technisch m\u00f6glich','#f39c12'],['Luftfeuchte','68\u00a0%','g\u00fcnstig f\u00fcr Aufnahme','#34c759'],['Trockenstd.','0\u00a0h','Antrockn. mind. 2\u00a0h','#f39c12'],['Niederschlag','0\u00a0mm','trockenes Fenster','#34c759']].map(function(c) {
-                    return '<div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;margin-bottom:4px;">' + c[0] + '</div>' +
-                      '<div style="font-size:18px;font-weight:700;color:#1d1d1f;">' + c[1] + '</div>' +
-                      '<div style="height:3px;background:' + c[3] + ';border-radius:2px;margin:4px 0;"></div>' +
-                      '<div style="font-size:13px;color:#8e8e93;">' + c[2] + '</div></div>';
-                  }).join('') +
-                '</div>' +
+              '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">' +
+                [
+                  ['Trocken vor Applikation', 'mind.\u00a03\u00a0Stunden', 'Trockene Blattfl\u00e4che f\u00fcr optimale Wirkstoffhaftung'],
+                  ['Regenfrei nach Applikation', 'mind.\u00a02\u00a0Stunden', 'Blattaufnahme des ALS-Hemmers ben\u00f6tigt 2\u00a0h Einwirkzeit'],
+                  ['Frost', 'Kein Frost\u00a0\u00b1\u00a024\u00a0h', 'K\u00e4ltestress blockiert Stomata\u00a0\u00b7 Wirkstofftransport gestoppt'],
+                ].map(function(c) {
+                  return '<div style="background:#fff;border-radius:10px;padding:14px;">' +
+                    '<div style="font-size:13px;font-weight:700;color:#1d1d1f;margin-bottom:4px;">' + c[0] + '</div>' +
+                    '<div style="font-size:15px;font-weight:700;color:#2563eb;margin-bottom:6px;">' + c[1] + '</div>' +
+                    '<div style="font-size:12px;color:#6e6e73;line-height:1.5;">' + c[2] + '</div>' +
+                  '</div>';
+                }).join('') +
               '</div>' +
             '</div>' +
+
+            buildWxTabsHtml(WX_ACTIVE) +
+            '<div style="background:#f8f9fb;border-radius:12px;padding:16px 18px;margin-bottom:16px;">' +
+              '<div id="wx-summary-text" style="font-size:15px;color:#1d1d1f;line-height:1.65;">' + WX_DAYS[WX_ACTIVE].sum + '</div>' +
+            '</div>' +
+            '<div id="wx-detail-slot">' + buildWxDetailHtml(WX_DAYS[WX_ACTIVE]) + '</div>' +
           '</div>'; /* end Einsatzprognose */
 
         /* ── Chart-Balken per IntersectionObserver animieren ── */
@@ -894,6 +1042,20 @@ function Beratung() {
           }, { root: sheet, threshold: 0.3 });
           bars.forEach(function(bar) { observer.observe(bar); });
         })();
+
+        window.switchWeatherDay = function(idx) {
+          WX_ACTIVE = idx;
+          document.querySelectorAll('.wx-tab').forEach(function(tab, i) {
+            var w = WX_DAYS[i];
+            var bg = w.st==='optimal' ? 'rgba(58,122,47,0.08)' : w.st==='bedingt' ? 'rgba(232,160,32,0.10)' : 'rgba(204,34,0,0.08)';
+            tab.style.background = i===idx ? '#fff' : bg;
+            tab.style.border     = '2px solid ' + (i===idx ? 'rgba(0,0,0,0.2)' : 'transparent');
+          });
+          var sumEl = document.getElementById('wx-summary-text');
+          if (sumEl) sumEl.textContent = WX_DAYS[idx].sum;
+          var detailEl = document.getElementById('wx-detail-slot');
+          if (detailEl) detailEl.innerHTML = buildWxDetailHtml(WX_DAYS[idx]);
+        };
 
         /* ── Sticky liquid-glass header befüllen ── */
         var stickyInfo = document.getElementById('ganttStickyInfo');
@@ -1001,6 +1163,7 @@ function Beratung() {
     return () => {
       delete window.ganttOpen;
       delete window.ganttClose;
+      delete window.switchWeatherDay;
       delete window.applyDropdownFilter;
       delete window.ganttFilter;
       delete window.toggleBbchImg;

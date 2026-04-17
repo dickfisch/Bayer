@@ -914,8 +914,8 @@ function Home() {
                     <h1>{slide.title}</h1>
                     <p>{slide.desc}</p>
                     <div className="hero-buttons">
-                      <Button href="/beratung-start" variant="primary">MEINE Produkt BERATUNG</Button>
-                      <Button href="/beratung" variant="secondary">MEHR ERFAHREN</Button>
+                      <Button href="/beratung-start" variant="inverted">MEINE Produkt BERATUNG</Button>
+                      <Button href="/beratung" variant="white">MEHR ERFAHREN</Button>
                     </div>
                   </div>
                 ))}
@@ -941,8 +941,8 @@ function Home() {
                   <h1>{HERO_SLIDES[heroIdx].title}</h1>
                   <p>{HERO_SLIDES[heroIdx].desc}</p>
                   <div className="hero-buttons">
-                    <Button href="/beratung-start" variant="primary">MEINE Produkt BERATUNG</Button>
-                    <Button href="/beratung" variant="secondary">MEHR ERFAHREN</Button>
+                    <Button href="/beratung-start" variant="inverted">MEINE Produkt BERATUNG</Button>
+                    <Button href="/beratung" variant="white">MEHR ERFAHREN</Button>
                   </div>
                 </motion.div>
               </AnimatePresence>
