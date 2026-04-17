@@ -687,8 +687,8 @@ function Beratung() {
               {l:'TROCKEN VOR',  v:'5\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'Minimum erf\u00fcllt \u2713', pct:85,  pc:'#3a7a2f'},
               {l:'REGEN NACH',   v:'0\u00a0mm',       lim:'0\u00a0mm empfohlen',                pill:'trockenes Fenster',           pct:5,   pc:'#3a7a2f'},
             ],
-            prof:[2,1,0,0,0,0,0,0,0,0,0,1,0],
-            winT:'08:00\u00a0\u2013\u00a018:00\u00a0Uhr', winN:'Idealtag\u00a0\u00b7 Blattn\u00e4sse fr\u00fch morgens pr\u00fcfen'
+            prof:[2,2,2,2,2,2,2,1,0,0,0,0,0,0,0,0,0,1,0,2,2,2,2,2],
+            winT:'08:00\u00a0\u2013\u00a018:00', winN:'Idealtag\u00a0\u00b7 Blattn\u00e4sse fr\u00fch morgens pr\u00fcfen'
           },
           { abbr:'DI', date:'15.04.', score:58, st:'bedingt',
             sum:'Brauchbares Fenster am Nachmittag. Wind am Vormittag noch zu hoch, sinkt ab 12\u00a0Uhr auf Limitniveau. Temperatur und Luftfeuchte g\u00fcnstig. Trockenfenster ab Mittag nutzbar.',
@@ -701,8 +701,8 @@ function Beratung() {
               {l:'TROCKEN VOR',  v:'3\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'Minimum erf\u00fcllt \u2713',        pct:60,  pc:'#3a7a2f'},
               {l:'REGEN NACH',   v:'0\u00a0mm',       lim:'0\u00a0mm empfohlen',                pill:'trockenes Fenster',                  pct:5,   pc:'#3a7a2f'},
             ],
-            prof:[2,2,2,2,1,1,1,1,0,0,0,0,1],
-            winT:'12:00\u00a0\u2013\u00a017:00\u00a0Uhr', winN:'Wind f\u00e4llt ab 12h\u00a0\u00b7 Nachmittagsfenster nutzen'
+            prof:[2,2,2,2,2,2,2,2,2,2,1,1,1,1,0,0,0,0,1,2,2,2,2,2],
+            winT:'12:00\u00a0\u2013\u00a017:00', winN:'Wind f\u00e4llt ab 12h\u00a0\u00b7 Nachmittagsfenster nutzen'
           },
           { abbr:'MI', date:'16.04.', score:14, st:'nogo',
             sum:'Nicht ausfahren. Temperatur unter Minimum, Wind weit \u00fcber Limit, Dauerregen ganztags. K\u00e4ltestress blockiert Stomata \u2013 Wirkstoffaufnahme auch bei trockenem Blatt stark reduziert. Pflanzenstoffwechsel eingestellt.',
@@ -715,7 +715,7 @@ function Beratung() {
               {l:'TROCKEN VOR',  v:'0\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'3\u00a0h fehlen',                    pct:10,  pc:'#cc2200'},
               {l:'REGEN NACH',   v:'22\u00a0mm',      lim:'0\u00a0mm empfohlen',                pill:'Auswaschung sicher',                 pct:100, pc:'#cc2200'},
             ],
-            prof:[2,2,2,2,2,2,2,2,2,2,2,2,2],
+            prof:[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
             winT:'Nicht m\u00f6glich', winN:'Triple-No-Go: Temperatur + Wind + Dauerregen'
           },
           { abbr:'DO', date:'17.04.', score:52, st:'bedingt',
@@ -729,8 +729,8 @@ function Beratung() {
               {l:'TROCKEN VOR',  v:'4\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'Minimum erf\u00fcllt \u2713',        pct:70,  pc:'#3a7a2f'},
               {l:'REGEN NACH',   v:'0\u00a0mm',       lim:'0\u00a0mm empfohlen',                pill:'trockenes Fenster',                  pct:5,   pc:'#3a7a2f'},
             ],
-            prof:[2,2,2,2,2,2,2,2,1,1,0,0,1],
-            winT:'14:00\u00a0\u2013\u00a018:00\u00a0Uhr', winN:'Wind f\u00e4llt ab 14h\u00a0\u00b7 Trockenheit nachmittags sicher'
+            prof:[2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,0,0,1,2,2,2,2,2],
+            winT:'14:00\u00a0\u2013\u00a018:00', winN:'Wind f\u00e4llt ab 14h\u00a0\u00b7 Trockenheit nachmittags sicher'
           },
           { abbr:'FR', date:'18.04.', score:90, st:'optimal',
             sum:'Ausgezeichnetes Fenster. Alle 6 Kriterien erf\u00fcllt. Optimale Bedingungen den ganzen Tag \u2013 windstill, trocken, Temperatur perfekt f\u00fcr Wirkstoffaufnahme und Antrocknung.',
@@ -743,26 +743,25 @@ function Beratung() {
               {l:'TROCKEN VOR',  v:'6\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'Minimum erf\u00fcllt \u2713', pct:90,  pc:'#3a7a2f'},
               {l:'REGEN NACH',   v:'0\u00a0mm',       lim:'0\u00a0mm empfohlen',                pill:'trockenes Fenster',           pct:5,   pc:'#3a7a2f'},
             ],
-            prof:[2,2,0,0,0,0,0,0,0,0,0,1,0],
-            winT:'08:00\u00a0\u2013\u00a018:00\u00a0Uhr', winN:'Bestes Fenster der Woche\u00a0\u00b7 Fr\u00fch starten empfohlen'
+            prof:[2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,1,0,2,2,2,2,2],
+            winT:'08:00\u00a0\u2013\u00a018:00', winN:'Bestes Fenster der Woche\u00a0\u00b7 Fr\u00fch starten empfohlen'
           },
         ];
         var WX_ACTIVE = 3;
         var buildWxTabsHtml = function(ai) {
-          var out = '<div style="display:flex;gap:8px;margin-bottom:16px;">';
+          var out = '<div style="display:flex;gap:8px;margin-bottom:0;">';
           for (var i = 0; i < WX_DAYS.length; i++) {
             var w = WX_DAYS[i];
             var sc  = w.st==='optimal' ? '#3a7a2f' : w.st==='bedingt' ? '#b85c00' : '#cc2200';
             var bg  = w.st==='optimal' ? 'rgba(58,122,47,0.08)' : w.st==='bedingt' ? 'rgba(232,160,32,0.10)' : 'rgba(204,34,0,0.08)';
             var isSel = i === ai;
             out += '<div class="wx-tab" onclick="window.switchWeatherDay(' + i + ')" ' +
-              'style="flex:1;padding:14px 8px;border-radius:12px;cursor:pointer;text-align:center;' +
-              'background:' + (isSel ? '#fff' : bg) + ';' +
-              'border:2px solid ' + (isSel ? 'rgba(0,0,0,0.2)' : 'transparent') + ';' +
+              'style="flex:1;padding:14px 8px;border-radius:' + (isSel ? '12px 12px 0 0' : '12px') + ';cursor:pointer;text-align:center;' +
+              'background:' + bg + ';' +
+              'border:none;' +
               'user-select:none;-webkit-tap-highlight-color:transparent;">' +
-              '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">' + w.abbr + '</div>' +
-              '<div style="font-size:13px;color:#3a3a3c;margin-top:2px;">' + w.date + '</div>' +
-              '<div style="font-size:34px;font-weight:800;color:' + sc + ';line-height:1.1;margin:6px 0;">' + w.score + '</div>' +
+              '<div style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#1d1d1f;">' + w.abbr + ', ' + w.date + '</div>' +
+              '<div style="font-size:18px;font-weight:700;color:' + sc + ';line-height:1.3;margin:8px 0 4px;">' + w.winT + '</div>' +
               '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:' + sc + ';">' +
                 (w.st==='optimal' ? 'OPTIMAL' : w.st==='bedingt' ? 'BEDINGT' : 'NO-GO') +
               '</div>' +
@@ -779,8 +778,8 @@ function Beratung() {
               var pillBg = m.pc==='#3a7a2f' ? 'rgba(58,122,47,0.12)' : m.pc==='#e8a020' ? 'rgba(232,160,32,0.14)' : 'rgba(204,34,0,0.10)';
               return '<div style="background:#fff;border-radius:12px;padding:14px;">' +
                 '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;margin-bottom:4px;">' + m.l + '</div>' +
-                '<div style="font-size:24px;font-weight:800;color:#1d1d1f;line-height:1;">' + m.v + '</div>' +
-                '<div style="font-size:11px;color:#8e8e93;margin:4px 0 8px;">' + m.lim + '</div>' +
+                '<div style="font-size:18px;font-weight:700;color:#1d1d1f;line-height:1;">' + m.v + '</div>' +
+                '<div style="font-size:14px;color:#8e8e93;margin:4px 0 8px;">' + m.lim + '</div>' +
                 '<div style="display:inline-block;background:' + pillBg + ';color:' + m.pc + ';border-radius:999px;padding:3px 10px;font-size:11px;font-weight:600;margin-bottom:8px;">' + m.pill + '</div>' +
                 '<div style="height:4px;background:rgba(0,0,0,0.08);border-radius:2px;">' +
                   '<div style="height:4px;width:' + Math.min(m.pct, 100) + '%;background:' + m.pc + ';border-radius:2px;"></div>' +
@@ -788,7 +787,7 @@ function Beratung() {
               '</div>';
             }).join('') +
           '</div>';
-          var profHours = ['6h','','','9h','','','12h','','','15h','','','18h'];
+          var profHours = ['0h','','','','','','6h','','','','','','12h','','','','','','18h','','','','',''];
           var profBars =
             '<div style="display:flex;gap:3px;height:32px;">' +
               w.prof.map(function(s) {
@@ -797,21 +796,10 @@ function Beratung() {
             '</div>' +
             '<div style="display:flex;margin-top:4px;">' +
               profHours.map(function(lbl) {
-                return '<div style="flex:1;text-align:center;font-size:10px;color:#aaa;">' + lbl + '</div>';
+                return '<div style="flex:1;text-align:center;font-size:14px;color:#1d1d1f;">' + lbl + '</div>';
               }).join('') +
             '</div>';
-          return '<div style="background:#eef0f4;border-radius:16px;padding:18px;">' +
-            '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">' +
-              '<div>' +
-                '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">' + w.abbr + '</div>' +
-                '<div style="font-size:24px;font-weight:800;color:#1d1d1f;">' + w.date + '</div>' +
-              '</div>' +
-              '<div style="text-align:right;">' +
-                '<div style="display:inline-block;background:' + badgeBg + ';color:' + sc + ';border-radius:999px;padding:5px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:6px;">' + w.badge + '</div>' +
-                '<div style="font-size:13px;color:#3a3a3c;">' + w.crit + '</div>' +
-                '<div style="font-size:12px;color:#6e6e73;margin-top:2px;">' + w.critNote + '</div>' +
-              '</div>' +
-            '</div>' +
+          return '<div style="background:' + badgeBg + ';border-radius:16px;padding:18px;">' +
             '<div style="margin-bottom:12px;">' +
               '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">' +
                 '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;">24-Stunden-Profil</div>' +
@@ -989,8 +977,8 @@ function Beratung() {
             '</div>' +
 
             /* Ausbringungskriterien */
-            '<div style="border:1px solid rgba(37,99,235,0.18);border-radius:14px;padding:20px;margin-bottom:24px;background:rgba(37,99,235,0.03);">' +
-              '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:#2563eb;margin-bottom:14px;">Ausbringungskriterien ' + d.products[0].n + ' \u2014 Grenzwerte laut Produktleitfaden</div>' +
+            '<div style="border-radius:14px;padding:20px;margin-bottom:24px;background:rgba(37,99,235,0.03);">' +
+              '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:#8e8e93;margin-bottom:14px;">Ausbringungskriterien \u2014 Grenzwerte laut Produktleitfaden</div>' +
               '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px;">' +
                 [
                   ['Temperatur', '8\u00a0\u2013\u00a025\u00a0\u00b0C', 'Aktiver Pflanzenstoffwechsel n\u00f6tig\u00a0\u00b7 Kein Wachstumsstress'],
@@ -1000,7 +988,7 @@ function Beratung() {
                 ].map(function(c) {
                   return '<div style="background:#fff;border-radius:10px;padding:14px;">' +
                     '<div style="font-size:13px;font-weight:700;color:#1d1d1f;margin-bottom:4px;">' + c[0] + '</div>' +
-                    '<div style="font-size:15px;font-weight:700;color:#2563eb;margin-bottom:6px;">' + c[1] + '</div>' +
+                    '<div style="font-size:18px;font-weight:700;color:#2563eb;margin-bottom:6px;">' + c[1] + '</div>' +
                     '<div style="font-size:12px;color:#6e6e73;line-height:1.5;">' + c[2] + '</div>' +
                   '</div>';
                 }).join('') +
@@ -1013,7 +1001,7 @@ function Beratung() {
                 ].map(function(c) {
                   return '<div style="background:#fff;border-radius:10px;padding:14px;">' +
                     '<div style="font-size:13px;font-weight:700;color:#1d1d1f;margin-bottom:4px;">' + c[0] + '</div>' +
-                    '<div style="font-size:15px;font-weight:700;color:#2563eb;margin-bottom:6px;">' + c[1] + '</div>' +
+                    '<div style="font-size:18px;font-weight:700;color:#2563eb;margin-bottom:6px;">' + c[1] + '</div>' +
                     '<div style="font-size:12px;color:#6e6e73;line-height:1.5;">' + c[2] + '</div>' +
                   '</div>';
                 }).join('') +
@@ -1021,7 +1009,8 @@ function Beratung() {
             '</div>' +
 
             buildWxTabsHtml(WX_ACTIVE) +
-            '<div style="background:#f8f9fb;border-radius:12px;padding:16px 18px;margin-bottom:16px;">' +
+            '<div id="wx-prognose-card" style="background:' + (WX_DAYS[WX_ACTIVE].st==='optimal' ? 'rgba(58,122,47,0.08)' : WX_DAYS[WX_ACTIVE].st==='bedingt' ? 'rgba(232,160,32,0.10)' : 'rgba(204,34,0,0.08)') + ';border-radius:0 0 12px 12px;padding:16px 18px;margin-bottom:16px;">' +
+              '<div id="wx-prognose-label" style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:#8e8e93;margin-bottom:8px;">Prognosetext</div>' +
               '<div id="wx-summary-text" style="font-size:15px;color:#1d1d1f;line-height:1.65;">' + WX_DAYS[WX_ACTIVE].sum + '</div>' +
             '</div>' +
             '<div id="wx-detail-slot">' + buildWxDetailHtml(WX_DAYS[WX_ACTIVE]) + '</div>' +
@@ -1048,9 +1037,12 @@ function Beratung() {
           document.querySelectorAll('.wx-tab').forEach(function(tab, i) {
             var w = WX_DAYS[i];
             var bg = w.st==='optimal' ? 'rgba(58,122,47,0.08)' : w.st==='bedingt' ? 'rgba(232,160,32,0.10)' : 'rgba(204,34,0,0.08)';
-            tab.style.background = i===idx ? '#fff' : bg;
-            tab.style.border     = '2px solid ' + (i===idx ? 'rgba(0,0,0,0.2)' : 'transparent');
+            tab.style.background   = bg;
+            tab.style.border       = 'none';
+            tab.style.borderRadius = i===idx ? '12px 12px 0 0' : '12px';
           });
+          var cardEl = document.getElementById('wx-prognose-card');
+          if (cardEl) cardEl.style.background = WX_DAYS[idx].st==='optimal' ? 'rgba(58,122,47,0.08)' : WX_DAYS[idx].st==='bedingt' ? 'rgba(232,160,32,0.10)' : 'rgba(204,34,0,0.08)';
           var sumEl = document.getElementById('wx-summary-text');
           if (sumEl) sumEl.textContent = WX_DAYS[idx].sum;
           var detailEl = document.getElementById('wx-detail-slot');

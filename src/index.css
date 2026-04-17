@@ -2287,8 +2287,8 @@ body, button, input, select, textarea {
     right: 10vw !important;
     max-width: 80vw !important;
     padding: 0 32px 48px !important;
-    height: 92vh !important;
-    max-height: 92vh !important;
+    height: 95vh !important;
+    max-height: 95vh !important;
     overflow-y: auto !important;
     border-radius: 24px 24px 0 0 !important;
     background: #eef0f4 !important;
@@ -2879,6 +2879,39 @@ body, button, input, select, textarea {
     display: flex;
     flex-direction: row;
     gap: 10px;
+  }
+
+  .hero-buttons .sheet-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    white-space: normal;
+    padding: 12px 14px;
+    font-size: 13px;
+    align-items: center;
+  }
+
+  .hero-buttons .sheet-btn .sheet-btn-left {
+    align-items: center;
+  }
+
+  .hero-buttons .sheet-btn--white {
+    white-space: nowrap;
+  }
+
+  .hero-buttons .sheet-btn:hover,
+  .hero-buttons .sheet-btn:active {
+    padding-right: 19px;
+    flex-basis: 0;
+  }
+
+  .hero-buttons .sheet-btn:hover .sheet-btn-text,
+  .hero-buttons .sheet-btn:active .sheet-btn-text {
+    transform: translateX(-5px);
+  }
+
+  .hero-buttons .sheet-btn:hover .sheet-btn-arrow,
+  .hero-buttons .sheet-btn:active .sheet-btn-arrow {
+    transform: translateX(5px);
   }
 
   .hero-btn-primary,
@@ -5358,8 +5391,11 @@ body, button, input, select, textarea {
     width: 300px;
 }
 
-.bs-form .home-cta-circle-btn {
+.bs-form .home-cta-circle-btn,
+.home-cta-row .home-cta-circle-btn {
     align-self: flex-end;
+    width: 90px;
+    border-radius: 31px;
 }
 
 .bs-login-hint {
