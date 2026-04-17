@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import TransitionLink from './TransitionLink'
 
 
 const TICKER_ITEMS = [
@@ -178,7 +179,7 @@ function MainNav() {
           onMouseLeave={handlePillLeave}
         >
           {/* Logo */}
-          <Link className="nav-logo" to="/" style={{ textDecoration: 'none' }}>
+          <TransitionLink className="nav-logo" to="/" style={{ textDecoration: 'none' }}>
             <img
               src="/Corp-Logo_BG_Bayer-Cross_Basic_on-screen_RGB.svg"
               alt="Bayer"
@@ -188,11 +189,11 @@ function MainNav() {
               <div className="nav-logo-bottom">Bayer Agrar</div>
               <div className="nav-logo-top">Deutschland</div>
             </div>
-          </Link>
+          </TransitionLink>
 
           <div className="main-nav-links">
             {/* Meine Beratung */}
-            <Link to={navKultur ? '/beratung' : '/beratung-start'} state={navKultur ? { plz: navPlz, kultur: navKultur } : undefined} className={beratungActive ? 'active' : ''} style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
+            <TransitionLink to={navKultur ? '/beratung' : '/beratung-start'} state={navKultur ? { plz: navPlz, kultur: navKultur } : undefined} className={beratungActive ? 'active' : ''} style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
               <span className="nav-link-text">Meine Beratung</span>
               {navKultur && (
                 <span style={{
@@ -206,7 +207,7 @@ function MainNav() {
                   </span>
                 </span>
               )}
-            </Link>
+            </TransitionLink>
 
             {/* Produkte */}
             <div className="nav-dropdown">
@@ -405,9 +406,9 @@ function MainNav() {
           <div className={panelCls('main')}>
             <ul className="mobile-drawer-list">
               <li>
-                <Link className="mobile-drawer-item mobile-drawer-item--plain" to={navKultur ? '/beratung' : '/beratung-start'} state={navKultur ? { plz: navPlz, kultur: navKultur } : undefined} onClick={closeMobileMenu}>
+                <TransitionLink className="mobile-drawer-item mobile-drawer-item--plain" to={navKultur ? '/beratung' : '/beratung-start'} state={navKultur ? { plz: navPlz, kultur: navKultur } : undefined} onClick={closeMobileMenu}>
                   Meine Beratung
-                </Link>
+                </TransitionLink>
               </li>
               <li>
                 <button className="mobile-drawer-item" onClick={() => setActivePanel('produkt')}>

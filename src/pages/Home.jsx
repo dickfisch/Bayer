@@ -1,5 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { usePageTransition } from '../context/TransitionContext'
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValue, useInView, animate } from 'framer-motion'
 import MainNav from '../components/MainNav'
 import Footer from '../components/Footer'
@@ -286,6 +287,7 @@ function ProdukteSlider() {
 
 function Home() {
   const navigate = useNavigate()
+  const { triggerTransition } = usePageTransition()
   const [plz, setPlz] = useState(() => sessionStorage.getItem('nav_plz') || '')
   const [premeoIdx, setPremeoIdx] = useState(0)
   const [heroCount, setHeroCount] = useState(0)
@@ -455,7 +457,7 @@ function Home() {
   function handleSubmit(e) {
     e.preventDefault()
     if (plz.length !== 5 || !kultur) return
-    navigate('/beratung', { state: { plz, kultur } })
+    triggerTransition('/beratung', e.clientX || 0, e.clientY || 0, { plz, kultur })
   }
 
   const canSubmit = plz.length === 5 && kultur !== ''

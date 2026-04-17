@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import MainNav from '../components/MainNav'
+import { usePageTransition } from '../context/TransitionContext'
 
 const KULTUREN = [
   { value: 'winterweizen', label: 'Winterweizen' },
@@ -16,7 +16,7 @@ const KULTUREN = [
 ]
 
 function BeratungStart() {
-  const navigate = useNavigate()
+  const { triggerTransition } = usePageTransition()
   const [plz, setPlz] = useState('')
   const [kultur, setKultur] = useState('')
 
@@ -26,7 +26,7 @@ function BeratungStart() {
     sessionStorage.setItem('nav_plz', plz)
     sessionStorage.setItem('nav_kultur', kultur)
     window.dispatchEvent(new CustomEvent('nav-context-update', { detail: { plz, kultur } }))
-    navigate('/beratung', { state: { plz, kultur } })
+    triggerTransition('/beratung', e.clientX || 0, e.clientY || 0, { plz, kultur })
   }
 
   const canSubmit = plz.length === 5 && kultur !== ''

@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useLocation, useNavigate } from 'react-router-dom'
 import MainNav from '../components/MainNav'
 import Footer from '../components/Footer'
+import Button from '../components/ui/Button'
 
 /* ══════════════════════════════════════════
    SUB NAV (nur auf Beratung-Seite)
@@ -78,17 +79,9 @@ function BeratungNav() {
 
   useEffect(() => {
     function onScroll() {
-      const y   = window.scrollY
-      const dir = y > lastY.current ? 'down' : 'up'
+      const y = window.scrollY
       lastY.current = y
-
-      if (y < threshold.current) {
-        setMode('inline')
-      } else if (dir === 'down') {
-        setMode('hidden')
-      } else {
-        setMode('floating')
-      }
+      setMode(y < threshold.current ? 'inline' : 'floating')
     }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -186,7 +179,7 @@ function BeratungNav() {
     return (
       <>
         <div style={{ height: wrapHeight }} />
-        <div className={`sub-nav-wrap sub-nav-wrap--scrolled${mode === 'hidden' ? ' sub-nav-wrap--hidden' : ''}`}>
+        <div className="sub-nav-wrap sub-nav-wrap--scrolled">
           {navContent}
         </div>
       </>
@@ -227,7 +220,7 @@ const cards = [
     title: 'Das leistungsstarken Getreidefungizid Delaro® Forte informieren.',
     tags: [
       { label: 'Fungizid', cls: 'fb-tag--fungizid' },
-      { label: 'Wachstumssieger', cls: 'fb-tag--wachstum' },
+      { label: 'Wachstumsregler', cls: 'fb-tag--wachstum' },
       { label: 'Herbizid', cls: 'fb-tag--herbizid' },
     ],
     desc: 'Mit der innovativen Kombination aus drei Wirkstoffen und unterschiedlichen Wirkungsweisen sorgt das neue Fungizid Delaro® Forte für gesunde Pflanzen und bekämpft effektiv Blatt- und Abreifekrankheiten ...',
@@ -252,7 +245,7 @@ const cards = [
     title: 'Resistenzentwicklung bei Ackerfuchsschwanz: Mittelwechsel einplanen.',
     tags: [
       { label: 'Herbizid', cls: 'fb-tag--herbizid' },
-      { label: 'Wachstumssieger', cls: 'fb-tag--wachstum' },
+      { label: 'Wachstumsregler', cls: 'fb-tag--wachstum' },
     ],
     desc: 'Neue Situation bei Ackerfuchsschwanz: Resistenzentwicklung schreitet fort. Bitte Mittelwechsel einplanen und frühzeitig behandeln.',
   },
@@ -476,7 +469,11 @@ function Beratung() {
               note: 'F\u00fcr Winterweizen, Winterroggen und Wintertriticale auf Windhalm-Standorten.',
               formulierung: 'Emulsionskonzentrat / \u00d6lige Dispersion',
               wirkstoffe: ['81\u00a0% Rapsp\u00f6lmethylester','50\u00a0g/l Iodosulfuron-methyl-natrium','7,5\u00a0g/l Mesosulfuron-methyl','250\u00a0g/l Mefenpyr-diethyl (Safener)'],
-              chart: { title: 'Wirkung gegen Einj\u00e4hrige Rispe', b1: { val: 70.5, label: 'VGM 0,13\u00a0kg/ha\nNetzmittel VGM\u00a01\u00a05,6\u00a0l/ha' }, b2: { val: 94.8, label: 'Husar\u00a0Plus\u00a00,2\u00a0l/ha\nMero\u00a01,0\u00a0l/ha' }, source: 'Husar Plus, n=16 Versuche (2012\u20132023)' } }
+              chart: { title: 'Wirkung gegen Einj\u00e4hrige Rispe', b1: { val: 70.5, label: 'VGM 0,13\u00a0kg/ha\nNetzmittel VGM\u00a01\u00a05,6\u00a0l/ha' }, b2: { val: 94.8, label: 'Husar\u00a0Plus\u00a00,2\u00a0l/ha\nMero\u00a01,0\u00a0l/ha' }, source: 'Husar Plus, n=16 Versuche (2012\u20132023)' },
+              artikel: [
+                { name: 'in Husar Plus + Mero', size: '1\u00a0l Flasche' },
+                { name: 'in Husar Plus + Mero', size: '3\u00a0l Kanister' }
+              ] }
       };
 
       var ROWS = ['f1','f2','f3','h1','h2','h3','h4','h5','h6'];
@@ -566,13 +563,13 @@ function Beratung() {
 
         /* Tags */
         var tagsHtml = d.targets.map(function(t) {
-            return '<span style="border:1px solid rgba(0,0,0,0.15);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:500;display:inline-flex;align-items:center;">' + t + '</span>';
+            return '<span style="border:1px solid rgba(0,0,0,0.15);border-radius:999px;padding:8px 16px;font-size:15px;font-weight:500;display:inline-flex;align-items:center;">' + t + '</span>';
         }).join('');
 
         /* Products table rows */
         var prodRows = d.products.map(function(pr) {
-            return '<tr><td style="padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.07);font-size:14px;color:#1d1d1f;">' + pr.n +
-                   '</td><td style="padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.07);font-size:14px;font-weight:700;text-align:right;color:#1d1d1f;">' + pr.d + '</td></tr>';
+            return '<tr><td style="padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.07);font-size:16px;color:#1d1d1f;">' + pr.n +
+                   '</td><td style="padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.07);font-size:16px;font-weight:700;text-align:right;color:#1d1d1f;">' + pr.d + '</td></tr>';
         }).join('');
 
         /* Product SVG illustration */
@@ -589,69 +586,92 @@ function Beratung() {
           var cH = 130;
           var b1h = Math.round(d.chart.b1.val / 100 * cH);
           var b2h = Math.round(d.chart.b2.val / 100 * cH);
-          var cHFull = 200;
+          var cHFull = 300;
           var b1hFull = Math.round(d.chart.b1.val / 100 * cHFull);
           var b2hFull = Math.round(d.chart.b2.val / 100 * cHFull);
           chartHtml =
             /* beige Outer-Box */
-            '<div style="background:#f0ede7;border-radius:14px;padding:16px 20px;margin-top:20px;">' +
-              '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:12px;">Versuchsergebnis</div>' +
+            '<div style="background:#eef0f4;border-radius:16px;padding:24px;margin-top:24px;">' +
+              '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:16px;">Versuchsergebnis</div>' +
               /* weisses Inner-Card */
-              '<div style="background:#fff;border-radius:10px;padding:20px 20px 16px;">' +
-                '<div style="font-size:18px;font-weight:700;color:#c8a050;margin-bottom:20px;">' + d.chart.title + '</div>' +
+              '<div style="background:#fff;border-radius:12px;padding:24px 24px 24px;">' +
+                '<div style="font-size:20px;font-weight:700;color:#c8a050;margin-bottom:24px;">' + d.chart.title + '</div>' +
                 /* Chart */
-                '<div style="display:flex;align-items:flex-end;gap:10px;height:' + cHFull + 'px;">' +
+                '<div style="display:flex;gap:8px;">' +
                   /* Y-Achse */
-                  '<div style="display:flex;flex-direction:column;justify-content:space-between;height:100%;padding-right:6px;text-align:right;">' +
-                    '<span style="font-size:10px;color:#bbb;">100</span>' +
-                    '<span style="font-size:10px;color:#bbb;">80</span>' +
-                    '<span style="font-size:10px;color:#bbb;">60</span>' +
-                    '<span style="font-size:10px;color:#bbb;">40</span>' +
-                    '<span style="font-size:10px;color:#bbb;">20</span>' +
-                    '<span style="font-size:10px;color:#bbb;">0</span>' +
+                  '<div style="position:relative;height:' + cHFull + 'px;width:32px;flex-shrink:0;">' +
+                    ['100','80','60','40','20','0'].map(function(v,i) {
+                      return '<span style="position:absolute;right:0;top:' + (i*20) + '%;transform:translateY(-50%);font-size:12px;color:#bbb;white-space:nowrap;">' + v + '</span>';
+                    }).join('') +
                   '</div>' +
-                  /* Balken */
-                  '<div style="flex:1;display:flex;align-items:flex-end;gap:14px;height:100%;border-bottom:1px solid rgba(0,0,0,0.08);">' +
-                    /* Bar 1 */
-                    '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">' +
-                      '<span style="font-size:16px;font-weight:700;color:#fff;background:#aaa;border-radius:8px 8px 0 0;width:100%;text-align:center;padding:8px 0;height:' + b1hFull + 'px;display:flex;align-items:center;justify-content:center;">' + d.chart.b1.val + '</span>' +
-                      '<div style="font-size:10px;color:#6e6e73;text-align:center;margin-top:8px;line-height:1.5;">' + d.chart.b1.label.replace(/\n/g,'<br>') + '</div>' +
-                    '</div>' +
-                    /* Badge Mitte */
-                    '<div style="display:flex;align-items:center;padding-bottom:40px;flex-shrink:0;">' +
-                      '<div style="background:' + accentColor + ';border-radius:20px;padding:8px 14px;text-align:center;white-space:nowrap;">' +
-                        '<span style="font-size:11px;font-weight:700;color:#fff;">&gt;20% mehr Wirkung</span>' +
+                  /* Balken-Bereich */
+                  '<div style="flex:1;display:flex;flex-direction:column;">' +
+                    /* Nur Balken – feste Höhe */
+                    '<div style="height:' + cHFull + 'px;display:flex;align-items:flex-end;gap:16px;border-bottom:1px solid rgba(0,0,0,0.08);">' +
+                      /* Bar 1 */
+                      '<div class="chart-bar" style="flex:1;height:' + b1hFull + 'px;background:#aaa;display:flex;align-items:center;justify-content:center;">' +
+                        '<span style="font-size:18px;font-weight:700;color:#fff;">' + d.chart.b1.val + '</span>' +
+                      '</div>' +
+                      /* Badge Mitte */
+                      '<div style="flex-shrink:0;display:flex;align-items:center;align-self:center;">' +
+                        '<div style="background:' + accentColor + ';border-radius:20px;padding:8px 16px;text-align:center;white-space:nowrap;">' +
+                          '<span style="font-size:13px;font-weight:700;color:#fff;">&gt;20% mehr Wirkung</span>' +
+                        '</div>' +
+                      '</div>' +
+                      /* Bar 2 */
+                      '<div class="chart-bar chart-bar--delay" style="flex:1;height:' + b2hFull + 'px;background:#c8a050;display:flex;align-items:center;justify-content:center;">' +
+                        '<span style="font-size:18px;font-weight:700;color:#fff;">' + d.chart.b2.val + '</span>' +
                       '</div>' +
                     '</div>' +
-                    /* Bar 2 */
-                    '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">' +
-                      '<span style="font-size:16px;font-weight:700;color:#fff;background:#c8a050;border-radius:8px 8px 0 0;width:100%;text-align:center;padding:8px 0;height:' + b2hFull + 'px;display:flex;align-items:center;justify-content:center;">' + d.chart.b2.val + '</span>' +
-                      '<div style="font-size:10px;color:#6e6e73;text-align:center;margin-top:8px;line-height:1.5;">' + d.chart.b2.label.replace(/\n/g,'<br>') + '</div>' +
+                    /* Labels – separate Zeile unter den Balken */
+                    '<div style="display:flex;gap:16px;margin-top:10px;">' +
+                      '<div style="flex:1;font-size:12px;color:#6e6e73;text-align:left;line-height:1.5;">' + d.chart.b1.label.replace(/\n/g,'<br>') + '</div>' +
+                      '<div style="flex-shrink:0;visibility:hidden;padding:8px 16px;white-space:nowrap;font-size:13px;">&gt;20% mehr Wirkung</div>' +
+                      '<div style="flex:1;font-size:12px;color:#6e6e73;text-align:left;line-height:1.5;">' + d.chart.b2.label.replace(/\n/g,'<br>') + '</div>' +
                     '</div>' +
                   '</div>' +
                 '</div>' +
                 /* Quelle */
-                '<div style="font-size:10px;color:#8e8e93;margin-top:14px;line-height:1.5;">' + d.chart.source + '<br>Quelle: Deutschlandweite Bayer-eigene Versuche</div>' +
+                '<div style="font-size:12px;color:#8e8e93;margin-top:16px;line-height:1.5;">' + d.chart.source + '<br>Quelle: Deutschlandweite Bayer-eigene Versuche</div>' +
               '</div>' + /* end weisses Inner-Card */
             '</div>'; /* end beige Outer-Box */
         }
 
         /* ── Action buttons ── */
         var buttonsHtml =
-          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px;">' +
-            '<button style="padding:13px 8px;background:#10384f;color:#fff;border:none;border-radius:12px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;">' +
-              '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>' +
-              'Produkt jetzt bestellen' +
-            '</button>' +
-            '<button style="padding:13px 8px;background:#1d1d1f;color:#fff;border:none;border-radius:12px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;">Zur Produktdetailseite \u2197</button>' +
-            '<button style="padding:13px 8px;background:#fff;color:#1d1d1f;border:none;border-radius:12px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;">' +
-              '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>' +
-              'Produkt vergleichen' +
-            '</button>' +
-            '<button style="padding:13px 8px;background:#fff;color:#1d1d1f;border:none;border-radius:12px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;">' +
-              '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>' +
-              'Produkt merken' +
-            '</button>' +
+          '<div style="display:flex;flex-direction:column;gap:8px;margin-top:24px;overflow:visible;">' +
+            '<div class="sheet-btn-row">' +
+              '<button class="sheet-btn sheet-btn--primary">' +
+                '<span class="sheet-btn-left">' +
+                  '<svg class="sheet-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>' +
+                  '<span class="sheet-btn-text">Jetzt bestellen</span>' +
+                '</span>' +
+                '<span class="sheet-btn-right"><span class="sheet-btn-slash">/</span><span class="sheet-btn-arrow">\u203a</span></span>' +
+              '</button>' +
+              '<button class="sheet-btn sheet-btn--primary">' +
+                '<span class="sheet-btn-left">' +
+                  '<svg class="sheet-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' +
+                  '<span class="sheet-btn-text">Zur Detailseite</span>' +
+                '</span>' +
+                '<span class="sheet-btn-right"><span class="sheet-btn-slash">/</span><span class="sheet-btn-arrow">\u203a</span></span>' +
+              '</button>' +
+            '</div>' +
+            '<div class="sheet-btn-row">' +
+              '<button class="sheet-btn sheet-btn--outline">' +
+                '<span class="sheet-btn-left">' +
+                  '<svg class="sheet-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>' +
+                  '<span class="sheet-btn-text">Vergleichen</span>' +
+                '</span>' +
+                '<span class="sheet-btn-right"><span class="sheet-btn-slash">/</span><span class="sheet-btn-arrow">\u203a</span></span>' +
+              '</button>' +
+              '<button class="sheet-btn sheet-btn--outline">' +
+                '<span class="sheet-btn-left">' +
+                  '<svg class="sheet-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>' +
+                  '<span class="sheet-btn-text">Merken</span>' +
+                '</span>' +
+                '<span class="sheet-btn-right"><span class="sheet-btn-slash">/</span><span class="sheet-btn-arrow">\u203a</span></span>' +
+              '</button>' +
+            '</div>' +
           '</div>';
 
         document.getElementById('ganttSheetContent').innerHTML =
@@ -659,44 +679,41 @@ function Beratung() {
           /* ══ OBEN: VOLLE BREITE – Info-Karten ══ */
 
           /* 3-Spalten-Info: Wirkt gegen | BBCH | Einsatzhinweis */
-          '<div style="display:grid;grid-template-columns:1fr 240px 0.7fr;gap:20px;margin-bottom:32px;">' +
-            '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:14px;padding:16px;">' +
-              '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:10px;">Wirkt gegen</div>' +
-              '<div style="display:flex;flex-wrap:wrap;gap:5px;">' + tagsHtml + '</div>' +
+          '<div style="display:grid;grid-template-columns:1fr 240px 0.7fr;gap:24px;margin-bottom:40px;">' +
+            '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:16px;padding:24px;">' +
+              '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Wirkt gegen</div>' +
+              '<div style="display:flex;flex-wrap:wrap;gap:8px;">' + tagsHtml + '</div>' +
             '</div>' +
-            '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:14px;padding:16px;">' +
-              '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Anwendungsfenster BBCH</div>' +
-              '<div style="font-size:54px;font-weight:600;letter-spacing:-2px;color:#1d1d1f;line-height:1;">' + d.from + '\u2013' + d.to + '</div>' +
+            '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:16px;padding:24px;">' +
+              '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Anwendungsfenster BBCH</div>' +
+              '<div style="font-size:56px;font-weight:600;letter-spacing:-2px;color:#1d1d1f;line-height:1;">' + d.from + '\u2013' + d.to + '</div>' +
             '</div>' +
-            '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:14px;padding:16px;">' +
-              '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Einsatzhinweis</div>' +
-              '<div style="font-size:13px;color:#3a3a3c;line-height:1.6;">' + noteText + '</div>' +
+            '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:16px;padding:24px;">' +
+              '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Einsatzhinweis</div>' +
+              '<div style="font-size:15px;color:#3a3a3c;line-height:1.6;">' + noteText + '</div>' +
             '</div>' +
           '</div>' +
 
           /* ══ PRODUKTKARTE – weisse Outer-Card ══ */
-          '<div style="background:#fff;border-radius:16px;padding:24px;border:1px solid rgba(0,0,0,0.07);margin-bottom:20px;">' +
+          '<div style="background:#fff;border-radius:16px;padding:32px;border:1px solid rgba(0,0,0,0.07);margin-bottom:24px;">' +
 
             /* Heading oben links */
-            '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">' +
-              '<div>' +
-                '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:2px;">Produktkarte</div>' +
-                '<div style="font-size:18px;font-weight:700;color:#1d1d1f;">Produkt, Details &amp; Downloads</div>' +
-              '</div>' +
-              '<span style="color:#8e8e93;font-size:18px;">\u2197</span>' +
+            '<div style="margin-bottom:24px;">' +
+              '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:4px;">Produktkarte</div>' +
+              '<div style="font-size:20px;font-weight:700;color:#1d1d1f;">Produkt, Details &amp; Downloads</div>' +
             '</div>' +
 
             /* 2-SPALTEN: Produktbild (links, beige) | Info-Rechts ══ */
-            '<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;">' +
+            '<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">' +
 
               /* LINKS: beige Box */
-              '<div style="position:sticky;top:120px;align-self:start;background:#f0ede7;border-radius:14px;padding:20px;">' +
+              '<div style="position:sticky;top:120px;align-self:start;background:#eef0f4;border-radius:16px;padding:24px;">' +
                 /* PREMEO-Badge – weiße Mini-Card oben rechts */
                 '<div style="display:flex;justify-content:flex-end;margin-bottom:16px;">' +
-                  '<div style="display:inline-flex;align-items:center;gap:10px;background:#fff;border-radius:14px;padding:10px 14px 10px 16px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">' +
+                  '<div style="display:inline-flex;align-items:center;gap:12px;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">' +
                     '<div style="text-align:left;line-height:1.4;">' +
-                      '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:#6e6e73;">Premeo</div>' +
-                      '<div style="font-size:14px;font-weight:600;color:#1d1d1f;">Bonusprogramm</div>' +
+                      '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:#6e6e73;">Premeo</div>' +
+                      '<div style="font-size:16px;font-weight:600;color:#1d1d1f;">Bonusprogramm</div>' +
                     '</div>' +
                     '<img src="/icons_bonus.svg" style="width:52px;height:auto;flex-shrink:0;" />' +
                   '</div>' +
@@ -713,55 +730,55 @@ function Beratung() {
               '<div>' +
 
               /* Aufwandmengen – beige Outer-Box */
-              '<div style="background:#f0ede7;border-radius:14px;padding:16px 20px;margin-bottom:20px;">' +
-                '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:12px;">Aufwandmengen je Kombination</div>' +
+              '<div style="background:#eef0f4;border-radius:16px;padding:16px 20px;margin-bottom:20px;">' +
+                '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:12px;">Aufwandmengen je Kombination</div>' +
                 /* weisses Inner-Card */
-                '<div style="background:#fff;border-radius:10px;overflow:hidden;">' +
+                '<div style="background:#fff;border-radius:12px;overflow:hidden;">' +
                   /* Column headers */
-                  '<div style="display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px 14px;border-bottom:1px solid rgba(0,0,0,0.06);">' +
-                    '<span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;">Produkt</span>' +
-                    '<span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;">Aufwandmenge</span>' +
+                  '<div style="display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px 16px;border-bottom:1px solid rgba(0,0,0,0.06);">' +
+                    '<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;">Produkt</span>' +
+                    '<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;">Aufwandmenge</span>' +
                   '</div>' +
                   d.products.map(function(pr) {
-                    return '<div style="display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:12px 14px;border-bottom:1px solid rgba(0,0,0,0.05);">' +
-                      '<span style="font-size:14px;color:#1d1d1f;">' + pr.n + '</span>' +
-                      '<span style="font-size:13px;font-weight:600;color:#1d1d1f;background:#f0ede7;border-radius:20px;padding:4px 12px;white-space:nowrap;">' + pr.d + '</span>' +
+                    return '<div style="display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:16px;border-bottom:1px solid rgba(0,0,0,0.05);">' +
+                      '<span style="font-size:16px;color:#1d1d1f;">' + pr.n + '</span>' +
+                      '<span style="font-size:15px;font-weight:600;color:#1d1d1f;background:#eef0f4;border-radius:20px;padding:8px 16px;white-space:nowrap;">' + pr.d + '</span>' +
                     '</div>';
                   }).join('') +
                 '</div>' + /* end weisses Inner-Card */
               '</div>' + /* end beige Outer-Box Aufwandmengen */
 
               /* Formulierung & Wirkstoff – Akkordeon */
-              '<div style="background:#f0ede7;border-radius:14px;margin-top:12px;overflow:hidden;">' +
+              '<div style="background:#eef0f4;border-radius:16px;margin-top:12px;overflow:hidden;">' +
                 '<div onclick="window.toggleAccordion(\'fw\')" style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;cursor:pointer;">' +
-                  '<span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">Formulierung &amp; Wirkstoff</span>' +
-                  '<span id="fw-icon" style="font-size:18px;color:#8e8e93;line-height:1;font-weight:300;">' + (d.formulierung ? '\u2212' : '+') + '</span>' +
+                  '<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">Formulierung &amp; Wirkstoff</span>' +
+                  '<span id="fw-icon" style="font-size:20px;color:#8e8e93;line-height:1;font-weight:300;">' + (d.formulierung ? '\u2212' : '+') + '</span>' +
                 '</div>' +
                 '<div id="fw-body" style="display:' + (d.formulierung ? 'block' : 'none') + ';padding:0 12px 12px;">' +
-                  '<div style="background:#fff;border-radius:10px;padding:16px 18px;">' +
+                  '<div style="background:#fff;border-radius:12px;padding:16px 18px;">' +
                     (d.formulierung ? (
-                      '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:6px;">Formulierung</div>' +
-                      '<div style="font-size:15px;font-weight:600;color:#1d1d1f;margin-bottom:16px;">' + d.formulierung + '</div>'
+                      '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:6px;">Formulierung</div>' +
+                      '<div style="font-size:17px;font-weight:600;color:#1d1d1f;margin-bottom:16px;">' + d.formulierung + '</div>'
                     ) : '') +
                     (d.wirkstoffe ? (
-                      '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Wirkstoff</div>' +
+                      '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Wirkstoff</div>' +
                       '<div style="display:flex;flex-direction:column;gap:6px;">' +
                         d.wirkstoffe.map(function(w) {
-                          return '<div style="background:#f0ede7;border-radius:8px;padding:11px 14px;font-size:13px;color:#1d1d1f;">' + w + '</div>';
+                          return '<div style="background:#eef0f4;border-radius:8px;padding:12px 16px;font-size:15px;color:#1d1d1f;">' + w + '</div>';
                         }).join('') +
                       '</div>'
-                    ) : '<div style="font-size:13px;color:#8e8e93;">Keine Daten verf\u00fcgbar</div>') +
+                    ) : '<div style="font-size:15px;color:#8e8e93;">Keine Daten verf\u00fcgbar</div>') +
                   '</div>' +
                 '</div>' +
               '</div>' + /* end Formulierung Akkordeon */
 
               /* Downloads – beige Outer-Box */
-              '<div style="background:#f0ede7;border-radius:14px;padding:16px 20px;margin-top:12px;">' +
-                '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:12px;">Downloads</div>' +
+              '<div style="background:#eef0f4;border-radius:16px;padding:16px 20px;margin-top:12px;">' +
+                '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:12px;">Downloads</div>' +
                 '<div style="display:flex;flex-direction:column;gap:6px;">' +
                   ['Sicherheitsdatenblatt','Gebrauchsanleitung','Leistungsprofil','L\u00fcckenindikationen','Abst\u00e4nde Gew\u00e4sser, Saumstrukturen und Hangneigung'].map(function(dl) {
-                    return '<div style="display:flex;justify-content:space-between;align-items:center;padding:13px 16px;background:#fff;border-radius:10px;cursor:pointer;">' +
-                      '<span style="font-size:14px;color:#1d1d1f;">' + dl + '</span>' +
+                    return '<div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:#fff;border-radius:12px;cursor:pointer;">' +
+                      '<span style="font-size:16px;color:#1d1d1f;">' + dl + '</span>' +
                       '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3v7" stroke="#8e8e93" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
                     '</div>';
                   }).join('') +
@@ -769,14 +786,25 @@ function Beratung() {
               '</div>' + /* end Downloads beige box */
 
               /* Artikel & Logistik – Akkordeon */
-              '<div style="background:#f0ede7;border-radius:14px;margin-top:12px;overflow:hidden;">' +
+              '<div style="background:#eef0f4;border-radius:16px;margin-top:12px;overflow:hidden;">' +
                 '<div onclick="window.toggleAccordion(\'al\')" style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;cursor:pointer;">' +
-                  '<span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">Artikel &amp; Logistik</span>' +
-                  '<span id="al-icon" style="font-size:18px;color:#8e8e93;line-height:1;font-weight:300;">+</span>' +
+                  '<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">Artikel &amp; Logistik</span>' +
+                  '<span id="al-icon" style="font-size:20px;color:#8e8e93;line-height:1;font-weight:300;">' + (d.artikel ? '\u2212' : '+') + '</span>' +
                 '</div>' +
-                '<div id="al-body" style="display:none;padding:0 12px 12px;">' +
-                  '<div style="background:#fff;border-radius:10px;padding:16px 18px;">' +
-                    '<div style="font-size:13px;color:#8e8e93;">Keine Daten verf\u00fcgbar</div>' +
+                '<div id="al-body" style="display:' + (d.artikel ? 'block' : 'none') + ';padding:0 16px 16px;">' +
+                  '<div style="background:#fff;border-radius:12px;padding:24px;">' +
+                    (d.artikel ? (
+                      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">' +
+                        '<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;">Artikelnummer</span>' +
+                        '<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;">Verpackungsgr\u00f6\u00dfe</span>' +
+                      '</div>' +
+                      d.artikel.map(function(a) {
+                        return '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 0;border-top:1px solid rgba(0,0,0,0.06);">' +
+                          '<span style="font-size:15px;font-weight:700;color:#1d1d1f;">' + a.name + '</span>' +
+                          '<span style="font-size:15px;color:#1d1d1f;">' + a.size + '</span>' +
+                        '</div>';
+                      }).join('')
+                    ) : '<div style="font-size:15px;color:#8e8e93;">Keine Daten verf\u00fcgbar</div>') +
                   '</div>' +
                 '</div>' +
               '</div>' + /* end Artikel Akkordeon */
@@ -792,64 +820,80 @@ function Beratung() {
           /* ══ UNTEN: VOLLE BREITE – Einsatzprognose ══ */
 
           /* Einsatzprognose */
-          '<div style="background:#fff;border-radius:16px;padding:20px;border:1px solid rgba(0,0,0,0.07);margin-top:24px;">' +
-            '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">' +
-              '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">Standort \u00b7 Windheim</div>' +
-              '<div style="font-size:12px;color:' + accentColor + ';font-weight:700;">Freitag</div>' +
+          '<div style="background:#fff;border-radius:16px;padding:32px;border:1px solid rgba(0,0,0,0.07);margin-top:32px;">' +
+            '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;">' +
+              '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;">Standort \u00b7 Windheim</div>' +
+              '<div style="font-size:14px;color:' + accentColor + ';font-weight:700;">Freitag</div>' +
             '</div>' +
-            '<div style="font-size:22px;font-weight:800;color:#1d1d1f;margin-bottom:16px;">Einsatzprognose</div>' +
-            '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Einsatzparameter laut Produktleitfaden</div>' +
-            '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">' +
+            '<div style="font-size:24px;font-weight:800;color:#1d1d1f;margin-bottom:24px;">Einsatzprognose</div>' +
+            '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Einsatzparameter laut Produktleitfaden</div>' +
+            '<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">' +
               ['Wind: \u2265\u202f15\u00a0km/h','B\u00f6en: \u2265\u202f25\u00a0km/h','8\u201325\u00b0C','rf \u2265\u202f65\u00a0%','mind. 3\u20135 trocken'].map(function(p) {
-                return '<span style="background:#f0ede7;border-radius:8px;padding:5px 10px;font-size:12px;font-weight:500;color:#3a3a3c;">' + p + '</span>';
+                return '<span style="background:#eef0f4;border-radius:8px;padding:8px 12px;font-size:14px;font-weight:500;color:#3a3a3c;">' + p + '</span>';
               }).join('') +
             '</div>' +
-            '<div style="font-size:14px;color:#3a3a3c;line-height:1.65;margin-bottom:20px;">Heute zu kritisch f\u00fcr einen sicheren Einsatz. Morgen wird das Fenster technisch deutlich besser. Am Mittwoch zeigt die Wochenlage eine stabile Verbesserung mit sinkender Abdriftgefahr, geringerer Niederschlagswahrscheinlichkeit und besseren Bedingungen f\u00fcr Antrocknung und Wirkstoffaufnahme.</div>' +
+            '<div style="font-size:16px;color:#3a3a3c;line-height:1.65;margin-bottom:24px;">Heute zu kritisch f\u00fcr einen sicheren Einsatz. Morgen wird das Fenster technisch deutlich besser. Am Mittwoch zeigt die Wochenlage eine stabile Verbesserung mit sinkender Abdriftgefahr, geringerer Niederschlagswahrscheinlichkeit und besseren Bedingungen f\u00fcr Antrocknung und Wirkstoffaufnahme.</div>' +
 
             /* Heute */
-            '<div style="border:1px solid rgba(0,0,0,0.09);border-radius:14px;overflow:hidden;margin-bottom:12px;">' +
-              '<div style="background:#f0ede7;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">' +
-                '<div style="display:flex;align-items:center;gap:10px;">' +
-                  '<span style="font-size:12px;font-weight:700;color:#1d1d1f;">Heute \u00b7 08.04.</span>' +
-                  '<span style="background:#ff3b30;color:#fff;border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.3px;">UNGEEIGNET</span>' +
+            '<div style="border:1px solid rgba(0,0,0,0.09);border-radius:16px;overflow:hidden;margin-bottom:16px;">' +
+              '<div style="background:#eef0f4;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;">' +
+                '<div style="display:flex;align-items:center;gap:8px;">' +
+                  '<span style="font-size:14px;font-weight:700;color:#1d1d1f;">Heute \u00b7 08.04.</span>' +
+                  '<span style="background:#ff3b30;color:#fff;border-radius:4px;padding:4px 8px;font-size:12px;font-weight:700;letter-spacing:0.3px;">UNGEEIGNET</span>' +
                 '</div>' +
-                '<span style="font-size:11px;color:#8e8e93;">64 Kriterien erf\u00fcllt</span>' +
+                '<span style="font-size:13px;color:#8e8e93;">64 Kriterien erf\u00fcllt</span>' +
               '</div>' +
               '<div style="padding:14px 16px;">' +
-                '<div style="font-size:12px;color:#ff3b30;font-weight:600;margin-bottom:14px;">Zu windig, feucht und mit Blattn\u00e4sse. Hohe Abdrift- und Wirkungsunsicherheit.</div>' +
+                '<div style="font-size:14px;color:#ff3b30;font-weight:600;margin-bottom:16px;">Zu windig, feucht und mit Blattn\u00e4sse. Hohe Abdrift- und Wirkungsunsicherheit.</div>' +
                 '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">' +
                   [['Temperatur','6\u201310\u00a0\u00b0C','1\u00b0C unterm Ziel','#ff3b30'],['Wind','22\u00a0km/h','+19\u00a0km/h zu hoch','#ff3b30'],['B\u00f6en','36\u00a0km/h','+19\u00a0km/h \u00fcber Limit','#ff3b30'],['Luftfeuchte','92\u00a0%','17\u00a0% zu feucht','#ff3b30'],['Trockenstd.','0\u00a0h','Antrockn. mind. 2\u00a0h','#ff3b30'],['Niederschlag','2,8\u00a0mm','2,8\u00a0mm ung\u00fcnstig','#ff3b30']].map(function(c) {
-                    return '<div><div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;margin-bottom:3px;">' + c[0] + '</div>' +
-                      '<div style="font-size:16px;font-weight:700;color:#1d1d1f;">' + c[1] + '</div>' +
+                    return '<div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;margin-bottom:4px;">' + c[0] + '</div>' +
+                      '<div style="font-size:18px;font-weight:700;color:#1d1d1f;">' + c[1] + '</div>' +
                       '<div style="height:3px;background:' + c[3] + ';border-radius:2px;margin:4px 0;"></div>' +
-                      '<div style="font-size:11px;color:#8e8e93;">' + c[2] + '</div></div>';
+                      '<div style="font-size:13px;color:#8e8e93;">' + c[2] + '</div></div>';
                   }).join('') +
                 '</div>' +
               '</div>' +
             '</div>' +
 
             /* Morgen */
-            '<div style="border:1px solid rgba(0,0,0,0.09);border-radius:14px;overflow:hidden;margin-bottom:12px;">' +
-              '<div style="background:#f0ede7;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">' +
-                '<div style="display:flex;align-items:center;gap:10px;">' +
-                  '<span style="font-size:12px;font-weight:700;color:#1d1d1f;">Morgen \u00b7 09.04.</span>' +
-                  '<span style="background:#34c759;color:#fff;border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.3px;">BESSER</span>' +
+            '<div style="border:1px solid rgba(0,0,0,0.09);border-radius:16px;overflow:hidden;margin-bottom:16px;">' +
+              '<div style="background:#eef0f4;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;">' +
+                '<div style="display:flex;align-items:center;gap:8px;">' +
+                  '<span style="font-size:14px;font-weight:700;color:#1d1d1f;">Morgen \u00b7 09.04.</span>' +
+                  '<span style="background:#34c759;color:#fff;border-radius:4px;padding:4px 8px;font-size:12px;font-weight:700;letter-spacing:0.3px;">BESSER</span>' +
                 '</div>' +
-                '<span style="font-size:11px;color:#8e8e93;">6/8 Kriterien aktiv</span>' +
+                '<span style="font-size:13px;color:#8e8e93;">6/8 Kriterien aktiv</span>' +
               '</div>' +
               '<div style="padding:14px 16px;">' +
-                '<div style="font-size:12px;color:#34c759;font-weight:600;margin-bottom:14px;">Deutlich ruhigeres Fenster. Ab sp\u00e4tem Vormittag technisch deutlich geeigneter.</div>' +
+                '<div style="font-size:14px;color:#34c759;font-weight:600;margin-bottom:16px;">Deutlich ruhigeres Fenster. Ab sp\u00e4tem Vormittag technisch deutlich geeigneter.</div>' +
                 '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">' +
                   [['Temperatur','11\u201317\u00a0\u00b0C','im Einzel-Bereich','#34c759'],['Wind','9\u00a0km/h','technisch m\u00f6glich','#34c759'],['B\u00f6en','18\u00a0km/h','technisch m\u00f6glich','#f39c12'],['Luftfeuchte','68\u00a0%','g\u00fcnstig f\u00fcr Aufnahme','#34c759'],['Trockenstd.','0\u00a0h','Antrockn. mind. 2\u00a0h','#f39c12'],['Niederschlag','0\u00a0mm','trockenes Fenster','#34c759']].map(function(c) {
-                    return '<div><div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;margin-bottom:3px;">' + c[0] + '</div>' +
-                      '<div style="font-size:16px;font-weight:700;color:#1d1d1f;">' + c[1] + '</div>' +
+                    return '<div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;margin-bottom:4px;">' + c[0] + '</div>' +
+                      '<div style="font-size:18px;font-weight:700;color:#1d1d1f;">' + c[1] + '</div>' +
                       '<div style="height:3px;background:' + c[3] + ';border-radius:2px;margin:4px 0;"></div>' +
-                      '<div style="font-size:11px;color:#8e8e93;">' + c[2] + '</div></div>';
+                      '<div style="font-size:13px;color:#8e8e93;">' + c[2] + '</div></div>';
                   }).join('') +
                 '</div>' +
               '</div>' +
             '</div>' +
           '</div>'; /* end Einsatzprognose */
+
+        /* ── Chart-Balken per IntersectionObserver animieren ── */
+        (function() {
+          var sheet = document.getElementById('ganttSheet');
+          var bars = document.querySelectorAll('#ganttSheetContent .chart-bar');
+          if (!bars.length) return;
+          var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { root: sheet, threshold: 0.3 });
+          bars.forEach(function(bar) { observer.observe(bar); });
+        })();
 
         /* ── Sticky liquid-glass header befüllen ── */
         var stickyInfo = document.getElementById('ganttStickyInfo');
@@ -1111,10 +1155,17 @@ function Beratung() {
                 <div className="section-tag">{[navPlz, navKultur ? navKultur.charAt(0).toUpperCase() + navKultur.slice(1) : ''].filter(Boolean).join(', ')}</div>
                 <div className="section-heading">Feldbericht</div>
               </div>
-              <button className="btn-outline">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-                Abonnieren
-              </button>
+              <Button
+                variant="white"
+                icon={
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                  </svg>
+                }
+              >
+                Season View abonnieren
+              </Button>
             </div>
 
             <div className="fbs-scroll-outer" ref={fbsTrackRef}>
@@ -1377,13 +1428,17 @@ function Beratung() {
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true, amount: 0.8 }}
               >
-                <button className="season-view-btn">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-                    <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-                  </svg>
+                <Button
+                  variant="white"
+                  icon={
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                      <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                    </svg>
+                  }
+                >
                   Season View abonnieren
-                </button>
+                </Button>
               </motion.div>
 
               {/* Legende */}
@@ -1394,10 +1449,18 @@ function Beratung() {
           {/* GANTT OVERLAY + BOTTOM SHEET */}
           <div className="g-overlay" id="ganttOv" onClick={() => window.ganttClose && window.ganttClose()}></div>
           <div className="g-sheet" id="ganttSheet">
+            <button className="g-sheet-close" onClick={() => window.ganttClose && window.ganttClose()}>&#x2715;</button>
             <div className="g-drag-handle"></div>
             <div className="g-sticky-header" id="ganttStickyHeader">
               <div id="ganttStickyInfo"></div>
-              <button className="g-sheet-close" onClick={() => window.ganttClose && window.ganttClose()}>&#x2715;</button>
+              <button className="sheet-btn sheet-btn--outline g-sheet-resistenz">
+                <span className="sheet-btn-left">
+                  <svg className="sheet-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v11m0 0h10m-10 0a2 2 0 0 0 2 2h6a2 2 0 0 1 2 2v1M9 14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1m0 0h18"/></svg>
+                  <span className="sheet-btn-text">Resistenz bestimmen</span>
+                </span>
+                <span className="sheet-btn-right"><span className="sheet-btn-slash">/</span><span className="sheet-btn-arrow">&#x203a;</span></span>
+              </button>
+              <button className="g-sheet-close g-sheet-close--sticky" onClick={() => window.ganttClose && window.ganttClose()}>&#x2715;</button>
             </div>
             <div id="ganttSheetContent"></div>
           </div>
