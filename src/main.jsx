@@ -7,6 +7,7 @@ import './index.css'
 import Home from './pages/Home'
 import BeratungStart from './pages/BeratungStart'
 import Beratung from './pages/Beratung'
+import AgrarMagazinDemo from './pages/AgrarMagazinDemo'
 import { TransitionProvider } from './context/TransitionContext'
 
 
@@ -46,6 +47,7 @@ function AppRoutes() {
           <Route path="/" element={<Home />} />
           <Route path="/beratung-start" element={<BeratungStart />} />
           <Route path="/beratung" element={<Beratung />} />
+          <Route path="/agrar-magazin-demo" element={<AgrarMagazinDemo />} />
         </Routes>
       </AnimatePresence>
     </LayoutGroup>

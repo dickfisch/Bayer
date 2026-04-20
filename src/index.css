@@ -350,14 +350,24 @@ body {
 }
 
 /* ══════════════════════════════════════════
-   TEIL 2 – SUB NAV (Glassmorphism, sticky)
+   TEIL 2 – BERATUNG NAV (Glassmorphism, sticky)
 ══════════════════════════════════════════ */
-.sub-nav-wrap {
+.beratung-nav-wrap {
     padding: 140px 0 20px;
     background: var(--bayer-blue);
 }
 
-.sub-nav {
+/* Sentinel sits at the top of the nav pill position; IntersectionObserver
+   uses it to toggle inline/floating without depending on mount-time scroll. */
+.beratung-nav-sentinel {
+    height: 1px;
+    width: 100%;
+    margin-bottom: -1px;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.beratung-nav {
     background: transparent;
     border: none;
     box-shadow: none;
@@ -368,12 +378,12 @@ body {
     margin: 0 auto;
 }
 
-.sub-nav:hover {
+.beratung-nav:hover {
     box-shadow: none;
 }
 
 /* Scrolled-State: Fixed wie Hauptnavi, kein Layout-Shift */
-.sub-nav-wrap--scrolled {
+.beratung-nav-wrap--scrolled {
     position: fixed;
     top: 16px;
     left: 0;
@@ -389,20 +399,20 @@ body {
 }
 
 /* Beim Runterscrollen: nach oben rausfahren wie Haupt-Nav */
-.sub-nav-wrap--hidden {
+.beratung-nav-wrap--hidden {
     transform: translateY(-130%);
     pointer-events: none;
 }
 
-.sub-nav-wrap--hidden .sub-nav {
+.beratung-nav-wrap--hidden .beratung-nav {
     pointer-events: none;
 }
 
-.sub-nav-wrap--scrolled .sub-nav {
+.beratung-nav-wrap--scrolled .beratung-nav {
     pointer-events: all;
 }
 
-.sub-nav--scrolled {
+.beratung-nav--scrolled {
     height: 76px;
     padding: 0 6px 0 8px;
     border-radius: 999px;
@@ -412,7 +422,7 @@ body {
         0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.sub-nav--scrolled::before {
+.beratung-nav--scrolled::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -447,14 +457,14 @@ body {
 .pill-plz-input::placeholder { color: rgba(255,255,255,0.5); }
 
 /* Im Scrolled-Zustand: helle Pill zurück */
-.sub-nav--scrolled .pill {
+.beratung-nav--scrolled .pill {
     border-color: rgba(0,0,0,0.12); color: #333; background: rgba(255,255,255,0.8);
 }
-.sub-nav--scrolled .pill:hover { border-color: #888; }
-.sub-nav--scrolled .pill-plz-input { color: #333; }
-.sub-nav--scrolled .pill-plz-input::placeholder { color: #aaa; }
+.beratung-nav--scrolled .pill:hover { border-color: #888; }
+.beratung-nav--scrolled .pill-plz-input { color: #333; }
+.beratung-nav--scrolled .pill-plz-input::placeholder { color: #aaa; }
 
-.sub-nav-kultur-select {
+.beratung-nav-kultur-select {
     appearance: none; -webkit-appearance: none;
     display: flex; align-items: center;
     border: 1px solid rgba(255,255,255,0.4); border-radius: 999px;
@@ -464,17 +474,17 @@ body {
     cursor: pointer; outline: none; font-family: 'Open Sans', sans-serif;
     transition: border-color 0.15s; white-space: nowrap;
 }
-.sub-nav-kultur-select:hover { border-color: rgba(255,255,255,0.8); }
-.sub-nav-kultur-select:focus { border-color: rgba(255,255,255,0.6); }
+.beratung-nav-kultur-select:hover { border-color: rgba(255,255,255,0.8); }
+.beratung-nav-kultur-select:focus { border-color: rgba(255,255,255,0.6); }
 
 /* Im Scrolled-Zustand: helles Select zurück */
-.sub-nav--scrolled .sub-nav-kultur-select {
+.beratung-nav--scrolled .beratung-nav-kultur-select {
     border-color: rgba(0,0,0,0.12); color: #333;
     background-color: rgba(255,255,255,0.8);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
 }
-.sub-nav--scrolled .sub-nav-kultur-select:hover { border-color: #888; }
-.sub-nav--scrolled .sub-nav-kultur-select:focus { border-color: rgba(0,0,0,0.3); }
+.beratung-nav--scrolled .beratung-nav-kultur-select:hover { border-color: #888; }
+.beratung-nav--scrolled .beratung-nav-kultur-select:focus { border-color: rgba(0,0,0,0.3); }
 
 .footer-kultur-select {
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 20px center / 28px 28px,
@@ -485,16 +495,16 @@ body {
 }
 .footer-kultur-select option { color: #333; background: #ffffff; }
 
-.sub-links { display: flex; gap: 2px; }
+.beratung-nav-links { display: flex; gap: 2px; }
 
-.sub-links a {
+.beratung-nav-links a {
     padding: 5px 12px; text-decoration: none; color: #ffffff;
     font-size: 18px; font-weight: 400; white-space: nowrap;
     position: relative;
     transition: color 0.18s;
 }
 
-.sub-links a::after {
+.beratung-nav-links a::after {
     content: '';
     position: absolute;
     bottom: 0; left: 12px;
@@ -503,15 +513,15 @@ body {
     transition: width 0.28s ease;
 }
 
-.sub-links a:hover         { color: #ffffff; }
-.sub-links a:hover::after  { width: calc(100% - 24px); }
-.sub-links a.active        { color: #ffffff; font-weight: 600; }
+.beratung-nav-links a:hover         { color: #ffffff; }
+.beratung-nav-links a:hover::after  { width: calc(100% - 24px); }
+.beratung-nav-links a.active        { color: #ffffff; font-weight: 600; }
 
 /* Im Scrolled-Zustand (Glassmorphism): originaler blauer Hover-Effekt */
-.sub-nav--scrolled .sub-links a         { color: #1a1a1a; }
-.sub-nav--scrolled .sub-links a::after  { background: #426b8f; }
-.sub-nav--scrolled .sub-links a:hover   { color: #426b8f; }
-.sub-nav--scrolled .sub-links a.active  { color: #426b8f; font-weight: 600; }
+.beratung-nav--scrolled .beratung-nav-links a         { color: #1a1a1a; }
+.beratung-nav--scrolled .beratung-nav-links a::after  { background: #426b8f; }
+.beratung-nav--scrolled .beratung-nav-links a:hover   { color: #426b8f; }
+.beratung-nav--scrolled .beratung-nav-links a.active  { color: #426b8f; font-weight: 600; }
 
 .user-widget { display: flex; align-items: center; gap: 10px; padding: 0 24px 0 12px; }
 
@@ -525,8 +535,8 @@ body {
 .user-role { font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.4; }
 
 /* Im Scrolled-Zustand: dunkle Farben zurück */
-.sub-nav--scrolled .user-name { color: #1a1a1a; }
-.sub-nav--scrolled .user-role { color: #6e6e73; }
+.beratung-nav--scrolled .user-name { color: #1a1a1a; }
+.beratung-nav--scrolled .user-role { color: #6e6e73; }
 
 /* ══════════════════════════════════════════
    SHARED SECTION RULES
@@ -3182,7 +3192,7 @@ body, button, input, select, textarea {
   width: 100%;
 }
 
-.cta-sticky-inner .sub-nav-kultur-select,
+.cta-sticky-inner .beratung-nav-kultur-select,
 .cta-sticky-inner .pill {
   padding-top: 0;
   padding-bottom: 0;
@@ -3191,7 +3201,7 @@ body, button, input, select, textarea {
   flex: 1;
 }
 
-.cta-sticky-inner .sub-nav-kultur-select {
+.cta-sticky-inner .beratung-nav-kultur-select {
   border-color: rgba(0,0,0,0.12);
   color: #333;
   background-color: rgba(255,255,255,0.8);
@@ -4667,7 +4677,7 @@ body, button, input, select, textarea {
   }
 
   /* Eingabefelder kompakter */
-  .home-cta-row .sub-nav-kultur-select {
+  .home-cta-row .beratung-nav-kultur-select {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     font-size: 15px !important;
@@ -4996,7 +5006,7 @@ body, button, input, select, textarea {
   }
 
   /* Eingabefelder: gleicher 10px Abstand oben/unten */
-  .cta-sticky-inner .sub-nav-kultur-select,
+  .cta-sticky-inner .beratung-nav-kultur-select,
   .cta-sticky-inner .pill {
     height: 40px;
     align-self: center;
@@ -5609,7 +5619,7 @@ body, button, input, select, textarea {
 
 
 /* BeratungNav inside gradient wrap: remove its own background */
-.dark-gradient-wrap .sub-nav-wrap {
+.dark-gradient-wrap .beratung-nav-wrap {
     background: transparent;
 }
 
@@ -5676,8 +5686,7 @@ body, button, input, select, textarea {
 .sheet-btn--light .sheet-btn-arrow   { color: #e0284f; }
 .sheet-btn--outline { background: transparent; color: #10384f; border: 1px solid #10384f; }
 .sheet-btn--outline .sheet-btn-right { color: #e0284f; }
-.sheet-btn--outline .sheet-btn-arrow { color: #e0284f; }
-.sheet-btn--inverted { background: #fff; color: #10384f; border: 1px solid #fff; }
+.sheet-btn--outline .sheet-btn-arrow { color: #e0284f; }.sheet-btn--inverted { background: #fff; color: #10384f; border: 1px solid #fff; }
 .sheet-btn--inverted .sheet-btn-right { color: #e0284f; }
 .sheet-btn--inverted .sheet-btn-arrow { color: #e0284f; }
 .sheet-btn--inverted .sheet-btn-slash  { color: rgba(224,40,79,0.35); }

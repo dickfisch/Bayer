@@ -102,7 +102,7 @@ function Footer() {
         {/* Kultur-Dropdown */}
         <div style={{ marginBottom: '56px' }}>
           <select
-            className="sub-nav-kultur-select footer-kultur-select"
+            className="beratung-nav-kultur-select footer-kultur-select"
             style={{ width: '100%', fontSize: '18px', padding: '22px 56px 22px 24px', boxShadow: '0 2px 12px rgba(0,0,0,0.10)' }}
             value={kultur}
             onChange={e => setKultur(e.target.value)}
@@ -266,7 +266,7 @@ function Footer() {
           <div style={{ background: 'transparent', padding: '110px 90px 32px' }}>
             <div style={{ maxWidth: '1800px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
               <select
-                className="sub-nav-kultur-select footer-kultur-select !text-2xl !py-5 !pl-9 !pr-16"
+                className="beratung-nav-kultur-select footer-kultur-select !text-2xl !py-5 !pl-9 !pr-16"
                 style={{ minWidth: '540px', fontSize: '22px', boxShadow: '0 2px 12px rgba(0,0,0,0.10)' }}
                 value={kultur}
                 onChange={e => setKultur(e.target.value)}

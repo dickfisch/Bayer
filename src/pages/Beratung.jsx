@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import Button from '../components/ui/Button'
 
 /* ══════════════════════════════════════════
-   SUB NAV (nur auf Beratung-Seite)
+   BERATUNG NAV (nur auf Beratung-Seite)
 ══════════════════════════════════════════ */
 const KULTUREN = [
   { value: 'mais',         label: 'Mais' },
@@ -23,6 +23,8 @@ const KULTUREN = [
   { value: 'sommergerste', label: 'Sommergerste' },
   { value: 'zuckerrueben', label: 'Zuckerrüben' },
 ]
+
+const STICKY_TOP = 16
 
 function BeratungNav() {
   const location = useLocation()
@@ -47,15 +49,11 @@ function BeratungNav() {
   const [kultur, setKultur] = useState(
     routeState.kultur || sessionStorage.getItem('nav_kultur') || 'mais'
   )
-  // mode: 'inline' = in document flow | 'floating' = fixed+glass | 'hidden' = fixed+off-screen
-  const [mode, setMode] = useState('inline')
+  const [mode, setMode] = useState('inline') // 'inline' | 'floating'
   const [wrapHeight, setWrapHeight] = useState(0)
   const [activeSection, setActiveSection] = useState(null)
-  const wrapRef    = useRef(null)
-  const subNavRef  = useRef(null) // ref on actual .sub-nav element to measure real doc position
-  const threshold  = useRef(0)   // scrollY at which nav content naturally reaches top: 16px
-  const lastY      = useRef(0)
-  const STICKY_TOP = 16
+  const wrapRef     = useRef(null)
+  const sentinelRef = useRef(null)
 
   const SECTIONS = ['feldbericht-slider', 'produkte', 'videos', 'termine', 'tools']
 
@@ -69,22 +67,31 @@ function BeratungNav() {
     fireNavUpdate(plz, kultur)
   }, [])
 
+  // Sentinel sits at the doc position of the nav pill. IntersectionObserver
+  // toggles mode — robust to mount-time layout/scroll timing (page transitions).
   useEffect(() => {
-    if (!wrapRef.current || !subNavRef.current) return
-    setWrapHeight(wrapRef.current.offsetHeight)
-    // Document-offset of the actual nav pill (subNavRef), not the wrapper with its big padding
-    const docTop = subNavRef.current.getBoundingClientRect().top + window.scrollY
-    threshold.current = docTop - STICKY_TOP
+    const sentinel = sentinelRef.current
+    if (!sentinel) return
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        const aboveViewport = entry.boundingClientRect.top < STICKY_TOP
+        setMode(aboveViewport ? 'floating' : 'inline')
+      },
+      { rootMargin: `-${STICKY_TOP}px 0px 0px 0px`, threshold: [0, 1] }
+    )
+    obs.observe(sentinel)
+    return () => obs.disconnect()
   }, [])
 
+  // Measure wrap height so the placeholder in floating mode preserves layout.
   useEffect(() => {
-    function onScroll() {
-      const y = window.scrollY
-      lastY.current = y
-      setMode(y < threshold.current ? 'inline' : 'floating')
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    if (!wrapRef.current) return
+    const measure = () => setWrapHeight(wrapRef.current.offsetHeight)
+    measure()
+    const ro = new ResizeObserver(measure)
+    ro.observe(wrapRef.current)
+    return () => ro.disconnect()
   }, [])
 
   useEffect(() => {
@@ -116,10 +123,10 @@ function BeratungNav() {
     return () => observers.forEach(o => o.disconnect())
   }, [location.pathname])
 
-  const isFloating = mode !== 'inline'
+  const isFloating = mode === 'floating'
 
   const navContent = (
-    <div ref={subNavRef} className={`sub-nav${isFloating ? ' sub-nav--scrolled' : ''}`}>
+    <div className={`beratung-nav${isFloating ? ' beratung-nav--scrolled' : ''}`}>
       <div className="user-widget">
         <div className="user-avatar">
           <img
@@ -153,7 +160,7 @@ function BeratungNav() {
         />
       </div>
       <select
-        className="sub-nav-kultur-select"
+        className="beratung-nav-kultur-select"
         value={kultur}
         onChange={e => {
           setKultur(e.target.value)
@@ -164,7 +171,7 @@ function BeratungNav() {
           <option key={k.value} value={k.value}>{k.label}</option>
         ))}
       </select>
-      <nav className="sub-links">
+      <nav className="beratung-nav-links">
         <a href="/beratung#feldbericht-slider" className={activeSection === 'feldbericht-slider' ? 'active' : ''} onClick={e => scrollTo(e, 'feldbericht-slider')}>Feldbericht</a>
         <a href="/beratung#produkte"           className={activeSection === 'produkte'           ? 'active' : ''} onClick={e => scrollTo(e, 'produkte')}>Einsatzempfehlungen</a>
         <a href="/beratung#videos"             className={activeSection === 'videos'             ? 'active' : ''} onClick={e => scrollTo(e, 'videos')}>Videos</a>
@@ -175,21 +182,24 @@ function BeratungNav() {
     </div>
   )
 
-  if (mode !== 'inline') {
-    return (
-      <>
-        <div style={{ height: wrapHeight }} />
-        <div className="sub-nav-wrap sub-nav-wrap--scrolled">
+  // Sentinel lives inside the wrap at the position of the nav pill so its
+  // document Y stays the same whether we're inline or floating.
+  return (
+    <>
+      <div
+        ref={wrapRef}
+        className="beratung-nav-wrap"
+        style={isFloating ? { height: wrapHeight } : undefined}
+      >
+        <div ref={sentinelRef} aria-hidden="true" className="beratung-nav-sentinel" />
+        {!isFloating && navContent}
+      </div>
+      {isFloating && (
+        <div className="beratung-nav-wrap beratung-nav-wrap--scrolled">
           {navContent}
         </div>
-      </>
-    )
-  }
-
-  return (
-    <div ref={wrapRef} className="sub-nav-wrap">
-      {navContent}
-    </div>
+      )}
+    </>
   )
 }
 
@@ -251,9 +261,189 @@ const cards = [
   },
 ]
 
+const SLIDE_IMAGES = ['/demo_header.jpg', '/key_header_01.jpg', '/key_header_02.jpg', '/wetter_back_2.jpg']
+
+function SeasonViewModal({ onClose }) {
+  const [slideIdx, setSlideIdx] = useState(0)
+  const intervalRef = useRef(null)
+
+  function goToSlide(i) {
+    setSlideIdx(i)
+    clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(() => setSlideIdx(n => (n + 1) % SLIDE_IMAGES.length), 3500)
+  }
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => setSlideIdx(i => (i + 1) % SLIDE_IMAGES.length), 3500)
+    return () => clearInterval(intervalRef.current)
+  }, [])
+
+  return (
+    <div
+      style={{
+        position: 'fixed', inset: 0, zIndex: 9999,
+        background: 'rgba(0,0,0,0.6)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        padding: '16px',
+      }}
+      onClick={onClose}
+    >
+      <div
+        style={{
+          display: 'flex', borderRadius: '20px', overflow: 'hidden',
+          width: '100%', maxWidth: '1100px', maxHeight: '90vh',
+          background: '#1c1c1e',
+          boxShadow: '0 32px 80px rgba(0,0,0,0.6)',
+        }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Left panel */}
+        <div style={{
+          flex: '0 0 46%', padding: '40px 36px 32px',
+          display: 'flex', flexDirection: 'column', gap: '0',
+          color: '#fff', overflowY: 'auto',
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
+            <svg viewBox="0 0 289.1 289.1" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+            <style>{`.mb1{fill:#ffffff;}.mb2{fill:#89D329;}.mb3{fill:#00BCFF;}`}</style>
+            <path className="mb1" d="M136.2,44.9h16.3c1.8,0,3.3-1.5,3.3-3.3c0-1.8-1.5-3.3-3.3-3.3h-16.3V44.9z M136.2,60.8H153c2.1,0,3.7-1.7,3.7-3.7c0-2.1-1.7-3.7-3.7-3.7h-16.8V60.8z M162.4,48.8c2.2,2.2,3.6,5.2,3.6,8.5c0,6.6-5.3,11.9-11.9,11.9h-27.3V30l26.9,0c6.3,0,11.4,5.1,11.4,11.4C165.1,44.2,164.1,46.8,162.4,48.8z"/>
+            <path className="mb1" d="M168.7,115.9h-10l-3.2-6.5h-21.9l-3.2,6.5h-10L140,76.7h9.1L168.7,115.9z M144.6,86.7l-6.9,14.2h13.8L144.6,86.7z"/>
+            <polygon className="mb1" points="157.9,124.3 169.1,124.3 149.2,149.8 149.2,163.5 139.9,163.5 139.9,149.8 120,124.3 131.3,124.3 144.6,142.1"/>
+            <polygon className="mb1" points="209.9,124.3 209.9,132.7 183.7,132.7 183.7,139.2 208.9,139.2 208.9,147.6 183.7,147.6 183.7,155.1 209.9,155.1 209.9,163.5 174.4,163.5 174.4,124.3"/>
+            <path className="mb1" d="M238.7,148.6h-7v14.9h-9.3v-39.2h23.8c6.7,0,12.1,5.5,12.1,12.1c0,5.5-3.7,10.2-8.7,11.6l11.5,15.4h-11.2L238.7,148.6z M245.3,132.7h-13.6v7.5h13.6c2.1,0,3.7-1.7,3.7-3.7C249,134.4,247.3,132.7,245.3,132.7z"/>
+            <path className="mb1" d="M124.4,163.5h-10l-3.2-6.5H89.3l-3.2,6.5h-10l19.6-39.2h9.1L124.4,163.5z M100.2,134.3l-6.9,14.2h13.8L100.2,134.3z"/>
+            <path className="mb1" d="M41,139.3h16.3c1.8,0,3.3-1.5,3.3-3.3c0-1.8-1.5-3.3-3.3-3.3l-16.3,0V139.3z M41,155.1h16.8c2.1,0,3.7-1.7,3.7-3.7c0-2.1-1.7-3.7-3.7-3.7H41V155.1z M67.3,143.1c2.2,2.2,3.6,5.2,3.6,8.5c0,6.6-5.3,11.9-11.9,11.9H31.7v-39.2h26.9c6.3,0,11.4,5.1,11.4,11.4C70,138.5,69,141.1,67.3,143.1z"/>
+            <polygon className="mb1" points="162.3,171.9 162.3,180.3 136.2,180.3 136.2,186.8 161.4,186.8 161.4,195.2 136.2,195.2 136.2,202.7 162.3,202.7 162.3,211.1 126.8,211.1 126.8,171.9"/>
+            <path className="mb1" d="M155.8,232.6c0-2.1-1.7-3.7-3.7-3.7h-15.9v7.5h15.9C154.1,236.3,155.8,234.6,155.8,232.6z M126.8,259.6v-39.2H153c6.7,0,12.1,5.5,12.1,12.2c0,5.1-3.1,9.4-7.5,11.3l11.8,15.8h-11.2l-11.2-14.9h-10.7v14.9H126.8z"/>
+            <path className="mb2" d="M286.1,135.8c-4.5-74.2-66.1-133-141.5-133C69.3,2.8,7.7,61.6,3.1,135.8c0.2,3,0.4,5.9,0.8,8.8C7,169.3,16.4,192,30.5,211c25.8,35,67.3,57.7,114.1,57.7c-65.5,0-119.3-51-123.9-115.4c-0.2-2.9-0.3-5.8-0.3-8.8c0-3,0.1-5.9,0.3-8.8C25.3,71.4,79.1,20.4,144.6,20.4c46.8,0,88.3,22.7,114.1,57.7c14.1,19.1,23.5,41.8,26.5,66.6c0.4,2.9,0.6,5.8,0.8,8.7c0.2-2.9,0.3-5.8,0.3-8.8C286.3,141.6,286.2,138.7,286.1,135.8"/>
+            <path className="mb3" d="M3.1,153.3c4.5,74.2,66.1,133,141.5,133c75.3,0,136.9-58.8,141.5-133c-0.2-3-0.4-5.9-0.8-8.8c-3.1-24.7-12.5-47.4-26.5-66.4c-25.8-35-67.3-57.7-114.1-57.7c65.5,0,119.3,51,123.9,115.4c0.2,2.9,0.3,5.8,0.3,8.8c0,3-0.1,5.9-0.3,8.8c-4.5,64.4-58.3,115.4-123.9,115.4c-46.8,0-88.3-22.7-114.1-57.7C16.4,191.9,7,169.2,4,144.5c-0.4-2.9-0.6-5.8-0.8-8.7c-0.2,2.9-0.3,5.8-0.3,8.8C2.9,147.5,3,150.4,3.1,153.3"/>
+          </svg>
+          </div>
+          <h2 style={{ fontSize: '32px', fontWeight: 700, textAlign: 'center', margin: '0 0 12px', lineHeight: 1.15 }}>
+            Season View<br />abonnieren
+          </h2>
+          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.55)', textAlign: 'center', margin: '0 0 28px', lineHeight: 1.6 }}>
+            Schnell anmelden und sofort in deine Saisonansicht einsteigen.
+          </p>
+
+          {[
+            { letter: 'G', color: '#4285F4', label: 'Weiter mit Google' },
+            { letter: 'A', color: '#fff',    label: 'Weiter mit Apple' },
+            { letter: 'M', color: '#00A4EF', label: 'Weiter mit Microsoft' },
+          ].map(({ letter, color, label }) => (
+            <button key={label} style={{
+              display: 'flex', alignItems: 'center', gap: '16px',
+              width: '100%', padding: '14px 20px',
+              background: 'transparent', border: '1px solid rgba(255,255,255,0.15)',
+              borderRadius: '12px', color: '#fff', cursor: 'pointer',
+              marginBottom: '10px', fontSize: '14px', fontWeight: 600,
+              transition: 'background 0.15s',
+            }}
+            onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.07)'}
+            onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+            >
+              <span style={{ fontSize: '16px', fontWeight: 800, color, width: '20px', textAlign: 'center' }}>{letter}</span>
+              <span style={{ flex: 1, textAlign: 'center' }}>{label}</span>
+            </button>
+          ))}
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', margin: '6px 0 16px' }}>
+            <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.15)' }} />
+            <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.1em' }}>ODER</span>
+            <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.15)' }} />
+          </div>
+
+          <button style={{
+            width: '100%', padding: '14px 20px',
+            background: 'transparent', border: '1px solid rgba(255,255,255,0.15)',
+            borderRadius: '12px', color: '#fff', cursor: 'pointer',
+            fontSize: '14px', fontWeight: 600, transition: 'background 0.15s',
+          }}
+          onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.07)'}
+          onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+          >
+            Weiter mit Email
+          </button>
+
+          <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)', marginTop: '20px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+            SSO optional für Business- und Enterprise-Zugänge.
+          </p>
+          <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.25)', marginTop: 'auto', paddingTop: '16px', lineHeight: 1.6 }}>
+            Mit dem Fortfahren bestätigst du Datenschutz, Nutzungsbedingungen und die Verarbeitung deiner Kontodaten zur Anmeldung in Season View.
+          </p>
+        </div>
+
+        {/* Right panel */}
+        <div style={{ flex: 1, position: 'relative', minHeight: '500px', overflow: 'hidden' }}>
+          {SLIDE_IMAGES.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt="Season View"
+              style={{
+                position: 'absolute', inset: 0,
+                width: '100%', height: '100%', objectFit: 'cover',
+                opacity: i === slideIdx ? 1 : 0,
+                transition: 'opacity 0.8s ease',
+              }}
+            />
+          ))}
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 50%, transparent 100%)',
+          }} />
+
+          {/* Close button */}
+          <button onClick={onClose} style={{
+            position: 'absolute', top: '16px', right: '16px',
+            width: '40px', height: '40px', borderRadius: '0',
+            background: 'rgba(255,255,255,0.95)',
+            border: 'none',
+            cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1c1c1e" strokeWidth="2.5" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+
+          {/* Bottom overlay content */}
+          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '24px' }}>
+            <span style={{
+              display: 'inline-block',
+              background: 'rgba(255,255,255,0.15)',
+              backdropFilter: 'blur(20px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.4), 0 4px 16px rgba(0,0,0,0.15)',
+              color: '#fff', fontSize: '12px', fontWeight: 600,
+              padding: '5px 12px', borderRadius: '20px', marginBottom: '14px',
+            }}>Standortbasierte Saisonansicht</span>
+            <div style={{ marginBottom: '10px' }}>
+              <span style={{ fontSize: '36px', fontWeight: 700, color: 'rgba(255,255,255,0.6)', letterSpacing: '-0.5px' }}>SEASON </span>
+              <span style={{ fontSize: '36px', fontWeight: 700, color: 'rgba(255,255,255,0.6)', letterSpacing: '-0.5px' }}>VIEW</span>
+            </div>
+            <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Wetter, BBCH-Verlauf, Produktempfehlungen und betriebliche Entscheidungen in einer kompakten Oberfläche für die laufende Saison.
+            </p>
+            <div style={{ display: 'flex', gap: '0', borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '16px' }}>
+              {['Wetterfenster', 'BBCH Status', 'Produktempfehlung', 'Betriebsprofil'].map((tab, i) => (
+                <span key={tab} onClick={() => goToSlide(i)} style={{
+                  flex: 1, fontSize: '11px', color: i === slideIdx ? '#fff' : 'rgba(255,255,255,0.45)',
+                  fontWeight: i === slideIdx ? 700 : 400, textAlign: 'center', paddingBottom: '8px',
+                  borderBottom: i === slideIdx ? '2px solid #fff' : '2px solid transparent',
+                  cursor: 'pointer', transition: 'color 0.2s',
+                }}>{tab}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function Beratung() {
   /* ── Produkte state ── */
   const [activeTab, setActiveTab] = useState(0)
+  const [showSeasonModal, setShowSeasonModal] = useState(false)
   const [cursorIdx, setCursorIdx] = useState(ST.indexOf(32)) // BBCH 32 = index 7
 
   const ticksRef    = useRef(null)
@@ -687,7 +877,7 @@ function Beratung() {
               {l:'TROCKEN VOR',  v:'5\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'Minimum erf\u00fcllt \u2713', pct:85,  pc:'#3a7a2f'},
               {l:'REGEN NACH',   v:'0\u00a0mm',       lim:'0\u00a0mm empfohlen',                pill:'trockenes Fenster',           pct:5,   pc:'#3a7a2f'},
             ],
-            prof:[2,2,2,2,2,2,2,1,0,0,0,0,0,0,0,0,0,1,0,2,2,2,2,2],
+            prof:[8,8,8,8,8,8,8,40,82,88,92,95,95,94,93,91,89,42,72,10,8,8,8,8],
             winT:'08:00\u00a0\u2013\u00a018:00', winN:'Idealtag\u00a0\u00b7 Blattn\u00e4sse fr\u00fch morgens pr\u00fcfen'
           },
           { abbr:'DI', date:'15.04.', score:58, st:'bedingt',
@@ -701,7 +891,7 @@ function Beratung() {
               {l:'TROCKEN VOR',  v:'3\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'Minimum erf\u00fcllt \u2713',        pct:60,  pc:'#3a7a2f'},
               {l:'REGEN NACH',   v:'0\u00a0mm',       lim:'0\u00a0mm empfohlen',                pill:'trockenes Fenster',                  pct:5,   pc:'#3a7a2f'},
             ],
-            prof:[2,2,2,2,2,2,2,2,2,2,1,1,1,1,0,0,0,0,1,2,2,2,2,2],
+            prof:[8,8,8,8,8,8,8,8,8,8,38,42,45,50,70,74,75,72,40,8,8,8,8,8],
             winT:'12:00\u00a0\u2013\u00a017:00', winN:'Wind f\u00e4llt ab 12h\u00a0\u00b7 Nachmittagsfenster nutzen'
           },
           { abbr:'MI', date:'16.04.', score:14, st:'nogo',
@@ -715,7 +905,7 @@ function Beratung() {
               {l:'TROCKEN VOR',  v:'0\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'3\u00a0h fehlen',                    pct:10,  pc:'#cc2200'},
               {l:'REGEN NACH',   v:'22\u00a0mm',      lim:'0\u00a0mm empfohlen',                pill:'Auswaschung sicher',                 pct:100, pc:'#cc2200'},
             ],
-            prof:[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+            prof:[8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8],
             winT:'Nicht m\u00f6glich', winN:'Triple-No-Go: Temperatur + Wind + Dauerregen'
           },
           { abbr:'DO', date:'17.04.', score:52, st:'bedingt',
@@ -729,7 +919,7 @@ function Beratung() {
               {l:'TROCKEN VOR',  v:'4\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'Minimum erf\u00fcllt \u2713',        pct:70,  pc:'#3a7a2f'},
               {l:'REGEN NACH',   v:'0\u00a0mm',       lim:'0\u00a0mm empfohlen',                pill:'trockenes Fenster',                  pct:5,   pc:'#3a7a2f'},
             ],
-            prof:[2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,0,0,1,2,2,2,2,2],
+            prof:[8,8,8,8,8,8,8,8,8,8,8,8,8,8,42,48,72,68,40,8,8,8,8,8],
             winT:'14:00\u00a0\u2013\u00a018:00', winN:'Wind f\u00e4llt ab 14h\u00a0\u00b7 Trockenheit nachmittags sicher'
           },
           { abbr:'FR', date:'18.04.', score:90, st:'optimal',
@@ -743,20 +933,20 @@ function Beratung() {
               {l:'TROCKEN VOR',  v:'6\u00a0h',        lim:'mind.\u00a03\u00a0h',                pill:'Minimum erf\u00fcllt \u2713', pct:90,  pc:'#3a7a2f'},
               {l:'REGEN NACH',   v:'0\u00a0mm',       lim:'0\u00a0mm empfohlen',                pill:'trockenes Fenster',           pct:5,   pc:'#3a7a2f'},
             ],
-            prof:[2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,1,0,2,2,2,2,2],
+            prof:[8,8,8,8,8,8,8,8,85,90,93,96,97,96,95,93,90,45,78,10,8,8,8,8],
             winT:'08:00\u00a0\u2013\u00a018:00', winN:'Bestes Fenster der Woche\u00a0\u00b7 Fr\u00fch starten empfohlen'
           },
         ];
         var WX_ACTIVE = 3;
         var buildWxTabsHtml = function(ai) {
-          var out = '<div style="display:flex;gap:8px;margin-bottom:0;">';
+          var out = '<div style="display:flex;gap:8px;margin-bottom:16px;">';
           for (var i = 0; i < WX_DAYS.length; i++) {
             var w = WX_DAYS[i];
             var sc  = w.st==='optimal' ? '#3a7a2f' : w.st==='bedingt' ? '#b85c00' : '#cc2200';
             var bg  = w.st==='optimal' ? 'rgba(58,122,47,0.08)' : w.st==='bedingt' ? 'rgba(232,160,32,0.10)' : 'rgba(204,34,0,0.08)';
             var isSel = i === ai;
             out += '<div class="wx-tab" onclick="window.switchWeatherDay(' + i + ')" ' +
-              'style="flex:1;padding:14px 8px;border-radius:' + (isSel ? '12px 12px 0 0' : '12px') + ';cursor:pointer;text-align:center;' +
+              'style="position:relative;flex:1;padding:16px 8px;border-radius:' + (isSel ? '12px 12px 0 0' : '12px') + ';cursor:pointer;text-align:center;' +
               'background:' + bg + ';' +
               'border:none;' +
               'user-select:none;-webkit-tap-highlight-color:transparent;">' +
@@ -765,22 +955,25 @@ function Beratung() {
               '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:' + sc + ';">' +
                 (w.st==='optimal' ? 'OPTIMAL' : w.st==='bedingt' ? 'BEDINGT' : 'NO-GO') +
               '</div>' +
+              (isSel ? '<div class="wx-tab-connector" style="position:absolute;left:0;right:0;bottom:-16px;height:16px;background:' + bg + ';pointer-events:none;"></div>' : '') +
             '</div>';
           }
           return out + '</div>';
         };
         var buildWxDetailHtml = function(w) {
           var sc      = w.st==='optimal' ? '#3a7a2f' : w.st==='bedingt' ? '#b85c00' : '#cc2200';
-          var badgeBg = w.st==='optimal' ? 'rgba(58,122,47,0.12)' : w.st==='bedingt' ? 'rgba(232,160,32,0.14)' : 'rgba(204,34,0,0.10)';
+          var badgeBg = w.st==='optimal' ? 'rgba(58,122,47,0.08)' : w.st==='bedingt' ? 'rgba(232,160,32,0.10)' : 'rgba(204,34,0,0.08)';
           var profColors = ['#3a7a2f', '#e8a020', '#cc2200'];
-          var metricsHtml = '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">' +
+          var profColor  = function(s) { return s > 65 ? '#3a7a2f' : s > 25 ? '#e8a020' : '#cc2200'; };
+          var profBarH   = function(s) { return Math.max(10, Math.round(s / 100 * 40)); };
+          var metricsHtml = '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;">' +
             w.m.map(function(m) {
               var pillBg = m.pc==='#3a7a2f' ? 'rgba(58,122,47,0.12)' : m.pc==='#e8a020' ? 'rgba(232,160,32,0.14)' : 'rgba(204,34,0,0.10)';
-              return '<div style="background:#fff;border-radius:12px;padding:14px;">' +
+              return '<div style="background:#fff;border-radius:12px;padding:16px;">' +
                 '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;margin-bottom:4px;">' + m.l + '</div>' +
                 '<div style="font-size:18px;font-weight:700;color:#1d1d1f;line-height:1;">' + m.v + '</div>' +
                 '<div style="font-size:14px;color:#8e8e93;margin:4px 0 8px;">' + m.lim + '</div>' +
-                '<div style="display:inline-block;background:' + pillBg + ';color:' + m.pc + ';border-radius:999px;padding:3px 10px;font-size:11px;font-weight:600;margin-bottom:8px;">' + m.pill + '</div>' +
+                '<div style="display:inline-block;background:' + pillBg + ';color:' + m.pc + ';border-radius:999px;padding:4px 8px;font-size:11px;font-weight:600;margin-bottom:8px;">' + m.pill + '</div>' +
                 '<div style="height:4px;background:rgba(0,0,0,0.08);border-radius:2px;">' +
                   '<div style="height:4px;width:' + Math.min(m.pct, 100) + '%;background:' + m.pc + ';border-radius:2px;"></div>' +
                 '</div>' +
@@ -789,9 +982,9 @@ function Beratung() {
           '</div>';
           var profHours = ['0h','','','','','','6h','','','','','','12h','','','','','','18h','','','','',''];
           var profBars =
-            '<div style="display:flex;gap:3px;height:32px;">' +
+            '<div style="display:flex;gap:4px;height:40px;align-items:flex-end;">' +
               w.prof.map(function(s) {
-                return '<div style="flex:1;height:32px;background:' + profColors[s] + ';border-radius:3px;"></div>';
+                return '<div style="flex:1;height:' + profBarH(s) + 'px;background:' + profColor(s) + ';border-radius:3px 3px 0 0;"></div>';
               }).join('') +
             '</div>' +
             '<div style="display:flex;margin-top:4px;">' +
@@ -799,11 +992,11 @@ function Beratung() {
                 return '<div style="flex:1;text-align:center;font-size:14px;color:#1d1d1f;">' + lbl + '</div>';
               }).join('') +
             '</div>';
-          return '<div style="background:' + badgeBg + ';border-radius:16px;padding:18px;">' +
-            '<div style="margin-bottom:12px;">' +
+          return '<div style="background:' + badgeBg + ';border-radius:0 0 16px 16px;padding:24px;">' +
+            '<div style="margin-bottom:16px;">' +
               '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">' +
                 '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;">24-Stunden-Profil</div>' +
-                '<div style="display:flex;gap:10px;align-items:center;">' +
+                '<div style="display:flex;gap:8px;align-items:center;">' +
                   ['Ausbringen', 'Eingeschr\u00e4nkt', 'Nicht'].map(function(lbl, li) {
                     return '<div style="display:flex;align-items:center;gap:4px;">' +
                       '<div style="width:8px;height:8px;border-radius:2px;background:' + profColors[li] + ';"></div>' +
@@ -815,12 +1008,14 @@ function Beratung() {
               profBars +
             '</div>' +
             metricsHtml +
-            '<div style="display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:12px;padding:14px 16px;margin-top:12px;">' +
-              '<div>' +
-                '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#8e8e93;margin-bottom:2px;">Ausbringungsfenster</div>' +
-                '<div style="font-size:18px;font-weight:800;color:#1d1d1f;">' + w.winT + '</div>' +
-              '</div>' +
-              '<div style="font-size:12px;color:#6e6e73;text-align:right;">' + w.winN + '</div>' +
+            '<div style="display:flex;justify-content:center;margin-top:32px;padding-bottom:16px;">' +
+              '<button class="sheet-btn sheet-btn--outline" style="flex:none;">' +
+                '<span class="sheet-btn-left">' +
+                  '<svg class="sheet-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>' +
+                  '<span class="sheet-btn-text">Produktinfo per E-Mail erhalten</span>' +
+                '</span>' +
+                '<span class="sheet-btn-right"><span class="sheet-btn-slash">/</span><span class="sheet-btn-arrow">\u203a</span></span>' +
+              '</button>' +
             '</div>' +
           '</div>';
         };
@@ -977,8 +1172,8 @@ function Beratung() {
             '</div>' +
 
             /* Ausbringungskriterien */
-            '<div style="border-radius:14px;padding:20px;margin-bottom:24px;background:rgba(37,99,235,0.03);">' +
-              '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:#8e8e93;margin-bottom:14px;">Ausbringungskriterien \u2014 Grenzwerte laut Produktleitfaden</div>' +
+            '<div style="border-radius:16px;padding:24px;margin-bottom:24px;background:rgba(37,99,235,0.03);">' +
+              '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:#8e8e93;margin-bottom:16px;">Ausbringungskriterien \u2014 Grenzwerte laut Produktleitfaden</div>' +
               '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px;">' +
                 [
                   ['Temperatur', '8\u00a0\u2013\u00a025\u00a0\u00b0C', 'Aktiver Pflanzenstoffwechsel n\u00f6tig\u00a0\u00b7 Kein Wachstumsstress'],
@@ -986,9 +1181,9 @@ function Beratung() {
                   ['B\u00f6en', '\u2264\u00a025\u00a0km/h', 'Spitzen bestimmen effektiven Abdrifteintrag'],
                   ['Rel. Luftfeuchte', '\u2264\u00a085\u00a0%', 'H\u00f6her: Blattn\u00e4sse, verd\u00fannte Spritzbrühe\u00a0\u00b7 Niedriger: Antrocknung'],
                 ].map(function(c) {
-                  return '<div style="background:#fff;border-radius:10px;padding:14px;">' +
+                  return '<div style="background:#fff;border-radius:12px;padding:16px;">' +
                     '<div style="font-size:13px;font-weight:700;color:#1d1d1f;margin-bottom:4px;">' + c[0] + '</div>' +
-                    '<div style="font-size:18px;font-weight:700;color:#2563eb;margin-bottom:6px;">' + c[1] + '</div>' +
+                    '<div style="font-size:18px;font-weight:700;color:#2563eb;margin-bottom:8px;">' + c[1] + '</div>' +
                     '<div style="font-size:12px;color:#6e6e73;line-height:1.5;">' + c[2] + '</div>' +
                   '</div>';
                 }).join('') +
@@ -999,9 +1194,9 @@ function Beratung() {
                   ['Regenfrei nach Applikation', 'mind.\u00a02\u00a0Stunden', 'Blattaufnahme des ALS-Hemmers ben\u00f6tigt 2\u00a0h Einwirkzeit'],
                   ['Frost', 'Kein Frost\u00a0\u00b1\u00a024\u00a0h', 'K\u00e4ltestress blockiert Stomata\u00a0\u00b7 Wirkstofftransport gestoppt'],
                 ].map(function(c) {
-                  return '<div style="background:#fff;border-radius:10px;padding:14px;">' +
+                  return '<div style="background:#fff;border-radius:12px;padding:16px;">' +
                     '<div style="font-size:13px;font-weight:700;color:#1d1d1f;margin-bottom:4px;">' + c[0] + '</div>' +
-                    '<div style="font-size:18px;font-weight:700;color:#2563eb;margin-bottom:6px;">' + c[1] + '</div>' +
+                    '<div style="font-size:18px;font-weight:700;color:#2563eb;margin-bottom:8px;">' + c[1] + '</div>' +
                     '<div style="font-size:12px;color:#6e6e73;line-height:1.5;">' + c[2] + '</div>' +
                   '</div>';
                 }).join('') +
@@ -1009,7 +1204,7 @@ function Beratung() {
             '</div>' +
 
             buildWxTabsHtml(WX_ACTIVE) +
-            '<div id="wx-prognose-card" style="background:' + (WX_DAYS[WX_ACTIVE].st==='optimal' ? 'rgba(58,122,47,0.08)' : WX_DAYS[WX_ACTIVE].st==='bedingt' ? 'rgba(232,160,32,0.10)' : 'rgba(204,34,0,0.08)') + ';border-radius:0 0 12px 12px;padding:16px 18px;margin-bottom:16px;">' +
+            '<div id="wx-prognose-card" style="background:' + (WX_DAYS[WX_ACTIVE].st==='optimal' ? 'rgba(58,122,47,0.08)' : WX_DAYS[WX_ACTIVE].st==='bedingt' ? 'rgba(232,160,32,0.10)' : 'rgba(204,34,0,0.08)') + ';border-radius:12px 12px 0 0;padding:16px 24px;margin-bottom:0;">' +
               '<div id="wx-prognose-label" style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:#8e8e93;margin-bottom:8px;">Prognosetext</div>' +
               '<div id="wx-summary-text" style="font-size:15px;color:#1d1d1f;line-height:1.65;">' + WX_DAYS[WX_ACTIVE].sum + '</div>' +
             '</div>' +
@@ -1040,6 +1235,19 @@ function Beratung() {
             tab.style.background   = bg;
             tab.style.border       = 'none';
             tab.style.borderRadius = i===idx ? '12px 12px 0 0' : '12px';
+            var existing = tab.querySelector('.wx-tab-connector');
+            if (i === idx) {
+              if (!existing) {
+                var c = document.createElement('div');
+                c.className = 'wx-tab-connector';
+                c.style.cssText = 'position:absolute;left:0;right:0;bottom:-16px;height:16px;pointer-events:none;';
+                tab.appendChild(c);
+                existing = c;
+              }
+              existing.style.background = bg;
+            } else if (existing) {
+              existing.remove();
+            }
           });
           var cardEl = document.getElementById('wx-prognose-card');
           if (cardEl) cardEl.style.background = WX_DAYS[idx].st==='optimal' ? 'rgba(58,122,47,0.08)' : WX_DAYS[idx].st==='bedingt' ? 'rgba(232,160,32,0.10)' : 'rgba(204,34,0,0.08)';
@@ -1199,22 +1407,15 @@ function Beratung() {
     }
 
     let lastScrollY = window.scrollY
-    let subNavHasAppeared = false
 
-    function showSubNav(subNavWrap) {
-      if (!subNavWrap) return
-      subNavWrap.classList.remove('sub-nav-wrap--hidden')
-      // Nach erster Einblendung auf Slide-Modus umschalten
-      if (!subNavHasAppeared) {
-        subNavHasAppeared = true
-        // Kurz warten bis Fade-In durch ist, dann --slide setzen
-        setTimeout(() => subNavWrap.classList.add('sub-nav-wrap--slide'), 320)
-      }
+    function showBeratungNav(wrap) {
+      if (!wrap) return
+      wrap.classList.remove('beratung-nav-wrap--hidden')
     }
 
-    function hideSubNav(subNavWrap) {
-      if (!subNavWrap) return
-      subNavWrap.classList.add('sub-nav-wrap--hidden')
+    function hideBeratungNav(wrap) {
+      if (!wrap) return
+      wrap.classList.add('beratung-nav-wrap--hidden')
     }
 
     function onScroll() {
@@ -1230,25 +1431,23 @@ function Beratung() {
       const ganttOuter   = document.getElementById('ganttOuterContainer')
       const ganttBottom  = ganttOuter ? ganttOuter.getBoundingClientRect().bottom : 0
 
+      const beratungNavWrap = document.querySelector('.beratung-nav-wrap--scrolled')
+
       // Im BBCH-Gantt-Bereich: beide Navis verstecken
       const inGanttZone = triggerTop <= 115 && ganttBottom > 0
 
       if (inGanttZone) {
-        // Weder MainNav noch BeratungNav
         nav.classList.add('main-nav--hidden')
-        hideSubNav(document.querySelector('.sub-nav-wrap--scrolled'))
+        hideBeratungNav(beratungNavWrap)
       } else if (currentScrollY <= 10) {
-        // Ganz oben: MainNav immer sichtbar
         nav.classList.remove('main-nav--hidden')
-        hideSubNav(document.querySelector('.sub-nav-wrap--scrolled'))
+        hideBeratungNav(beratungNavWrap)
       } else if (scrollingDown) {
-        // Nach unten scrollen → BeratungNav
         nav.classList.add('main-nav--hidden')
-        showSubNav(document.querySelector('.sub-nav-wrap--scrolled'))
+        showBeratungNav(beratungNavWrap)
       } else {
-        // Nach oben scrollen → MainNav
         nav.classList.remove('main-nav--hidden')
-        hideSubNav(document.querySelector('.sub-nav-wrap--scrolled'))
+        hideBeratungNav(beratungNavWrap)
       }
 
       // BBCH-Bar fixieren: wenn Trigger oben raus
@@ -1290,6 +1489,7 @@ function Beratung() {
 
   return (
     <>
+      {showSeasonModal && <SeasonViewModal onClose={() => setShowSeasonModal(false)} />}
       <MainNav />
       <motion.div
         className="beratung-content"
@@ -1312,6 +1512,7 @@ function Beratung() {
               </div>
               <Button
                 variant="white"
+                onClick={() => setShowSeasonModal(true)}
                 icon={
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
@@ -1585,6 +1786,7 @@ function Beratung() {
               >
                 <Button
                   variant="white"
+                  onClick={() => setShowSeasonModal(true)}
                   icon={
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>

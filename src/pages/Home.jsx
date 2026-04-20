@@ -546,6 +546,7 @@ function Home() {
 
   // Drag-to-scroll for featured carousel
   const featDragRef    = useRef({ dragging: false, startX: 0, startMotionX: 0 })
+  const featDidDrag    = useRef(false)
   const [featDragging, setFeatDragging] = useState(false)
 
   const snapFeat = useCallback(() => {
@@ -570,6 +571,7 @@ function Home() {
 
   const onFeatMouseDown = useCallback((e) => {
     featDragRef.current = { dragging: true, startX: e.clientX, startMotionX: featXMotion.get() }
+    featDidDrag.current = false
     setFeatDragging(true)
     agrPausedRef.current = true
   }, [featXMotion])
@@ -577,6 +579,7 @@ function Home() {
   const onFeatMouseMove = useCallback((e) => {
     if (!featDragRef.current.dragging) return
     const delta = e.clientX - featDragRef.current.startX
+    if (Math.abs(delta) > 8) featDidDrag.current = true
     featXMotion.set(featDragRef.current.startMotionX + delta)
   }, [featXMotion])
 
@@ -611,6 +614,7 @@ function Home() {
     -(MOB_N * (window.innerWidth * 0.76 + 14)) + window.innerWidth * 0.12
   )
   const mobDragRef                  = useRef({ dragging: false, startX: 0, startY: 0, startMX: 0, isHorizontal: null })
+  const mobDidDrag                  = useRef(false)
   const [mobDragging, setMobDragging] = useState(false)
   const mobWrapRef                  = useRef(null)
 
@@ -660,6 +664,7 @@ function Home() {
   const onMobTouchStart = useCallback((e) => {
     const t = e.touches[0]
     mobDragRef.current = { dragging: true, startX: t.clientX, startY: t.clientY, startMX: mobXMotion.get(), isHorizontal: null }
+    mobDidDrag.current = false
     setMobDragging(true)
     mobPausedRef.current = true
   }, [mobXMotion])
@@ -673,6 +678,7 @@ function Home() {
       mobDragRef.current.isHorizontal = Math.abs(dx) >= Math.abs(dy)
     }
     if (!mobDragRef.current.isHorizontal) return
+    if (Math.abs(dx) > 8) mobDidDrag.current = true
     e.preventDefault()
     mobXMotion.set(mobDragRef.current.startMX + dx)
   }, [mobXMotion])
@@ -822,7 +828,7 @@ function Home() {
           >
             <div className="cta-sticky-inner">
               <select
-                className="sub-nav-kultur-select flex-1"
+                className="beratung-nav-kultur-select flex-1"
                 value={kultur}
                 onChange={e => setKultur(e.target.value)}
               >
@@ -1075,7 +1081,7 @@ function Home() {
 
           {/* Kultur */}
           <select
-            className="sub-nav-kultur-select !text-xl !py-4 !pl-7 !pr-12 flex-1"
+            className="beratung-nav-kultur-select !text-xl !py-4 !pl-7 !pr-12 flex-1"
             value={kultur}
             onChange={e => setKultur(e.target.value)}
           >
@@ -1270,6 +1276,8 @@ function Home() {
                 title={card.title}
                 text={card.text}
                 draggable={false}
+                onClick={() => { if (!featDidDrag.current) navigate('/agrar-magazin-demo') }}
+                style={{ cursor: 'pointer' }}
               />
             ))}
           </motion.div>
@@ -1291,6 +1299,8 @@ function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: i * 0.18 }}
+                onClick={() => navigate('/agrar-magazin-demo')}
+                style={{ cursor: 'pointer' }}
               />
             ))}
           </div>
@@ -1312,6 +1322,8 @@ function Home() {
                 title={card.title}
                 text={card.text}
                 draggable={false}
+                onClick={() => { if (!mobDidDrag.current) navigate('/agrar-magazin-demo') }}
+                style={{ cursor: 'pointer' }}
               />
             ))}
           </motion.div>
