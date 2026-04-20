@@ -1,12 +1,12 @@
 # Graph Report - /Users/raphaelschneider/meine-beratung  (2026-04-20)
 
 ## Corpus Check
-- 16 files · ~598,686 words
+- 16 files · ~598,738 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 290 nodes · 305 edges · 55 communities detected
-- Extraction: 73% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 32 edges (avg confidence: 0.86)
+- 291 nodes · 306 edges · 55 communities detected
+- Extraction: 74% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 32 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -83,12 +83,12 @@
   index.html → README.md
 - `Main JSX Script Module` --conceptually_related_to--> `React + Vite Project Setup`  [INFERRED]
   index.html → README.md
-- `usePageTransition()` --calls--> `Home()`  [INFERRED]
-  src/context/TransitionContext.jsx → /Users/raphaelschneider/meine-beratung/src/pages/Home.jsx
-- `usePageTransition()` --calls--> `TransitionLink()`  [INFERRED]
-  src/context/TransitionContext.jsx → src/components/TransitionLink.jsx
 - `usePageTransition()` --calls--> `BeratungStart()`  [INFERRED]
-  src/context/TransitionContext.jsx → src/pages/BeratungStart.jsx
+  /Users/raphaelschneider/meine-beratung/src/context/TransitionContext.jsx → src/pages/BeratungStart.jsx
+- `usePageTransition()` --calls--> `Home()`  [INFERRED]
+  /Users/raphaelschneider/meine-beratung/src/context/TransitionContext.jsx → /Users/raphaelschneider/meine-beratung/src/pages/Home.jsx
+- `usePageTransition()` --calls--> `TransitionLink()`  [INFERRED]
+  /Users/raphaelschneider/meine-beratung/src/context/TransitionContext.jsx → /Users/raphaelschneider/meine-beratung/src/components/TransitionLink.jsx
 
 ## Hyperedges (group relationships)
 - **FieldConsultationScene** —  [INFERRED]
@@ -108,7 +108,7 @@ Cohesion: 0.19
 Nodes (15): Adengo, Anwenderkategorie: Beruflich, Baumschulgehölzpflanzen, Bayer, Cyprosulfamide, Früher Nachauflauf, HRAC/WSSA Gruppen 2 und 27, Herbizid (+7 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.17
+Cohesion: 0.15
 Nodes (4): BeratungStart(), Home(), usePageTransition(), TransitionLink()
 
 ### Community 4 - "Community 4"

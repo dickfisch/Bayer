@@ -5,7 +5,8 @@
       "Read(//usr/local/bin/**)",
       "Read(//Users/raphaelschneider/.nvm/versions/**)",
       "Bash(command -v npm)",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(python3 *)"
     ]
   }
 }

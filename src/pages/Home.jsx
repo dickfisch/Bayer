@@ -457,7 +457,8 @@ function Home() {
   function handleSubmit(e) {
     e.preventDefault()
     if (plz.length !== 5 || !kultur) return
-    triggerWeiterTransition('/beratung', e.clientX || 0, e.clientY || 0, { plz, kultur })
+    const rect = e.currentTarget.getBoundingClientRect()
+    triggerWeiterTransition('/beratung', rect, { plz, kultur })
   }
 
   const canSubmit = plz.length === 5 && kultur !== ''

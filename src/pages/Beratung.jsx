@@ -742,6 +742,7 @@ function Beratung() {
 
       window.ganttOpen = function(id) {
         var d = DATA[id];
+        window._ganttCurrentProduct = d;
         var cat = d.cat;
         var isFung = cat === 'fungizid';
         var badgeLabel = isFung ? 'Fungizid' : 'Herbizid';
@@ -831,7 +832,7 @@ function Beratung() {
         var buttonsHtml =
           '<div style="display:flex;flex-direction:column;gap:8px;margin-top:24px;overflow:visible;">' +
             '<div class="sheet-btn-row">' +
-              '<button class="sheet-btn sheet-btn--primary">' +
+              '<button class="sheet-btn sheet-btn--primary" onclick="window.openOrderModal()">' +
                 '<span class="sheet-btn-left">' +
                   '<svg class="sheet-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>' +
                   '<span class="sheet-btn-text">Jetzt bestellen</span>' +
@@ -1033,6 +1034,12 @@ function Beratung() {
             '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:16px;padding:24px;">' +
               '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Anwendungsfenster BBCH</div>' +
               '<div style="font-size:56px;font-weight:600;letter-spacing:-2px;color:#1d1d1f;line-height:1;">' + d.from + '\u2013' + d.to + '</div>' +
+              '<div onclick="window.openBbchLightbox()" style="cursor:zoom-in;border-radius:8px;overflow:hidden;margin-top:12px;position:relative;">' +
+                '<img src="/bbch_real.jpg" style="width:100%;height:60px;object-fit:cover;object-position:center;display:block;" />' +
+                '<div style="position:absolute;bottom:7px;right:7px;width:28px;height:28px;background:rgba(0,0,0,0.45);border-radius:50%;display:flex;align-items:center;justify-content:center;pointer-events:none;">' +
+                  '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>' +
+                '</div>' +
+              '</div>' +
             '</div>' +
             '<div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:16px;padding:24px;">' +
               '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8e8e93;margin-bottom:8px;">Einsatzhinweis</div>' +
@@ -1300,14 +1307,114 @@ function Beratung() {
         });
       })();
 
-      window.toggleBbchImg = function() {
-        var wrap = document.getElementById('bbchImgWrap');
-        var hint = document.getElementById('bbchImgHint');
-        if (!wrap) return;
-        wrap.classList.toggle('expanded');
-        hint.textContent = wrap.classList.contains('expanded')
-            ? 'Tippen zum Verkleinern \u2195'
-            : 'Tippen zum Vergr\u00f6\u00dfern \u2195';
+      window.openBbchLightbox = function() {
+        var overlay = document.createElement('div');
+        overlay.id = 'bbchLightbox';
+        overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.82);display:flex;align-items:center;justify-content:center;padding:24px;';
+        overlay.innerHTML =
+          '<img src="/bbch_real.jpg" style="max-width:100%;max-height:100%;border-radius:12px;object-fit:contain;box-shadow:0 24px 80px rgba(0,0,0,0.6);" />' +
+          '<button onclick="window.closeBbchLightbox()" style="position:fixed;top:20px;right:20px;width:44px;height:44px;border-radius:50%;background:rgba(240,240,240,0.95);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.2);">' +
+            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1d1d1f" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
+          '</button>';
+        overlay.addEventListener('click', function(e) { if (e.target === overlay) window.closeBbchLightbox(); });
+        document.body.appendChild(overlay);
+        document.body.style.overflow = 'hidden';
+      };
+      window.closeBbchLightbox = function() {
+        var el = document.getElementById('bbchLightbox');
+        if (el) el.remove();
+        document.body.style.overflow = '';
+      };
+
+      window.openOrderModal = function() {
+        var d = window._ganttCurrentProduct;
+        if (!d) return;
+        var isFung = d.cat === 'fungizid';
+        var badgeLabel = isFung ? 'Fungizid' : 'Herbizid';
+        var accentColor = isFung ? '#2D7D3A' : '#E8590C';
+        var dealers = [
+          { name: 'AGRAVIS Technik & Beratung', km: '12 km', status: 'sofort verfügbar', statusColor: '#2D7D3A', lieferzeit: 'Lieferung in 1–2 Werktagen', versand: 'Spedition / regionaler Handel', badge: 'verfügbar', badgeBg: '#e6f4ea', badgeC: '#2D7D3A', highlight: true },
+          { name: 'Raiffeisen Markt Region West', km: '28 km', status: 'begrenzter Bestand', statusColor: '#E8590C', lieferzeit: 'Lieferung in 2–3 Werktagen', versand: 'Abholung oder Zustellung', badge: 'verfügbar', badgeBg: '#e6f4ea', badgeC: '#2D7D3A', highlight: false },
+          { name: 'BayWa Agrar Vertrieb', km: '34 km', status: 'auf Anfrage', statusColor: '#8e8e93', lieferzeit: 'Lieferung in 3–5 Werktagen', versand: 'Direktversand ab Lager', badge: 'verfügbar', badgeBg: '#e6f4ea', badgeC: '#2D7D3A', highlight: false },
+        ];
+        var dealersHtml = dealers.map(function(dl, idx) {
+          return '<div data-dealer="' + idx + '" onclick="window.selectDealer(' + idx + ')" style="border:1.5px solid ' + (dl.highlight ? '#E8590C' : 'rgba(0,0,0,0.09)') + ';border-radius:14px;padding:18px 20px;margin-bottom:12px;background:' + (dl.highlight ? '#fff9f7' : '#fff') + ';cursor:pointer;transition:border-color 0.18s,background 0.18s;">' +
+            '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">' +
+              '<span style="font-size:16px;font-weight:700;color:#1d1d1f;flex:1;">' + dl.name + '</span>' +
+              '<span style="font-size:12px;font-weight:700;background:#f5a623;color:#fff;border-radius:20px;padding:4px 10px;">' + dl.km + '</span>' +
+              '<span style="font-size:12px;font-weight:600;background:' + dl.badgeBg + ';color:' + dl.badgeC + ';border-radius:20px;padding:4px 12px;">' + dl.badge + '</span>' +
+              '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="2" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>' +
+            '</div>' +
+            '<div style="font-size:13px;font-weight:700;color:' + dl.statusColor + ';margin-bottom:4px;">' + dl.status + '</div>' +
+            '<div style="font-size:13px;color:#6e6e73;line-height:1.5;">Lieferzeit: ' + dl.lieferzeit + '<br>Versandart: ' + dl.versand + '</div>' +
+          '</div>';
+        }).join('');
+        var overlay = document.createElement('div');
+        overlay.id = 'orderModal';
+        overlay.style.cssText = 'position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;padding:24px;';
+        overlay.innerHTML =
+          '<div style="background:#f5f5f7;border-radius:24px;max-width:920px;width:100%;max-height:90vh;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 32px 80px rgba(0,0,0,0.35);position:relative;">' +
+
+            /* ── LINKS ── */
+            '<div style="padding:40px 36px;border-right:1px solid rgba(0,0,0,0.08);display:flex;flex-direction:column;">' +
+              '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8e8e93;margin-bottom:12px;">Produkt jetzt bestellen</div>' +
+              '<div style="font-size:32px;font-weight:800;color:#1d1d1f;line-height:1.15;margin-bottom:32px;">Händler wählen<br><span style="background:linear-gradient(to right,#5a4861,#b8274a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Lieferzeit prüfen</span></div>' +
+
+              /* Produkt-Card */
+              '<div style="background:#fff;border-radius:16px;padding:24px 20px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:28px;">' +
+                (d.img ? '<img src="/' + d.img + '" style="width:160px;height:160px;object-fit:contain;margin-bottom:16px;" />' : '') +
+                '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:' + accentColor + ';margin-bottom:6px;">' + badgeLabel + '</div>' +
+                '<div style="font-size:22px;font-weight:800;color:#1d1d1f;margin-bottom:4px;">' + (d.products[0] ? d.products[0].n : d.label) + '</div>' +
+                '<div style="font-size:13px;color:#6e6e73;">' + d.label + '</div>' +
+              '</div>' +
+
+              /* Wichtige Hinweise */
+              '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8e8e93;margin-bottom:8px;">Wichtige Hinweise</div>' +
+              '<div style="font-size:13px;color:#6e6e73;line-height:1.65;">Verfügbarkeit, Lieferzeit und Versandart können je Händler variieren. Preise, Staffelungen und Rückfragen zur Beratung werden im nächsten Schritt direkt beim ausgewählten Partner geklärt.</div>' +
+              '<div style="display:flex;justify-content:flex-end;margin-top:auto;padding-top:24px;">' +
+                '<button class="sheet-btn sheet-btn--outline" onclick="window.closeOrderModal()" style="white-space:nowrap;min-width:220px;flex:none;">' +
+                  '<span class="sheet-btn-left"><span class="sheet-btn-text">Beratung anfragen</span></span>' +
+                  '<span class="sheet-btn-right"><span class="sheet-btn-slash">/</span><span class="sheet-btn-arrow">›</span></span>' +
+                '</button>' +
+              '</div>' +
+            '</div>' +
+
+            /* ── RECHTS ── */
+            '<div style="padding:40px 36px;display:flex;flex-direction:column;">' +
+              '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8e8e93;margin-bottom:8px;">Händlerauswahl</div>' +
+              '<div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:24px;">' +
+                '<div style="font-size:24px;font-weight:800;color:#1d1d1f;line-height:1.2;">Passenden Partner<br>auswählen</div>' +
+                '<div style="font-size:13px;font-weight:600;color:#8e8e93;text-align:right;">3 Händler<br>verfügbar</div>' +
+              '</div>' +
+              dealersHtml +
+              '<div style="flex:1;"></div>' +
+              '<div style="display:flex;justify-content:flex-end;margin-top:24px;">' +
+                '<button class="sheet-btn sheet-btn--primary" onclick="window.closeOrderModal()" style="white-space:nowrap;min-width:220px;flex:none;">' +
+                  '<span class="sheet-btn-left"><span class="sheet-btn-text">Händler auswählen</span></span>' +
+                  '<span class="sheet-btn-right"><span class="sheet-btn-slash">/</span><span class="sheet-btn-arrow">\u203a</span></span>' +
+                '</button>' +
+              '</div>' +
+            '</div>' +
+
+            /* Close */
+            '<button onclick="window.closeOrderModal()" style="position:absolute;top:20px;right:20px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.08);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;">' +
+              '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1d1d1f" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
+            '</button>' +
+          '</div>';
+        overlay.addEventListener('click', function(e) { if (e.target === overlay) window.closeOrderModal(); });
+        document.body.appendChild(overlay);
+      };
+      window.closeOrderModal = function() {
+        var el = document.getElementById('orderModal');
+        if (el) el.remove();
+      };
+      window.selectDealer = function(idx) {
+        var cards = document.querySelectorAll('#orderModal [data-dealer]');
+        cards.forEach(function(card) {
+          var i = parseInt(card.getAttribute('data-dealer'));
+          card.style.borderColor = i === idx ? '#E8590C' : 'rgba(0,0,0,0.09)';
+          card.style.background = i === idx ? '#fff9f7' : '#fff';
+        });
       };
 
       window.ganttClose = function() {
@@ -1366,7 +1473,12 @@ function Beratung() {
       delete window.switchWeatherDay;
       delete window.applyDropdownFilter;
       delete window.ganttFilter;
-      delete window.toggleBbchImg;
+      delete window.openBbchLightbox;
+      delete window.closeBbchLightbox;
+      delete window.openOrderModal;
+      delete window.closeOrderModal;
+      delete window.selectDealer;
+      delete window._ganttCurrentProduct;
       delete window.refreshCursorLine;
     };
   }, [])
@@ -1524,7 +1636,14 @@ function Beratung() {
             <div className="fbs-scroll-outer" ref={fbsTrackRef}>
             <div className="fbs-track">
               {cards.map((c, i) => (
-                <div className="fbs-card" key={i}>
+                <motion.div
+                  className="fbs-card"
+                  key={i}
+                  initial={{ opacity: 0, y: 200 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.8 + i * 0.1 }}
+                >
 
                   {/* Top: Avatar links, Meta rechts */}
                   <div className="fb-card-top">
@@ -1559,7 +1678,7 @@ function Beratung() {
                     <span className="fb-card-arrow">/ <span className="agrar-arrow-chevron">›</span></span>
                   </div>
 
-                </div>
+                </motion.div>
               ))}
             </div>
             </div>
@@ -1635,8 +1754,14 @@ function Beratung() {
                   <div className="gantt-inner-head" id="ganttInnerHead">
                     {/* Scale row */}
                     <div className="gantt-scale" style={{overflow:'visible',position:'relative'}}>
-                      <div className="gantt-scale-label" style={{ flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center' }}>
+                      <div className="gantt-scale-label" style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: '8px' }}>
                         <span>BBCH</span>
+                        <div
+                          onClick={() => window.openBbchLightbox && window.openBbchLightbox()}
+                          style={{ cursor: 'zoom-in', width: '26px', height: '26px', background: 'rgba(255,255,255,0.12)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}
+                        >
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                        </div>
                       </div>
                       <div className="gantt-scale-ticks" id="ganttTicks" ref={ticksRef}>
                         {/* React-controlled cursor bubble */}

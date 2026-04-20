@@ -2804,7 +2804,7 @@ body, button, input, select, textarea {
 
   .hero {
     height: auto;
-    min-height: 100svh;
+    min-height: 90svh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
