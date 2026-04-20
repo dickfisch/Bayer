@@ -1,8 +1,8 @@
-import { usePageTransition } from '../context/TransitionContext'
+import { useNavigate } from 'react-router-dom'
 
 /**
  * Ersetzt <Link to="..."> und <a href="..."> für interne Navigation.
- * Fängt den Klick ab, liest clientX/clientY und löst die Kreisanimation aus.
+ * Navigiert direkt ohne Übergangsanimation.
  */
 export default function TransitionLink({
   to,
@@ -12,27 +12,14 @@ export default function TransitionLink({
   onClick,
   ...props
 }) {
-  const { triggerTransition } = usePageTransition()
+  const navigate = useNavigate()
   const path = to ?? href
 
   function handleClick(e) {
-    // Nur interne Routen abfangen
     if (!path || !path.startsWith('/')) return
-
     e.preventDefault()
-
-    // Klick-Position (Fallback: Elementmitte bei Tastaturnavigation)
-    let clientX = e.clientX
-    let clientY = e.clientY
-    if (!clientX && !clientY) {
-      const r = e.currentTarget.getBoundingClientRect()
-      clientX = r.left + r.width / 2
-      clientY = r.top + r.height / 2
-    }
-
-    // Erst den eigenen onClick (z.B. closeMobileMenu), dann Transition
     onClick?.(e)
-    triggerTransition(path, clientX, clientY, state)
+    navigate(path, { state })
   }
 
   return (

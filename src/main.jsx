@@ -1,7 +1,7 @@
 import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { AnimatePresence, LayoutGroup } from 'framer-motion'
+
 import Lenis from 'lenis'
 import './index.css'
 import Home from './pages/Home'
@@ -38,19 +38,16 @@ function ScrollToTop() {
 }
 
 function AppRoutes() {
-  const location = useLocation()
   return (
-    <LayoutGroup>
+    <>
       <ScrollToTop />
-      <AnimatePresence>
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/beratung-start" element={<BeratungStart />} />
-          <Route path="/beratung" element={<Beratung />} />
-          <Route path="/agrar-magazin-demo" element={<AgrarMagazinDemo />} />
-        </Routes>
-      </AnimatePresence>
-    </LayoutGroup>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/beratung-start" element={<BeratungStart />} />
+        <Route path="/beratung" element={<Beratung />} />
+        <Route path="/agrar-magazin-demo" element={<AgrarMagazinDemo />} />
+      </Routes>
+    </>
   )
 }
 

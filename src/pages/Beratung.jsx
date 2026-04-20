@@ -1491,11 +1491,8 @@ function Beratung() {
     <>
       {showSeasonModal && <SeasonViewModal onClose={() => setShowSeasonModal(false)} />}
       <MainNav />
-      <motion.div
+      <div
         className="beratung-content"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
       >
 
         {/* ── GRADIENT WRAP (BeratungNav + Feldbericht + Produkte) ── */}
@@ -1965,7 +1962,7 @@ function Beratung() {
         </section>
 
         <Footer />
-      </motion.div>
+      </div>
     </>
   )
 }

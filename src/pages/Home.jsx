@@ -287,7 +287,7 @@ function ProdukteSlider() {
 
 function Home() {
   const navigate = useNavigate()
-  const { triggerTransition } = usePageTransition()
+  const { triggerWeiterTransition } = usePageTransition()
   const [plz, setPlz] = useState(() => sessionStorage.getItem('nav_plz') || '')
   const [premeoIdx, setPremeoIdx] = useState(0)
   const [heroCount, setHeroCount] = useState(0)
@@ -457,7 +457,7 @@ function Home() {
   function handleSubmit(e) {
     e.preventDefault()
     if (plz.length !== 5 || !kultur) return
-    triggerTransition('/beratung', e.clientX || 0, e.clientY || 0, { plz, kultur })
+    triggerWeiterTransition('/beratung', e.clientX || 0, e.clientY || 0, { plz, kultur })
   }
 
   const canSubmit = plz.length === 5 && kultur !== ''

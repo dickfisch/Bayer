@@ -25,7 +25,7 @@
       "source_file": "vite.config.js",
       "source_location": "L1",
       "id": "vite_config_js",
-      "community": 49,
+      "community": 50,
       "norm_label": "vite.config.js"
     },
     {
@@ -34,43 +34,43 @@
       "source_file": "eslint.config.js",
       "source_location": "L1",
       "id": "eslint_config_js",
-      "community": 50,
+      "community": 51,
       "norm_label": "eslint.config.js"
     },
     {
       "label": "main.jsx",
       "file_type": "code",
-      "source_file": "src/main.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/main.jsx",
       "source_location": "L1",
-      "id": "src_main_jsx",
-      "community": 27,
+      "id": "users_raphaelschneider_meine_beratung_src_main_jsx",
+      "community": 29,
       "norm_label": "main.jsx"
     },
     {
       "label": "LenisProvider()",
       "file_type": "code",
-      "source_file": "src/main.jsx",
-      "source_location": "L13",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/main.jsx",
+      "source_location": "L14",
       "id": "main_lenisprovider",
-      "community": 27,
+      "community": 29,
       "norm_label": "lenisprovider()"
     },
     {
       "label": "ScrollToTop()",
       "file_type": "code",
-      "source_file": "src/main.jsx",
-      "source_location": "L27",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/main.jsx",
+      "source_location": "L28",
       "id": "main_scrolltotop",
-      "community": 27,
+      "community": 29,
       "norm_label": "scrolltotop()"
     },
     {
       "label": "AppRoutes()",
       "file_type": "code",
-      "source_file": "src/main.jsx",
-      "source_location": "L39",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/main.jsx",
+      "source_location": "L40",
       "id": "main_approutes",
-      "community": 27,
+      "community": 29,
       "norm_label": "approutes()"
     },
     {
@@ -121,37 +121,37 @@
     {
       "label": "MainNav.jsx",
       "file_type": "code",
-      "source_file": "src/components/MainNav.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/components/MainNav.jsx",
       "source_location": "L1",
-      "id": "src_components_mainnav_jsx",
-      "community": 28,
+      "id": "users_raphaelschneider_meine_beratung_src_components_mainnav_jsx",
+      "community": 30,
       "norm_label": "mainnav.jsx"
     },
     {
       "label": "WeatherIcon()",
       "file_type": "code",
-      "source_file": "src/components/MainNav.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/components/MainNav.jsx",
       "source_location": "L12",
       "id": "mainnav_weathericon",
-      "community": 28,
+      "community": 30,
       "norm_label": "weathericon()"
     },
     {
       "label": "ChevronRight()",
       "file_type": "code",
-      "source_file": "src/components/MainNav.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/components/MainNav.jsx",
       "source_location": "L28",
       "id": "mainnav_chevronright",
-      "community": 28,
+      "community": 30,
       "norm_label": "chevronright()"
     },
     {
       "label": "MainNav()",
       "file_type": "code",
-      "source_file": "src/components/MainNav.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/components/MainNav.jsx",
       "source_location": "L36",
       "id": "mainnav_mainnav",
-      "community": 28,
+      "community": 30,
       "norm_label": "mainnav()"
     },
     {
@@ -160,7 +160,7 @@
       "source_file": "src/components/Footer.jsx",
       "source_location": "L1",
       "id": "src_components_footer_jsx",
-      "community": 37,
+      "community": 38,
       "norm_label": "footer.jsx"
     },
     {
@@ -169,7 +169,7 @@
       "source_file": "src/components/Footer.jsx",
       "source_location": "L20",
       "id": "footer_mobilenavsection",
-      "community": 37,
+      "community": 38,
       "norm_label": "mobilenavsection()"
     },
     {
@@ -178,7 +178,7 @@
       "source_file": "src/components/Footer.jsx",
       "source_location": "L41",
       "id": "footer_footer",
-      "community": 37,
+      "community": 38,
       "norm_label": "footer()"
     },
     {
@@ -205,7 +205,7 @@
       "source_file": "src/components/ui/Button.jsx",
       "source_location": "L1",
       "id": "src_components_ui_button_jsx",
-      "community": 43,
+      "community": 44,
       "norm_label": "button.jsx"
     },
     {
@@ -214,7 +214,7 @@
       "source_file": "src/components/ui/Button.jsx",
       "source_location": "L48",
       "id": "button_button",
-      "community": 43,
+      "community": 44,
       "norm_label": "button()"
     },
     {
@@ -223,7 +223,7 @@
       "source_file": "src/components/ui/Card.jsx",
       "source_location": "L1",
       "id": "src_components_ui_card_jsx",
-      "community": 44,
+      "community": 45,
       "norm_label": "card.jsx"
     },
     {
@@ -232,7 +232,7 @@
       "source_file": "src/components/ui/Card.jsx",
       "source_location": "L1",
       "id": "card_card",
-      "community": 44,
+      "community": 45,
       "norm_label": "card()"
     },
     {
@@ -241,7 +241,7 @@
       "source_file": "src/components/ui/Label.jsx",
       "source_location": "L1",
       "id": "src_components_ui_label_jsx",
-      "community": 45,
+      "community": 46,
       "norm_label": "label.jsx"
     },
     {
@@ -250,7 +250,7 @@
       "source_file": "src/components/ui/Label.jsx",
       "source_location": "L1",
       "id": "label_label",
-      "community": 45,
+      "community": 46,
       "norm_label": "label()"
     },
     {
@@ -259,7 +259,7 @@
       "source_file": "src/components/ui/TileCard.jsx",
       "source_location": "L1",
       "id": "src_components_ui_tilecard_jsx",
-      "community": 46,
+      "community": 47,
       "norm_label": "tilecard.jsx"
     },
     {
@@ -268,7 +268,7 @@
       "source_file": "src/components/ui/TileCard.jsx",
       "source_location": "L7",
       "id": "tilecard_tilecard",
-      "community": 46,
+      "community": 47,
       "norm_label": "tilecard()"
     },
     {
@@ -277,7 +277,7 @@
       "source_file": "src/components/ui/PageHeader.jsx",
       "source_location": "L1",
       "id": "src_components_ui_pageheader_jsx",
-      "community": 47,
+      "community": 48,
       "norm_label": "pageheader.jsx"
     },
     {
@@ -286,7 +286,7 @@
       "source_file": "src/components/ui/PageHeader.jsx",
       "source_location": "L10",
       "id": "pageheader_pageheader",
-      "community": 47,
+      "community": 48,
       "norm_label": "pageheader()"
     },
     {
@@ -308,54 +308,117 @@
       "norm_label": "beratungstart()"
     },
     {
+      "label": "AgrarMagazinDemo.jsx",
+      "file_type": "code",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/AgrarMagazinDemo.jsx",
+      "source_location": "L1",
+      "id": "users_raphaelschneider_meine_beratung_src_pages_agrarmagazindemo_jsx",
+      "community": 11,
+      "norm_label": "agrarmagazindemo.jsx"
+    },
+    {
+      "label": "ArticleSection()",
+      "file_type": "code",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/AgrarMagazinDemo.jsx",
+      "source_location": "L6",
+      "id": "agrarmagazindemo_articlesection",
+      "community": 11,
+      "norm_label": "articlesection()"
+    },
+    {
+      "label": "ArticleQuote()",
+      "file_type": "code",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/AgrarMagazinDemo.jsx",
+      "source_location": "L28",
+      "id": "agrarmagazindemo_articlequote",
+      "community": 11,
+      "norm_label": "articlequote()"
+    },
+    {
+      "label": "ArticleImage()",
+      "file_type": "code",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/AgrarMagazinDemo.jsx",
+      "source_location": "L70",
+      "id": "agrarmagazindemo_articleimage",
+      "community": 11,
+      "norm_label": "articleimage()"
+    },
+    {
+      "label": "SocialBar()",
+      "file_type": "code",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/AgrarMagazinDemo.jsx",
+      "source_location": "L81",
+      "id": "agrarmagazindemo_socialbar",
+      "community": 11,
+      "norm_label": "socialbar()"
+    },
+    {
+      "label": "AgrarMagazinDemo()",
+      "file_type": "code",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/AgrarMagazinDemo.jsx",
+      "source_location": "L117",
+      "id": "agrarmagazindemo_agrarmagazindemo",
+      "community": 11,
+      "norm_label": "agrarmagazindemo()"
+    },
+    {
       "label": "Beratung.jsx",
       "file_type": "code",
-      "source_file": "src/pages/Beratung.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
       "source_location": "L1",
-      "id": "src_pages_beratung_jsx",
-      "community": 29,
+      "id": "users_raphaelschneider_meine_beratung_src_pages_beratung_jsx",
+      "community": 17,
       "norm_label": "beratung.jsx"
     },
     {
       "label": "BeratungNav()",
       "file_type": "code",
-      "source_file": "src/pages/Beratung.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
       "source_location": "L29",
       "id": "beratung_beratungnav",
-      "community": 29,
+      "community": 17,
       "norm_label": "beratungnav()"
     },
     {
       "label": "pos()",
       "file_type": "code",
-      "source_file": "src/pages/Beratung.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
       "source_location": "L209",
       "id": "beratung_pos",
-      "community": 29,
+      "community": 17,
       "norm_label": "pos()"
+    },
+    {
+      "label": "SeasonViewModal()",
+      "file_type": "code",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
+      "source_location": "L266",
+      "id": "beratung_seasonviewmodal",
+      "community": 17,
+      "norm_label": "seasonviewmodal()"
     },
     {
       "label": "Beratung()",
       "file_type": "code",
-      "source_file": "src/pages/Beratung.jsx",
-      "source_location": "L264",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
+      "source_location": "L443",
       "id": "beratung_beratung",
-      "community": 29,
+      "community": 17,
       "norm_label": "beratung()"
     },
     {
       "label": "Home.jsx",
       "file_type": "code",
-      "source_file": "src/pages/Home.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Home.jsx",
       "source_location": "L1",
-      "id": "src_pages_home_jsx",
+      "id": "users_raphaelschneider_meine_beratung_src_pages_home_jsx",
       "community": 3,
       "norm_label": "home.jsx"
     },
     {
       "label": "ProdukteSlider()",
       "file_type": "code",
-      "source_file": "src/pages/Home.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Home.jsx",
       "source_location": "L174",
       "id": "home_produkteslider",
       "community": 3,
@@ -364,7 +427,7 @@
     {
       "label": "Home()",
       "file_type": "code",
-      "source_file": "src/pages/Home.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Home.jsx",
       "source_location": "L288",
       "id": "home_home",
       "community": 3,
@@ -379,9 +442,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "index_app_entry_point",
       "community": 4,
-      "norm_label": "app entry point"
+      "norm_label": "app entry point",
+      "id": "index_app_entry_point"
     },
     {
       "label": "Root DOM Element (#root)",
@@ -392,9 +455,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "index_root_div",
       "community": 4,
-      "norm_label": "root dom element (#root)"
+      "norm_label": "root dom element (#root)",
+      "id": "index_root_div"
     },
     {
       "label": "Main JSX Script Module",
@@ -405,9 +468,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "index_main_jsx_script",
       "community": 4,
-      "norm_label": "main jsx script module"
+      "norm_label": "main jsx script module",
+      "id": "index_main_jsx_script"
     },
     {
       "label": "Favicon (SVG)",
@@ -418,9 +481,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "index_favicon",
       "community": 4,
-      "norm_label": "favicon (svg)"
+      "norm_label": "favicon (svg)",
+      "id": "index_favicon"
     },
     {
       "label": "Page Title: Bayer Agrar Deutschland",
@@ -431,9 +494,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "index_page_title",
       "community": 4,
-      "norm_label": "page title: bayer agrar deutschland"
+      "norm_label": "page title: bayer agrar deutschland",
+      "id": "index_page_title"
     },
     {
       "label": "React + Vite Project Setup",
@@ -444,9 +507,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_react_vite_setup",
       "community": 4,
-      "norm_label": "react + vite project setup"
+      "norm_label": "react + vite project setup",
+      "id": "readme_react_vite_setup"
     },
     {
       "label": "Vite React Plugin (@vitejs/plugin-react)",
@@ -457,9 +520,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_vite_react_plugin",
       "community": 4,
-      "norm_label": "vite react plugin (@vitejs/plugin-react)"
+      "norm_label": "vite react plugin (@vitejs/plugin-react)",
+      "id": "readme_vite_react_plugin"
     },
     {
       "label": "Vite React SWC Plugin (@vitejs/plugin-react-swc)",
@@ -470,9 +533,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_vite_react_swc_plugin",
       "community": 4,
-      "norm_label": "vite react swc plugin (@vitejs/plugin-react-swc)"
+      "norm_label": "vite react swc plugin (@vitejs/plugin-react-swc)",
+      "id": "readme_vite_react_swc_plugin"
     },
     {
       "label": "React Compiler (optional)",
@@ -483,9 +546,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_react_compiler",
       "community": 4,
-      "norm_label": "react compiler (optional)"
+      "norm_label": "react compiler (optional)",
+      "id": "readme_react_compiler"
     },
     {
       "label": "Rationale: React Compiler Disabled by Default",
@@ -496,9 +559,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_react_compiler_disabled_rationale",
       "community": 4,
-      "norm_label": "rationale: react compiler disabled by default"
+      "norm_label": "rationale: react compiler disabled by default",
+      "id": "readme_react_compiler_disabled_rationale"
     },
     {
       "label": "ESLint Configuration",
@@ -509,9 +572,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_eslint_config",
       "community": 4,
-      "norm_label": "eslint configuration"
+      "norm_label": "eslint configuration",
+      "id": "readme_eslint_config"
     },
     {
       "label": "TypeScript Recommendation for Production",
@@ -522,9 +585,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_typescript_recommendation",
       "community": 4,
-      "norm_label": "typescript recommendation for production"
+      "norm_label": "typescript recommendation for production",
+      "id": "readme_typescript_recommendation"
     },
     {
       "label": "Graphify Knowledge Graph",
@@ -535,9 +598,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_graphify_knowledge_graph",
-      "community": 16,
-      "norm_label": "graphify knowledge graph"
+      "community": 18,
+      "norm_label": "graphify knowledge graph",
+      "id": "claude_graphify_knowledge_graph"
     },
     {
       "label": "Graphify Output Directory (graphify-out/)",
@@ -548,9 +611,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_graphify_out_directory",
-      "community": 16,
-      "norm_label": "graphify output directory (graphify-out/)"
+      "community": 18,
+      "norm_label": "graphify output directory (graphify-out/)",
+      "id": "claude_graphify_out_directory"
     },
     {
       "label": "Graph Report (GRAPH_REPORT.md)",
@@ -561,9 +624,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_graph_report",
-      "community": 16,
-      "norm_label": "graph report (graph_report.md)"
+      "community": 18,
+      "norm_label": "graph report (graph_report.md)",
+      "id": "claude_graph_report"
     },
     {
       "label": "Wiki Index (graphify-out/wiki/index.md)",
@@ -574,9 +637,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_wiki_index",
-      "community": 16,
-      "norm_label": "wiki index (graphify-out/wiki/index.md)"
+      "community": 18,
+      "norm_label": "wiki index (graphify-out/wiki/index.md)",
+      "id": "claude_wiki_index"
     },
     {
       "label": "Rule: Run graphify update after code changes",
@@ -587,9 +650,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_graphify_update_rule",
-      "community": 16,
-      "norm_label": "rule: run graphify update after code changes"
+      "community": 18,
+      "norm_label": "rule: run graphify update after code changes",
+      "id": "claude_graphify_update_rule"
     },
     {
       "label": "code_1.svg",
@@ -601,9 +664,9 @@
       "author": null,
       "contributor": null,
       "notes": "SVG vector graphic, 400x495.64px, generated with Adobe Illustrator 30.3.0",
-      "id": "code_1_svg_file",
-      "community": 11,
-      "norm_label": "code_1.svg"
+      "community": 12,
+      "norm_label": "code_1.svg",
+      "id": "code_1_svg_file"
     },
     {
       "label": "Double Slash Icon",
@@ -615,9 +678,9 @@
       "author": null,
       "contributor": null,
       "notes": "Two white diagonal slash shapes (path elements) forming a '//' symbol",
-      "id": "code_1_double_slash_icon",
-      "community": 11,
-      "norm_label": "double slash icon"
+      "community": 12,
+      "norm_label": "double slash icon",
+      "id": "code_1_double_slash_icon"
     },
     {
       "label": "Code Comment Symbol",
@@ -629,9 +692,9 @@
       "author": null,
       "contributor": null,
       "notes": "The '//' double-slash is universally recognized as the code comment syntax in languages like JavaScript, C, C++, Java, etc.",
-      "id": "code_1_code_comment_symbol",
-      "community": 11,
-      "norm_label": "code comment symbol"
+      "community": 12,
+      "norm_label": "code comment symbol",
+      "id": "code_1_code_comment_symbol"
     },
     {
       "label": "Programming / Coding Icon",
@@ -643,9 +706,9 @@
       "author": null,
       "contributor": null,
       "notes": "Icon used to represent software development, coding, or technical services",
-      "id": "code_1_programming_icon",
-      "community": 11,
-      "norm_label": "programming / coding icon"
+      "community": 12,
+      "norm_label": "programming / coding icon",
+      "id": "code_1_programming_icon"
     },
     {
       "label": "White Fill (#fff)",
@@ -657,9 +720,9 @@
       "author": null,
       "contributor": null,
       "notes": "Both path shapes use fill #ffffff (white), implying display on a dark or colored background",
-      "id": "code_1_white_fill",
-      "community": 11,
-      "norm_label": "white fill (#fff)"
+      "community": 12,
+      "norm_label": "white fill (#fff)",
+      "id": "code_1_white_fill"
     },
     {
       "label": "Adobe Illustrator 30.3.0",
@@ -671,9 +734,9 @@
       "author": null,
       "contributor": null,
       "notes": "Tool used to create and export this SVG (generator comment in file header)",
-      "id": "code_1_adobe_illustrator",
-      "community": 11,
-      "norm_label": "adobe illustrator 30.3.0"
+      "community": 12,
+      "norm_label": "adobe illustrator 30.3.0",
+      "id": "code_1_adobe_illustrator"
     },
     {
       "label": "Weather Icon SVG (Sun)",
@@ -695,9 +758,9 @@
         "website-asset",
         "german"
       ],
-      "id": "icons_website_dummy_wetter_svg",
-      "community": 38,
-      "norm_label": "weather icon svg (sun)"
+      "community": 39,
+      "norm_label": "weather icon svg (sun)",
+      "id": "icons_website_dummy_wetter_svg"
     },
     {
       "label": "Sun Weather Concept",
@@ -715,9 +778,9 @@
         "clear-sky",
         "icon-concept"
       ],
-      "id": "icons_website_dummy_wetter_concept_sun",
-      "community": 38,
-      "norm_label": "sun weather concept"
+      "community": 39,
+      "norm_label": "sun weather concept",
+      "id": "icons_website_dummy_wetter_concept_sun"
     },
     {
       "label": "Dummy/Placeholder Asset",
@@ -735,9 +798,9 @@
         "mockup",
         "development-asset"
       ],
-      "id": "icons_website_dummy_wetter_concept_placeholder",
-      "community": 38,
-      "norm_label": "dummy/placeholder asset"
+      "community": 39,
+      "norm_label": "dummy/placeholder asset",
+      "id": "icons_website_dummy_wetter_concept_placeholder"
     },
     {
       "label": "code_2.svg Graphic",
@@ -749,9 +812,9 @@
       "author": null,
       "contributor": null,
       "description": "SVG graphic composed of five white angled parallelogram/diagonal stripe shapes arranged in a stacked, cascading pattern. Likely a decorative brand mark or logo visual element.",
-      "id": "code_2_svg_graphic",
-      "community": 30,
-      "norm_label": "code_2.svg graphic"
+      "community": 31,
+      "norm_label": "code_2.svg graphic",
+      "id": "code_2_svg_graphic"
     },
     {
       "label": "Parallelogram Shape",
@@ -763,9 +826,9 @@
       "author": null,
       "contributor": null,
       "description": "Repeating white parallelogram/diagonal stripe path element used as a building block in the SVG composition.",
-      "id": "code_2_parallelogram_shape",
-      "community": 30,
-      "norm_label": "parallelogram shape"
+      "community": 31,
+      "norm_label": "parallelogram shape",
+      "id": "code_2_parallelogram_shape"
     },
     {
       "label": "Logo Mark / Brand Visual",
@@ -777,9 +840,9 @@
       "author": null,
       "contributor": null,
       "description": "The overall composition of angled shapes functions as a logo mark or decorative brand identity graphic, created with Adobe Illustrator.",
-      "id": "code_2_logo_mark",
-      "community": 30,
-      "norm_label": "logo mark / brand visual"
+      "community": 31,
+      "norm_label": "logo mark / brand visual",
+      "id": "code_2_logo_mark"
     },
     {
       "label": "Adobe Illustrator (Generator)",
@@ -791,9 +854,9 @@
       "author": null,
       "contributor": null,
       "description": "The SVG was generated by Adobe Illustrator 30.3.0, indicating professional vector graphic authoring.",
-      "id": "code_2_adobe_illustrator",
-      "community": 30,
-      "norm_label": "adobe illustrator (generator)"
+      "community": 31,
+      "norm_label": "adobe illustrator (generator)",
+      "id": "code_2_adobe_illustrator"
     },
     {
       "label": "SVG Graphic: code_3",
@@ -813,9 +876,9 @@
         "generator": "Adobe Illustrator 30.3.0",
         "svg_version": "2.1.3"
       },
-      "id": "code_3_svg_graphic",
-      "community": 17,
-      "norm_label": "svg graphic: code_3"
+      "community": 19,
+      "norm_label": "svg graphic: code_3",
+      "id": "code_3_svg_graphic"
     },
     {
       "label": "Brand Color: Green #649f1f",
@@ -832,9 +895,9 @@
         "css_class": "st0",
         "role": "brand_color"
       },
-      "id": "code_3_green_fill",
-      "community": 17,
-      "norm_label": "brand color: green #649f1f"
+      "community": 19,
+      "norm_label": "brand color: green #649f1f",
+      "id": "code_3_green_fill"
     },
     {
       "label": "Visual Motif: Stylized Barcode / Vertical Stripes",
@@ -851,9 +914,9 @@
         "orientation": "horizontal_banner",
         "shape_type": "parallelogram_bars"
       },
-      "id": "code_3_barcode_motif",
-      "community": 17,
-      "norm_label": "visual motif: stylized barcode / vertical stripes"
+      "community": 19,
+      "norm_label": "visual motif: stylized barcode / vertical stripes",
+      "id": "code_3_barcode_motif"
     },
     {
       "label": "UI Element: Decorative Banner Graphic",
@@ -869,9 +932,9 @@
         "usage_context": "web_decorative",
         "aspect_ratio": "wide_banner"
       },
-      "id": "code_3_decorative_element",
-      "community": 17,
-      "norm_label": "ui element: decorative banner graphic"
+      "community": 19,
+      "norm_label": "ui element: decorative banner graphic",
+      "id": "code_3_decorative_element"
     },
     {
       "label": "Tool: Adobe Illustrator 30.3.0",
@@ -889,9 +952,9 @@
         "plugin": "SVG Export Plug-In",
         "plugin_version": "2.1.3 Build 182"
       },
-      "id": "code_3_adobe_illustrator",
-      "community": 17,
-      "norm_label": "tool: adobe illustrator 30.3.0"
+      "community": 19,
+      "norm_label": "tool: adobe illustrator 30.3.0",
+      "id": "code_3_adobe_illustrator"
     },
     {
       "label": "Bonus Icon SVG",
@@ -903,9 +966,9 @@
       "author": null,
       "contributor": null,
       "description": "SVG icon depicting a hexagonal badge with gradient fill (pink-to-red), containing the text 'BONUS' and the number '80'. Used as a visual icon for a bonus or reward concept.",
-      "id": "icons_bonus_svg_icon",
       "community": 8,
-      "norm_label": "bonus icon svg"
+      "norm_label": "bonus icon svg",
+      "id": "icons_bonus_svg_icon"
     },
     {
       "label": "Hexagon Shape",
@@ -917,9 +980,9 @@
       "author": null,
       "contributor": null,
       "description": "The outer hexagonal polygon shape forming the badge background of the bonus icon.",
-      "id": "icons_bonus_hexagon_shape",
       "community": 8,
-      "norm_label": "hexagon shape"
+      "norm_label": "hexagon shape",
+      "id": "icons_bonus_hexagon_shape"
     },
     {
       "label": "Pink-Red Linear Gradient Fill",
@@ -931,9 +994,9 @@
       "author": null,
       "contributor": null,
       "description": "Linear gradient from #e94772 (pink) to #df015e (deep red/magenta) used as the fill for the hexagon background.",
-      "id": "icons_bonus_gradient_fill",
       "community": 8,
-      "norm_label": "pink-red linear gradient fill"
+      "norm_label": "pink-red linear gradient fill",
+      "id": "icons_bonus_gradient_fill"
     },
     {
       "label": "Number 80",
@@ -945,9 +1008,9 @@
       "author": null,
       "contributor": null,
       "description": "Large white '80' numeral rendered in the center of the icon, likely representing a bonus score, percentage, or reward value.",
-      "id": "icons_bonus_number_80",
       "community": 8,
-      "norm_label": "number 80"
+      "norm_label": "number 80",
+      "id": "icons_bonus_number_80"
     },
     {
       "label": "BONUS Label Text",
@@ -959,9 +1022,9 @@
       "author": null,
       "contributor": null,
       "description": "White 'BONUS' text rendered at the top of the icon, identifying the concept as a bonus or reward indicator.",
-      "id": "icons_bonus_label_text",
       "community": 8,
-      "norm_label": "bonus label text"
+      "norm_label": "bonus label text",
+      "id": "icons_bonus_label_text"
     },
     {
       "label": "Bonus / Reward Concept",
@@ -973,9 +1036,9 @@
       "author": null,
       "contributor": null,
       "description": "Abstract concept of a bonus or reward, visually communicated by the badge design, the word 'BONUS', and the numeric value '80'.",
-      "id": "icons_bonus_concept_reward",
       "community": 8,
-      "norm_label": "bonus / reward concept"
+      "norm_label": "bonus / reward concept",
+      "id": "icons_bonus_concept_reward"
     },
     {
       "label": "Adobe Illustrator (Authoring Tool)",
@@ -987,9 +1050,9 @@
       "author": null,
       "contributor": null,
       "description": "Adobe Illustrator 30.3.0 was used to generate this SVG via its SVG Export Plug-In (version 2.1.3 Build 182).",
-      "id": "icons_bonus_adobe_illustrator",
       "community": 8,
-      "norm_label": "adobe illustrator (authoring tool)"
+      "norm_label": "adobe illustrator (authoring tool)",
+      "id": "icons_bonus_adobe_illustrator"
     },
     {
       "label": "Premeo Bonuspunkte SVG Asset",
@@ -1001,9 +1064,9 @@
       "author": null,
       "contributor": null,
       "description": "SVG logo/badge for the Premeo bonus points program. Depicts the word 'BONUS' rendered in pink-red (#FF3162) letter paths inside a hexagonal outline frame, also in pink-red. Created with Adobe Illustrator 27.8.0. ViewBox 1000x1000.",
-      "id": "premeo_bonuspunkte_svg_asset",
-      "community": 18,
-      "norm_label": "premeo bonuspunkte svg asset"
+      "community": 20,
+      "norm_label": "premeo bonuspunkte svg asset",
+      "id": "premeo_bonuspunkte_svg_asset"
     },
     {
       "label": "Premeo Brand",
@@ -1015,9 +1078,9 @@
       "author": null,
       "contributor": null,
       "description": "Brand identity for 'Premeo', a bonus points / loyalty program. Brand color is #FF3162 (vivid pink-red). Uses a hexagon as the primary brand shape.",
-      "id": "premeo_bonuspunkte_premeo_brand",
-      "community": 18,
-      "norm_label": "premeo brand"
+      "community": 20,
+      "norm_label": "premeo brand",
+      "id": "premeo_bonuspunkte_premeo_brand"
     },
     {
       "label": "Bonus Points Program (Bonuspunkte)",
@@ -1029,9 +1092,9 @@
       "author": null,
       "contributor": null,
       "description": "A loyalty / bonus points program named Premeo. The SVG badge is likely used as a marketing or UI element to indicate that a product or service participates in or rewards Premeo Bonuspunkte.",
-      "id": "premeo_bonuspunkte_bonus_points_program",
-      "community": 18,
-      "norm_label": "bonus points program (bonuspunkte)"
+      "community": 20,
+      "norm_label": "bonus points program (bonuspunkte)",
+      "id": "premeo_bonuspunkte_bonus_points_program"
     },
     {
       "label": "Hexagon Badge Shape",
@@ -1043,9 +1106,9 @@
       "author": null,
       "contributor": null,
       "description": "The visual badge is a hexagon (six-sided polygon) outline (stroke #FF3162, stroke-width 43.4). The hexagon encloses the 'BONUS' typography. Hexagon is a common shape for badge/award iconography.",
-      "id": "premeo_bonuspunkte_hexagon_badge",
-      "community": 18,
-      "norm_label": "hexagon badge shape"
+      "community": 20,
+      "norm_label": "hexagon badge shape",
+      "id": "premeo_bonuspunkte_hexagon_badge"
     },
     {
       "label": "BONUS Typography",
@@ -1057,9 +1120,9 @@
       "author": null,
       "contributor": null,
       "description": "The letters B, O, N, U, S are rendered as vector paths (Pfad_662 through Pfad_665 plus additional path) in fill color #FF3162, positioned centrally within the hexagon frame.",
-      "id": "premeo_bonuspunkte_bonus_typography",
-      "community": 18,
-      "norm_label": "bonus typography"
+      "community": 20,
+      "norm_label": "bonus typography",
+      "id": "premeo_bonuspunkte_bonus_typography"
     },
     {
       "label": "Bayer Corporate Logo (Bayer Cross)",
@@ -1082,9 +1145,9 @@
       "usage": "on-screen RGB",
       "tool": "Adobe Illustrator 22.0.1",
       "dimensions": "289.1x289.1",
-      "id": "corp_logo_bg_bayer_cross_basic_on_screen_rgb_bayer_corporate_logo",
-      "community": 48,
-      "norm_label": "bayer corporate logo (bayer cross)"
+      "community": 49,
+      "norm_label": "bayer corporate logo (bayer cross)",
+      "id": "corp_logo_bg_bayer_cross_basic_on_screen_rgb_bayer_corporate_logo"
     },
     {
       "label": "Bayer Brand Identity",
@@ -1096,9 +1159,9 @@
       "author": null,
       "contributor": null,
       "description": "Corporate brand identity concept represented by the Bayer Cross logo. The Bayer Cross is one of the most recognizable corporate logos in the world, representing Bayer AG, a German multinational pharmaceutical and life sciences company.",
-      "id": "corp_logo_bg_bayer_cross_basic_on_screen_rgb_brand_identity",
-      "community": 48,
-      "norm_label": "bayer brand identity"
+      "community": 49,
+      "norm_label": "bayer brand identity",
+      "id": "corp_logo_bg_bayer_cross_basic_on_screen_rgb_brand_identity"
     },
     {
       "label": "Dummy Magazine Icon (SVG)",
@@ -1122,9 +1185,9 @@
         ],
         "description": "SVG icon depicting a magazine/newspaper with a bordered header rectangle and two text line indicators"
       },
-      "id": "icons_website_dummy_magazin",
-      "community": 39,
-      "norm_label": "dummy magazine icon (svg)"
+      "community": 40,
+      "norm_label": "dummy magazine icon (svg)",
+      "id": "icons_website_dummy_magazin"
     },
     {
       "label": "Newspaper / Magazine",
@@ -1145,9 +1208,9 @@
           "side fold/extra page"
         ]
       },
-      "id": "icons_website_dummy_magazin_concept_newspaper",
-      "community": 39,
-      "norm_label": "newspaper / magazine"
+      "community": 40,
+      "norm_label": "newspaper / magazine",
+      "id": "icons_website_dummy_magazin_concept_newspaper"
     },
     {
       "label": "Header/Title Box",
@@ -1164,9 +1227,9 @@
         "rx": "2.5",
         "ry": "2.5"
       },
-      "id": "icons_website_dummy_magazin_concept_header_box",
-      "community": 39,
-      "norm_label": "header/title box"
+      "community": 40,
+      "norm_label": "header/title box",
+      "id": "icons_website_dummy_magazin_concept_header_box"
     },
     {
       "label": "Dummy Video Icon (SVG)",
@@ -1194,9 +1257,9 @@
         "fill": "none",
         "description": "Circular play button icon with a triangle play arrow inside a circle, styled with a dark navy stroke color and no fill"
       },
-      "id": "icons_website_dummy_video",
-      "community": 31,
-      "norm_label": "dummy video icon (svg)"
+      "community": 32,
+      "norm_label": "dummy video icon (svg)",
+      "id": "icons_website_dummy_video"
     },
     {
       "label": "Play Arrow Shape",
@@ -1212,9 +1275,9 @@
         "class": "cls-2",
         "description": "Triangular play arrow with rounded corners, positioned slightly left of center"
       },
-      "id": "icons_website_dummy_video_play_arrow",
-      "community": 31,
-      "norm_label": "play arrow shape"
+      "community": 32,
+      "norm_label": "play arrow shape",
+      "id": "icons_website_dummy_video_play_arrow"
     },
     {
       "label": "Circle Border Shape",
@@ -1230,9 +1293,9 @@
         "class": "cls-2",
         "description": "Outer circular border approximately radius 38 centered near (49, 50)"
       },
-      "id": "icons_website_dummy_video_circle",
-      "community": 31,
-      "norm_label": "circle border shape"
+      "community": 32,
+      "norm_label": "circle border shape",
+      "id": "icons_website_dummy_video_circle"
     },
     {
       "label": "Invisible Bounding Box",
@@ -1249,9 +1312,9 @@
         "fill": "none",
         "description": "Transparent bounding rectangle covering the full icon area"
       },
-      "id": "icons_website_dummy_video_bounding_box",
-      "community": 31,
-      "norm_label": "invisible bounding box"
+      "community": 32,
+      "norm_label": "invisible bounding box",
+      "id": "icons_website_dummy_video_bounding_box"
     },
     {
       "label": "Icons SVG Sprite",
@@ -1263,9 +1326,9 @@
       "author": null,
       "contributor": null,
       "description": "SVG sprite file containing social media and UI icons as reusable symbols",
-      "id": "icons_sprite",
       "community": 6,
-      "norm_label": "icons svg sprite"
+      "norm_label": "icons svg sprite",
+      "id": "icons_sprite"
     },
     {
       "label": "Bluesky Icon",
@@ -1277,9 +1340,9 @@
       "author": null,
       "contributor": null,
       "description": "Bluesky social network icon (butterfly/cloud shape), fill color #08060d",
-      "id": "icons_bluesky",
       "community": 6,
-      "norm_label": "bluesky icon"
+      "norm_label": "bluesky icon",
+      "id": "icons_bluesky"
     },
     {
       "label": "Discord Icon",
@@ -1291,9 +1354,9 @@
       "author": null,
       "contributor": null,
       "description": "Discord chat platform icon (controller/gamepad shape), fill color #08060d",
-      "id": "icons_discord",
       "community": 6,
-      "norm_label": "discord icon"
+      "norm_label": "discord icon",
+      "id": "icons_discord"
     },
     {
       "label": "Documentation Icon",
@@ -1305,9 +1368,9 @@
       "author": null,
       "contributor": null,
       "description": "Documentation/code icon with file and code brackets, stroke color #aa3bff (purple)",
-      "id": "icons_documentation",
       "community": 6,
-      "norm_label": "documentation icon"
+      "norm_label": "documentation icon",
+      "id": "icons_documentation"
     },
     {
       "label": "GitHub Icon",
@@ -1319,9 +1382,9 @@
       "author": null,
       "contributor": null,
       "description": "GitHub source code hosting platform icon (octocat/cat shape), fill color #08060d",
-      "id": "icons_github",
       "community": 6,
-      "norm_label": "github icon"
+      "norm_label": "github icon",
+      "id": "icons_github"
     },
     {
       "label": "Social / Person Icon",
@@ -1333,9 +1396,9 @@
       "author": null,
       "contributor": null,
       "description": "Social / person / profile icon with user silhouette and star badge, stroke color #aa3bff (purple)",
-      "id": "icons_social",
       "community": 6,
-      "norm_label": "social / person icon"
+      "norm_label": "social / person icon",
+      "id": "icons_social"
     },
     {
       "label": "X (Twitter) Icon",
@@ -1347,9 +1410,9 @@
       "author": null,
       "contributor": null,
       "description": "X (formerly Twitter) social network icon, fill color #08060d",
-      "id": "icons_x",
       "community": 6,
-      "norm_label": "x (twitter) icon"
+      "norm_label": "x (twitter) icon",
+      "id": "icons_x"
     },
     {
       "label": "Social Media Icons Category",
@@ -1361,9 +1424,9 @@
       "author": null,
       "contributor": null,
       "description": "Category grouping icons for social media platforms: Bluesky, Discord, GitHub, X (Twitter)",
-      "id": "icons_category_social_media",
       "community": 6,
-      "norm_label": "social media icons category"
+      "norm_label": "social media icons category",
+      "id": "icons_category_social_media"
     },
     {
       "label": "UI Icons Category",
@@ -1375,9 +1438,9 @@
       "author": null,
       "contributor": null,
       "description": "Category grouping generic UI icons: documentation, social/person",
-      "id": "icons_category_ui",
       "community": 6,
-      "norm_label": "ui icons category"
+      "norm_label": "ui icons category",
+      "id": "icons_category_ui"
     },
     {
       "label": "Bayer Cross Logo",
@@ -1389,9 +1452,9 @@
       "author": null,
       "contributor": null,
       "description": "The Bayer Cross corporate logo rendered as an SVG favicon, featuring the word BAYER in a cross/grid layout with circular arcs.",
-      "id": "favicon_bayer_cross_logo",
       "community": 9,
-      "norm_label": "bayer cross logo"
+      "norm_label": "bayer cross logo",
+      "id": "favicon_bayer_cross_logo"
     },
     {
       "label": "Brand Color: Dark Blue (#10384F)",
@@ -1403,9 +1466,9 @@
       "author": null,
       "contributor": null,
       "description": "Primary brand color dark navy/teal blue (#10384F) used for the BAYER letterforms and text elements in the cross logo.",
-      "id": "favicon_color_dark_blue",
       "community": 9,
-      "norm_label": "brand color: dark blue (#10384f)"
+      "norm_label": "brand color: dark blue (#10384f)",
+      "id": "favicon_color_dark_blue"
     },
     {
       "label": "Brand Color: Lime Green (#89D329)",
@@ -1417,9 +1480,9 @@
       "author": null,
       "contributor": null,
       "description": "Secondary brand color lime green (#89D329) used for the upper arc of the circular Bayer Cross emblem.",
-      "id": "favicon_color_green",
       "community": 9,
-      "norm_label": "brand color: lime green (#89d329)"
+      "norm_label": "brand color: lime green (#89d329)",
+      "id": "favicon_color_green"
     },
     {
       "label": "Brand Color: Cyan Blue (#00BCFF)",
@@ -1431,9 +1494,9 @@
       "author": null,
       "contributor": null,
       "description": "Tertiary brand color bright cyan (#00BCFF) used for the lower arc of the circular Bayer Cross emblem.",
-      "id": "favicon_color_cyan",
       "community": 9,
-      "norm_label": "brand color: cyan blue (#00bcff)"
+      "norm_label": "brand color: cyan blue (#00bcff)",
+      "id": "favicon_color_cyan"
     },
     {
       "label": "Circular Cross Emblem",
@@ -1445,9 +1508,9 @@
       "author": null,
       "contributor": null,
       "description": "Two overlapping circular arc paths (green upper, cyan lower) forming the outer ring of the Bayer Cross symbol at 289.1x289.1 viewBox.",
-      "id": "favicon_circular_emblem",
       "community": 9,
-      "norm_label": "circular cross emblem"
+      "norm_label": "circular cross emblem",
+      "id": "favicon_circular_emblem"
     },
     {
       "label": "BAYER Letterforms in Cross Layout",
@@ -1459,9 +1522,9 @@
       "author": null,
       "contributor": null,
       "description": "SVG path-based letterforms spelling B, A, Y, E, R arranged in a cross pattern (vertical: B-A-Y; horizontal: B-A-Y-E-R), all in dark blue (#10384F).",
-      "id": "favicon_typography_bayer_letters",
       "community": 9,
-      "norm_label": "bayer letterforms in cross layout"
+      "norm_label": "bayer letterforms in cross layout",
+      "id": "favicon_typography_bayer_letters"
     },
     {
       "label": "SVG Vector Format",
@@ -1473,9 +1536,9 @@
       "author": null,
       "contributor": null,
       "description": "Favicon delivered as SVG 1.1 vector format at 289.1x289.1 units, ensuring crisp rendering at all sizes.",
-      "id": "favicon_svg_format",
       "community": 9,
-      "norm_label": "svg vector format"
+      "norm_label": "svg vector format",
+      "id": "favicon_svg_format"
     },
     {
       "label": "Vite Logo",
@@ -1491,9 +1554,9 @@
       "dimensions": "77x47",
       "aria_label": "Vite",
       "color_scheme_support": "light and dark mode via CSS media query",
-      "id": "vite_logo",
-      "community": 32,
-      "norm_label": "vite logo"
+      "community": 33,
+      "norm_label": "vite logo",
+      "id": "vite_logo"
     },
     {
       "label": "Vite",
@@ -1505,9 +1568,9 @@
       "author": null,
       "contributor": null,
       "description": "Vite is a modern frontend build tool and dev server used in this project's build toolchain",
-      "id": "vite_build_tool",
-      "community": 32,
-      "norm_label": "vite"
+      "community": 33,
+      "norm_label": "vite",
+      "id": "vite_build_tool"
     },
     {
       "label": "SVG Asset",
@@ -1519,9 +1582,9 @@
       "author": null,
       "contributor": null,
       "description": "Static SVG image asset stored in src/assets, part of the project's static resources",
-      "id": "vite_svg_asset",
-      "community": 32,
-      "norm_label": "svg asset"
+      "community": 33,
+      "norm_label": "svg asset",
+      "id": "vite_svg_asset"
     },
     {
       "label": "Dark Mode Support",
@@ -1533,9 +1596,9 @@
       "author": null,
       "contributor": null,
       "description": "The SVG uses a CSS media query (prefers-color-scheme: dark) to adapt parenthesis fill color between black and white",
-      "id": "vite_dark_mode",
-      "community": 32,
-      "norm_label": "dark mode support"
+      "community": 33,
+      "norm_label": "dark mode support",
+      "id": "vite_dark_mode"
     },
     {
       "label": "React Logo SVG",
@@ -1547,9 +1610,9 @@
       "author": null,
       "contributor": null,
       "description": "SVG asset containing the React framework logo, using the iconify--logos icon set. Rendered in React brand cyan color (#00D8FF), depicting the characteristic atomic orbital symbol.",
-      "id": "react_logo_svg",
-      "community": 12,
-      "norm_label": "react logo svg"
+      "community": 13,
+      "norm_label": "react logo svg",
+      "id": "react_logo_svg"
     },
     {
       "label": "React Framework",
@@ -1561,9 +1624,9 @@
       "author": null,
       "contributor": null,
       "description": "JavaScript frontend UI library developed by Meta. The project uses React as its primary frontend framework, as evidenced by the presence of the React logo asset.",
-      "id": "react_framework",
-      "community": 12,
-      "norm_label": "react framework"
+      "community": 13,
+      "norm_label": "react framework",
+      "id": "react_framework"
     },
     {
       "label": "React Brand Color #00D8FF",
@@ -1575,9 +1638,9 @@
       "author": null,
       "contributor": null,
       "description": "The official React brand cyan color (#00D8FF) used in the logo SVG fill. Part of the React visual identity.",
-      "id": "react_brand_color",
-      "community": 12,
-      "norm_label": "react brand color #00d8ff"
+      "community": 13,
+      "norm_label": "react brand color #00d8ff",
+      "id": "react_brand_color"
     },
     {
       "label": "Iconify Logos Icon Set",
@@ -1589,9 +1652,9 @@
       "author": null,
       "contributor": null,
       "description": "The SVG uses the iconify--logos CSS class, indicating it originates from the Iconify icon library's logos collection, a common source of brand/framework logos for web projects.",
-      "id": "react_iconify_logos",
-      "community": 12,
-      "norm_label": "iconify logos icon set"
+      "community": 13,
+      "norm_label": "iconify logos icon set",
+      "id": "react_iconify_logos"
     },
     {
       "label": "React Atomic Orbital Symbol",
@@ -1603,9 +1666,9 @@
       "author": null,
       "contributor": null,
       "description": "The React logo depicts an atom with three elliptical orbits and a nucleus, symbolizing the component-based, modular architecture of the React library. The nucleus corresponds to the central circle at viewBox coordinates (128, 113.668).",
-      "id": "react_atomic_symbol",
-      "community": 12,
-      "norm_label": "react atomic orbital symbol"
+      "community": 13,
+      "norm_label": "react atomic orbital symbol",
+      "id": "react_atomic_symbol"
     },
     {
       "label": "SVG Static Asset",
@@ -1617,9 +1680,9 @@
       "author": null,
       "contributor": null,
       "description": "Static SVG file placed in src/assets/, the standard Vite/React project directory for static assets imported directly by components. Width 35.93px, height 32px, viewBox 256x228.",
-      "id": "react_svg_asset",
-      "community": 12,
-      "norm_label": "svg static asset"
+      "community": 13,
+      "norm_label": "svg static asset",
+      "id": "react_svg_asset"
     },
     {
       "label": "Product",
@@ -1639,9 +1702,9 @@
         "registration_number": "DE85856472I",
         "ufi": "SR80-X0HC-D90Z-Y1J7"
       },
-      "id": "movento_movento_sc100",
       "community": 5,
-      "norm_label": "product"
+      "norm_label": "product",
+      "id": "movento_movento_sc100"
     },
     {
       "label": "ActiveIngredient",
@@ -1658,9 +1721,9 @@
         "concentration_percent": "9.26 Gew.-%",
         "cas_or_class": "Spirotetramat"
       },
-      "id": "movento_spirotetramat",
       "community": 5,
-      "norm_label": "activeingredient"
+      "norm_label": "activeingredient",
+      "id": "movento_spirotetramat"
     },
     {
       "label": "Manufacturer",
@@ -1676,9 +1739,9 @@
         "brand": "Bayer",
         "logo_visible": true
       },
-      "id": "movento_bayer",
       "community": 5,
-      "norm_label": "manufacturer"
+      "norm_label": "manufacturer",
+      "id": "movento_bayer"
     },
     {
       "label": "ProductCategory",
@@ -1694,9 +1757,9 @@
         "category": "Insektizid",
         "use_class": "Pflanzenschutzmittel"
       },
-      "id": "movento_insektizid",
       "community": 5,
-      "norm_label": "productcategory"
+      "norm_label": "productcategory",
+      "id": "movento_insektizid"
     },
     {
       "label": "HazardStatement",
@@ -1712,9 +1775,9 @@
         "code": "H317",
         "statement": "Kann allergische Hautreaktionen verursachen."
       },
-      "id": "movento_hazard_h317",
       "community": 5,
-      "norm_label": "hazardstatement"
+      "norm_label": "hazardstatement",
+      "id": "movento_hazard_h317"
     },
     {
       "label": "HazardStatement",
@@ -1730,9 +1793,9 @@
         "code": "H361fd",
         "statement": "Kann vermutlich die Fruchtbarkeit beeintr\u00e4chtigen. Kann vermutlich das Kind im Mutterleib sch\u00e4digen."
       },
-      "id": "movento_hazard_h361fd",
       "community": 5,
-      "norm_label": "hazardstatement"
+      "norm_label": "hazardstatement",
+      "id": "movento_hazard_h361fd"
     },
     {
       "label": "HazardStatement",
@@ -1748,9 +1811,9 @@
         "code": "H411",
         "statement": "Giftig f\u00fcr Wasserorganismen, mit langfristiger Wirkung."
       },
-      "id": "movento_hazard_h411",
       "community": 5,
-      "norm_label": "hazardstatement"
+      "norm_label": "hazardstatement",
+      "id": "movento_hazard_h411"
     },
     {
       "label": "HazardStatement",
@@ -1766,9 +1829,9 @@
         "code": "EUH401",
         "statement": "Zur Vermeidung von Risiken f\u00fcr Mensch und Umwelt die Gebrauchsanleitung einhalten."
       },
-      "id": "movento_hazard_eu4401",
       "community": 5,
-      "norm_label": "hazardstatement"
+      "norm_label": "hazardstatement",
+      "id": "movento_hazard_eu4401"
     },
     {
       "label": "GHSPictogram",
@@ -1784,9 +1847,9 @@
         "pictogram": "GHS07",
         "meaning": "Achtung / Irritant / Harmful"
       },
-      "id": "movento_ghs_warning",
       "community": 5,
-      "norm_label": "ghspictogram"
+      "norm_label": "ghspictogram",
+      "id": "movento_ghs_warning"
     },
     {
       "label": "GHSPictogram",
@@ -1802,9 +1865,9 @@
         "pictogram": "GHS09",
         "meaning": "Gef\u00e4hrlich f\u00fcr die Umwelt / Environmental hazard"
       },
-      "id": "movento_ghs_environment",
       "community": 5,
-      "norm_label": "ghspictogram"
+      "norm_label": "ghspictogram",
+      "id": "movento_ghs_environment"
     },
     {
       "label": "SignalWord",
@@ -1820,9 +1883,9 @@
         "signal_word": "Achtung",
         "ghs_level": "Warning"
       },
-      "id": "movento_signal_word_achtung",
       "community": 5,
-      "norm_label": "signalword"
+      "norm_label": "signalword",
+      "id": "movento_signal_word_achtung"
     },
     {
       "label": "FormulationType",
@@ -1838,9 +1901,9 @@
         "code": "SC",
         "full_name": "Suspensionskonzentrat"
       },
-      "id": "movento_suspension_concentrate",
       "community": 5,
-      "norm_label": "formulationtype"
+      "norm_label": "formulationtype",
+      "id": "movento_suspension_concentrate"
     },
     {
       "label": "Image",
@@ -1852,9 +1915,9 @@
       "author": null,
       "contributor": null,
       "description": "Close-up macro photograph of a corn (maize) leaf covered with water droplets and raindrops. The background shows a blurred corn field and an overcast grey sky with faint rain streaks, conveying rainy and wet weather conditions. Used as a background image for a weather ('Wetter') section.",
-      "id": "wetter_back_2_image",
-      "community": 19,
-      "norm_label": "image"
+      "community": 21,
+      "norm_label": "image",
+      "id": "wetter_back_2_image"
     },
     {
       "label": "CornLeaf",
@@ -1866,9 +1929,9 @@
       "author": null,
       "contributor": null,
       "description": "Foreground subject: a single broad corn (maize) leaf in sharp focus, covered with water droplets.",
-      "id": "wetter_back_2_corn_leaf",
-      "community": 19,
-      "norm_label": "cornleaf"
+      "community": 21,
+      "norm_label": "cornleaf",
+      "id": "wetter_back_2_corn_leaf"
     },
     {
       "label": "Rain",
@@ -1880,9 +1943,9 @@
       "author": null,
       "contributor": null,
       "description": "Visible rain streaks in the image and water droplets on the corn leaf indicate active rainfall.",
-      "id": "wetter_back_2_rain",
-      "community": 19,
-      "norm_label": "rain"
+      "community": 21,
+      "norm_label": "rain",
+      "id": "wetter_back_2_rain"
     },
     {
       "label": "CornField",
@@ -1894,9 +1957,9 @@
       "author": null,
       "contributor": null,
       "description": "Background of the image: a blurred corn field with multiple corn plants visible.",
-      "id": "wetter_back_2_corn_field",
-      "community": 19,
-      "norm_label": "cornfield"
+      "community": 21,
+      "norm_label": "cornfield",
+      "id": "wetter_back_2_corn_field"
     },
     {
       "label": "OvercastSky",
@@ -1908,9 +1971,9 @@
       "author": null,
       "contributor": null,
       "description": "Grey overcast sky visible in the upper portion of the background, reinforcing the rainy weather atmosphere.",
-      "id": "wetter_back_2_overcast_sky",
-      "community": 19,
-      "norm_label": "overcastsky"
+      "community": 21,
+      "norm_label": "overcastsky",
+      "id": "wetter_back_2_overcast_sky"
     },
     {
       "label": "Flufenacet Ban",
@@ -1922,9 +1985,9 @@
       "author": null,
       "contributor": null,
       "description": "Guiding principle / policy image representing the ban of the herbicide Flufenacet in agricultural contexts",
-      "id": "leitbild_flufenacet_verbot_flufenacet_ban",
       "community": 7,
-      "norm_label": "flufenacet ban"
+      "norm_label": "flufenacet ban",
+      "id": "leitbild_flufenacet_verbot_flufenacet_ban"
     },
     {
       "label": "Herbicide Application",
@@ -1936,9 +1999,9 @@
       "author": null,
       "contributor": null,
       "description": "Visual depiction of a tractor with a boom sprayer applying herbicide/pesticide across a large green agricultural field",
-      "id": "leitbild_flufenacet_verbot_herbicide_application",
       "community": 7,
-      "norm_label": "herbicide application"
+      "norm_label": "herbicide application",
+      "id": "leitbild_flufenacet_verbot_herbicide_application"
     },
     {
       "label": "Tractor with Boom Sprayer",
@@ -1950,9 +2013,9 @@
       "author": null,
       "contributor": null,
       "description": "An orange/red tractor (appears to be a Steyr brand) equipped with a wide boom sprayer, actively spraying chemicals on a field",
-      "id": "leitbild_flufenacet_verbot_tractor_boom_sprayer",
       "community": 7,
-      "norm_label": "tractor with boom sprayer"
+      "norm_label": "tractor with boom sprayer",
+      "id": "leitbild_flufenacet_verbot_tractor_boom_sprayer"
     },
     {
       "label": "Agricultural Field",
@@ -1964,9 +2027,9 @@
       "author": null,
       "contributor": null,
       "description": "Large green agricultural field (likely winter wheat or similar cereal crop) where herbicide is being applied",
-      "id": "leitbild_flufenacet_verbot_agricultural_field",
       "community": 7,
-      "norm_label": "agricultural field"
+      "norm_label": "agricultural field",
+      "id": "leitbild_flufenacet_verbot_agricultural_field"
     },
     {
       "label": "Wildlife / Deer in Field",
@@ -1978,9 +2041,9 @@
       "author": null,
       "contributor": null,
       "description": "Several deer (Rehe/roe deer) visible in the background of the field, symbolising wildlife exposure to herbicide spraying and the ecological impact of pesticide use",
-      "id": "leitbild_flufenacet_verbot_wildlife_deer",
       "community": 7,
-      "norm_label": "wildlife / deer in field"
+      "norm_label": "wildlife / deer in field",
+      "id": "leitbild_flufenacet_verbot_wildlife_deer"
     },
     {
       "label": "Flufenacet (Herbicide)",
@@ -1992,9 +2055,9 @@
       "author": null,
       "contributor": null,
       "description": "Flufenacet is a pre-emergence herbicide widely used in cereal farming to control grass weeds; the image contextualises its use and the policy debate around its prohibition",
-      "id": "leitbild_flufenacet_verbot_flufenacet_herbicide",
       "community": 7,
-      "norm_label": "flufenacet (herbicide)"
+      "norm_label": "flufenacet (herbicide)",
+      "id": "leitbild_flufenacet_verbot_flufenacet_herbicide"
     },
     {
       "label": "Pesticide Regulation / Policy",
@@ -2006,9 +2069,9 @@
       "author": null,
       "contributor": null,
       "description": "Regulatory and policy dimension of banning or restricting herbicide use in agriculture, relevant to EU plant protection product legislation",
-      "id": "leitbild_flufenacet_verbot_pesticide_regulation",
       "community": 7,
-      "norm_label": "pesticide regulation / policy"
+      "norm_label": "pesticide regulation / policy",
+      "id": "leitbild_flufenacet_verbot_pesticide_regulation"
     },
     {
       "label": "Environmental Impact of Herbicide Use",
@@ -2020,9 +2083,9 @@
       "author": null,
       "contributor": null,
       "description": "The ecological consequences of herbicide application on biodiversity, soil health, and wildlife \u2014 visually represented by the deer present near the spraying tractor",
-      "id": "leitbild_flufenacet_verbot_environmental_impact",
       "community": 7,
-      "norm_label": "environmental impact of herbicide use"
+      "norm_label": "environmental impact of herbicide use",
+      "id": "leitbild_flufenacet_verbot_environmental_impact"
     },
     {
       "label": "Sustainable Agriculture",
@@ -2034,9 +2097,9 @@
       "author": null,
       "contributor": null,
       "description": "Overarching guiding principle (Leitbild) for transitioning agriculture away from harmful herbicides towards more sustainable farming practices",
-      "id": "leitbild_flufenacet_verbot_sustainable_agriculture",
       "community": 7,
-      "norm_label": "sustainable agriculture"
+      "norm_label": "sustainable agriculture",
+      "id": "leitbild_flufenacet_verbot_sustainable_agriculture"
     },
     {
       "label": "Person",
@@ -2054,9 +2117,9 @@
       "attire": "white shirt/jacket with Bayer logo",
       "expression": "friendly smile",
       "context": "business/advisory",
-      "id": "selmayer_portrait_person",
-      "community": 51,
-      "norm_label": "person"
+      "community": 52,
+      "norm_label": "person",
+      "id": "selmayer_portrait_person"
     },
     {
       "label": "Rapeseed Field",
@@ -2068,9 +2131,9 @@
       "author": null,
       "contributor": null,
       "description": "Blooming yellow rapeseed (canola) field under a clear blue sky, serving as the backdrop for a field consulting scene.",
-      "id": "image_beratung_rapeseed_field",
-      "community": 20,
-      "norm_label": "rapeseed field"
+      "community": 22,
+      "norm_label": "rapeseed field",
+      "id": "image_beratung_rapeseed_field"
     },
     {
       "label": "Field Advisors (Bayer)",
@@ -2082,9 +2145,9 @@
       "author": null,
       "contributor": null,
       "description": "Two men in dark blue polo shirts bearing the Bayer logo, acting as agricultural field advisors during an on-site crop consultation.",
-      "id": "image_beratung_field_advisors",
-      "community": 20,
-      "norm_label": "field advisors (bayer)"
+      "community": 22,
+      "norm_label": "field advisors (bayer)",
+      "id": "image_beratung_field_advisors"
     },
     {
       "label": "Farmer / Client",
@@ -2096,9 +2159,9 @@
       "author": null,
       "contributor": null,
       "description": "A man wearing a dark vest, likely a farmer or client, participating in the field consultation.",
-      "id": "image_beratung_farmer",
-      "community": 20,
-      "norm_label": "farmer / client"
+      "community": 22,
+      "norm_label": "farmer / client",
+      "id": "image_beratung_farmer"
     },
     {
       "label": "Crop Plant Inspection",
@@ -2110,9 +2173,9 @@
       "author": null,
       "contributor": null,
       "description": "Three men jointly examining a uprooted rapeseed plant, representing hands-on agricultural crop analysis and consulting.",
-      "id": "image_beratung_crop_inspection",
-      "community": 20,
-      "norm_label": "crop plant inspection"
+      "community": 22,
+      "norm_label": "crop plant inspection",
+      "id": "image_beratung_crop_inspection"
     },
     {
       "label": "Agricultural Consulting Scene",
@@ -2124,9 +2187,9 @@
       "author": null,
       "contributor": null,
       "description": "Hero image for the Beratung (consulting/advisory) section of the website. Depicts a real-world agricultural advisory meeting in a rapeseed field, conveying expertise, partnership, and on-site support.",
-      "id": "image_beratung_agricultural_consulting",
-      "community": 20,
-      "norm_label": "agricultural consulting scene"
+      "community": 22,
+      "norm_label": "agricultural consulting scene",
+      "id": "image_beratung_agricultural_consulting"
     },
     {
       "label": "Premeo Bonus Program",
@@ -2158,9 +2221,9 @@
         "setting": "barn / agricultural environment",
         "target_audience": "agricultural customers / farmers"
       },
-      "id": "premeo_2023_premeo_bonus_program",
-      "community": 33,
-      "norm_label": "premeo bonus program"
+      "community": 34,
+      "norm_label": "premeo bonus program",
+      "id": "premeo_2023_premeo_bonus_program"
     },
     {
       "label": "Bayer",
@@ -2177,9 +2240,9 @@
         "industry": "agriculture / pharmaceuticals",
         "logo_visible": true
       },
-      "id": "premeo_2023_bayer",
-      "community": 33,
-      "norm_label": "bayer"
+      "community": 34,
+      "norm_label": "bayer",
+      "id": "premeo_2023_bayer"
     },
     {
       "label": "Premeo Bonus Reward Box",
@@ -2196,9 +2259,9 @@
         "qr_code_destination": "premeo.de",
         "tangible_reward": true
       },
-      "id": "premeo_2023_premeo_bonus_box",
-      "community": 33,
-      "norm_label": "premeo bonus reward box"
+      "community": 34,
+      "norm_label": "premeo bonus reward box",
+      "id": "premeo_2023_premeo_bonus_box"
     },
     {
       "label": "Tagline: Verlass dich drauf.",
@@ -2215,9 +2278,9 @@
         "translation_en": "Rely on it / Count on it",
         "placement": "pink stripe on reward box"
       },
-      "id": "premeo_2023_tagline_verlass_dich_drauf",
-      "community": 33,
-      "norm_label": "tagline: verlass dich drauf."
+      "community": 34,
+      "norm_label": "tagline: verlass dich drauf.",
+      "id": "premeo_2023_tagline_verlass_dich_drauf"
     },
     {
       "label": "HeroImage",
@@ -2229,9 +2292,9 @@
       "author": null,
       "contributor": null,
       "description": "Website header/hero image showing two people (a man and a woman) standing in a lush green agricultural field. The man is holding up a plant sample and pointing, while the woman looks on. In the background, a green tractor (appears to be a Fendt) is visible operating in the field, likely spraying crops. The setting is a large open farmland under bright daylight. A decorative quotation mark graphic overlay appears on the right side of the image. The image evokes themes of agricultural consulting, crop advisory, field inspection, and farming expertise.",
-      "id": "key_header_01_hero_image",
-      "community": 13,
-      "norm_label": "heroimage"
+      "community": 14,
+      "norm_label": "heroimage",
+      "id": "key_header_01_hero_image"
     },
     {
       "label": "AgriculturalField",
@@ -2243,9 +2306,9 @@
       "author": null,
       "contributor": null,
       "description": "Lush green crop field, likely sugar beet or similar broadleaf crop, extending into the background. Flat, open landscape typical of Northern European farmland.",
-      "id": "key_header_01_agricultural_field",
-      "community": 13,
-      "norm_label": "agriculturalfield"
+      "community": 14,
+      "norm_label": "agriculturalfield",
+      "id": "key_header_01_agricultural_field"
     },
     {
       "label": "Tractor",
@@ -2257,9 +2320,9 @@
       "author": null,
       "contributor": null,
       "description": "Green tractor (Fendt brand) visible in the background of the field, appearing to be equipped with a sprayer or field equipment. Represents active farm operations.",
-      "id": "key_header_01_tractor",
-      "community": 13,
-      "norm_label": "tractor"
+      "community": 14,
+      "norm_label": "tractor",
+      "id": "key_header_01_tractor"
     },
     {
       "label": "AgriculturalConsultant",
@@ -2271,9 +2334,9 @@
       "author": null,
       "contributor": null,
       "description": "A man in a checkered shirt and dark jacket holding up a plant sample and pointing toward the field, apparently explaining or advising. Represents an agricultural consultant or agronomist role.",
-      "id": "key_header_01_consultant_advisor",
-      "community": 13,
-      "norm_label": "agriculturalconsultant"
+      "community": 14,
+      "norm_label": "agriculturalconsultant",
+      "id": "key_header_01_consultant_advisor"
     },
     {
       "label": "FarmerOrClient",
@@ -2285,9 +2348,9 @@
       "author": null,
       "contributor": null,
       "description": "A woman in a white shirt and dark jacket standing next to the consultant, listening and observing. Represents a farmer, landowner, or client receiving field consultation.",
-      "id": "key_header_01_farmer_client",
-      "community": 13,
-      "norm_label": "farmerorclient"
+      "community": 14,
+      "norm_label": "farmerorclient",
+      "id": "key_header_01_farmer_client"
     },
     {
       "label": "PlantSample",
@@ -2299,9 +2362,9 @@
       "author": null,
       "contributor": null,
       "description": "A green plant (likely a broadleaf crop such as sugar beet or rapeseed) held up by the consultant for examination. Symbolizes crop inspection and agronomic analysis.",
-      "id": "key_header_01_plant_sample",
-      "community": 13,
-      "norm_label": "plantsample"
+      "community": 14,
+      "norm_label": "plantsample",
+      "id": "key_header_01_plant_sample"
     },
     {
       "label": "HeroImage",
@@ -2313,9 +2376,9 @@
       "author": null,
       "contributor": null,
       "description": "Header/hero image showing two people (a man and a woman) standing in a lush green agricultural field, examining a plant cutting together. A green tractor is visible in the background, operating on the field. The scene conveys agricultural consulting or advisory work in a farming context.",
-      "id": "key_header_02_hero_image",
-      "community": 34,
-      "norm_label": "heroimage"
+      "community": 35,
+      "norm_label": "heroimage",
+      "id": "key_header_02_hero_image"
     },
     {
       "label": "AgriculturalField",
@@ -2327,9 +2390,9 @@
       "author": null,
       "contributor": null,
       "description": "Lush green crop field visible in the background of the hero image, representing an agricultural setting.",
-      "id": "key_header_02_agricultural_field",
-      "community": 34,
-      "norm_label": "agriculturalfield"
+      "community": 35,
+      "norm_label": "agriculturalfield",
+      "id": "key_header_02_agricultural_field"
     },
     {
       "label": "Tractor",
@@ -2341,9 +2404,9 @@
       "author": null,
       "contributor": null,
       "description": "Green tractor operating in the background of the field, likely spraying or tilling crops.",
-      "id": "key_header_02_tractor",
-      "community": 34,
-      "norm_label": "tractor"
+      "community": 35,
+      "norm_label": "tractor",
+      "id": "key_header_02_tractor"
     },
     {
       "label": "ConsultingScene",
@@ -2355,9 +2418,9 @@
       "author": null,
       "contributor": null,
       "description": "Two people \u2014 a man and a woman \u2014 examining a plant cutting together in a field, representing agricultural advisory or consulting activity.",
-      "id": "key_header_02_consulting_scene",
-      "community": 34,
-      "norm_label": "consultingscene"
+      "community": 35,
+      "norm_label": "consultingscene",
+      "id": "key_header_02_consulting_scene"
     },
     {
       "label": "Portrait Photo",
@@ -2369,9 +2432,9 @@
       "author": null,
       "contributor": null,
       "description": "Professional headshot portrait of a young woman with straight blonde hair, blue eyes, and a warm smile. She wears a white collared shirt with dark blue accents and a small logo/emblem on the collar. Background is neutral grey. Corporate/professional profile photo style.",
-      "id": "berater4_portrait_photo",
-      "community": 21,
-      "norm_label": "portrait photo"
+      "community": 23,
+      "norm_label": "portrait photo",
+      "id": "berater4_portrait_photo"
     },
     {
       "label": "Person (Advisor/Consultant)",
@@ -2383,9 +2446,9 @@
       "author": null,
       "contributor": null,
       "description": "Young woman depicted as the 4th agricultural advisor/consultant (Berater) in a series. Presents a professional appearance suitable for a consulting or advisory role.",
-      "id": "berater4_person",
-      "community": 21,
-      "norm_label": "person (advisor/consultant)"
+      "community": 23,
+      "norm_label": "person (advisor/consultant)",
+      "id": "berater4_person"
     },
     {
       "label": "Visual Appearance",
@@ -2397,9 +2460,9 @@
       "author": null,
       "contributor": null,
       "description": "Straight blonde hair, blue eyes, warm smile. Wearing a white collared shirt with dark blue trim and a small emblem on the collar.",
-      "id": "berater4_appearance",
-      "community": 21,
-      "norm_label": "visual appearance"
+      "community": 23,
+      "norm_label": "visual appearance",
+      "id": "berater4_appearance"
     },
     {
       "label": "Clothing / Attire",
@@ -2411,9 +2474,9 @@
       "author": null,
       "contributor": null,
       "description": "White collared shirt with dark blue accents. Small logo or emblem visible on the collar, suggesting a branded uniform or professional attire associated with an advisory organisation.",
-      "id": "berater4_clothing",
-      "community": 21,
-      "norm_label": "clothing / attire"
+      "community": 23,
+      "norm_label": "clothing / attire",
+      "id": "berater4_clothing"
     },
     {
       "label": "Photo Background",
@@ -2425,9 +2488,9 @@
       "author": null,
       "contributor": null,
       "description": "Neutral grey seamless studio background, typical of corporate headshot photography.",
-      "id": "berater4_background",
-      "community": 21,
-      "norm_label": "photo background"
+      "community": 23,
+      "norm_label": "photo background",
+      "id": "berater4_background"
     },
     {
       "label": "BackgroundImage",
@@ -2439,9 +2502,9 @@
       "author": null,
       "contributor": null,
       "description": "Background image for the Premeo loyalty program section. Shows a young man with short brown hair and a beard wearing a red plaid flannel shirt, looking down at a smartphone with a slight smile. In the background is a large agricultural tractor (green/yellow, consistent with brands like Claas or John Deere), slightly out of focus. Warm golden-hour lighting. The overall mood is modern, approachable, and agricultural \u2014 fitting for a farming or agri-business loyalty/consulting program.",
-      "id": "premeo_back_1_background_image",
-      "community": 22,
-      "norm_label": "backgroundimage"
+      "community": 24,
+      "norm_label": "backgroundimage",
+      "id": "premeo_back_1_background_image"
     },
     {
       "label": "Person",
@@ -2453,9 +2516,9 @@
       "author": null,
       "contributor": null,
       "description": "Young man, short brown hair, beard, red plaid flannel shirt over grey t-shirt, smiling while looking at a smartphone.",
-      "id": "premeo_back_1_person",
-      "community": 22,
-      "norm_label": "person"
+      "community": 24,
+      "norm_label": "person",
+      "id": "premeo_back_1_person"
     },
     {
       "label": "Smartphone",
@@ -2467,9 +2530,9 @@
       "author": null,
       "contributor": null,
       "description": "A smartphone held in both hands by the person, representing digital engagement and mobile usage.",
-      "id": "premeo_back_1_smartphone",
-      "community": 22,
-      "norm_label": "smartphone"
+      "community": 24,
+      "norm_label": "smartphone",
+      "id": "premeo_back_1_smartphone"
     },
     {
       "label": "AgriculturalTractor",
@@ -2481,9 +2544,9 @@
       "author": null,
       "contributor": null,
       "description": "Large green/yellow agricultural tractor visible in the background, out of focus. Consistent with brands such as Claas or John Deere. Establishes an agricultural context.",
-      "id": "premeo_back_1_tractor",
-      "community": 22,
-      "norm_label": "agriculturaltractor"
+      "community": 24,
+      "norm_label": "agriculturaltractor",
+      "id": "premeo_back_1_tractor"
     },
     {
       "label": "OutdoorAgriSetting",
@@ -2495,9 +2558,9 @@
       "author": null,
       "contributor": null,
       "description": "Outdoor agricultural environment with warm golden-hour lighting, conveying a rural/farming atmosphere.",
-      "id": "premeo_back_1_setting",
-      "community": 22,
-      "norm_label": "outdooragrisetting"
+      "community": 24,
+      "norm_label": "outdooragrisetting",
+      "id": "premeo_back_1_setting"
     },
     {
       "label": "Product",
@@ -2510,9 +2573,9 @@
       "author": null,
       "contributor": null,
       "description": "Prosaro is a registered fungicide product by Bayer, packaged in a 5-litre white HDPE container with green label.",
-      "id": "prosaro_product",
       "community": 1,
-      "norm_label": "product"
+      "norm_label": "product",
+      "id": "prosaro_product"
     },
     {
       "label": "Organisation",
@@ -2525,9 +2588,9 @@
       "author": null,
       "contributor": null,
       "description": "Bayer AG - manufacturer and registrant of Prosaro fungicide, logo visible on label.",
-      "id": "prosaro_bayer",
       "community": 1,
-      "norm_label": "organisation"
+      "norm_label": "organisation",
+      "id": "prosaro_bayer"
     },
     {
       "label": "Concept",
@@ -2540,9 +2603,9 @@
       "author": null,
       "contributor": null,
       "description": "Product category printed on label: Fungizid (fungicide). Controls fungal diseases in cereals, maize and oilseed rape.",
-      "id": "prosaro_fungicide",
       "community": 1,
-      "norm_label": "concept"
+      "norm_label": "concept",
+      "id": "prosaro_fungicide"
     },
     {
       "label": "ChemicalIngredient",
@@ -2555,9 +2618,9 @@
       "author": null,
       "contributor": null,
       "description": "Active ingredient: Prothioconazol 125 g/l - a triazole-class fungicide active substance.",
-      "id": "prosaro_prothioconazole",
       "community": 1,
-      "norm_label": "chemicalingredient"
+      "norm_label": "chemicalingredient",
+      "id": "prosaro_prothioconazole"
     },
     {
       "label": "ChemicalIngredient",
@@ -2570,9 +2633,9 @@
       "author": null,
       "contributor": null,
       "description": "Active ingredient: Tebuconazol 125 g/l - a second triazole-class fungicide active substance in the formulation.",
-      "id": "prosaro_tebuconazole",
       "community": 1,
-      "norm_label": "chemicalingredient"
+      "norm_label": "chemicalingredient",
+      "id": "prosaro_tebuconazole"
     },
     {
       "label": "Formulation",
@@ -2585,9 +2648,9 @@
       "author": null,
       "contributor": null,
       "description": "Formulation type stated on label: Emulgierbares Konzentrat (Emulsifiable Concentrate, EC).",
-      "id": "prosaro_emulsifiable_concentrate",
       "community": 1,
-      "norm_label": "formulation"
+      "norm_label": "formulation",
+      "id": "prosaro_emulsifiable_concentrate"
     },
     {
       "label": "Crop",
@@ -2600,9 +2663,9 @@
       "author": null,
       "contributor": null,
       "description": "Target crop: Getreide (cereals) - shown on label and depicted in background photo on packaging.",
-      "id": "prosaro_getreide",
       "community": 1,
-      "norm_label": "crop"
+      "norm_label": "crop",
+      "id": "prosaro_getreide"
     },
     {
       "label": "Crop",
@@ -2615,9 +2678,9 @@
       "author": null,
       "contributor": null,
       "description": "Target crop: Mais (maize/corn) - listed on label as an approved crop.",
-      "id": "prosaro_mais",
       "community": 1,
-      "norm_label": "crop"
+      "norm_label": "crop",
+      "id": "prosaro_mais"
     },
     {
       "label": "Crop",
@@ -2630,9 +2693,9 @@
       "author": null,
       "contributor": null,
       "description": "Target crop: Raps (oilseed rape) - listed on label as an approved crop.",
-      "id": "prosaro_raps",
       "community": 1,
-      "norm_label": "crop"
+      "norm_label": "crop",
+      "id": "prosaro_raps"
     },
     {
       "label": "Concept",
@@ -2645,9 +2708,9 @@
       "author": null,
       "contributor": null,
       "description": "Mode of action target: pilzliche Krankheiten (fungal diseases) in cereal, maize and oilseed rape crops.",
-      "id": "prosaro_pilzliche_krankheiten",
       "community": 1,
-      "norm_label": "concept"
+      "norm_label": "concept",
+      "id": "prosaro_pilzliche_krankheiten"
     },
     {
       "label": "Packaging",
@@ -2660,9 +2723,9 @@
       "author": null,
       "contributor": null,
       "description": "Pack size 5 l printed on label. Container is a white plastic jerry-can with handle and child-resistant cap.",
-      "id": "prosaro_5l_container",
       "community": 1,
-      "norm_label": "packaging"
+      "norm_label": "packaging",
+      "id": "prosaro_5l_container"
     },
     {
       "label": "Concept",
@@ -2675,9 +2738,9 @@
       "author": null,
       "contributor": null,
       "description": "Regulatory category: Pflanzenschutzmittel (plant protection product / pesticide), as indicated by the Vorsicht notice on the label.",
-      "id": "prosaro_pflanzenschutzmittel",
       "community": 1,
-      "norm_label": "concept"
+      "norm_label": "concept",
+      "id": "prosaro_pflanzenschutzmittel"
     },
     {
       "label": "RegulatoryIdentifier",
@@ -2690,9 +2753,9 @@
       "author": null,
       "contributor": null,
       "description": "Austrian plant protection product registration number: Pfl.Reg.Nr. 3054, visible on the label.",
-      "id": "prosaro_pfl_reg_3054",
       "community": 1,
-      "norm_label": "regulatoryidentifier"
+      "norm_label": "regulatoryidentifier",
+      "id": "prosaro_pfl_reg_3054"
     },
     {
       "label": "Concept",
@@ -2705,9 +2768,9 @@
       "author": null,
       "contributor": null,
       "description": "Resistance management group: GRUPPE 3 FUNGIZID printed at bottom of label, corresponding to FRAC Group 3 (DMI / triazole fungicides).",
-      "id": "prosaro_gruppe_3_fungizid",
       "community": 1,
-      "norm_label": "concept"
+      "norm_label": "concept",
+      "id": "prosaro_gruppe_3_fungizid"
     },
     {
       "label": "DigitalAsset",
@@ -2720,9 +2783,9 @@
       "author": null,
       "contributor": null,
       "description": "A QR code is printed on the upper-right of the label with the call-to-action 'Fur weitere Informationen QR-Code scannen'.",
-      "id": "prosaro_qr_code",
       "community": 1,
-      "norm_label": "digitalasset"
+      "norm_label": "digitalasset",
+      "id": "prosaro_qr_code"
     },
     {
       "label": "Image",
@@ -2754,9 +2817,9 @@
         "field",
         "digital farming"
       ],
-      "id": "premeo_back_2_image",
-      "community": 23,
-      "norm_label": "image"
+      "community": 25,
+      "norm_label": "image",
+      "id": "premeo_back_2_image"
     },
     {
       "label": "Person",
@@ -2769,9 +2832,9 @@
       "contributor": null,
       "description": "Young man with beard, red plaid flannel shirt, using a smartphone",
       "role": "farmer / agricultural worker",
-      "id": "premeo_back_2_subject_farmer",
-      "community": 23,
-      "norm_label": "person"
+      "community": 25,
+      "norm_label": "person",
+      "id": "premeo_back_2_subject_farmer"
     },
     {
       "label": "Vehicle",
@@ -2785,9 +2848,9 @@
       "description": "Large green agricultural tractor, likely Claas brand, parked in a field",
       "vehicle_type": "agricultural tractor",
       "brand": "Claas",
-      "id": "premeo_back_2_subject_tractor",
-      "community": 23,
-      "norm_label": "vehicle"
+      "community": 25,
+      "norm_label": "vehicle",
+      "id": "premeo_back_2_subject_tractor"
     },
     {
       "label": "Object",
@@ -2800,9 +2863,9 @@
       "contributor": null,
       "description": "Smartphone held and viewed by the farmer, symbolizing digital/mobile connectivity in agriculture",
       "object_type": "smartphone",
-      "id": "premeo_back_2_subject_smartphone",
-      "community": 23,
-      "norm_label": "object"
+      "community": 25,
+      "norm_label": "object",
+      "id": "premeo_back_2_subject_smartphone"
     },
     {
       "label": "Theme",
@@ -2815,9 +2878,9 @@
       "contributor": null,
       "description": "Digital transformation and mobile technology adoption in agriculture; farmer using smartphone next to tractor in the field",
       "theme": "digital agriculture / smart farming",
-      "id": "premeo_back_2_theme_digital_agriculture",
-      "community": 23,
-      "norm_label": "theme"
+      "community": 25,
+      "norm_label": "theme",
+      "id": "premeo_back_2_theme_digital_agriculture"
     },
     {
       "label": "Husar Plus",
@@ -2839,9 +2902,9 @@
         "group": "GRUPPE 2",
         "hazard_class": "WIRKSTOFF"
       },
-      "id": "husar_plus_product",
       "community": 0,
-      "norm_label": "husar plus"
+      "norm_label": "husar plus",
+      "id": "husar_plus_product"
     },
     {
       "label": "Bayer",
@@ -2857,9 +2920,9 @@
         "name": "Bayer",
         "logo_visible": true
       },
-      "id": "husar_plus_bayer",
       "community": 0,
-      "norm_label": "bayer"
+      "norm_label": "bayer",
+      "id": "husar_plus_bayer"
     },
     {
       "label": "Herbizid",
@@ -2875,9 +2938,9 @@
         "name": "Herbizid",
         "description": "Herbicide for weed control in cereals"
       },
-      "id": "husar_plus_herbizid",
       "community": 0,
-      "norm_label": "herbizid"
+      "norm_label": "herbizid",
+      "id": "husar_plus_herbizid"
     },
     {
       "label": "Mesosulfuron-methyl",
@@ -2894,9 +2957,9 @@
         "concentration": "7,5 g/l",
         "unit": "g/l"
       },
-      "id": "husar_plus_active_ingredient_mesosulfuron",
       "community": 0,
-      "norm_label": "mesosulfuron-methyl"
+      "norm_label": "mesosulfuron-methyl",
+      "id": "husar_plus_active_ingredient_mesosulfuron"
     },
     {
       "label": "Iodosulfuron-methyl-Natrium",
@@ -2913,9 +2976,9 @@
         "concentration": "30,0 g/l",
         "unit": "g/l"
       },
-      "id": "husar_plus_active_ingredient_iodosulfuron",
       "community": 0,
-      "norm_label": "iodosulfuron-methyl-natrium"
+      "norm_label": "iodosulfuron-methyl-natrium",
+      "id": "husar_plus_active_ingredient_iodosulfuron"
     },
     {
       "label": "Mefenpyr-diethyl",
@@ -2933,9 +2996,9 @@
         "unit": "g/l",
         "total_active": "250,0 g/l"
       },
-      "id": "husar_plus_safener_mefenpyr",
       "community": 0,
-      "norm_label": "mefenpyr-diethyl"
+      "norm_label": "mefenpyr-diethyl",
+      "id": "husar_plus_safener_mefenpyr"
     },
     {
       "label": "Winterweizen",
@@ -2951,9 +3014,9 @@
         "name": "Winterweizen",
         "common_name": "Winter wheat"
       },
-      "id": "husar_plus_target_crop_winterweizen",
       "community": 0,
-      "norm_label": "winterweizen"
+      "norm_label": "winterweizen",
+      "id": "husar_plus_target_crop_winterweizen"
     },
     {
       "label": "Roggen",
@@ -2969,9 +3032,9 @@
         "name": "Roggen",
         "common_name": "Rye"
       },
-      "id": "husar_plus_target_crop_roggen",
       "community": 0,
-      "norm_label": "roggen"
+      "norm_label": "roggen",
+      "id": "husar_plus_target_crop_roggen"
     },
     {
       "label": "Triticale",
@@ -2986,9 +3049,9 @@
         "entity_type": "target_crop",
         "name": "Triticale"
       },
-      "id": "husar_plus_target_crop_triticale",
       "community": 0,
-      "norm_label": "triticale"
+      "norm_label": "triticale",
+      "id": "husar_plus_target_crop_triticale"
     },
     {
       "label": "Wintergerste",
@@ -3004,9 +3067,9 @@
         "name": "Wintergerste",
         "common_name": "Winter barley"
       },
-      "id": "husar_plus_target_crop_wintergerste",
       "community": 0,
-      "norm_label": "wintergerste"
+      "norm_label": "wintergerste",
+      "id": "husar_plus_target_crop_wintergerste"
     },
     {
       "label": "Dinkel",
@@ -3022,9 +3085,9 @@
         "name": "Dinkel",
         "common_name": "Spelt"
       },
-      "id": "husar_plus_target_crop_dinkel",
       "community": 0,
-      "norm_label": "dinkel"
+      "norm_label": "dinkel",
+      "id": "husar_plus_target_crop_dinkel"
     },
     {
       "label": "Gemeiner Windhalm",
@@ -3041,9 +3104,9 @@
         "scientific_name": "Apera spica-venti",
         "weed_type": "grass_weed"
       },
-      "id": "husar_plus_target_weed_windhalm",
       "community": 0,
-      "norm_label": "gemeiner windhalm"
+      "norm_label": "gemeiner windhalm",
+      "id": "husar_plus_target_weed_windhalm"
     },
     {
       "label": "Weidelgras-Arten",
@@ -3060,9 +3123,9 @@
         "scientific_name": "Lolium spp.",
         "weed_type": "grass_weed"
       },
-      "id": "husar_plus_target_weed_weidelgras",
       "community": 0,
-      "norm_label": "weidelgras-arten"
+      "norm_label": "weidelgras-arten",
+      "id": "husar_plus_target_weed_weidelgras"
     },
     {
       "label": "Klappen-Arten",
@@ -3078,9 +3141,9 @@
         "name": "Klappen-Arten",
         "weed_type": "grass_weed"
       },
-      "id": "husar_plus_target_weed_klappe",
       "community": 0,
-      "norm_label": "klappen-arten"
+      "norm_label": "klappen-arten",
+      "id": "husar_plus_target_weed_klappe"
     },
     {
       "label": "Einjaehrige zweikeimblaettrige Unkraeuter",
@@ -3096,9 +3159,9 @@
         "name": "Einjaehrige zweikeimblaettrige Unkraeuter",
         "weed_type": "broadleaf_weed"
       },
-      "id": "husar_plus_target_weed_breitblatt",
       "community": 0,
-      "norm_label": "einjaehrige zweikeimblaettrige unkraeuter"
+      "norm_label": "einjaehrige zweikeimblaettrige unkraeuter",
+      "id": "husar_plus_target_weed_breitblatt"
     },
     {
       "label": "Oeldispersion (OD)",
@@ -3115,9 +3178,9 @@
         "name": "Oeldispersion",
         "description": "Oil dispersion formulation"
       },
-      "id": "husar_plus_formulation_od",
       "community": 0,
-      "norm_label": "oeldispersion (od)"
+      "norm_label": "oeldispersion (od)",
+      "id": "husar_plus_formulation_od"
     },
     {
       "label": "Vor Gebrauch schuetteln",
@@ -3133,9 +3196,9 @@
         "instruction": "VOR GEBRAUCH SCHUETTELN",
         "icon": "shake_bottle"
       },
-      "id": "husar_plus_warning_shake",
       "community": 0,
-      "norm_label": "vor gebrauch schuetteln"
+      "norm_label": "vor gebrauch schuetteln",
+      "id": "husar_plus_warning_shake"
     },
     {
       "label": "Pflanzenschutzmittel Zulassung Deutschland",
@@ -3153,9 +3216,9 @@
         "type": "Pflanzenschutzmittel",
         "note": "Abgabe nur in Originalverpackung"
       },
-      "id": "husar_plus_registration_de",
       "community": 0,
-      "norm_label": "pflanzenschutzmittel zulassung deutschland"
+      "norm_label": "pflanzenschutzmittel zulassung deutschland",
+      "id": "husar_plus_registration_de"
     },
     {
       "label": "Maisz\u00fcchtung \u2013 Maisspitzen (Photograph)",
@@ -3167,9 +3230,9 @@
       "author": null,
       "contributor": null,
       "description": "Low-angle photograph of a maize/corn (Zea mays) field taken at golden hour with warm backlighting. Plants are at an early vegetative growth stage (approx. V6\u2013V8, 6\u20138 leaf stage). Long, narrow, bright green leaves point upward; the leaf tips (Maisspitzen) are prominently visible. Faint tassel precursors are discernible at the tops of the most advanced plants. The crop stand is dense and uniform, consistent with a plant breeding or certified seed production field. A forested hillside is visible in the background.",
-      "id": "maiszuechtung_maisspitzen_image",
-      "community": 14,
-      "norm_label": "maiszuchtung \u2013 maisspitzen (photograph)"
+      "community": 15,
+      "norm_label": "maiszuchtung \u2013 maisspitzen (photograph)",
+      "id": "maiszuechtung_maisspitzen_image"
     },
     {
       "label": "Maize / Corn (Zea mays)",
@@ -3181,9 +3244,9 @@
       "author": null,
       "contributor": null,
       "description": "The crop species depicted: maize (Zea mays), a major cereal crop. Shown at early vegetative stage with characteristic rolled/arching leaves.",
-      "id": "maiszuechtung_maisspitzen_crop_maize",
-      "community": 14,
-      "norm_label": "maize / corn (zea mays)"
+      "community": 15,
+      "norm_label": "maize / corn (zea mays)",
+      "id": "maiszuechtung_maisspitzen_crop_maize"
     },
     {
       "label": "Vegetative Growth Stage V6\u2013V8",
@@ -3195,9 +3258,9 @@
       "author": null,
       "contributor": null,
       "description": "The plants appear to be at approximately the V6\u2013V8 leaf stage of maize development. No ears or fully formed tassels are visible; small tassel precursors are faintly discernible at the shoot apex of advanced plants.",
-      "id": "maiszuechtung_maisspitzen_growth_stage",
-      "community": 14,
-      "norm_label": "vegetative growth stage v6\u2013v8"
+      "community": 15,
+      "norm_label": "vegetative growth stage v6\u2013v8",
+      "id": "maiszuechtung_maisspitzen_growth_stage"
     },
     {
       "label": "Maisspitzen (Maize Leaf Tips)",
@@ -3209,9 +3272,9 @@
       "author": null,
       "contributor": null,
       "description": "The pointed leaf tips of young maize plants \u2014 'Maisspitzen' \u2014 are the visual focus of the image. They are elongated, bright green, and oriented upward, backlit by strong sunlight.",
-      "id": "maiszuechtung_maisspitzen_leaf_tips",
-      "community": 14,
-      "norm_label": "maisspitzen (maize leaf tips)"
+      "community": 15,
+      "norm_label": "maisspitzen (maize leaf tips)",
+      "id": "maiszuechtung_maisspitzen_leaf_tips"
     },
     {
       "label": "Maize Field / Breeding Plot",
@@ -3223,9 +3286,9 @@
       "author": null,
       "contributor": null,
       "description": "A dense, uniform stand of maize plants in an outdoor field, with a forested hillside visible in the background. The uniformity of the stand suggests a plant breeding trial or seed production field (Maisz\u00fcchtung = maize breeding).",
-      "id": "maiszuechtung_maisspitzen_field_setting",
-      "community": 14,
-      "norm_label": "maize field / breeding plot"
+      "community": 15,
+      "norm_label": "maize field / breeding plot",
+      "id": "maiszuechtung_maisspitzen_field_setting"
     },
     {
       "label": "Golden Hour Backlighting",
@@ -3237,9 +3300,9 @@
       "author": null,
       "contributor": null,
       "description": "The photograph is taken with strong warm backlighting consistent with golden hour (sunrise or sunset). The light accentuates the translucency and bright green color of the maize leaves and creates a visually striking agricultural scene.",
-      "id": "maiszuechtung_maisspitzen_lighting",
-      "community": 14,
-      "norm_label": "golden hour backlighting"
+      "community": 15,
+      "norm_label": "golden hour backlighting",
+      "id": "maiszuechtung_maisspitzen_lighting"
     },
     {
       "label": "Portrait Photo",
@@ -3251,9 +3314,9 @@
       "author": null,
       "contributor": null,
       "description": "Professional headshot of a young man (late 20s to mid-30s) with short brown hair, neatly trimmed beard, and blue eyes. He is smiling warmly at the camera and wearing a white polo/collared shirt with a Bayer logo badge on the chest. Background is a neutral grey gradient. High-quality professional portrait photography with soft, even lighting.",
-      "id": "berater2_portrait_photo",
-      "community": 40,
-      "norm_label": "portrait photo"
+      "community": 41,
+      "norm_label": "portrait photo",
+      "id": "berater2_portrait_photo"
     },
     {
       "label": "Person",
@@ -3265,9 +3328,9 @@
       "author": null,
       "contributor": null,
       "description": "Male agricultural advisor depicted in the portrait. Approximate age: late 20s to mid-30s. Physical features: short brown hair, trimmed beard, blue eyes, warm smile.",
-      "id": "berater2_person",
-      "community": 40,
-      "norm_label": "person"
+      "community": 41,
+      "norm_label": "person",
+      "id": "berater2_person"
     },
     {
       "label": "Bayer Logo",
@@ -3279,9 +3342,9 @@
       "author": null,
       "contributor": null,
       "description": "Bayer AG corporate logo/badge visible on the chest of the advisor's white shirt, indicating affiliation with Bayer (agricultural and pharmaceutical company).",
-      "id": "berater2_bayer_logo",
-      "community": 40,
-      "norm_label": "bayer logo"
+      "community": 41,
+      "norm_label": "bayer logo",
+      "id": "berater2_bayer_logo"
     },
     {
       "label": "Portrait Photo",
@@ -3293,9 +3356,9 @@
       "author": null,
       "contributor": null,
       "description": "Professional corporate headshot of a middle-aged woman with short reddish-brown hair, wearing a white collared shirt with a blue Bayer company logo. She has a friendly smile and is photographed against a neutral gray background.",
-      "id": "berater3_portrait_photo",
-      "community": 24,
-      "norm_label": "portrait photo"
+      "community": 26,
+      "norm_label": "portrait photo",
+      "id": "berater3_portrait_photo"
     },
     {
       "label": "Female Advisor",
@@ -3307,9 +3370,9 @@
       "author": null,
       "contributor": null,
       "description": "A female agricultural advisor depicted in the portrait photo. Middle-aged, short reddish-brown hair, friendly expression.",
-      "id": "berater3_female_advisor",
-      "community": 24,
-      "norm_label": "female advisor"
+      "community": 26,
+      "norm_label": "female advisor",
+      "id": "berater3_female_advisor"
     },
     {
       "label": "Bayer Company Logo",
@@ -3321,9 +3384,9 @@
       "author": null,
       "contributor": null,
       "description": "Blue Bayer crosshairs logo visible on the collar of the advisor's white shirt, indicating affiliation with Bayer AG (agricultural division).",
-      "id": "berater3_bayer_logo",
-      "community": 24,
-      "norm_label": "bayer company logo"
+      "community": 26,
+      "norm_label": "bayer company logo",
+      "id": "berater3_bayer_logo"
     },
     {
       "label": "White Collared Shirt",
@@ -3335,9 +3398,9 @@
       "author": null,
       "contributor": null,
       "description": "White collared shirt with blue accent on the collar, branded with the Bayer logo, worn by the female advisor.",
-      "id": "berater3_white_shirt",
-      "community": 24,
-      "norm_label": "white collared shirt"
+      "community": 26,
+      "norm_label": "white collared shirt",
+      "id": "berater3_white_shirt"
     },
     {
       "label": "Gray Studio Background",
@@ -3349,9 +3412,9 @@
       "author": null,
       "contributor": null,
       "description": "Neutral gray studio background typical of professional corporate portrait photography.",
-      "id": "berater3_gray_background",
-      "community": 24,
-      "norm_label": "gray studio background"
+      "community": 26,
+      "norm_label": "gray studio background",
+      "id": "berater3_gray_background"
     },
     {
       "label": "Portrait Photo",
@@ -3363,9 +3426,9 @@
       "author": null,
       "contributor": null,
       "description": "Professional portrait photo of a middle-aged man with short grey-white hair and a trimmed grey beard, smiling broadly. He wears a white collared shirt or jacket with a small Bayer (pharmaceutical/agricultural company) logo badge on the chest. The background is a neutral dark grey. The image style is a clean, corporate headshot typical of a professional advisor or consultant profile photo.",
-      "id": "berater1_portrait_photo",
-      "community": 41,
-      "norm_label": "portrait photo"
+      "community": 42,
+      "norm_label": "portrait photo",
+      "id": "berater1_portrait_photo"
     },
     {
       "label": "Person",
@@ -3377,9 +3440,9 @@
       "author": null,
       "contributor": null,
       "description": "Male person depicted in the portrait. Appears to be in his 50s, with grey-white short hair, a trimmed grey beard, and a warm, confident smile. Likely an agricultural or industry advisor given the Bayer logo on his attire.",
-      "id": "berater1_person",
-      "community": 41,
-      "norm_label": "person"
+      "community": 42,
+      "norm_label": "person",
+      "id": "berater1_person"
     },
     {
       "label": "Bayer Logo",
@@ -3391,9 +3454,9 @@
       "author": null,
       "contributor": null,
       "description": "Small Bayer company logo badge visible on the chest of the person's white shirt/jacket. Bayer is a multinational pharmaceutical and life sciences company with a significant agricultural division (Bayer Crop Science).",
-      "id": "berater1_bayer_logo",
-      "community": 41,
-      "norm_label": "bayer logo"
+      "community": 42,
+      "norm_label": "bayer logo",
+      "id": "berater1_bayer_logo"
     },
     {
       "label": "Podcast Thumbnail (Episode 1)",
@@ -3405,9 +3468,9 @@
       "author": null,
       "contributor": null,
       "description": "Thumbnail image for the first podcast episode. Shows a young man in a professional podcast recording studio, wearing over-ear headphones and holding a condenser microphone on a boom arm. He is dressed in a light blue casual button-up shirt and smiling at the camera. Background features a sage/dark green wall with a framed lightbulb illustration poster, a ring light, and camera/monitor equipment. No explicit episode title, guest name, or branding text visible.",
-      "id": "podcast_1_podcast_thumbnail",
-      "community": 25,
-      "norm_label": "podcast thumbnail (episode 1)"
+      "community": 27,
+      "norm_label": "podcast thumbnail (episode 1)",
+      "id": "podcast_1_podcast_thumbnail"
     },
     {
       "label": "Podcast Host or Guest (Male, Young Adult)",
@@ -3419,9 +3482,9 @@
       "author": null,
       "contributor": null,
       "description": "A young adult male person appearing in the podcast thumbnail. Wearing over-ear headphones and holding a microphone, smiling at the camera. Identity not explicitly labeled in the image.",
-      "id": "podcast_1_podcast_host_or_guest",
-      "community": 25,
-      "norm_label": "podcast host or guest (male, young adult)"
+      "community": 27,
+      "norm_label": "podcast host or guest (male, young adult)",
+      "id": "podcast_1_podcast_host_or_guest"
     },
     {
       "label": "Podcast Recording Studio",
@@ -3433,9 +3496,9 @@
       "author": null,
       "contributor": null,
       "description": "A modern, well-equipped podcast studio visible in the background. Features a sage/dark green wall, framed lightbulb illustration poster, boom arm microphone mount, ring light, and monitor/camera equipment on the right side.",
-      "id": "podcast_1_podcast_studio",
-      "community": 25,
-      "norm_label": "podcast recording studio"
+      "community": 27,
+      "norm_label": "podcast recording studio",
+      "id": "podcast_1_podcast_studio"
     },
     {
       "label": "Podcast Recording Equipment",
@@ -3447,9 +3510,9 @@
       "author": null,
       "contributor": null,
       "description": "Podcast recording equipment visible in the image: over-ear headphones, condenser microphone on a boom arm, ring light, and monitor/camera setup.",
-      "id": "podcast_1_podcast_equipment",
-      "community": 25,
-      "norm_label": "podcast recording equipment"
+      "community": 27,
+      "norm_label": "podcast recording equipment",
+      "id": "podcast_1_podcast_equipment"
     },
     {
       "label": "Lightbulb Illustration Poster",
@@ -3461,9 +3524,9 @@
       "author": null,
       "contributor": null,
       "description": "A framed poster on the studio wall depicting a yellow lightbulb illustration on a white/light background \u2014 commonly symbolizing ideas, innovation, or creativity.",
-      "id": "podcast_1_lightbulb_poster",
-      "community": 25,
-      "norm_label": "lightbulb illustration poster"
+      "community": 27,
+      "norm_label": "lightbulb illustration poster",
+      "id": "podcast_1_lightbulb_poster"
     },
     {
       "label": "Adengo",
@@ -3477,9 +3540,9 @@
       "description": "Adengo herbicide product by Bayer, 5L container",
       "product_type": "Herbizid",
       "volume": "5L",
-      "id": "adengo_adengo",
       "community": 2,
-      "norm_label": "adengo"
+      "norm_label": "adengo",
+      "id": "adengo_adengo"
     },
     {
       "label": "Bayer",
@@ -3492,9 +3555,9 @@
       "contributor": null,
       "description": "Bayer AG - manufacturer of Adengo herbicide",
       "entity_type": "company",
-      "id": "adengo_bayer",
       "community": 2,
-      "norm_label": "bayer"
+      "norm_label": "bayer",
+      "id": "adengo_bayer"
     },
     {
       "label": "Herbizid",
@@ -3507,9 +3570,9 @@
       "contributor": null,
       "description": "Product category: herbicide for weed control",
       "entity_type": "product_category",
-      "id": "adengo_herbizid",
       "community": 2,
-      "norm_label": "herbizid"
+      "norm_label": "herbizid",
+      "id": "adengo_herbizid"
     },
     {
       "label": "Mais",
@@ -3522,9 +3585,9 @@
       "contributor": null,
       "description": "Maize/corn - the target crop for Adengo application",
       "entity_type": "crop",
-      "id": "adengo_mais",
       "community": 2,
-      "norm_label": "mais"
+      "norm_label": "mais",
+      "id": "adengo_mais"
     },
     {
       "label": "Einj\u00e4hrige ein- und zweikeimbl\u00e4ttrige Unkr\u00e4uter",
@@ -3537,9 +3600,9 @@
       "contributor": null,
       "description": "Annual mono- and dicotyledonous weeds - target of Adengo herbicide",
       "entity_type": "target_organism",
-      "id": "adengo_unkraeuter",
       "community": 2,
-      "norm_label": "einjahrige ein- und zweikeimblattrige unkrauter"
+      "norm_label": "einjahrige ein- und zweikeimblattrige unkrauter",
+      "id": "adengo_unkraeuter"
     },
     {
       "label": "Baumschulgeh\u00f6lzpflanzen",
@@ -3552,9 +3615,9 @@
       "contributor": null,
       "description": "Nursery woody plants - secondary application context for Adengo",
       "entity_type": "application_context",
-      "id": "adengo_baumschulgeh\u00f6lzpflanzen",
       "community": 2,
-      "norm_label": "baumschulgeholzpflanzen"
+      "norm_label": "baumschulgeholzpflanzen",
+      "id": "adengo_baumschulgeh\u00f6lzpflanzen"
     },
     {
       "label": "Vorauflauf",
@@ -3567,9 +3630,9 @@
       "contributor": null,
       "description": "Pre-emergence application timing for Adengo in maize",
       "entity_type": "application_timing",
-      "id": "adengo_vorauflauf",
       "community": 2,
-      "norm_label": "vorauflauf"
+      "norm_label": "vorauflauf",
+      "id": "adengo_vorauflauf"
     },
     {
       "label": "Fr\u00fcher Nachauflauf",
@@ -3582,9 +3645,9 @@
       "contributor": null,
       "description": "Early post-emergence application timing for Adengo in maize",
       "entity_type": "application_timing",
-      "id": "adengo_fruehernachauflauf",
       "community": 2,
-      "norm_label": "fruher nachauflauf"
+      "norm_label": "fruher nachauflauf",
+      "id": "adengo_fruehernachauflauf"
     },
     {
       "label": "Isoxaflutole",
@@ -3599,9 +3662,9 @@
       "entity_type": "active_ingredient",
       "concentration": "225 g/l",
       "hrac_group": "27",
-      "id": "adengo_isoxaflutole",
       "community": 2,
-      "norm_label": "isoxaflutole"
+      "norm_label": "isoxaflutole",
+      "id": "adengo_isoxaflutole"
     },
     {
       "label": "Thiencarbazone-methyl",
@@ -3616,9 +3679,9 @@
       "entity_type": "active_ingredient",
       "concentration": "90 g/l",
       "hrac_group": "2",
-      "id": "adengo_thiencarbazone_methyl",
       "community": 2,
-      "norm_label": "thiencarbazone-methyl"
+      "norm_label": "thiencarbazone-methyl",
+      "id": "adengo_thiencarbazone_methyl"
     },
     {
       "label": "Cyprosulfamide",
@@ -3632,9 +3695,9 @@
       "description": "Safener ingredient in Adengo: 250 g/l Cyprosulfamide (Safener)",
       "entity_type": "safener",
       "concentration": "250 g/l",
-      "id": "adengo_cyprosulfamide",
       "community": 2,
-      "norm_label": "cyprosulfamide"
+      "norm_label": "cyprosulfamide",
+      "id": "adengo_cyprosulfamide"
     },
     {
       "label": "\u00d6l-in-Wasser-Emulsion (OD)",
@@ -3647,9 +3710,9 @@
       "contributor": null,
       "description": "Formulation type of Adengo: oil-in-water emulsion (OD)",
       "entity_type": "formulation_type",
-      "id": "adengo_ol_in_wasser_emulsion",
       "community": 2,
-      "norm_label": "ol-in-wasser-emulsion (od)"
+      "norm_label": "ol-in-wasser-emulsion (od)",
+      "id": "adengo_ol_in_wasser_emulsion"
     },
     {
       "label": "Wirksamkeitskontrolle",
@@ -3662,9 +3725,9 @@
       "contributor": null,
       "description": "Efficacy control category listed on Adengo label",
       "entity_type": "product_attribute",
-      "id": "adengo_wirkstoffkontrolle",
-      "community": 52,
-      "norm_label": "wirksamkeitskontrolle"
+      "community": 53,
+      "norm_label": "wirksamkeitskontrolle",
+      "id": "adengo_wirkstoffkontrolle"
     },
     {
       "label": "HRAC/WSSA Gruppen 2 und 27",
@@ -3677,9 +3740,9 @@
       "contributor": null,
       "description": "Herbicide resistance classification groups for Adengo active ingredients",
       "entity_type": "resistance_classification",
-      "id": "adengo_gruppe_2_27",
       "community": 2,
-      "norm_label": "hrac/wssa gruppen 2 und 27"
+      "norm_label": "hrac/wssa gruppen 2 und 27",
+      "id": "adengo_gruppe_2_27"
     },
     {
       "label": "Premeo Bonus",
@@ -3692,9 +3755,9 @@
       "contributor": null,
       "description": "Bayer loyalty/bonus program logo visible on Adengo packaging",
       "entity_type": "marketing_program",
-      "id": "adengo_premeo_bonus",
       "community": 2,
-      "norm_label": "premeo bonus"
+      "norm_label": "premeo bonus",
+      "id": "adengo_premeo_bonus"
     },
     {
       "label": "Anwenderkategorie: Beruflich",
@@ -3707,9 +3770,9 @@
       "contributor": null,
       "description": "User category: Professional use only",
       "entity_type": "regulatory_attribute",
-      "id": "adengo_anwenderkategorie_beruflich",
       "community": 2,
-      "norm_label": "anwenderkategorie: beruflich"
+      "norm_label": "anwenderkategorie: beruflich",
+      "id": "adengo_anwenderkategorie_beruflich"
     },
     {
       "label": "Podcast Episode 2 Thumbnail",
@@ -3721,9 +3784,9 @@
       "author": null,
       "contributor": null,
       "description": "Outdoor podcast recording thumbnail showing two people standing in a grain field (wheat/barley). A woman in a white shirt and jeans on the left, and a man in a black t-shirt wearing headphones and carrying an OSCA-branded recording device on the right. A field trial marker sign reading 'UK' is visible in the background.",
-      "id": "podcast_2_thumbnail",
       "community": 10,
-      "norm_label": "podcast episode 2 thumbnail"
+      "norm_label": "podcast episode 2 thumbnail",
+      "id": "podcast_2_thumbnail"
     },
     {
       "label": "Agriculture / Grain Field Topic",
@@ -3735,9 +3798,9 @@
       "author": null,
       "contributor": null,
       "description": "The podcast episode is set in a grain field (wheat or barley), indicating an agricultural topic, likely related to crop consulting, agronomy, or field trials.",
-      "id": "podcast_2_agriculture",
       "community": 10,
-      "norm_label": "agriculture / grain field topic"
+      "norm_label": "agriculture / grain field topic",
+      "id": "podcast_2_agriculture"
     },
     {
       "label": "Field Trial Marker 'UK'",
@@ -3749,9 +3812,9 @@
       "author": null,
       "contributor": null,
       "description": "A field trial sign labeled 'UK' visible in the background, suggesting a variety trial or experimental plot designation in the grain field.",
-      "id": "podcast_2_field_trial_uk",
       "community": 10,
-      "norm_label": "field trial marker 'uk'"
+      "norm_label": "field trial marker 'uk'",
+      "id": "podcast_2_field_trial_uk"
     },
     {
       "label": "Podcast Host (Male, Headphones, OSCA Recorder)",
@@ -3763,9 +3826,9 @@
       "author": null,
       "contributor": null,
       "description": "A man wearing headphones and carrying an OSCA-branded mobile recording device, acting as the podcast host or interviewer in the field.",
-      "id": "podcast_2_host_male",
       "community": 10,
-      "norm_label": "podcast host (male, headphones, osca recorder)"
+      "norm_label": "podcast host (male, headphones, osca recorder)",
+      "id": "podcast_2_host_male"
     },
     {
       "label": "Podcast Guest (Female, White Shirt)",
@@ -3777,9 +3840,9 @@
       "author": null,
       "contributor": null,
       "description": "A woman in a white shirt and jeans standing in the grain field, likely a guest expert or specialist being interviewed for the podcast episode.",
-      "id": "podcast_2_guest_female",
       "community": 10,
-      "norm_label": "podcast guest (female, white shirt)"
+      "norm_label": "podcast guest (female, white shirt)",
+      "id": "podcast_2_guest_female"
     },
     {
       "label": "OSCA Mobile Recording Device",
@@ -3791,9 +3854,9 @@
       "author": null,
       "contributor": null,
       "description": "A blue OSCA-branded portable audio recording bag/device used for the outdoor field podcast recording.",
-      "id": "podcast_2_osca_recorder",
       "community": 10,
-      "norm_label": "osca mobile recording device"
+      "norm_label": "osca mobile recording device",
+      "id": "podcast_2_osca_recorder"
     },
     {
       "label": "Outdoor Field Podcast Recording",
@@ -3805,9 +3868,9 @@
       "author": null,
       "contributor": null,
       "description": "The podcast episode is recorded outdoors in an agricultural field during summer (sunny day, mature grain crop), emphasizing hands-on, on-location content style.",
-      "id": "podcast_2_outdoor_recording",
       "community": 10,
-      "norm_label": "outdoor field podcast recording"
+      "norm_label": "outdoor field podcast recording",
+      "id": "podcast_2_outdoor_recording"
     },
     {
       "label": "Corn Field",
@@ -3819,9 +3882,9 @@
       "author": null,
       "contributor": null,
       "description": "Wide panoramic photograph of a young corn (maize) field with seedlings growing in neat parallel rows converging into the distance. Dark moist soil between rows. Background features a tree line and a soft pink/orange sky indicating golden hour (sunrise or sunset) lighting.",
-      "id": "demo_header_corn_field",
-      "community": 35,
-      "norm_label": "corn field"
+      "community": 36,
+      "norm_label": "corn field",
+      "id": "demo_header_corn_field"
     },
     {
       "label": "Agricultural Landscape",
@@ -3833,9 +3896,9 @@
       "author": null,
       "contributor": null,
       "description": "Broad open agricultural landscape visible in the header image, suggesting themes of farming, nature, growth, and rural scenery.",
-      "id": "demo_header_agricultural_landscape",
-      "community": 35,
-      "norm_label": "agricultural landscape"
+      "community": 36,
+      "norm_label": "agricultural landscape",
+      "id": "demo_header_agricultural_landscape"
     },
     {
       "label": "Golden Hour Sky",
@@ -3847,9 +3910,9 @@
       "author": null,
       "contributor": null,
       "description": "Soft pink and orange sky at golden hour (sunrise or sunset) visible at the top of the header image, giving a warm, optimistic tone to the scene.",
-      "id": "demo_header_golden_hour_sky",
-      "community": 35,
-      "norm_label": "golden hour sky"
+      "community": 36,
+      "norm_label": "golden hour sky",
+      "id": "demo_header_golden_hour_sky"
     },
     {
       "label": "Tree Line / Forest Edge",
@@ -3861,9 +3924,9 @@
       "author": null,
       "contributor": null,
       "description": "Dense tree line forming the horizon background behind the corn field, adding depth and a natural boundary to the landscape.",
-      "id": "demo_header_tree_line",
-      "community": 35,
-      "norm_label": "tree line / forest edge"
+      "community": 36,
+      "norm_label": "tree line / forest edge",
+      "id": "demo_header_tree_line"
     },
     {
       "label": "huSAR Plus Herbicide",
@@ -3884,9 +3947,9 @@
       "certifications": [
         "PREMED DANNES"
       ],
-      "id": "productimage_image_husar_plus_herbicide",
-      "community": 26,
-      "norm_label": "husar plus herbicide"
+      "community": 28,
+      "norm_label": "husar plus herbicide",
+      "id": "productimage_image_husar_plus_herbicide"
     },
     {
       "label": "Bayer",
@@ -3900,9 +3963,9 @@
       "description": "Bayer AG \u2014 multinational pharmaceutical and life sciences company, manufacturer of huSAR Plus herbicide.",
       "entity_type": "Organization",
       "industry": "Agriculture / Agrochemicals",
-      "id": "productimage_image_bayer",
-      "community": 26,
-      "norm_label": "bayer"
+      "community": 28,
+      "norm_label": "bayer",
+      "id": "productimage_image_bayer"
     },
     {
       "label": "Herbicide",
@@ -3915,9 +3978,9 @@
       "contributor": null,
       "description": "A type of agricultural chemical (pesticide) used to control or kill unwanted plants (weeds) in crop fields.",
       "entity_type": "ProductCategory",
-      "id": "productimage_image_herbicide",
-      "community": 26,
-      "norm_label": "herbicide"
+      "community": 28,
+      "norm_label": "herbicide",
+      "id": "productimage_image_herbicide"
     },
     {
       "label": "Agrochemical",
@@ -3930,9 +3993,9 @@
       "contributor": null,
       "description": "Chemical products used in agriculture, including pesticides, herbicides, and fertilizers.",
       "entity_type": "Concept",
-      "id": "productimage_image_agrochemical",
-      "community": 26,
-      "norm_label": "agrochemical"
+      "community": 28,
+      "norm_label": "agrochemical",
+      "id": "productimage_image_agrochemical"
     },
     {
       "label": "Grain Crop Protection",
@@ -3945,9 +4008,9 @@
       "contributor": null,
       "description": "Application domain for huSAR Plus \u2014 protecting cereal/grain crops such as wheat or barley from weed competition.",
       "entity_type": "ApplicationDomain",
-      "id": "productimage_image_grain_crop_protection",
-      "community": 26,
-      "norm_label": "grain crop protection"
+      "community": 28,
+      "norm_label": "grain crop protection",
+      "id": "productimage_image_grain_crop_protection"
     },
     {
       "label": "BCS Kartoffelbestand (Potato Field)",
@@ -3961,9 +4024,9 @@
       "description": "Aerial ground-level photograph of a Bayer CropScience potato field (Kartoffelbestand). Shows parallel rows of healthy mid-season potato plants with broad dark-green leaves and dense canopy cover, growing in ridged sandy/loamy soil furrows. Flat agricultural landscape with trees visible on the horizon under an overcast sky.",
       "image_width": 1600,
       "image_height": 805,
-      "id": "bcs_kartoffelbestand_1600x805_image",
-      "community": 36,
-      "norm_label": "bcs kartoffelbestand (potato field)"
+      "community": 37,
+      "norm_label": "bcs kartoffelbestand (potato field)",
+      "id": "bcs_kartoffelbestand_1600x805_image"
     },
     {
       "label": "Potato Plant (Solanum tuberosum)",
@@ -3979,9 +4042,9 @@
       "growth_stage": "mid-season",
       "leaf_color": "dark green",
       "canopy_coverage": "dense",
-      "id": "bcs_kartoffelbestand_1600x805_potato_plant",
-      "community": 36,
-      "norm_label": "potato plant (solanum tuberosum)"
+      "community": 37,
+      "norm_label": "potato plant (solanum tuberosum)",
+      "id": "bcs_kartoffelbestand_1600x805_potato_plant"
     },
     {
       "label": "Agricultural Field / Potato Crop",
@@ -3996,9 +4059,9 @@
       "soil_type": "sandy/loamy",
       "row_structure": "ridged furrows",
       "landscape_type": "flat agricultural",
-      "id": "bcs_kartoffelbestand_1600x805_agricultural_field",
-      "community": 36,
-      "norm_label": "agricultural field / potato crop"
+      "community": 37,
+      "norm_label": "agricultural field / potato crop",
+      "id": "bcs_kartoffelbestand_1600x805_agricultural_field"
     },
     {
       "label": "Bayer CropScience",
@@ -4012,9 +4075,9 @@
       "description": "Bayer CropScience \u2014 agricultural division of Bayer AG, provider of crop protection products, seeds, and digital farming solutions. Image is used as a client reference/visual asset.",
       "organization_type": "agrochemical / crop science company",
       "industry": "agriculture",
-      "id": "bcs_kartoffelbestand_1600x805_bayer_cropscience",
-      "community": 36,
-      "norm_label": "bayer cropscience"
+      "community": 37,
+      "norm_label": "bayer cropscience",
+      "id": "bcs_kartoffelbestand_1600x805_bayer_cropscience"
     },
     {
       "label": "Corn Cob (Maize)",
@@ -4053,9 +4116,9 @@
         "plant",
         "harvest"
       ],
-      "id": "mais_corn_cob",
-      "community": 42,
-      "norm_label": "corn cob (maize)"
+      "community": 43,
+      "norm_label": "corn cob (maize)",
+      "id": "mais_corn_cob"
     },
     {
       "label": "Maize Kernel",
@@ -4070,9 +4133,9 @@
       "color": "golden yellow",
       "texture": "smooth, glossy, plump",
       "arrangement": "vertical rows on cob",
-      "id": "mais_kernel",
-      "community": 42,
-      "norm_label": "maize kernel"
+      "community": 43,
+      "norm_label": "maize kernel",
+      "id": "mais_kernel"
     },
     {
       "label": "Maize Husk (Leaf Sheaths)",
@@ -4086,9 +4149,9 @@
       "description": "Green husk leaves of the maize cob, partially peeled back to reveal the kernels. Bright green, with visible leaf veining.",
       "color": "bright green",
       "state": "partially peeled back",
-      "id": "mais_husk",
-      "community": 42,
-      "norm_label": "maize husk (leaf sheaths)"
+      "community": 43,
+      "norm_label": "maize husk (leaf sheaths)",
+      "id": "mais_husk"
     },
     {
       "label": "re:soil (Brand)",
@@ -4111,9 +4174,9 @@
         ],
         "description": "Brand logo and visual identity for re:soil, a soil health / regenerative agriculture product or initiative"
       },
-      "id": "leitbild_resoil_resoil_brand",
-      "community": 15,
-      "norm_label": "re:soil (brand)"
+      "community": 16,
+      "norm_label": "re:soil (brand)",
+      "id": "leitbild_resoil_resoil_brand"
     },
     {
       "label": "Tagline: Starker Boden. Starke Pflanzen.",
@@ -4131,9 +4194,9 @@
         "language": "de",
         "purpose": "guiding principle / brand promise"
       },
-      "id": "leitbild_resoil_tagline",
-      "community": 15,
-      "norm_label": "tagline: starker boden. starke pflanzen."
+      "community": 16,
+      "norm_label": "tagline: starker boden. starke pflanzen.",
+      "id": "leitbild_resoil_tagline"
     },
     {
       "label": "Soil Health (Bodengesundheit)",
@@ -4150,9 +4213,9 @@
         "visual_representation": "cross-section of rich dark soil",
         "domain": "agriculture / regenerative farming"
       },
-      "id": "leitbild_resoil_soil_health",
-      "community": 15,
-      "norm_label": "soil health (bodengesundheit)"
+      "community": 16,
+      "norm_label": "soil health (bodengesundheit)",
+      "id": "leitbild_resoil_soil_health"
     },
     {
       "label": "Plant Growth (Pflanzenwachstum)",
@@ -4169,9 +4232,9 @@
         "visual_representation": "seedling sprouting from soil",
         "domain": "agriculture / plant vitality"
       },
-      "id": "leitbild_resoil_plant_growth",
-      "community": 15,
-      "norm_label": "plant growth (pflanzenwachstum)"
+      "community": 16,
+      "norm_label": "plant growth (pflanzenwachstum)",
+      "id": "leitbild_resoil_plant_growth"
     },
     {
       "label": "Regenerative Agriculture",
@@ -4188,9 +4251,9 @@
         "inferred_from": "brand name re:soil + tagline + visual imagery",
         "description": "Broader thematic domain: restoring and regenerating soil for sustainable plant and food production"
       },
-      "id": "leitbild_resoil_regenerative_agriculture",
-      "community": 15,
-      "norm_label": "regenerative agriculture"
+      "community": 16,
+      "norm_label": "regenerative agriculture",
+      "id": "leitbild_resoil_regenerative_agriculture"
     },
     {
       "label": "Visual Identity / Leitbild Image",
@@ -4213,9 +4276,9 @@
           "dark green leaf/arc graphic elements"
         ]
       },
-      "id": "leitbild_resoil_visual_identity",
-      "community": 15,
-      "norm_label": "visual identity / leitbild image"
+      "community": 16,
+      "norm_label": "visual identity / leitbild image",
+      "id": "leitbild_resoil_visual_identity"
     },
     {
       "label": "Isometric Stacked Layers (Hero Image)",
@@ -4235,45 +4298,45 @@
         "grey"
       ],
       "concept": "stacked layers, modular structure, solid foundation, layered expertise",
-      "id": "hero_isometric_stacked_layers",
-      "community": 53,
-      "norm_label": "isometric stacked layers (hero image)"
+      "community": 54,
+      "norm_label": "isometric stacked layers (hero image)",
+      "id": "hero_isometric_stacked_layers"
     }
   ],
   "links": [
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/main.jsx",
-      "source_location": "L13",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/main.jsx",
+      "source_location": "L14",
       "weight": 1.0,
-      "_src": "src_main_jsx",
+      "_src": "users_raphaelschneider_meine_beratung_src_main_jsx",
       "_tgt": "main_lenisprovider",
-      "source": "src_main_jsx",
+      "source": "users_raphaelschneider_meine_beratung_src_main_jsx",
       "target": "main_lenisprovider",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/main.jsx",
-      "source_location": "L27",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/main.jsx",
+      "source_location": "L28",
       "weight": 1.0,
-      "_src": "src_main_jsx",
+      "_src": "users_raphaelschneider_meine_beratung_src_main_jsx",
       "_tgt": "main_scrolltotop",
-      "source": "src_main_jsx",
+      "source": "users_raphaelschneider_meine_beratung_src_main_jsx",
       "target": "main_scrolltotop",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/main.jsx",
-      "source_location": "L39",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/main.jsx",
+      "source_location": "L40",
       "weight": 1.0,
-      "_src": "src_main_jsx",
+      "_src": "users_raphaelschneider_meine_beratung_src_main_jsx",
       "_tgt": "main_approutes",
-      "source": "src_main_jsx",
+      "source": "users_raphaelschneider_meine_beratung_src_main_jsx",
       "target": "main_approutes",
       "confidence_score": 1.0
     },
@@ -4332,8 +4395,8 @@
       "source_file": "src/components/TransitionLink.jsx",
       "source_location": "L15",
       "weight": 1.0,
-      "_src": "transitionlink_transitionlink",
-      "_tgt": "transitioncontext_usepagetransition",
+      "_src": "transitioncontext_usepagetransition",
+      "_tgt": "transitionlink_transitionlink",
       "source": "transitioncontext_usepagetransition",
       "target": "transitionlink_transitionlink"
     },
@@ -4344,8 +4407,8 @@
       "source_file": "src/pages/BeratungStart.jsx",
       "source_location": "L19",
       "weight": 1.0,
-      "_src": "beratungstart_beratungstart",
-      "_tgt": "transitioncontext_usepagetransition",
+      "_src": "transitioncontext_usepagetransition",
+      "_tgt": "beratungstart_beratungstart",
       "source": "transitioncontext_usepagetransition",
       "target": "beratungstart_beratungstart"
     },
@@ -4356,44 +4419,44 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L290",
       "weight": 1.0,
-      "_src": "home_home",
-      "_tgt": "transitioncontext_usepagetransition",
+      "_src": "transitioncontext_usepagetransition",
+      "_tgt": "home_home",
       "source": "transitioncontext_usepagetransition",
       "target": "home_home"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/MainNav.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/components/MainNav.jsx",
       "source_location": "L12",
       "weight": 1.0,
-      "_src": "src_components_mainnav_jsx",
+      "_src": "users_raphaelschneider_meine_beratung_src_components_mainnav_jsx",
       "_tgt": "mainnav_weathericon",
-      "source": "src_components_mainnav_jsx",
+      "source": "users_raphaelschneider_meine_beratung_src_components_mainnav_jsx",
       "target": "mainnav_weathericon",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/MainNav.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/components/MainNav.jsx",
       "source_location": "L28",
       "weight": 1.0,
-      "_src": "src_components_mainnav_jsx",
+      "_src": "users_raphaelschneider_meine_beratung_src_components_mainnav_jsx",
       "_tgt": "mainnav_chevronright",
-      "source": "src_components_mainnav_jsx",
+      "source": "users_raphaelschneider_meine_beratung_src_components_mainnav_jsx",
       "target": "mainnav_chevronright",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/MainNav.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/components/MainNav.jsx",
       "source_location": "L36",
       "weight": 1.0,
-      "_src": "src_components_mainnav_jsx",
+      "_src": "users_raphaelschneider_meine_beratung_src_components_mainnav_jsx",
       "_tgt": "mainnav_mainnav",
-      "source": "src_components_mainnav_jsx",
+      "source": "users_raphaelschneider_meine_beratung_src_components_mainnav_jsx",
       "target": "mainnav_mainnav",
       "confidence_score": 1.0
     },
@@ -4508,60 +4571,132 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/Beratung.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/AgrarMagazinDemo.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "users_raphaelschneider_meine_beratung_src_pages_agrarmagazindemo_jsx",
+      "_tgt": "agrarmagazindemo_articlesection",
+      "source": "users_raphaelschneider_meine_beratung_src_pages_agrarmagazindemo_jsx",
+      "target": "agrarmagazindemo_articlesection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/AgrarMagazinDemo.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "users_raphaelschneider_meine_beratung_src_pages_agrarmagazindemo_jsx",
+      "_tgt": "agrarmagazindemo_articlequote",
+      "source": "users_raphaelschneider_meine_beratung_src_pages_agrarmagazindemo_jsx",
+      "target": "agrarmagazindemo_articlequote",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/AgrarMagazinDemo.jsx",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_src": "users_raphaelschneider_meine_beratung_src_pages_agrarmagazindemo_jsx",
+      "_tgt": "agrarmagazindemo_articleimage",
+      "source": "users_raphaelschneider_meine_beratung_src_pages_agrarmagazindemo_jsx",
+      "target": "agrarmagazindemo_articleimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/AgrarMagazinDemo.jsx",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_src": "users_raphaelschneider_meine_beratung_src_pages_agrarmagazindemo_jsx",
+      "_tgt": "agrarmagazindemo_socialbar",
+      "source": "users_raphaelschneider_meine_beratung_src_pages_agrarmagazindemo_jsx",
+      "target": "agrarmagazindemo_socialbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/AgrarMagazinDemo.jsx",
+      "source_location": "L117",
+      "weight": 1.0,
+      "_src": "users_raphaelschneider_meine_beratung_src_pages_agrarmagazindemo_jsx",
+      "_tgt": "agrarmagazindemo_agrarmagazindemo",
+      "source": "users_raphaelschneider_meine_beratung_src_pages_agrarmagazindemo_jsx",
+      "target": "agrarmagazindemo_agrarmagazindemo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
       "source_location": "L29",
       "weight": 1.0,
-      "_src": "src_pages_beratung_jsx",
+      "_src": "users_raphaelschneider_meine_beratung_src_pages_beratung_jsx",
       "_tgt": "beratung_beratungnav",
-      "source": "src_pages_beratung_jsx",
+      "source": "users_raphaelschneider_meine_beratung_src_pages_beratung_jsx",
       "target": "beratung_beratungnav",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/Beratung.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
       "source_location": "L209",
       "weight": 1.0,
-      "_src": "src_pages_beratung_jsx",
+      "_src": "users_raphaelschneider_meine_beratung_src_pages_beratung_jsx",
       "_tgt": "beratung_pos",
-      "source": "src_pages_beratung_jsx",
+      "source": "users_raphaelschneider_meine_beratung_src_pages_beratung_jsx",
       "target": "beratung_pos",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/Beratung.jsx",
-      "source_location": "L264",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
+      "source_location": "L266",
       "weight": 1.0,
-      "_src": "src_pages_beratung_jsx",
+      "_src": "users_raphaelschneider_meine_beratung_src_pages_beratung_jsx",
+      "_tgt": "beratung_seasonviewmodal",
+      "source": "users_raphaelschneider_meine_beratung_src_pages_beratung_jsx",
+      "target": "beratung_seasonviewmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
+      "source_location": "L443",
+      "weight": 1.0,
+      "_src": "users_raphaelschneider_meine_beratung_src_pages_beratung_jsx",
       "_tgt": "beratung_beratung",
-      "source": "src_pages_beratung_jsx",
+      "source": "users_raphaelschneider_meine_beratung_src_pages_beratung_jsx",
       "target": "beratung_beratung",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/Home.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Home.jsx",
       "source_location": "L174",
       "weight": 1.0,
-      "_src": "src_pages_home_jsx",
+      "_src": "users_raphaelschneider_meine_beratung_src_pages_home_jsx",
       "_tgt": "home_produkteslider",
-      "source": "src_pages_home_jsx",
+      "source": "users_raphaelschneider_meine_beratung_src_pages_home_jsx",
       "target": "home_produkteslider",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/Home.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Home.jsx",
       "source_location": "L288",
       "weight": 1.0,
-      "_src": "src_pages_home_jsx",
+      "_src": "users_raphaelschneider_meine_beratung_src_pages_home_jsx",
       "_tgt": "home_home",
-      "source": "src_pages_home_jsx",
+      "source": "users_raphaelschneider_meine_beratung_src_pages_home_jsx",
       "target": "home_home",
       "confidence_score": 1.0
     },
@@ -4692,8 +4827,8 @@
       "source_file": "README.md",
       "source_location": "line 12",
       "weight": 1.0,
-      "_src": "readme_react_compiler_disabled_rationale",
-      "_tgt": "readme_react_compiler",
+      "_src": "readme_react_compiler",
+      "_tgt": "readme_react_compiler_disabled_rationale",
       "source": "readme_react_compiler",
       "target": "readme_react_compiler_disabled_rationale"
     },
@@ -4752,8 +4887,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "line 8",
       "weight": 1.0,
-      "_src": "claude_graphify_update_rule",
-      "_tgt": "claude_graphify_knowledge_graph",
+      "_src": "claude_graphify_knowledge_graph",
+      "_tgt": "claude_graphify_update_rule",
       "source": "claude_graphify_knowledge_graph",
       "target": "claude_graphify_update_rule"
     },
@@ -4849,8 +4984,8 @@
       "source_location": null,
       "weight": 0.7,
       "notes": "White fill suggests icon is intended for use on a dark/colored background, typical of UI hero icons or section decorations",
-      "_src": "code_1_white_fill",
-      "_tgt": "code_1_programming_icon",
+      "_src": "code_1_programming_icon",
+      "_tgt": "code_1_white_fill",
       "source": "code_1_programming_icon",
       "target": "code_1_white_fill"
     },
@@ -4858,499 +4993,499 @@
       "relation": "depicts",
       "_src": "icons_website_dummy_wetter_svg",
       "_tgt": "icons_website_dummy_wetter_concept_sun",
+      "confidence_score": 1.0,
       "source": "icons_website_dummy_wetter_svg",
-      "target": "icons_website_dummy_wetter_concept_sun",
-      "confidence_score": 1.0
+      "target": "icons_website_dummy_wetter_concept_sun"
     },
     {
       "relation": "classified_as",
       "_src": "icons_website_dummy_wetter_svg",
       "_tgt": "icons_website_dummy_wetter_concept_placeholder",
+      "confidence_score": 1.0,
       "source": "icons_website_dummy_wetter_svg",
-      "target": "icons_website_dummy_wetter_concept_placeholder",
-      "confidence_score": 1.0
+      "target": "icons_website_dummy_wetter_concept_placeholder"
     },
     {
       "relation": "contains",
       "_src": "code_2_svg_graphic",
       "_tgt": "code_2_parallelogram_shape",
+      "confidence_score": 1.0,
       "source": "code_2_svg_graphic",
-      "target": "code_2_parallelogram_shape",
-      "confidence_score": 1.0
+      "target": "code_2_parallelogram_shape"
     },
     {
       "relation": "depicts",
       "_src": "code_2_svg_graphic",
       "_tgt": "code_2_logo_mark",
+      "confidence_score": 1.0,
       "source": "code_2_svg_graphic",
-      "target": "code_2_logo_mark",
-      "confidence_score": 1.0
+      "target": "code_2_logo_mark"
     },
     {
       "relation": "generated_by",
       "_src": "code_2_svg_graphic",
       "_tgt": "code_2_adobe_illustrator",
+      "confidence_score": 1.0,
       "source": "code_2_svg_graphic",
-      "target": "code_2_adobe_illustrator",
-      "confidence_score": 1.0
+      "target": "code_2_adobe_illustrator"
     },
     {
       "relation": "uses_color",
       "_src": "code_3_svg_graphic",
       "_tgt": "code_3_green_fill",
+      "confidence_score": 1.0,
       "source": "code_3_svg_graphic",
-      "target": "code_3_green_fill",
-      "confidence_score": 1.0
+      "target": "code_3_green_fill"
     },
     {
       "relation": "depicts",
       "_src": "code_3_svg_graphic",
       "_tgt": "code_3_barcode_motif",
+      "confidence_score": 1.0,
       "source": "code_3_svg_graphic",
-      "target": "code_3_barcode_motif",
-      "confidence_score": 1.0
+      "target": "code_3_barcode_motif"
     },
     {
       "relation": "serves_as",
       "_src": "code_3_svg_graphic",
       "_tgt": "code_3_decorative_element",
+      "confidence_score": 1.0,
       "source": "code_3_svg_graphic",
-      "target": "code_3_decorative_element",
-      "confidence_score": 1.0
+      "target": "code_3_decorative_element"
     },
     {
       "relation": "created_with",
       "_src": "code_3_svg_graphic",
       "_tgt": "code_3_adobe_illustrator",
+      "confidence_score": 1.0,
       "source": "code_3_svg_graphic",
-      "target": "code_3_adobe_illustrator",
-      "confidence_score": 1.0
+      "target": "code_3_adobe_illustrator"
     },
     {
       "relation": "contains",
       "_src": "icons_bonus_svg_icon",
       "_tgt": "icons_bonus_hexagon_shape",
+      "confidence_score": 1.0,
       "source": "icons_bonus_svg_icon",
-      "target": "icons_bonus_hexagon_shape",
-      "confidence_score": 1.0
+      "target": "icons_bonus_hexagon_shape"
     },
     {
       "relation": "uses",
       "_src": "icons_bonus_svg_icon",
       "_tgt": "icons_bonus_gradient_fill",
+      "confidence_score": 1.0,
       "source": "icons_bonus_svg_icon",
-      "target": "icons_bonus_gradient_fill",
-      "confidence_score": 1.0
+      "target": "icons_bonus_gradient_fill"
     },
     {
       "relation": "contains",
       "_src": "icons_bonus_svg_icon",
       "_tgt": "icons_bonus_number_80",
+      "confidence_score": 1.0,
       "source": "icons_bonus_svg_icon",
-      "target": "icons_bonus_number_80",
-      "confidence_score": 1.0
+      "target": "icons_bonus_number_80"
     },
     {
       "relation": "contains",
       "_src": "icons_bonus_svg_icon",
       "_tgt": "icons_bonus_label_text",
+      "confidence_score": 1.0,
       "source": "icons_bonus_svg_icon",
-      "target": "icons_bonus_label_text",
-      "confidence_score": 1.0
+      "target": "icons_bonus_label_text"
     },
     {
       "relation": "represents",
       "_src": "icons_bonus_svg_icon",
       "_tgt": "icons_bonus_concept_reward",
+      "confidence_score": 1.0,
       "source": "icons_bonus_svg_icon",
-      "target": "icons_bonus_concept_reward",
-      "confidence_score": 1.0
+      "target": "icons_bonus_concept_reward"
     },
     {
       "relation": "generated",
-      "_src": "icons_bonus_adobe_illustrator",
-      "_tgt": "icons_bonus_svg_icon",
+      "_src": "icons_bonus_svg_icon",
+      "_tgt": "icons_bonus_adobe_illustrator",
+      "confidence_score": 1.0,
       "source": "icons_bonus_svg_icon",
-      "target": "icons_bonus_adobe_illustrator",
-      "confidence_score": 1.0
+      "target": "icons_bonus_adobe_illustrator"
     },
     {
       "relation": "filled_by",
       "_src": "icons_bonus_hexagon_shape",
       "_tgt": "icons_bonus_gradient_fill",
+      "confidence_score": 1.0,
       "source": "icons_bonus_hexagon_shape",
-      "target": "icons_bonus_gradient_fill",
-      "confidence_score": 1.0
+      "target": "icons_bonus_gradient_fill"
     },
     {
       "relation": "quantifies",
       "_src": "icons_bonus_number_80",
       "_tgt": "icons_bonus_concept_reward",
+      "confidence_score": 1.0,
       "source": "icons_bonus_number_80",
-      "target": "icons_bonus_concept_reward",
-      "confidence_score": 1.0
+      "target": "icons_bonus_concept_reward"
     },
     {
       "relation": "labels",
       "_src": "icons_bonus_label_text",
       "_tgt": "icons_bonus_concept_reward",
+      "confidence_score": 1.0,
       "source": "icons_bonus_label_text",
-      "target": "icons_bonus_concept_reward",
-      "confidence_score": 1.0
+      "target": "icons_bonus_concept_reward"
     },
     {
       "relation": "represents",
       "_src": "premeo_bonuspunkte_svg_asset",
       "_tgt": "premeo_bonuspunkte_premeo_brand",
+      "confidence_score": 1.0,
       "source": "premeo_bonuspunkte_svg_asset",
-      "target": "premeo_bonuspunkte_premeo_brand",
-      "confidence_score": 1.0
+      "target": "premeo_bonuspunkte_premeo_brand"
     },
     {
       "relation": "depicts",
       "_src": "premeo_bonuspunkte_svg_asset",
       "_tgt": "premeo_bonuspunkte_bonus_points_program",
+      "confidence_score": 1.0,
       "source": "premeo_bonuspunkte_svg_asset",
-      "target": "premeo_bonuspunkte_bonus_points_program",
-      "confidence_score": 1.0
+      "target": "premeo_bonuspunkte_bonus_points_program"
     },
     {
       "relation": "contains_shape",
       "_src": "premeo_bonuspunkte_svg_asset",
       "_tgt": "premeo_bonuspunkte_hexagon_badge",
+      "confidence_score": 1.0,
       "source": "premeo_bonuspunkte_svg_asset",
-      "target": "premeo_bonuspunkte_hexagon_badge",
-      "confidence_score": 1.0
+      "target": "premeo_bonuspunkte_hexagon_badge"
     },
     {
       "relation": "contains_text",
       "_src": "premeo_bonuspunkte_svg_asset",
       "_tgt": "premeo_bonuspunkte_bonus_typography",
+      "confidence_score": 1.0,
       "source": "premeo_bonuspunkte_svg_asset",
-      "target": "premeo_bonuspunkte_bonus_typography",
-      "confidence_score": 1.0
+      "target": "premeo_bonuspunkte_bonus_typography"
     },
     {
       "relation": "owns",
       "_src": "premeo_bonuspunkte_premeo_brand",
       "_tgt": "premeo_bonuspunkte_bonus_points_program",
+      "confidence_score": 1.0,
       "source": "premeo_bonuspunkte_premeo_brand",
-      "target": "premeo_bonuspunkte_bonus_points_program",
-      "confidence_score": 1.0
+      "target": "premeo_bonuspunkte_bonus_points_program"
     },
     {
       "relation": "frames",
       "_src": "premeo_bonuspunkte_hexagon_badge",
       "_tgt": "premeo_bonuspunkte_bonus_typography",
+      "confidence_score": 1.0,
       "source": "premeo_bonuspunkte_hexagon_badge",
-      "target": "premeo_bonuspunkte_bonus_typography",
-      "confidence_score": 1.0
+      "target": "premeo_bonuspunkte_bonus_typography"
     },
     {
       "relation": "represents",
       "weight": 1.0,
       "_src": "corp_logo_bg_bayer_cross_basic_on_screen_rgb_bayer_corporate_logo",
       "_tgt": "corp_logo_bg_bayer_cross_basic_on_screen_rgb_brand_identity",
+      "confidence_score": 1.0,
       "source": "corp_logo_bg_bayer_cross_basic_on_screen_rgb_bayer_corporate_logo",
-      "target": "corp_logo_bg_bayer_cross_basic_on_screen_rgb_brand_identity",
-      "confidence_score": 1.0
+      "target": "corp_logo_bg_bayer_cross_basic_on_screen_rgb_brand_identity"
     },
     {
       "relation": "depicts",
       "weight": 1.0,
       "_src": "icons_website_dummy_magazin",
       "_tgt": "icons_website_dummy_magazin_concept_newspaper",
+      "confidence_score": 1.0,
       "source": "icons_website_dummy_magazin",
-      "target": "icons_website_dummy_magazin_concept_newspaper",
-      "confidence_score": 1.0
+      "target": "icons_website_dummy_magazin_concept_newspaper"
     },
     {
       "relation": "contains",
       "weight": 0.9,
       "_src": "icons_website_dummy_magazin",
       "_tgt": "icons_website_dummy_magazin_concept_header_box",
+      "confidence_score": 1.0,
       "source": "icons_website_dummy_magazin",
-      "target": "icons_website_dummy_magazin_concept_header_box",
-      "confidence_score": 1.0
+      "target": "icons_website_dummy_magazin_concept_header_box"
     },
     {
       "relation": "has_component",
       "weight": 0.85,
       "_src": "icons_website_dummy_magazin_concept_newspaper",
       "_tgt": "icons_website_dummy_magazin_concept_header_box",
+      "confidence_score": 1.0,
       "source": "icons_website_dummy_magazin_concept_newspaper",
-      "target": "icons_website_dummy_magazin_concept_header_box",
-      "confidence_score": 1.0
+      "target": "icons_website_dummy_magazin_concept_header_box"
     },
     {
       "relation": "part_of",
-      "_src": "icons_website_dummy_video_play_arrow",
-      "_tgt": "icons_website_dummy_video",
+      "_src": "icons_website_dummy_video",
+      "_tgt": "icons_website_dummy_video_play_arrow",
+      "confidence_score": 1.0,
       "source": "icons_website_dummy_video",
-      "target": "icons_website_dummy_video_play_arrow",
-      "confidence_score": 1.0
+      "target": "icons_website_dummy_video_play_arrow"
     },
     {
       "relation": "part_of",
-      "_src": "icons_website_dummy_video_circle",
-      "_tgt": "icons_website_dummy_video",
+      "_src": "icons_website_dummy_video",
+      "_tgt": "icons_website_dummy_video_circle",
+      "confidence_score": 1.0,
       "source": "icons_website_dummy_video",
-      "target": "icons_website_dummy_video_circle",
-      "confidence_score": 1.0
+      "target": "icons_website_dummy_video_circle"
     },
     {
       "relation": "part_of",
-      "_src": "icons_website_dummy_video_bounding_box",
-      "_tgt": "icons_website_dummy_video",
+      "_src": "icons_website_dummy_video",
+      "_tgt": "icons_website_dummy_video_bounding_box",
+      "confidence_score": 1.0,
       "source": "icons_website_dummy_video",
-      "target": "icons_website_dummy_video_bounding_box",
-      "confidence_score": 1.0
+      "target": "icons_website_dummy_video_bounding_box"
     },
     {
       "relation": "contains",
       "_src": "icons_sprite",
       "_tgt": "icons_bluesky",
+      "confidence_score": 1.0,
       "source": "icons_sprite",
-      "target": "icons_bluesky",
-      "confidence_score": 1.0
+      "target": "icons_bluesky"
     },
     {
       "relation": "contains",
       "_src": "icons_sprite",
       "_tgt": "icons_discord",
+      "confidence_score": 1.0,
       "source": "icons_sprite",
-      "target": "icons_discord",
-      "confidence_score": 1.0
+      "target": "icons_discord"
     },
     {
       "relation": "contains",
       "_src": "icons_sprite",
       "_tgt": "icons_documentation",
+      "confidence_score": 1.0,
       "source": "icons_sprite",
-      "target": "icons_documentation",
-      "confidence_score": 1.0
+      "target": "icons_documentation"
     },
     {
       "relation": "contains",
       "_src": "icons_sprite",
       "_tgt": "icons_github",
+      "confidence_score": 1.0,
       "source": "icons_sprite",
-      "target": "icons_github",
-      "confidence_score": 1.0
+      "target": "icons_github"
     },
     {
       "relation": "contains",
       "_src": "icons_sprite",
       "_tgt": "icons_social",
+      "confidence_score": 1.0,
       "source": "icons_sprite",
-      "target": "icons_social",
-      "confidence_score": 1.0
+      "target": "icons_social"
     },
     {
       "relation": "contains",
       "_src": "icons_sprite",
       "_tgt": "icons_x",
+      "confidence_score": 1.0,
       "source": "icons_sprite",
-      "target": "icons_x",
-      "confidence_score": 1.0
+      "target": "icons_x"
     },
     {
       "relation": "groups",
-      "_src": "icons_category_social_media",
-      "_tgt": "icons_bluesky",
+      "_src": "icons_bluesky",
+      "_tgt": "icons_category_social_media",
+      "confidence_score": 1.0,
       "source": "icons_bluesky",
-      "target": "icons_category_social_media",
-      "confidence_score": 1.0
+      "target": "icons_category_social_media"
     },
     {
       "relation": "groups",
-      "_src": "icons_category_social_media",
-      "_tgt": "icons_discord",
+      "_src": "icons_discord",
+      "_tgt": "icons_category_social_media",
+      "confidence_score": 1.0,
       "source": "icons_discord",
-      "target": "icons_category_social_media",
-      "confidence_score": 1.0
+      "target": "icons_category_social_media"
     },
     {
       "relation": "groups",
-      "_src": "icons_category_ui",
-      "_tgt": "icons_documentation",
+      "_src": "icons_documentation",
+      "_tgt": "icons_category_ui",
+      "confidence_score": 1.0,
       "source": "icons_documentation",
-      "target": "icons_category_ui",
-      "confidence_score": 1.0
+      "target": "icons_category_ui"
     },
     {
       "relation": "groups",
-      "_src": "icons_category_social_media",
-      "_tgt": "icons_github",
+      "_src": "icons_github",
+      "_tgt": "icons_category_social_media",
+      "confidence_score": 1.0,
       "source": "icons_github",
-      "target": "icons_category_social_media",
-      "confidence_score": 1.0
+      "target": "icons_category_social_media"
     },
     {
       "relation": "groups",
-      "_src": "icons_category_ui",
-      "_tgt": "icons_social",
+      "_src": "icons_social",
+      "_tgt": "icons_category_ui",
+      "confidence_score": 1.0,
       "source": "icons_social",
-      "target": "icons_category_ui",
-      "confidence_score": 1.0
+      "target": "icons_category_ui"
     },
     {
       "relation": "groups",
-      "_src": "icons_category_social_media",
-      "_tgt": "icons_x",
+      "_src": "icons_x",
+      "_tgt": "icons_category_social_media",
+      "confidence_score": 1.0,
       "source": "icons_x",
-      "target": "icons_category_social_media",
-      "confidence_score": 1.0
+      "target": "icons_category_social_media"
     },
     {
       "relation": "uses_color",
       "_src": "favicon_bayer_cross_logo",
       "_tgt": "favicon_color_dark_blue",
+      "confidence_score": 1.0,
       "source": "favicon_bayer_cross_logo",
-      "target": "favicon_color_dark_blue",
-      "confidence_score": 1.0
+      "target": "favicon_color_dark_blue"
     },
     {
       "relation": "uses_color",
       "_src": "favicon_bayer_cross_logo",
       "_tgt": "favicon_color_green",
+      "confidence_score": 1.0,
       "source": "favicon_bayer_cross_logo",
-      "target": "favicon_color_green",
-      "confidence_score": 1.0
+      "target": "favicon_color_green"
     },
     {
       "relation": "uses_color",
       "_src": "favicon_bayer_cross_logo",
       "_tgt": "favicon_color_cyan",
+      "confidence_score": 1.0,
       "source": "favicon_bayer_cross_logo",
-      "target": "favicon_color_cyan",
-      "confidence_score": 1.0
+      "target": "favicon_color_cyan"
     },
     {
       "relation": "contains",
       "_src": "favicon_bayer_cross_logo",
       "_tgt": "favicon_circular_emblem",
+      "confidence_score": 1.0,
       "source": "favicon_bayer_cross_logo",
-      "target": "favicon_circular_emblem",
-      "confidence_score": 1.0
+      "target": "favicon_circular_emblem"
     },
     {
       "relation": "contains",
       "_src": "favicon_bayer_cross_logo",
       "_tgt": "favicon_typography_bayer_letters",
+      "confidence_score": 1.0,
       "source": "favicon_bayer_cross_logo",
-      "target": "favicon_typography_bayer_letters",
-      "confidence_score": 1.0
+      "target": "favicon_typography_bayer_letters"
     },
     {
       "relation": "delivered_as",
       "_src": "favicon_bayer_cross_logo",
       "_tgt": "favicon_svg_format",
+      "confidence_score": 1.0,
       "source": "favicon_bayer_cross_logo",
-      "target": "favicon_svg_format",
-      "confidence_score": 1.0
+      "target": "favicon_svg_format"
     },
     {
       "relation": "uses_color",
-      "_src": "favicon_typography_bayer_letters",
-      "_tgt": "favicon_color_dark_blue",
+      "_src": "favicon_color_dark_blue",
+      "_tgt": "favicon_typography_bayer_letters",
+      "confidence_score": 1.0,
       "source": "favicon_color_dark_blue",
-      "target": "favicon_typography_bayer_letters",
-      "confidence_score": 1.0
+      "target": "favicon_typography_bayer_letters"
     },
     {
       "relation": "uses_color",
-      "_src": "favicon_circular_emblem",
-      "_tgt": "favicon_color_green",
+      "_src": "favicon_color_green",
+      "_tgt": "favicon_circular_emblem",
+      "confidence_score": 1.0,
       "source": "favicon_color_green",
-      "target": "favicon_circular_emblem",
-      "confidence_score": 1.0
+      "target": "favicon_circular_emblem"
     },
     {
       "relation": "uses_color",
-      "_src": "favicon_circular_emblem",
-      "_tgt": "favicon_color_cyan",
+      "_src": "favicon_color_cyan",
+      "_tgt": "favicon_circular_emblem",
+      "confidence_score": 1.0,
       "source": "favicon_color_cyan",
-      "target": "favicon_circular_emblem",
-      "confidence_score": 1.0
+      "target": "favicon_circular_emblem"
     },
     {
       "relation": "represents",
       "_src": "vite_logo",
       "_tgt": "vite_build_tool",
+      "confidence_score": 1.0,
       "source": "vite_logo",
-      "target": "vite_build_tool",
-      "confidence_score": 1.0
+      "target": "vite_build_tool"
     },
     {
       "relation": "is_a",
       "_src": "vite_logo",
       "_tgt": "vite_svg_asset",
+      "confidence_score": 1.0,
       "source": "vite_logo",
-      "target": "vite_svg_asset",
-      "confidence_score": 1.0
+      "target": "vite_svg_asset"
     },
     {
       "relation": "implements",
       "_src": "vite_logo",
       "_tgt": "vite_dark_mode",
+      "confidence_score": 1.0,
       "source": "vite_logo",
-      "target": "vite_dark_mode",
-      "confidence_score": 1.0
+      "target": "vite_dark_mode"
     },
     {
       "relation": "represents",
       "weight": 1.0,
       "_src": "react_logo_svg",
       "_tgt": "react_framework",
+      "confidence_score": 1.0,
       "source": "react_logo_svg",
-      "target": "react_framework",
-      "confidence_score": 1.0
+      "target": "react_framework"
     },
     {
       "relation": "uses_color",
       "weight": 0.8,
       "_src": "react_logo_svg",
       "_tgt": "react_brand_color",
+      "confidence_score": 1.0,
       "source": "react_logo_svg",
-      "target": "react_brand_color",
-      "confidence_score": 1.0
+      "target": "react_brand_color"
     },
     {
       "relation": "sourced_from",
       "weight": 0.7,
       "_src": "react_logo_svg",
       "_tgt": "react_iconify_logos",
+      "confidence_score": 1.0,
       "source": "react_logo_svg",
-      "target": "react_iconify_logos",
-      "confidence_score": 1.0
+      "target": "react_iconify_logos"
     },
     {
       "relation": "depicts",
       "weight": 0.9,
       "_src": "react_logo_svg",
       "_tgt": "react_atomic_symbol",
+      "confidence_score": 1.0,
       "source": "react_logo_svg",
-      "target": "react_atomic_symbol",
-      "confidence_score": 1.0
+      "target": "react_atomic_symbol"
     },
     {
       "relation": "is_a",
       "weight": 1.0,
       "_src": "react_logo_svg",
       "_tgt": "react_svg_asset",
+      "confidence_score": 1.0,
       "source": "react_logo_svg",
-      "target": "react_svg_asset",
-      "confidence_score": 1.0
+      "target": "react_svg_asset"
     },
     {
       "relation": "symbolizes",
       "weight": 0.9,
-      "_src": "react_atomic_symbol",
-      "_tgt": "react_framework",
+      "_src": "react_framework",
+      "_tgt": "react_atomic_symbol",
+      "confidence_score": 1.0,
       "source": "react_framework",
-      "target": "react_atomic_symbol",
-      "confidence_score": 1.0
+      "target": "react_atomic_symbol"
     },
     {
       "relation": "contains_active_ingredient",
@@ -5512,41 +5647,41 @@
       "relation": "contains_subject",
       "_src": "wetter_back_2_image",
       "_tgt": "wetter_back_2_corn_leaf",
+      "confidence_score": 1.0,
       "source": "wetter_back_2_image",
-      "target": "wetter_back_2_corn_leaf",
-      "confidence_score": 1.0
+      "target": "wetter_back_2_corn_leaf"
     },
     {
       "relation": "depicts_weather",
       "_src": "wetter_back_2_image",
       "_tgt": "wetter_back_2_rain",
+      "confidence_score": 1.0,
       "source": "wetter_back_2_image",
-      "target": "wetter_back_2_rain",
-      "confidence_score": 1.0
+      "target": "wetter_back_2_rain"
     },
     {
       "relation": "contains_background",
       "_src": "wetter_back_2_image",
       "_tgt": "wetter_back_2_corn_field",
+      "confidence_score": 1.0,
       "source": "wetter_back_2_image",
-      "target": "wetter_back_2_corn_field",
-      "confidence_score": 1.0
+      "target": "wetter_back_2_corn_field"
     },
     {
       "relation": "contains_background",
       "_src": "wetter_back_2_image",
       "_tgt": "wetter_back_2_overcast_sky",
+      "confidence_score": 1.0,
       "source": "wetter_back_2_image",
-      "target": "wetter_back_2_overcast_sky",
-      "confidence_score": 1.0
+      "target": "wetter_back_2_overcast_sky"
     },
     {
       "relation": "causes_water_droplets_on",
-      "_src": "wetter_back_2_rain",
-      "_tgt": "wetter_back_2_corn_leaf",
+      "_src": "wetter_back_2_corn_leaf",
+      "_tgt": "wetter_back_2_rain",
+      "confidence_score": 1.0,
       "source": "wetter_back_2_corn_leaf",
-      "target": "wetter_back_2_rain",
-      "confidence_score": 1.0
+      "target": "wetter_back_2_rain"
     },
     {
       "relation": "is_about",
@@ -5591,8 +5726,8 @@
       "source_file": "public/Leitbild_Flufenacet_Verbot.jpg",
       "source_location": null,
       "weight": 0.9,
-      "_src": "leitbild_flufenacet_verbot_environmental_impact",
-      "_tgt": "leitbild_flufenacet_verbot_flufenacet_ban",
+      "_src": "leitbild_flufenacet_verbot_flufenacet_ban",
+      "_tgt": "leitbild_flufenacet_verbot_environmental_impact",
       "source": "leitbild_flufenacet_verbot_flufenacet_ban",
       "target": "leitbild_flufenacet_verbot_environmental_impact"
     },
@@ -5651,8 +5786,8 @@
       "source_file": "public/Leitbild_Flufenacet_Verbot.jpg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "leitbild_flufenacet_verbot_wildlife_deer",
-      "_tgt": "leitbild_flufenacet_verbot_agricultural_field",
+      "_src": "leitbild_flufenacet_verbot_agricultural_field",
+      "_tgt": "leitbild_flufenacet_verbot_wildlife_deer",
       "source": "leitbild_flufenacet_verbot_agricultural_field",
       "target": "leitbild_flufenacet_verbot_wildlife_deer"
     },
@@ -5663,8 +5798,8 @@
       "source_file": "public/Leitbild_Flufenacet_Verbot.jpg",
       "source_location": null,
       "weight": 0.95,
-      "_src": "leitbild_flufenacet_verbot_flufenacet_herbicide",
-      "_tgt": "leitbild_flufenacet_verbot_agricultural_field",
+      "_src": "leitbild_flufenacet_verbot_agricultural_field",
+      "_tgt": "leitbild_flufenacet_verbot_flufenacet_herbicide",
       "source": "leitbild_flufenacet_verbot_agricultural_field",
       "target": "leitbild_flufenacet_verbot_flufenacet_herbicide"
     },
@@ -5694,279 +5829,279 @@
     },
     {
       "relation": "takes_place_in",
-      "_src": "image_beratung_agricultural_consulting",
-      "_tgt": "image_beratung_rapeseed_field",
+      "_src": "image_beratung_rapeseed_field",
+      "_tgt": "image_beratung_agricultural_consulting",
+      "confidence_score": 1.0,
       "source": "image_beratung_rapeseed_field",
-      "target": "image_beratung_agricultural_consulting",
-      "confidence_score": 1.0
+      "target": "image_beratung_agricultural_consulting"
     },
     {
       "relation": "participates_in",
       "_src": "image_beratung_field_advisors",
       "_tgt": "image_beratung_agricultural_consulting",
+      "confidence_score": 1.0,
       "source": "image_beratung_field_advisors",
-      "target": "image_beratung_agricultural_consulting",
-      "confidence_score": 1.0
+      "target": "image_beratung_agricultural_consulting"
     },
     {
       "relation": "performs",
       "_src": "image_beratung_field_advisors",
       "_tgt": "image_beratung_crop_inspection",
+      "confidence_score": 1.0,
       "source": "image_beratung_field_advisors",
-      "target": "image_beratung_crop_inspection",
-      "confidence_score": 1.0
+      "target": "image_beratung_crop_inspection"
     },
     {
       "relation": "participates_in",
       "_src": "image_beratung_farmer",
       "_tgt": "image_beratung_agricultural_consulting",
+      "confidence_score": 1.0,
       "source": "image_beratung_farmer",
-      "target": "image_beratung_agricultural_consulting",
-      "confidence_score": 1.0
+      "target": "image_beratung_agricultural_consulting"
     },
     {
       "relation": "includes_activity",
-      "_src": "image_beratung_agricultural_consulting",
-      "_tgt": "image_beratung_crop_inspection",
+      "_src": "image_beratung_crop_inspection",
+      "_tgt": "image_beratung_agricultural_consulting",
+      "confidence_score": 1.0,
       "source": "image_beratung_crop_inspection",
-      "target": "image_beratung_agricultural_consulting",
-      "confidence_score": 1.0
+      "target": "image_beratung_agricultural_consulting"
     },
     {
       "relation": "operated_by",
       "weight": 1.0,
       "_src": "premeo_2023_premeo_bonus_program",
       "_tgt": "premeo_2023_bayer",
+      "confidence_score": 1.0,
       "source": "premeo_2023_premeo_bonus_program",
-      "target": "premeo_2023_bayer",
-      "confidence_score": 1.0
+      "target": "premeo_2023_bayer"
     },
     {
       "relation": "delivers_reward_via",
       "weight": 0.9,
       "_src": "premeo_2023_premeo_bonus_program",
       "_tgt": "premeo_2023_premeo_bonus_box",
+      "confidence_score": 1.0,
       "source": "premeo_2023_premeo_bonus_program",
-      "target": "premeo_2023_premeo_bonus_box",
-      "confidence_score": 1.0
+      "target": "premeo_2023_premeo_bonus_box"
     },
     {
       "relation": "uses_tagline",
       "weight": 0.8,
       "_src": "premeo_2023_premeo_bonus_program",
       "_tgt": "premeo_2023_tagline_verlass_dich_drauf",
+      "confidence_score": 1.0,
       "source": "premeo_2023_premeo_bonus_program",
-      "target": "premeo_2023_tagline_verlass_dich_drauf",
-      "confidence_score": 1.0
+      "target": "premeo_2023_tagline_verlass_dich_drauf"
     },
     {
       "relation": "branded_by",
       "weight": 0.9,
-      "_src": "premeo_2023_premeo_bonus_box",
-      "_tgt": "premeo_2023_bayer",
+      "_src": "premeo_2023_bayer",
+      "_tgt": "premeo_2023_premeo_bonus_box",
+      "confidence_score": 1.0,
       "source": "premeo_2023_bayer",
-      "target": "premeo_2023_premeo_bonus_box",
-      "confidence_score": 1.0
+      "target": "premeo_2023_premeo_bonus_box"
     },
     {
       "relation": "depicts",
       "_src": "key_header_01_hero_image",
       "_tgt": "key_header_01_agricultural_field",
+      "confidence_score": 1.0,
       "source": "key_header_01_hero_image",
-      "target": "key_header_01_agricultural_field",
-      "confidence_score": 1.0
+      "target": "key_header_01_agricultural_field"
     },
     {
       "relation": "depicts",
       "_src": "key_header_01_hero_image",
       "_tgt": "key_header_01_consultant_advisor",
+      "confidence_score": 1.0,
       "source": "key_header_01_hero_image",
-      "target": "key_header_01_consultant_advisor",
-      "confidence_score": 1.0
+      "target": "key_header_01_consultant_advisor"
     },
     {
       "relation": "depicts",
       "_src": "key_header_01_hero_image",
       "_tgt": "key_header_01_farmer_client",
+      "confidence_score": 1.0,
       "source": "key_header_01_hero_image",
-      "target": "key_header_01_farmer_client",
-      "confidence_score": 1.0
+      "target": "key_header_01_farmer_client"
     },
     {
       "relation": "depicts",
       "_src": "key_header_01_hero_image",
       "_tgt": "key_header_01_tractor",
+      "confidence_score": 1.0,
       "source": "key_header_01_hero_image",
-      "target": "key_header_01_tractor",
-      "confidence_score": 1.0
+      "target": "key_header_01_tractor"
     },
     {
       "relation": "depicts",
       "_src": "key_header_01_hero_image",
       "_tgt": "key_header_01_plant_sample",
+      "confidence_score": 1.0,
       "source": "key_header_01_hero_image",
-      "target": "key_header_01_plant_sample",
-      "confidence_score": 1.0
+      "target": "key_header_01_plant_sample"
     },
     {
       "relation": "inspects",
-      "_src": "key_header_01_consultant_advisor",
-      "_tgt": "key_header_01_agricultural_field",
+      "_src": "key_header_01_agricultural_field",
+      "_tgt": "key_header_01_consultant_advisor",
+      "confidence_score": 1.0,
       "source": "key_header_01_agricultural_field",
-      "target": "key_header_01_consultant_advisor",
-      "confidence_score": 1.0
+      "target": "key_header_01_consultant_advisor"
     },
     {
       "relation": "owns_or_manages",
-      "_src": "key_header_01_farmer_client",
-      "_tgt": "key_header_01_agricultural_field",
+      "_src": "key_header_01_agricultural_field",
+      "_tgt": "key_header_01_farmer_client",
+      "confidence_score": 1.0,
       "source": "key_header_01_agricultural_field",
-      "target": "key_header_01_farmer_client",
-      "confidence_score": 1.0
+      "target": "key_header_01_farmer_client"
     },
     {
       "relation": "operates_in",
-      "_src": "key_header_01_tractor",
-      "_tgt": "key_header_01_agricultural_field",
+      "_src": "key_header_01_agricultural_field",
+      "_tgt": "key_header_01_tractor",
+      "confidence_score": 1.0,
       "source": "key_header_01_agricultural_field",
-      "target": "key_header_01_tractor",
-      "confidence_score": 1.0
+      "target": "key_header_01_tractor"
     },
     {
       "relation": "holds_and_examines",
       "_src": "key_header_01_consultant_advisor",
       "_tgt": "key_header_01_plant_sample",
+      "confidence_score": 1.0,
       "source": "key_header_01_consultant_advisor",
-      "target": "key_header_01_plant_sample",
-      "confidence_score": 1.0
+      "target": "key_header_01_plant_sample"
     },
     {
       "relation": "advises",
       "_src": "key_header_01_consultant_advisor",
       "_tgt": "key_header_01_farmer_client",
+      "confidence_score": 1.0,
       "source": "key_header_01_consultant_advisor",
-      "target": "key_header_01_farmer_client",
-      "confidence_score": 1.0
+      "target": "key_header_01_farmer_client"
     },
     {
       "relation": "depicts",
       "_src": "key_header_02_hero_image",
       "_tgt": "key_header_02_agricultural_field",
+      "confidence_score": 1.0,
       "source": "key_header_02_hero_image",
-      "target": "key_header_02_agricultural_field",
-      "confidence_score": 1.0
+      "target": "key_header_02_agricultural_field"
     },
     {
       "relation": "depicts",
       "_src": "key_header_02_hero_image",
       "_tgt": "key_header_02_tractor",
+      "confidence_score": 1.0,
       "source": "key_header_02_hero_image",
-      "target": "key_header_02_tractor",
-      "confidence_score": 1.0
+      "target": "key_header_02_tractor"
     },
     {
       "relation": "depicts",
       "_src": "key_header_02_hero_image",
       "_tgt": "key_header_02_consulting_scene",
+      "confidence_score": 1.0,
       "source": "key_header_02_hero_image",
-      "target": "key_header_02_consulting_scene",
-      "confidence_score": 1.0
+      "target": "key_header_02_consulting_scene"
     },
     {
       "relation": "located_in",
-      "_src": "key_header_02_consulting_scene",
-      "_tgt": "key_header_02_agricultural_field",
+      "_src": "key_header_02_agricultural_field",
+      "_tgt": "key_header_02_consulting_scene",
+      "confidence_score": 1.0,
       "source": "key_header_02_agricultural_field",
-      "target": "key_header_02_consulting_scene",
-      "confidence_score": 1.0
+      "target": "key_header_02_consulting_scene"
     },
     {
       "relation": "depicts",
       "_src": "berater4_portrait_photo",
       "_tgt": "berater4_person",
+      "confidence_score": 1.0,
       "source": "berater4_portrait_photo",
-      "target": "berater4_person",
-      "confidence_score": 1.0
+      "target": "berater4_person"
     },
     {
       "relation": "has_background",
       "_src": "berater4_portrait_photo",
       "_tgt": "berater4_background",
+      "confidence_score": 1.0,
       "source": "berater4_portrait_photo",
-      "target": "berater4_background",
-      "confidence_score": 1.0
+      "target": "berater4_background"
     },
     {
       "relation": "has_appearance",
       "_src": "berater4_person",
       "_tgt": "berater4_appearance",
+      "confidence_score": 1.0,
       "source": "berater4_person",
-      "target": "berater4_appearance",
-      "confidence_score": 1.0
+      "target": "berater4_appearance"
     },
     {
       "relation": "wears",
       "_src": "berater4_person",
       "_tgt": "berater4_clothing",
+      "confidence_score": 1.0,
       "source": "berater4_person",
-      "target": "berater4_clothing",
-      "confidence_score": 1.0
+      "target": "berater4_clothing"
     },
     {
       "relation": "contains",
       "_src": "premeo_back_1_background_image",
       "_tgt": "premeo_back_1_person",
+      "confidence_score": 1.0,
       "source": "premeo_back_1_background_image",
-      "target": "premeo_back_1_person",
-      "confidence_score": 1.0
+      "target": "premeo_back_1_person"
     },
     {
       "relation": "contains",
       "_src": "premeo_back_1_background_image",
       "_tgt": "premeo_back_1_smartphone",
+      "confidence_score": 1.0,
       "source": "premeo_back_1_background_image",
-      "target": "premeo_back_1_smartphone",
-      "confidence_score": 1.0
+      "target": "premeo_back_1_smartphone"
     },
     {
       "relation": "contains",
       "_src": "premeo_back_1_background_image",
       "_tgt": "premeo_back_1_tractor",
+      "confidence_score": 1.0,
       "source": "premeo_back_1_background_image",
-      "target": "premeo_back_1_tractor",
-      "confidence_score": 1.0
+      "target": "premeo_back_1_tractor"
     },
     {
       "relation": "contains",
       "_src": "premeo_back_1_background_image",
       "_tgt": "premeo_back_1_setting",
+      "confidence_score": 1.0,
       "source": "premeo_back_1_background_image",
-      "target": "premeo_back_1_setting",
-      "confidence_score": 1.0
+      "target": "premeo_back_1_setting"
     },
     {
       "relation": "uses",
       "_src": "premeo_back_1_person",
       "_tgt": "premeo_back_1_smartphone",
+      "confidence_score": 1.0,
       "source": "premeo_back_1_person",
-      "target": "premeo_back_1_smartphone",
-      "confidence_score": 1.0
+      "target": "premeo_back_1_smartphone"
     },
     {
       "relation": "associated_with",
       "_src": "premeo_back_1_person",
       "_tgt": "premeo_back_1_tractor",
+      "confidence_score": 1.0,
       "source": "premeo_back_1_person",
-      "target": "premeo_back_1_tractor",
-      "confidence_score": 1.0
+      "target": "premeo_back_1_tractor"
     },
     {
       "relation": "located_in",
       "_src": "premeo_back_1_person",
       "_tgt": "premeo_back_1_setting",
+      "confidence_score": 1.0,
       "source": "premeo_back_1_person",
-      "target": "premeo_back_1_setting",
-      "confidence_score": 1.0
+      "target": "premeo_back_1_setting"
     },
     {
       "relation": "manufactured_by",
@@ -6176,49 +6311,49 @@
       "relation": "depicts",
       "_src": "premeo_back_2_image",
       "_tgt": "premeo_back_2_subject_farmer",
+      "confidence_score": 1.0,
       "source": "premeo_back_2_image",
-      "target": "premeo_back_2_subject_farmer",
-      "confidence_score": 1.0
+      "target": "premeo_back_2_subject_farmer"
     },
     {
       "relation": "depicts",
       "_src": "premeo_back_2_image",
       "_tgt": "premeo_back_2_subject_tractor",
+      "confidence_score": 1.0,
       "source": "premeo_back_2_image",
-      "target": "premeo_back_2_subject_tractor",
-      "confidence_score": 1.0
+      "target": "premeo_back_2_subject_tractor"
     },
     {
       "relation": "depicts",
       "_src": "premeo_back_2_image",
       "_tgt": "premeo_back_2_subject_smartphone",
+      "confidence_score": 1.0,
       "source": "premeo_back_2_image",
-      "target": "premeo_back_2_subject_smartphone",
-      "confidence_score": 1.0
+      "target": "premeo_back_2_subject_smartphone"
     },
     {
       "relation": "conveys",
       "_src": "premeo_back_2_image",
       "_tgt": "premeo_back_2_theme_digital_agriculture",
+      "confidence_score": 1.0,
       "source": "premeo_back_2_image",
-      "target": "premeo_back_2_theme_digital_agriculture",
-      "confidence_score": 1.0
+      "target": "premeo_back_2_theme_digital_agriculture"
     },
     {
       "relation": "uses",
       "_src": "premeo_back_2_subject_farmer",
       "_tgt": "premeo_back_2_subject_smartphone",
+      "confidence_score": 1.0,
       "source": "premeo_back_2_subject_farmer",
-      "target": "premeo_back_2_subject_smartphone",
-      "confidence_score": 1.0
+      "target": "premeo_back_2_subject_smartphone"
     },
     {
       "relation": "stands_beside",
       "_src": "premeo_back_2_subject_farmer",
       "_tgt": "premeo_back_2_subject_tractor",
+      "confidence_score": 1.0,
       "source": "premeo_back_2_subject_farmer",
-      "target": "premeo_back_2_subject_tractor",
-      "confidence_score": 1.0
+      "target": "premeo_back_2_subject_tractor"
     },
     {
       "relation": "manufactured_by",
@@ -6452,145 +6587,145 @@
       "relation": "depicts",
       "_src": "maiszuechtung_maisspitzen_image",
       "_tgt": "maiszuechtung_maisspitzen_crop_maize",
+      "confidence_score": 1.0,
       "source": "maiszuechtung_maisspitzen_image",
-      "target": "maiszuechtung_maisspitzen_crop_maize",
-      "confidence_score": 1.0
+      "target": "maiszuechtung_maisspitzen_crop_maize"
     },
     {
       "relation": "depicts",
       "_src": "maiszuechtung_maisspitzen_image",
       "_tgt": "maiszuechtung_maisspitzen_growth_stage",
+      "confidence_score": 1.0,
       "source": "maiszuechtung_maisspitzen_image",
-      "target": "maiszuechtung_maisspitzen_growth_stage",
-      "confidence_score": 1.0
+      "target": "maiszuechtung_maisspitzen_growth_stage"
     },
     {
       "relation": "depicts",
       "_src": "maiszuechtung_maisspitzen_image",
       "_tgt": "maiszuechtung_maisspitzen_leaf_tips",
+      "confidence_score": 1.0,
       "source": "maiszuechtung_maisspitzen_image",
-      "target": "maiszuechtung_maisspitzen_leaf_tips",
-      "confidence_score": 1.0
+      "target": "maiszuechtung_maisspitzen_leaf_tips"
     },
     {
       "relation": "depicts",
       "_src": "maiszuechtung_maisspitzen_image",
       "_tgt": "maiszuechtung_maisspitzen_field_setting",
+      "confidence_score": 1.0,
       "source": "maiszuechtung_maisspitzen_image",
-      "target": "maiszuechtung_maisspitzen_field_setting",
-      "confidence_score": 1.0
+      "target": "maiszuechtung_maisspitzen_field_setting"
     },
     {
       "relation": "depicts",
       "_src": "maiszuechtung_maisspitzen_image",
       "_tgt": "maiszuechtung_maisspitzen_lighting",
+      "confidence_score": 1.0,
       "source": "maiszuechtung_maisspitzen_image",
-      "target": "maiszuechtung_maisspitzen_lighting",
-      "confidence_score": 1.0
+      "target": "maiszuechtung_maisspitzen_lighting"
     },
     {
       "relation": "has_feature",
       "_src": "maiszuechtung_maisspitzen_crop_maize",
       "_tgt": "maiszuechtung_maisspitzen_leaf_tips",
+      "confidence_score": 1.0,
       "source": "maiszuechtung_maisspitzen_crop_maize",
-      "target": "maiszuechtung_maisspitzen_leaf_tips",
-      "confidence_score": 1.0
+      "target": "maiszuechtung_maisspitzen_leaf_tips"
     },
     {
       "relation": "observed_at_stage",
       "_src": "maiszuechtung_maisspitzen_crop_maize",
       "_tgt": "maiszuechtung_maisspitzen_growth_stage",
+      "confidence_score": 1.0,
       "source": "maiszuechtung_maisspitzen_crop_maize",
-      "target": "maiszuechtung_maisspitzen_growth_stage",
-      "confidence_score": 1.0
+      "target": "maiszuechtung_maisspitzen_growth_stage"
     },
     {
       "relation": "contains",
-      "_src": "maiszuechtung_maisspitzen_field_setting",
-      "_tgt": "maiszuechtung_maisspitzen_crop_maize",
+      "_src": "maiszuechtung_maisspitzen_crop_maize",
+      "_tgt": "maiszuechtung_maisspitzen_field_setting",
+      "confidence_score": 1.0,
       "source": "maiszuechtung_maisspitzen_crop_maize",
-      "target": "maiszuechtung_maisspitzen_field_setting",
-      "confidence_score": 1.0
+      "target": "maiszuechtung_maisspitzen_field_setting"
     },
     {
       "relation": "depicts",
       "_src": "berater2_portrait_photo",
       "_tgt": "berater2_person",
+      "confidence_score": 1.0,
       "source": "berater2_portrait_photo",
-      "target": "berater2_person",
-      "confidence_score": 1.0
+      "target": "berater2_person"
     },
     {
       "relation": "wears",
       "_src": "berater2_person",
       "_tgt": "berater2_bayer_logo",
+      "confidence_score": 1.0,
       "source": "berater2_person",
-      "target": "berater2_bayer_logo",
-      "confidence_score": 1.0
+      "target": "berater2_bayer_logo"
     },
     {
       "relation": "depicts",
       "_src": "berater3_portrait_photo",
       "_tgt": "berater3_female_advisor",
+      "confidence_score": 1.0,
       "source": "berater3_portrait_photo",
-      "target": "berater3_female_advisor",
-      "confidence_score": 1.0
+      "target": "berater3_female_advisor"
     },
     {
       "relation": "has_background",
       "_src": "berater3_portrait_photo",
       "_tgt": "berater3_gray_background",
+      "confidence_score": 1.0,
       "source": "berater3_portrait_photo",
-      "target": "berater3_gray_background",
-      "confidence_score": 1.0
+      "target": "berater3_gray_background"
     },
     {
       "relation": "wears",
       "_src": "berater3_female_advisor",
       "_tgt": "berater3_white_shirt",
+      "confidence_score": 1.0,
       "source": "berater3_female_advisor",
-      "target": "berater3_white_shirt",
-      "confidence_score": 1.0
+      "target": "berater3_white_shirt"
     },
     {
       "relation": "affiliated_with",
       "_src": "berater3_female_advisor",
       "_tgt": "berater3_bayer_logo",
+      "confidence_score": 1.0,
       "source": "berater3_female_advisor",
-      "target": "berater3_bayer_logo",
-      "confidence_score": 1.0
+      "target": "berater3_bayer_logo"
     },
     {
       "relation": "displays",
-      "_src": "berater3_white_shirt",
-      "_tgt": "berater3_bayer_logo",
+      "_src": "berater3_bayer_logo",
+      "_tgt": "berater3_white_shirt",
+      "confidence_score": 1.0,
       "source": "berater3_bayer_logo",
-      "target": "berater3_white_shirt",
-      "confidence_score": 1.0
+      "target": "berater3_white_shirt"
     },
     {
       "relation": "depicts",
       "_src": "berater1_portrait_photo",
       "_tgt": "berater1_person",
+      "confidence_score": 1.0,
       "source": "berater1_portrait_photo",
-      "target": "berater1_person",
-      "confidence_score": 1.0
+      "target": "berater1_person"
     },
     {
       "relation": "contains",
       "_src": "berater1_portrait_photo",
       "_tgt": "berater1_bayer_logo",
+      "confidence_score": 1.0,
       "source": "berater1_portrait_photo",
-      "target": "berater1_bayer_logo",
-      "confidence_score": 1.0
+      "target": "berater1_bayer_logo"
     },
     {
       "relation": "wears",
       "_src": "berater1_person",
       "_tgt": "berater1_bayer_logo",
+      "confidence_score": 1.0,
       "source": "berater1_person",
-      "target": "berater1_bayer_logo",
-      "confidence_score": 1.0
+      "target": "berater1_bayer_logo"
     },
     {
       "relation": "depicts",
@@ -6647,8 +6782,8 @@
       "source_file": "public/Podcast_1.jpg",
       "source_location": null,
       "weight": 0.5,
-      "_src": "podcast_1_lightbulb_poster",
-      "_tgt": "podcast_1_podcast_host_or_guest",
+      "_src": "podcast_1_podcast_host_or_guest",
+      "_tgt": "podcast_1_lightbulb_poster",
       "source": "podcast_1_podcast_host_or_guest",
       "target": "podcast_1_lightbulb_poster"
     },
@@ -6863,8 +6998,8 @@
       "source_file": "public/Adengo.png",
       "source_location": null,
       "weight": 0.9,
-      "_src": "adengo_cyprosulfamide",
-      "_tgt": "adengo_mais",
+      "_src": "adengo_mais",
+      "_tgt": "adengo_cyprosulfamide",
       "source": "adengo_mais",
       "target": "adengo_cyprosulfamide"
     },
@@ -6995,8 +7130,8 @@
       "source_file": "public/Podcast_2.jpg",
       "source_location": null,
       "weight": 0.9,
-      "_src": "podcast_2_outdoor_recording",
-      "_tgt": "podcast_2_agriculture",
+      "_src": "podcast_2_agriculture",
+      "_tgt": "podcast_2_outdoor_recording",
       "source": "podcast_2_agriculture",
       "target": "podcast_2_outdoor_recording"
     },
@@ -7007,8 +7142,8 @@
       "source_file": "public/Podcast_2.jpg",
       "source_location": null,
       "weight": 0.9,
-      "_src": "podcast_2_field_trial_uk",
-      "_tgt": "podcast_2_agriculture",
+      "_src": "podcast_2_agriculture",
+      "_tgt": "podcast_2_field_trial_uk",
       "source": "podcast_2_agriculture",
       "target": "podcast_2_field_trial_uk"
     },
@@ -7040,120 +7175,120 @@
       "relation": "part_of",
       "_src": "demo_header_corn_field",
       "_tgt": "demo_header_agricultural_landscape",
+      "confidence_score": 1.0,
       "source": "demo_header_corn_field",
-      "target": "demo_header_agricultural_landscape",
-      "confidence_score": 1.0
+      "target": "demo_header_agricultural_landscape"
     },
     {
       "relation": "has_background",
       "_src": "demo_header_agricultural_landscape",
       "_tgt": "demo_header_golden_hour_sky",
+      "confidence_score": 1.0,
       "source": "demo_header_agricultural_landscape",
-      "target": "demo_header_golden_hour_sky",
-      "confidence_score": 1.0
+      "target": "demo_header_golden_hour_sky"
     },
     {
       "relation": "has_background",
       "_src": "demo_header_agricultural_landscape",
       "_tgt": "demo_header_tree_line",
+      "confidence_score": 1.0,
       "source": "demo_header_agricultural_landscape",
-      "target": "demo_header_tree_line",
-      "confidence_score": 1.0
+      "target": "demo_header_tree_line"
     },
     {
       "relation": "manufactured_by",
       "_src": "productimage_image_husar_plus_herbicide",
       "_tgt": "productimage_image_bayer",
+      "confidence_score": 1.0,
       "source": "productimage_image_husar_plus_herbicide",
-      "target": "productimage_image_bayer",
-      "confidence_score": 1.0
+      "target": "productimage_image_bayer"
     },
     {
       "relation": "is_a",
       "_src": "productimage_image_husar_plus_herbicide",
       "_tgt": "productimage_image_herbicide",
+      "confidence_score": 1.0,
       "source": "productimage_image_husar_plus_herbicide",
-      "target": "productimage_image_herbicide",
-      "confidence_score": 1.0
+      "target": "productimage_image_herbicide"
     },
     {
       "relation": "used_in",
       "_src": "productimage_image_husar_plus_herbicide",
       "_tgt": "productimage_image_grain_crop_protection",
+      "confidence_score": 1.0,
       "source": "productimage_image_husar_plus_herbicide",
-      "target": "productimage_image_grain_crop_protection",
-      "confidence_score": 1.0
+      "target": "productimage_image_grain_crop_protection"
     },
     {
       "relation": "is_a",
       "_src": "productimage_image_herbicide",
       "_tgt": "productimage_image_agrochemical",
+      "confidence_score": 1.0,
       "source": "productimage_image_herbicide",
-      "target": "productimage_image_agrochemical",
-      "confidence_score": 1.0
+      "target": "productimage_image_agrochemical"
     },
     {
       "relation": "depicts",
       "weight": 1.0,
       "_src": "bcs_kartoffelbestand_1600x805_image",
       "_tgt": "bcs_kartoffelbestand_1600x805_potato_plant",
+      "confidence_score": 1.0,
       "source": "bcs_kartoffelbestand_1600x805_image",
-      "target": "bcs_kartoffelbestand_1600x805_potato_plant",
-      "confidence_score": 1.0
+      "target": "bcs_kartoffelbestand_1600x805_potato_plant"
     },
     {
       "relation": "depicts",
       "weight": 1.0,
       "_src": "bcs_kartoffelbestand_1600x805_image",
       "_tgt": "bcs_kartoffelbestand_1600x805_agricultural_field",
+      "confidence_score": 1.0,
       "source": "bcs_kartoffelbestand_1600x805_image",
-      "target": "bcs_kartoffelbestand_1600x805_agricultural_field",
-      "confidence_score": 1.0
+      "target": "bcs_kartoffelbestand_1600x805_agricultural_field"
     },
     {
       "relation": "attributed_to",
       "weight": 1.0,
       "_src": "bcs_kartoffelbestand_1600x805_image",
       "_tgt": "bcs_kartoffelbestand_1600x805_bayer_cropscience",
+      "confidence_score": 1.0,
       "source": "bcs_kartoffelbestand_1600x805_image",
-      "target": "bcs_kartoffelbestand_1600x805_bayer_cropscience",
-      "confidence_score": 1.0
+      "target": "bcs_kartoffelbestand_1600x805_bayer_cropscience"
     },
     {
       "relation": "grows_in",
       "weight": 1.0,
       "_src": "bcs_kartoffelbestand_1600x805_potato_plant",
       "_tgt": "bcs_kartoffelbestand_1600x805_agricultural_field",
+      "confidence_score": 1.0,
       "source": "bcs_kartoffelbestand_1600x805_potato_plant",
-      "target": "bcs_kartoffelbestand_1600x805_agricultural_field",
-      "confidence_score": 1.0
+      "target": "bcs_kartoffelbestand_1600x805_agricultural_field"
     },
     {
       "relation": "manages",
       "weight": 0.8,
-      "_src": "bcs_kartoffelbestand_1600x805_bayer_cropscience",
-      "_tgt": "bcs_kartoffelbestand_1600x805_agricultural_field",
+      "_src": "bcs_kartoffelbestand_1600x805_agricultural_field",
+      "_tgt": "bcs_kartoffelbestand_1600x805_bayer_cropscience",
+      "confidence_score": 1.0,
       "source": "bcs_kartoffelbestand_1600x805_agricultural_field",
-      "target": "bcs_kartoffelbestand_1600x805_bayer_cropscience",
-      "confidence_score": 1.0
+      "target": "bcs_kartoffelbestand_1600x805_bayer_cropscience"
     },
     {
       "relation": "has_part",
       "label": "has part: kernel",
       "_src": "mais_corn_cob",
       "_tgt": "mais_kernel",
+      "confidence_score": 1.0,
       "source": "mais_corn_cob",
-      "target": "mais_kernel",
-      "confidence_score": 1.0
+      "target": "mais_kernel"
     },
     {
       "relation": "has_part",
       "label": "has part: husk",
       "_src": "mais_corn_cob",
       "_tgt": "mais_husk",
+      "confidence_score": 1.0,
       "source": "mais_corn_cob",
-      "target": "mais_husk",
-      "confidence_score": 1.0
+      "target": "mais_husk"
     },
     {
       "relation": "has_tagline",
@@ -7210,8 +7345,8 @@
       "source_file": "public/Leitbild_ReSoil.jpg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "leitbild_resoil_visual_identity",
-      "_tgt": "leitbild_resoil_resoil_brand",
+      "_src": "leitbild_resoil_resoil_brand",
+      "_tgt": "leitbild_resoil_visual_identity",
       "source": "leitbild_resoil_resoil_brand",
       "target": "leitbild_resoil_visual_identity"
     },
@@ -7246,8 +7381,8 @@
       "source_file": "public/Leitbild_ReSoil.jpg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "leitbild_resoil_visual_identity",
-      "_tgt": "leitbild_resoil_tagline",
+      "_src": "leitbild_resoil_tagline",
+      "_tgt": "leitbild_resoil_visual_identity",
       "source": "leitbild_resoil_tagline",
       "target": "leitbild_resoil_visual_identity"
     },
@@ -7282,8 +7417,8 @@
       "source_file": "public/Leitbild_ReSoil.jpg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "leitbild_resoil_visual_identity",
-      "_tgt": "leitbild_resoil_soil_health",
+      "_src": "leitbild_resoil_soil_health",
+      "_tgt": "leitbild_resoil_visual_identity",
       "source": "leitbild_resoil_soil_health",
       "target": "leitbild_resoil_visual_identity"
     },
@@ -7294,8 +7429,8 @@
       "source_file": "public/Leitbild_ReSoil.jpg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "leitbild_resoil_visual_identity",
-      "_tgt": "leitbild_resoil_plant_growth",
+      "_src": "leitbild_resoil_plant_growth",
+      "_tgt": "leitbild_resoil_visual_identity",
       "source": "leitbild_resoil_plant_growth",
       "target": "leitbild_resoil_visual_identity"
     }
