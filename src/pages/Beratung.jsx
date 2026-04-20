@@ -1334,14 +1334,14 @@ function Beratung() {
         var accentColor = isFung ? '#2D7D3A' : '#E8590C';
         var dealers = [
           { name: 'AGRAVIS Technik & Beratung', km: '12 km', status: 'sofort verfügbar', statusColor: '#2D7D3A', lieferzeit: 'Lieferung in 1–2 Werktagen', versand: 'Spedition / regionaler Handel', badge: 'verfügbar', badgeBg: '#e6f4ea', badgeC: '#2D7D3A', highlight: true },
-          { name: 'Raiffeisen Markt Region West', km: '28 km', status: 'begrenzter Bestand', statusColor: '#E8590C', lieferzeit: 'Lieferung in 2–3 Werktagen', versand: 'Abholung oder Zustellung', badge: 'verfügbar', badgeBg: '#e6f4ea', badgeC: '#2D7D3A', highlight: false },
+          { name: 'Raiffeisen Markt Region West', km: '28 km', status: 'begrenzter Bestand', statusColor: '#b8274a', lieferzeit: 'Lieferung in 2–3 Werktagen', versand: 'Abholung oder Zustellung', badge: 'verfügbar', badgeBg: '#e6f4ea', badgeC: '#2D7D3A', highlight: false },
           { name: 'BayWa Agrar Vertrieb', km: '34 km', status: 'auf Anfrage', statusColor: '#8e8e93', lieferzeit: 'Lieferung in 3–5 Werktagen', versand: 'Direktversand ab Lager', badge: 'verfügbar', badgeBg: '#e6f4ea', badgeC: '#2D7D3A', highlight: false },
         ];
         var dealersHtml = dealers.map(function(dl, idx) {
-          return '<div data-dealer="' + idx + '" onclick="window.selectDealer(' + idx + ')" style="border:1.5px solid ' + (dl.highlight ? '#E8590C' : 'rgba(0,0,0,0.09)') + ';border-radius:14px;padding:18px 20px;margin-bottom:12px;background:' + (dl.highlight ? '#fff9f7' : '#fff') + ';cursor:pointer;transition:border-color 0.18s,background 0.18s;">' +
+          return '<div data-dealer="' + idx + '" onclick="window.selectDealer(' + idx + ')" style="border:1.5px solid ' + (dl.highlight ? '#b8274a' : 'rgba(0,0,0,0.09)') + ';border-radius:14px;padding:18px 20px;margin-bottom:12px;background:' + (dl.highlight ? '#fdf2f5' : '#fff') + ';cursor:pointer;transition:border-color 0.18s,background 0.18s;">' +
             '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">' +
               '<span style="font-size:16px;font-weight:700;color:#1d1d1f;flex:1;">' + dl.name + '</span>' +
-              '<span style="font-size:12px;font-weight:700;background:#f5a623;color:#fff;border-radius:20px;padding:4px 10px;">' + dl.km + '</span>' +
+              '<span style="font-size:12px;font-weight:700;background:#b8274a;color:#fff;border-radius:20px;padding:4px 10px;">' + dl.km + '</span>' +
               '<span style="font-size:12px;font-weight:600;background:' + dl.badgeBg + ';color:' + dl.badgeC + ';border-radius:20px;padding:4px 12px;">' + dl.badge + '</span>' +
               '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="2" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>' +
             '</div>' +
@@ -1358,13 +1358,13 @@ function Beratung() {
             /* ── LINKS ── */
             '<div style="padding:40px 36px;border-right:1px solid rgba(0,0,0,0.08);display:flex;flex-direction:column;">' +
               '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8e8e93;margin-bottom:12px;">Produkt jetzt bestellen</div>' +
-              '<div style="font-size:32px;font-weight:800;color:#1d1d1f;line-height:1.15;margin-bottom:32px;">Händler wählen<br><span style="background:linear-gradient(to right,#5a4861,#b8274a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Lieferzeit prüfen</span></div>' +
+              '<div style="font-size:32px;font-weight:700;color:#1d1d1f;line-height:1.15;margin-bottom:32px;">Händler wählen<br><span style="background:linear-gradient(to right,#5a4861,#b8274a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Lieferzeit prüfen</span></div>' +
 
               /* Produkt-Card */
               '<div style="background:#fff;border-radius:16px;padding:24px 20px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:28px;">' +
                 (d.img ? '<img src="/' + d.img + '" style="width:160px;height:160px;object-fit:contain;margin-bottom:16px;" />' : '') +
                 '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:' + accentColor + ';margin-bottom:6px;">' + badgeLabel + '</div>' +
-                '<div style="font-size:22px;font-weight:800;color:#1d1d1f;margin-bottom:4px;">' + (d.products[0] ? d.products[0].n : d.label) + '</div>' +
+                '<div style="font-size:22px;font-weight:700;color:#1d1d1f;margin-bottom:4px;">' + (d.products[0] ? d.products[0].n : d.label) + '</div>' +
                 '<div style="font-size:13px;color:#6e6e73;">' + d.label + '</div>' +
               '</div>' +
 
@@ -1383,7 +1383,7 @@ function Beratung() {
             '<div style="padding:40px 36px;display:flex;flex-direction:column;">' +
               '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#8e8e93;margin-bottom:8px;">Händlerauswahl</div>' +
               '<div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:24px;">' +
-                '<div style="font-size:24px;font-weight:800;color:#1d1d1f;line-height:1.2;">Passenden Partner<br>auswählen</div>' +
+                '<div style="font-size:24px;font-weight:700;color:#1d1d1f;line-height:1.2;">Händler<br>auswählen</div>' +
                 '<div style="font-size:13px;font-weight:600;color:#8e8e93;text-align:right;">3 Händler<br>verfügbar</div>' +
               '</div>' +
               dealersHtml +
@@ -1412,8 +1412,8 @@ function Beratung() {
         var cards = document.querySelectorAll('#orderModal [data-dealer]');
         cards.forEach(function(card) {
           var i = parseInt(card.getAttribute('data-dealer'));
-          card.style.borderColor = i === idx ? '#E8590C' : 'rgba(0,0,0,0.09)';
-          card.style.background = i === idx ? '#fff9f7' : '#fff';
+          card.style.borderColor = i === idx ? '#b8274a' : 'rgba(0,0,0,0.09)';
+          card.style.background = i === idx ? '#fdf2f5' : '#fff';
         });
       };
 
