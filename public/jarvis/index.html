@@ -307,6 +307,33 @@
     50%      { opacity: 1;   transform: scale(1.05); }
   }
 
+  .orb-wrap.orb-tap-hint {
+    cursor: pointer;
+  }
+  .orb-wrap.orb-tap-hint .orb-glow {
+    animation: orbTapPulse 1.4s ease-in-out infinite;
+  }
+  @keyframes orbTapPulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50%      { opacity: 1;   transform: scale(1.18); }
+  }
+
+  #tapHint {
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4db8a0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+    white-space: nowrap;
+  }
+  #tapHint.visible { opacity: 1; }
+
   /* Chat */
   .chat {
     width: 100%;
@@ -552,7 +579,7 @@
 </header>
 
 <main>
-  <div class="orb-wrap" id="orb" data-state="idle">
+  <div class="orb-wrap" id="orb" data-state="idle" style="position:relative">
     <canvas class="orb-particles" id="orbParticles" width="520" height="520"></canvas>
     <div class="orb-glow" id="orbGlow"></div>
     <div class="orb-rings-scale" id="orbRingsScale">
@@ -572,6 +599,7 @@
       </g>
     </svg>
     </div>
+    <div id="tapHint">Tippen zum Starten</div>
     <svg class="orb-cross" viewBox="0 0 289.1 289.1" aria-hidden="true">
       <g class="cross-text">
         <path d="M136.2,44.9h16.3c1.8,0,3.3-1.5,3.3-3.3c0-1.8-1.5-3.3-3.3-3.3h-16.3V44.9z M136.2,60.8H153 c2.1,0,3.7-1.7,3.7-3.7c0-2.1-1.7-3.7-3.7-3.7h-16.8V60.8z M162.4,48.8c2.2,2.2,3.6,5.2,3.6,8.5c0,6.6-5.3,11.9-11.9,11.9h-27.3 V30l26.9,0c6.3,0,11.4,5.1,11.4,11.4C165.1,44.2,164.1,46.8,162.4,48.8z"/>
@@ -971,15 +999,13 @@ function chunkSentences(text) {
 
 let pendingSpeech = null;
 
-// Auf erstem Klick irgendwo im Dokument: gepufferte Sprachausgabe nachholen
-document.addEventListener("click", function onFirstClick() {
-  document.removeEventListener("click", onFirstClick);
-  if (pendingSpeech) {
-    const t = pendingSpeech;
-    pendingSpeech = null;
-    speak(t);
-  }
-}, { once: true });
+function setOrbTapHint(active) {
+  const orb = document.getElementById("orb");
+  const hint = document.getElementById("tapHint");
+  if (!orb || !hint) return;
+  orb.classList.toggle("orb-tap-hint", active);
+  hint.classList.toggle("visible", active);
+}
 
 async function speak(text) {
   // Vorheriges Audio stoppen
@@ -1002,6 +1028,7 @@ async function speak(text) {
     if (err.name === "NotAllowedError" || err.message?.includes("interact")) {
       pendingSpeech = cleaned;
       setOrbState("idle");
+      setOrbTapHint(true);
       return;
     }
     console.warn("ElevenLabs failed, fallback auf Browser-TTS:", err.message);
@@ -1450,6 +1477,16 @@ initVoiceIndicator();
 initParticles();
 
 setTimeout(greet, 400);
+
+// Orb-Klick: gepufferte Begrüßung abspielen
+document.getElementById("orb").addEventListener("click", () => {
+  if (pendingSpeech) {
+    const t = pendingSpeech;
+    pendingSpeech = null;
+    setOrbTapHint(false);
+    speak(t);
+  }
+});
 </script>
 </body>
 </html>
