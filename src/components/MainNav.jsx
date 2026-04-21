@@ -328,7 +328,7 @@ function MainNav() {
 
             {/* Agrar Magazin – nur im expanded State */}
             <div className="nav-extra-item">
-              <TransitionLink to="/agrar-magazin-demo" className="nav-plain-link"><span className="nav-link-text">Agrar Magazin</span></TransitionLink>
+              <a href="https://bayer-flow-agrar-magazin.vercel.app" target="_blank" rel="noopener noreferrer" className="nav-plain-link"><span className="nav-link-text">Agrar Magazin</span></a>
             </div>
 
             {/* Hamburger – verschwindet beim Expand (Desktop) / öffnet Drawer (Mobile) */}
@@ -424,7 +424,7 @@ function MainNav() {
               </li>
               <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Regionales</a></li>
               <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Digital Farming</a></li>
-              <li><TransitionLink className="mobile-drawer-item mobile-drawer-item--plain" to="/agrar-magazin-demo" onClick={closeMobileMenu}>Agrar Magazin</TransitionLink></li>
+              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="https://bayer-flow-agrar-magazin.vercel.app" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>Agrar Magazin</a></li>
             </ul>
           </div>
 

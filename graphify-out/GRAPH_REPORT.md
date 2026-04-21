@@ -1,7 +1,7 @@
 # Graph Report - /Users/raphaelschneider/meine-beratung  (2026-04-21)
 
 ## Corpus Check
-- 16 files · ~654,977 words
+- 16 files · ~655,029 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
