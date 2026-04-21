@@ -969,6 +969,18 @@ function chunkSentences(text) {
   return chunks;
 }
 
+let pendingSpeech = null;
+
+// Auf erstem Klick irgendwo im Dokument: gepufferte Sprachausgabe nachholen
+document.addEventListener("click", function onFirstClick() {
+  document.removeEventListener("click", onFirstClick);
+  if (pendingSpeech) {
+    const t = pendingSpeech;
+    pendingSpeech = null;
+    speak(t);
+  }
+}, { once: true });
+
 async function speak(text) {
   // Vorheriges Audio stoppen
   if (currentAudio) { try { currentAudio.pause(); } catch(e){} currentAudio = null; }
@@ -980,16 +992,20 @@ async function speak(text) {
   setOrbState("speaking");
 
   // Priorität 1: ElevenLabs (menschlich)
-  {
-    try {
-      await speakElevenLabs(cleaned);
-      updateVoiceIndicator("eleven", "Adam (ElevenLabs)");
+  try {
+    await speakElevenLabs(cleaned);
+    updateVoiceIndicator("eleven", "Dave (ElevenLabs)");
+    setOrbState("idle");
+    return;
+  } catch (err) {
+    // Autoplay geblockt → auf ersten Klick warten, KEIN Browser-Fallback
+    if (err.name === "NotAllowedError" || err.message?.includes("interact")) {
+      pendingSpeech = cleaned;
       setOrbState("idle");
       return;
-    } catch (err) {
-      console.warn("ElevenLabs failed, fallback auf Browser-TTS:", err.message);
-      updateVoiceIndicator("browser", "Browser (ElevenLabs-Fehler: " + err.message.slice(0, 60) + ")");
     }
+    console.warn("ElevenLabs failed, fallback auf Browser-TTS:", err.message);
+    updateVoiceIndicator("browser", "Browser (ElevenLabs-Fehler: " + err.message.slice(0, 60) + ")");
   }
 
   // Priorität 2: Browser-TTS mit bester verfügbarer Stimme
