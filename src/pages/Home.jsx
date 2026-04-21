@@ -1006,7 +1006,7 @@ function Home() {
       <div className="dark-gradient-wrap">
 
         {/* Deko-SVGs – außerhalb der Sektionen damit kein clip */}
-        <img ref={ctaDecoRef}   src="/code_2.svg" alt="" className="cta-deco-tl-wrap" />
+        <img ref={ctaDecoRef}   src="/code_2_filled.svg" alt="" className="cta-deco-tl-wrap" />
         <img ref={ctaDecoBrRef} src="/code_1.svg" alt="" className="cta-deco-br-wrap" />
 
       {/* Beratungs-Einstieg */}
