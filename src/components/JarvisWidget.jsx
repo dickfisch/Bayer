@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import { createPortal } from 'react-dom'
 
 export default function JarvisWidget() {
   const [open, setOpen] = useState(false)
 
-  return (
+  return createPortal(
     <>
       <button
         type="button"
@@ -33,6 +34,7 @@ export default function JarvisWidget() {
           </div>
         </div>
       )}
-    </>
+    </>,
+    document.body
   )
 }
