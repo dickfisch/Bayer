@@ -1,0 +1,3570 @@
+[
+  {
+    "name": "Inteco®",
+    "description": "Zusatzstoff für Saatgutbehandlungsmittel zur Verbesserung der Anhaftung der Beize am Getreidekorn sowie zur Verminderung von Abrieb (Beizstaub)",
+    "category": "Beizmittel, Zusatzstoff",
+    "wirkstoff": "",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "80 %",
+        "name": "Sojaöl Raffinat",
+        "safener": false
+      },
+      {
+        "amount": "20 %",
+        "name": "Tenside",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "91917224",
+        "verpackungsgroesse": "Karton 15 l Kanister",
+        "paletteneinheit": "48"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=390&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Inteco?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/inteco.jpg"
+  },
+  {
+    "name": "Mero®",
+    "description": "Zusatzstoff auf Rapsöl-Basis",
+    "category": "Herbizid, Zusatzstoff",
+    "wirkstoff": "",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "81 %",
+        "name": "Rapsölmethylester",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Netzmittel auf Basis nachwachsender Rohstoffe (Rapsmethylester)",
+      "Unterstützung der Wirkstoffaufnahme von blattaktiven Produkten insbesondere unter trockenen Witterungsbedingungen (Luftfeuchte unter 60%)",
+      "Ideales Netzmittel für die Anwendung mit Husar Plus und Betanal Tandem"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "05405490",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "in Husar Plus COP",
+        "verpackungsgroesse": "Karton 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "in Betanal Tandem Pack",
+        "verpackungsgroesse": "10 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=393&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Mero?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/mero.jpg"
+  },
+  {
+    "name": "Aliette® WG",
+    "description": "Fungizid zur Bekämpfung von pilzlichen Krankheiten an Hopfen, Erdbeeren, Zierpflanzen sowie Gemüse",
+    "category": "Fungizid",
+    "wirkstoff": "800 g/kg Fosetyl-Al\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                81019231\n                                 6  kg Sack",
+    "formulierung": "Wasserdispergierbares Granulat",
+    "wirkstoffe": [
+      {
+        "amount": "800 g/kg",
+        "name": "Fosetyl-Al",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "vollsystemische Wirkstoffverteilung",
+      "doppeltes Wirksystem: Hemmung der Sporenkeimung und des Mycelwachstums sowie Stärkung der natürlichen Abwehrkräfte",
+      "breit wirksam gegen versch. Erreger der Familie Peronosporaceae",
+      "nicht bienengefährlich (B4)"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "81019231",
+        "verpackungsgroesse": "6 kg Sack, wiederverschließbar",
+        "paletteneinheit": "141"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=395&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Aliette%20WG?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/aliette-wg.jpg"
+  },
+  {
+    "name": "Atlantis® OD",
+    "description": "Herbizid zur Nachauflaufanwendung gegen Ungräser, Kamille-Arten, Vogel-Sternmiere und kruzifere Unkräuter in Winterweizen, -roggen und Triticale",
+    "category": "Herbizid",
+    "wirkstoff": "9,72 g/l Mesosulfuron, 1,86 g/l Iodosulfuron, 28,86 g/l Mefenpyr",
+    "formulierung": "Ölige Dispersion",
+    "wirkstoffe": [
+      {
+        "amount": "9,72 g/l",
+        "name": "Mesosulfuron (als Methylester-Na 10 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "1,86 g/l",
+        "name": "Iodosulfuron (als Methylester-Na 2 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "28,86 g/l",
+        "name": "Mefenpyr (als Diethylester 30 g/l)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "05951746",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=399&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Atlantis%20OD?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/atlantis-od.jpg"
+  },
+  {
+    "name": "Attribut®",
+    "description": "Wasserlösliches Granulat zur Bekämpfung von Ungräsern in Winterweichweizen, -roggen, -triticale und Dinkel im Nachauflauf Frühjahr",
+    "category": "Herbizid",
+    "wirkstoff": "700 g/kg Propoxycarbazone",
+    "formulierung": "Wasserlösliches Granulat",
+    "wirkstoffe": [
+      {
+        "amount": "700 g/kg",
+        "name": "Propoxycarbazone (als Natrium-Salz)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Von Anfang an volle Kraft gegen Ungräser",
+      "Breite und sichere Gräserwirkung (Gemeiner Windhalm, Acker-Fuchsschwanz, Trespe und Quecke)",
+      "Flexible Aufwandmengen",
+      "Breit mischbar mit allen Dikot-Herbiziden, Wachstumsregulatoren und AHL"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "88915186",
+        "verpackungsgroesse": "Karton 20 x 300 g Flasche",
+        "paletteneinheit": "77"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=400&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Attribut?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/attribut.jpg"
+  },
+  {
+    "name": "Bandur®",
+    "description": "Vorauflaufherbizid zur Bekämpfung von Ungräsern und Unkräutern in Kartoffeln, Ackerbohnen, Futtererbsen, Sonnenblumen und verschiedenen Gemüsekulturen sowie in Tagetes erecta (als Vorkultur zu Erdbeeren und Zierpflanzen) und Weiße Lupine",
+    "category": "Herbizid",
+    "wirkstoff": "600 g/l Aclonifen\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                04211978\n                                Karton 4 x 5 l Kaniste",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "600 g/l",
+        "name": "Aclonifen",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Unkräuter und Schadgräser auf einen Streich",
+      "Anwendbar in Sonnenblumen und zahlreichen Gemüsekulturen"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "04211978",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "79492227",
+        "verpackungsgroesse": "Karton 15 l Kanister",
+        "paletteneinheit": "48"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=403&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Bandur?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/bandur.jpg"
+  },
+  {
+    "name": "Cadou® SC",
+    "description": "Herbizid zur Bekämpfung von Ungräsern in Wintergetreide im Herbst, in Erdbeere sowie im Gemüsebau",
+    "category": "Herbizid",
+    "wirkstoff": "508,8 g/l Flufenacet\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                    \n                \n            \n\n\n\n\n                \n                    Enthalten in",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "508,8 g/l",
+        "name": "Flufenacet",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "idealer Baustein für Anti-Resistenz-Strategien gegen Ungräser",
+      "einsetzbar in allen Wintergetreidearten (außer Winterhafer)",
+      "einsetzbar auf allen Standorten",
+      "flexibel in der Aufwandmenge in Abhängigkeit vom zu bekämpfenden Ungras",
+      "gute Kulturverträglichkeit",
+      "anwenderfreundliche Flüssigformulierung",
+      "Die Zulassung von Cadou® SC endet am 05. Juni 2025.",
+      "Die Abverkaufsfrist endet am 05. Dezember 2025 (6 Monate nach Zulassungsende).",
+      "Die Aufbrauchfrist endet am 05. Dezember 2026 (18 Monate nach Zulassungsende)."
+    ],
+    "gebinde": [],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=411&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Cadou%20SC?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/cadou-sc.jpg"
+  },
+  {
+    "name": "CCC 720®",
+    "description": "Wachstumsregler zur Halmverkürzung und -festigung von Winter- und Sommerweichweizen, Winterroggen, Triticale und Hafer",
+    "category": "Wachstumsregler",
+    "wirkstoff": "720 g/l Chlormequatchlorid\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                04543172\n                                 2 x 10  l Ka",
+    "formulierung": "Wasserlösliches Konzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "720 g/l",
+        "name": "Chlormequatchlorid",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Der bewährte Standard"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "04543172",
+        "verpackungsgroesse": "2 x 10 l Kanister",
+        "paletteneinheit": "36"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=414&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/CCC%20720?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/ccc-720.jpg"
+  },
+  {
+    "name": "Flint®",
+    "description": "Spritzmittel gegen Echten Mehltau und Schorf an Apfel, Birne und Quitte, weiteren pilzlichen Lagerkrankheiten an Apfel sowie Echten Mehltaupilzen an Zierpflanzen",
+    "category": "Fungizid",
+    "wirkstoff": "500 g/kg Trifloxystrobin\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                02622770\n                                Karton 10 x 1 k",
+    "formulierung": "Wasserdispergierbares Granulat",
+    "wirkstoffe": [
+      {
+        "amount": "500 g/kg",
+        "name": "Trifloxystrobin",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Umfangreiche und ausgezeichnete Breitenwirkung als Vertreter der Strobiluringruppe",
+      "Lange Wirkungsdauer mit hoher Wirkkonstanz",
+      "Herausragende Wirkungssicherheit gegen Mehltau und pilzliche Lagerfäulen",
+      "Sehr gute Pflanzenverträglichkeit in allen Sorten, auch in der empfindlichen Blütephase"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "02622770",
+        "verpackungsgroesse": "Karton 10 x 1 kg Faltschachtel",
+        "paletteneinheit": "70"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=422&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Flint?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/flint.jpg"
+  },
+  {
+    "name": "Folicur®",
+    "description": "Spritzmittel gegen pilzliche Krankheiten in Winter- und Sommerraps, Weizen, Gerste und Roggen, anderen Ackerbaukulturen sowie im Gemüse- und im Obstbau",
+    "category": "Fungizid",
+    "wirkstoff": "250 g/l Tebuconazol\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                03583841\n                                Karton 12 x 1 l Flas",
+    "formulierung": "Emulsion, Öl in Wasser",
+    "wirkstoffe": [
+      {
+        "amount": "250 g/l",
+        "name": "Tebuconazol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Raps: Erfasst zuverlässig alle wirtschaftlich bedeutenden Rapskrankheiten, vor allem Wurzelhals- und Stängelfäule (Phoma lingam)",
+      "Erhöht die Pflanzenvitalität und das Wurzelwachstum im Herbst",
+      "Erhöht die Winterfestigkeit und verbessert die Standfestigkeit",
+      "Stabilisierung und Einkürzung der Rapsstängel, Förderung der Seitentriebbildung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "03583841",
+        "verpackungsgroesse": "Karton 12 x 1 l Flasche",
+        "paletteneinheit": "60"
+      },
+      {
+        "artikelnummer": "02622800",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=423&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Folicur?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/folicur.jpg"
+  },
+  {
+    "name": "Husar® OD",
+    "description": "Herbizid zur Bekämpfung von Gemeinem Windhalm, Weidelgras-Arten, Rispengras-Arten und einjährigen zweikeimblättrigen Unkräutern in Winterweizen, -roggen, -triticale sowie Sommerweizen, -gerste, -hartweizen und Dinkel, auch in Gräsern zur Saatguterzeugung",
+    "category": "Herbizid",
+    "wirkstoff": "100 g/l Iodosulfuron-methyl-natrium\n                            \n                            \n                                300 g",
+    "formulierung": "Ölige Dispersion",
+    "wirkstoffe": [
+      {
+        "amount": "100 g/l",
+        "name": "Iodosulfuron-methyl-natrium",
+        "safener": false
+      },
+      {
+        "amount": "300 g/l",
+        "name": "Mefenpyr-diethyl",
+        "safener": true
+      }
+    ],
+    "eigenschaften": [
+      "Exzellente Wirkung gegen breitblättrige Unkräuter und Ungräser",
+      "Einsetzbar in Wintergetreide (außer Wintergerste); Sommergetreide (außer Hafer)",
+      "Beschleunigte Wirkstoffaufnahme",
+      "Flexibel in der Wahl der Aufwandmenge"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "in Incelo Komplett",
+        "verpackungsgroesse": "500 ml Flasche",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=427&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Husar%20OD?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/husar-od.jpg"
+  },
+  {
+    "name": "Infinito®",
+    "description": "Fungizid zur Bekämpfung von Phytophthora infestans an Kartoffel",
+    "category": "Fungizid",
+    "wirkstoff": "62,5 g/l Fluopicolide\n                            \n                            \n                                625, ,0 g/l Propamocarb-HCl\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinhe",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "62,5 g/l",
+        "name": "Fluopicolide",
+        "safener": false
+      },
+      {
+        "amount": "625,0 g/l",
+        "name": "Propamocarb-HCl",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "exzellente Wirkung gegen Blatt-, Stängel- und Knollenfäule",
+      "Produkt mit eingebautem Anti-Resistenz-Mechanismus",
+      "Langzeitwirkung bei jedem Wetter",
+      "Flüssiges Fungizid",
+      "sichert hohe Erträge"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "80936737",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "91215629",
+        "verpackungsgroesse": "Karton 2 x 10 l Kanister",
+        "paletteneinheit": "36"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=428&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Infinito?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/infinito.jpg"
+  },
+  {
+    "name": "Laudis®",
+    "description": "Herbizid zur Bekämpfung von Ungräsern und Unkräutern in Mais im Nachauflaufverfahren sowie gegen einjährige zweikeimblättrige Unkräuter in Tannen",
+    "category": "Herbizid",
+    "wirkstoff": "44 g/l Tembotrione\n                            \n                            \n                                22 g",
+    "formulierung": "Ölige Dispersion",
+    "wirkstoffe": [
+      {
+        "amount": "44 g/l",
+        "name": "Tembotrione",
+        "safener": false
+      },
+      {
+        "amount": "22 g/l",
+        "name": "Isoxadifen-ethyl",
+        "safener": true
+      }
+    ],
+    "eigenschaften": [
+      "Unglaublich stark gegen Hühnerhirse!!",
+      "In allen Sorten verträglich!",
+      "Sehr breites Wirkungsspektrum (>95 % Wirkung gegen 47 Unkräuter)",
+      "Sehr schnell regenfest (<1 h)!"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "79092954",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "in Laudis Aspect Pack und Laudis Plus",
+        "verpackungsgroesse": "5 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=432&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Laudis?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/laudis.jpg"
+  },
+  {
+    "name": "Melody® Combi",
+    "description": "Wasserdispergierbares Granulat gegen pilzliche Krankheiten im Weinbau sowie gegen Blauschimmel an Tabak",
+    "category": "Fungizid",
+    "wirkstoff": "90 g/kg Iprovalicarb\n                            \n                            \n                                563 g",
+    "formulierung": "Wasserdispergierbares Granulat",
+    "wirkstoffe": [
+      {
+        "amount": "90 g/kg",
+        "name": "Iprovalicarb",
+        "safener": false
+      },
+      {
+        "amount": "563 g/kg",
+        "name": "Folpet",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Sehr hohe Wirkungssicherheit",
+      "Vorbeugende und heilende Wirkung",
+      "Lange Wirkungsdauer",
+      "Praxisbewährt und mit Tiefenwirkung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "80991088",
+        "verpackungsgroesse": "6 kg Sack, wiederverschließbar",
+        "paletteneinheit": "141"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=434&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Melody%20Combi?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/melody-combi.jpg"
+  },
+  {
+    "name": "Profiler®",
+    "description": "Fungizid gegen Rebenperonospora (Plasmopara viticola) an Kelter- und Tafeltrauben sowie gegen Falschen Mehltau an Brombeeren und Hopfen",
+    "category": "Fungizid",
+    "wirkstoff": "44,4 g/kg Fluopicolide\n                            \n                            \n                                666, ,7 g/kg Fosetyl-Al\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit",
+    "formulierung": "Wasserdispergierbares Granulat",
+    "wirkstoffe": [
+      {
+        "amount": "44,4 g/kg",
+        "name": "Fluopicolide",
+        "safener": false
+      },
+      {
+        "amount": "666,7 g/kg",
+        "name": "Fosetyl-Al",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Neuer Wirkungsmechanismus bietet hervorragende Wirkungssicherheit",
+      "Vollsystemische Wirkstoffverteilung schützt den Neuzuwachs",
+      "Ausgeprägte Wirkungsdauer ermöglicht lange Behandlungsabstände"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "80890451",
+        "verpackungsgroesse": "6 kg Sack, wiederverschließbar",
+        "paletteneinheit": "141"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=442&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Profiler?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/profiler.jpg"
+  },
+  {
+    "name": "Proline®",
+    "description": "Spritzmittel gegen pilzliche Krankheitserreger in Getreide und Winterraps",
+    "category": "Fungizid",
+    "wirkstoff": "250 g/l Prothioconazol\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                03400178\n                                Karton 4 x 5 l Ka",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "250 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Leistungsstarkes und breit wirksames Azolfungizid in Getreide und Raps",
+      "Hervorragend gegen Halmbasis-/Stängel- & Blattkrankheiten",
+      "Günstige Gewässerabstandsauflagen",
+      "Das Original: Bewährte und hochwertige Formulierung mit klaren Wirkungs- & Einsatzvorteilen"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "03400178",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=443&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Proline?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/proline.jpg"
+  },
+  {
+    "name": "Pronto® Plus",
+    "description": "Fungizid gegen pilzliche Krankheiten im Getreide",
+    "category": "Fungizid",
+    "wirkstoff": "250 g/l Spiroxamine\n                            \n                            \n                                133 g",
+    "formulierung": "Emulsion, Öl in Wasser",
+    "wirkstoffe": [
+      {
+        "amount": "250 g/l",
+        "name": "Spiroxamine",
+        "safener": false
+      },
+      {
+        "amount": "133 g/l",
+        "name": "Tebuconazol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Umfassende Wirkungsbreite gegen Blatt- und Abreifekrankheiten einschl. Fusarium-Bekämpfung",
+      "Stark als Solo-Produkt",
+      "Ideal als Mischpartner"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "06032914",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=444&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Pronto%20Plus?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/pronto-plus.jpg"
+  },
+  {
+    "name": "Prosaro®",
+    "description": "Fungizid gegen pilzliche Krankheiten in Getreide, Raps und Mais",
+    "category": "Fungizid",
+    "wirkstoff": "125 g/l Tebuconazol\n                            \n                            \n                                125 g",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "125 g/l",
+        "name": "Tebuconazol",
+        "safener": false
+      },
+      {
+        "amount": "125 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "breite und sichere Wirkung gegen alle relevanten Blatt-/Ährenkrankheiten (kurativ/Protektiv)",
+      "effiziente und wirtschaftliche Lösung zur Abschlussbehandlung in Weizen, Roggen, Triticale",
+      "günstiges Preis-/Leistungsverhältnis im Blatt/Ähren-Segment",
+      "neuer Standard zur Bekämpfung von Fusariosen und Reduzierung des Mycotoxingehaltes im Erntegut",
+      "neue Formulierungstechnologie und damit optimale Anlagerung und Wirkstoffaufnahme ins Blatt sowie hohe Verträglichkeit"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "03705483",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=445&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Prosaro?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/prosaro.jpg"
+  },
+  {
+    "name": "Teldor®",
+    "description": "Wasserdispergierbares Granulat zur Bekämpfung von Botrytis im Wein-, Gemüse-, Obst- und Zierpflanzenbau sowie Monilia-Arten an Kirschen und Pflaumen",
+    "category": "Fungizid",
+    "wirkstoff": "500 g/kg Fenhexamid\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                80922485\n                                Karton 10 x 1 kg Fal",
+    "formulierung": "Wasserdispergierbares Granulat",
+    "wirkstoffe": [
+      {
+        "amount": "500 g/kg",
+        "name": "Fenhexamid",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Hochwirksames Spezialfungizid gegen Botrytis und Monilia-Arten",
+      "Ideal für eine nachhaltige Botrytis-Bekämpfungsstrategie mit Botrytiziden aus anderen Wirkstoffgruppen geeignet",
+      "Lange Wirkungsdauer bei kurzer Wartezeit"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "80922485",
+        "verpackungsgroesse": "Karton 10 x 1 kg Faltschachtel",
+        "paletteneinheit": "48"
+      },
+      {
+        "artikelnummer": "80848846",
+        "verpackungsgroesse": "6 kg Sack, wiederverschließbar",
+        "paletteneinheit": "105"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=453&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Teldor?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/teldor.jpg"
+  },
+  {
+    "name": "Adengo®",
+    "description": "Herbizid zur Bekämpfung von Einjährigen ein- und zweikeimblättrigen Unkräutern in Mais im Vorauflauf bzw. frühen Nachauflauf sowie in Baumschulgehölzpflanzen",
+    "category": "Herbizid",
+    "wirkstoff": "225,0 g/l Isoxaflutole\n                            \n                            \n                                86, ,77 g/l Thiencarbazone, 150 g/l Cyprosulfamide",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "225,0 g/l",
+        "name": "Isoxaflutole",
+        "safener": false
+      },
+      {
+        "amount": "86,77 g/l",
+        "name": "Thiencarbazone (als Methylester 90 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "150 g/l",
+        "name": "Cyprosulfamide",
+        "safener": true
+      }
+    ],
+    "eigenschaften": [
+      "Geringe Aufwandmenge",
+      "TBA-frei",
+      "Blatt- und Bodenkombination"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "79120753",
+        "verpackungsgroesse": "Karton 12 x 1 l Flasche",
+        "paletteneinheit": "60"
+      },
+      {
+        "artikelnummer": "79120958",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=456&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Adengo?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/adengo.jpg"
+  },
+  {
+    "name": "Aviator® Xpro",
+    "description": "Fungizid mit systemischen Eigenschaften gegen ein breites Spektrum pilzlicher Krankheitserreger in Getreide",
+    "category": "Fungizid",
+    "wirkstoff": "75 g/l Bixafen\n                            \n                            \n                                150 g",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "75 g/l",
+        "name": "Bixafen",
+        "safener": false
+      },
+      {
+        "amount": "150 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Wichtiger Baustein im Resistenzenmanagement",
+      "Bessere Stresstoleranz",
+      "Kurative und protektive Wirkung",
+      "Breitwirksame Fungizidkombination"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "79653204",
+        "verpackungsgroesse": "4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=458&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Aviator%20Xpro?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/aviator-xpro.jpg"
+  },
+  {
+    "name": "Fandango®",
+    "description": "Fungizid gegen pilzliche Krankheiten im Getreide und Speisezwiebel",
+    "category": "Fungizid",
+    "wirkstoff": "100 g/l Prothioconazol\n                            \n                            \n                                100 g",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "100 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      },
+      {
+        "amount": "100 g/l",
+        "name": "Fluoxastrobin",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "leistungsfähige Kombination zweier hochwirksamer Wirkstoffe",
+      "Spitzenlösung für Gerste, Roggen und Triticale",
+      "Exzellente Kornqualität",
+      "Umfassendes Wirkungsspektrum",
+      "Hervorragende Sicherung von Ertrag und Qualität"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "80873409",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=463&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Fandango?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/fandango.jpg"
+  },
+  {
+    "name": "Tilmor®",
+    "description": "Fungizid gegen pilzliche Krankheiten sowie zur Erhöhung der Stand- und Winterfestigkeit im Raps",
+    "category": "Fungizid",
+    "wirkstoff": "80 g/l Prothioconazol\n                            \n                            \n                                160 g",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "80 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      },
+      {
+        "amount": "160 g/l",
+        "name": "Tebuconazol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "hervorragende Blattbenetzung: lückenloser Wirkstofffilm",
+      "schnelle Regenfestigkeit",
+      "Gute Kombinierbarkeit mit Blattdüngern",
+      "Gute Mischbarkeit mit Insektiziden und Graminiziden"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "79481519",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "91215599",
+        "verpackungsgroesse": "Karton 2 x 10 l Kanister",
+        "paletteneinheit": "36"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=475&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Tilmor?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/tilmor.jpg"
+  },
+  {
+    "name": "Previcur® Energy",
+    "description": "Fungizid gegen Auflaufkrankheiten - Pythium-Arten und Falsche Mehltau-Pilze an verschiedenen Gemüsekulturen und Zierpflanzen",
+    "category": "Fungizid",
+    "wirkstoff": "530,0 g/l Propamocarb\n                            \n                            \n                                310, ,0 g/l Fosetyl\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit",
+    "formulierung": "Wasserlösliches Konzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "530,0 g/l",
+        "name": "Propamocarb",
+        "safener": false
+      },
+      {
+        "amount": "310,0 g/l",
+        "name": "Fosetyl",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Verbesserte fungizide Eigenschaften für die Produktion gesunder Pflanzen",
+      "Geringes Resistenzrisiko für eine nachhaltige Bekämpfung von Schadpilzen",
+      "Stimulierung der pflanzeneigenen Abwehr für zusätzliche Wirkungssicherheit"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "79129882",
+        "verpackungsgroesse": "Karton 12 x 1 l Flasche",
+        "paletteneinheit": "60"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=481&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Previcur%20Energy?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/previcur-energy.jpg"
+  },
+  {
+    "name": "Luna® Experience",
+    "description": "Fungizid gegen pilzliche Krankheiten an Keltertrauben, Kernobst, Kirschen, Pflaumen, Pfirsich, Aprikose sowie verschiedenen Gemüsekulturen",
+    "category": "Fungizid",
+    "wirkstoff": "200 g/l Fluopyram\n                            \n                            \n                                200 g",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "200 g/l",
+        "name": "Fluopyram",
+        "safener": false
+      },
+      {
+        "amount": "200 g/l",
+        "name": "Tebuconazol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Strobilurinfreie Lösung mit hoher Wirkungssicherheit",
+      "Flexibel in der Saison einsetzbar",
+      "Flüssige Formulierung ist einfach dosierbar und leicht in der Handhabung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "79706057",
+        "verpackungsgroesse": "Karton 12 x 1 l Flasche",
+        "paletteneinheit": "60"
+      },
+      {
+        "artikelnummer": "79676174",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=554&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Luna%20Experience?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/luna-experience.jpg"
+  },
+  {
+    "name": "MaisTer® power",
+    "description": "Herbizid zur Bekämpfung von Ungräsern und Unkräutern in Mais im Nachauflaufverfahren",
+    "category": "Herbizid",
+    "wirkstoff": "30,0 g/l Foramsulfuron, 9,77 g/l Thiencarbazone, 0,85 g/l Iodosulfuron",
+    "formulierung": "Ölige Dispersion",
+    "wirkstoffe": [
+      {
+        "amount": "30,0 g/l",
+        "name": "Foramsulfuron (als Natrium-Salz 31,5 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "9,77 g/l",
+        "name": "Thiencarbazone (als Methylester 10 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "0,85 g/l",
+        "name": "Iodosulfuron (als Methylester-Na 1 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "15 g/l",
+        "name": "Cyprosulfamide",
+        "safener": true
+      }
+    ],
+    "eigenschaften": [
+      "TBA freie Komplettlösung",
+      "Jedes Jahr auf der gleichen Fläche einsetzbar",
+      "Blatt- und Bodenwirkung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "89153417",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "in MaisTer power Flexx",
+        "verpackungsgroesse": "Karton 5 l Kanister",
+        "paletteneinheit": ""
+      },
+      {
+        "artikelnummer": "89360544",
+        "verpackungsgroesse": "Karton 2 x 10 l Kanister",
+        "paletteneinheit": "36"
+      },
+      {
+        "artikelnummer": "in MaisTer power Flexx",
+        "verpackungsgroesse": "Karton 10 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=556&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/MaisTer%20power?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/maister-power.jpg"
+  },
+  {
+    "name": "Siltra® Xpro",
+    "description": "Fungizid zur Bekämpfung von pilzlichen Krankheiten im Getreide",
+    "category": "Fungizid",
+    "wirkstoff": "60 g/l Bixafen\n                            \n                            \n                                200 g",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "60 g/l",
+        "name": "Bixafen",
+        "safener": false
+      },
+      {
+        "amount": "200 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "in Cayunis Xpro Set",
+        "verpackungsgroesse": "5 l Kanister",
+        "paletteneinheit": ""
+      },
+      {
+        "artikelnummer": "in Cayunis Xpro Set",
+        "verpackungsgroesse": "10 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=559&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Siltra%20Xpro?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/siltra-xpro.jpg"
+  },
+  {
+    "name": "Skyway® Xpro",
+    "description": "Fungizid zur Bekämpfung von pilzlichen Krankheiten im Getreide",
+    "category": "Fungizid",
+    "wirkstoff": "75 g/l Bixafen\n                            \n                            \n                                100 g, 100 g/l Tebuconazol",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "75 g/l",
+        "name": "Bixafen",
+        "safener": false
+      },
+      {
+        "amount": "100 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      },
+      {
+        "amount": "100 g/l",
+        "name": "Tebuconazol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Optimale Kornfüllungsphase garantiert Ertrag und Qualität",
+      "Mehr Sicherheit bei allen Abreifekrankheiten insb. Rostarten",
+      "Hohe Dosis- und Einsatzflexibilität",
+      "Sicher gegen Fusarium und Mykotoxine"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "79650566",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "79677332",
+        "verpackungsgroesse": "Karton 15 l Kanister",
+        "paletteneinheit": "48"
+      },
+      {
+        "artikelnummer": "91215610",
+        "verpackungsgroesse": "Karton 2 x 10 l Kanister",
+        "paletteneinheit": "36"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=576&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Skyway%20Xpro?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/skyway-xpro.jpg"
+  },
+  {
+    "name": "Input® Classic",
+    "description": "Fungizid für mehr Output im Getreide",
+    "category": "Fungizid",
+    "wirkstoff": "160 g/l Prothioconazol\n                            \n                            \n                                300 g",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "160 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      },
+      {
+        "amount": "300 g/l",
+        "name": "Spiroxamine",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "sehr breites Wirkungsspektrum: von Halmbasis bis Blatt und Ähre",
+      "breite Einsetzbarkeit während der gesamten Wachstumsperiode (bis BBCH 69)",
+      "exzellente Fusarium-Leistung",
+      "lang anhaltende, sichere Wirkung",
+      "effektives Resistenzmanagement",
+      "einfache Handhabung der Fertigformulierung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "03400038",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "91215556",
+        "verpackungsgroesse": "Karton 2 x 10 l Kanister",
+        "paletteneinheit": "36"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=577&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Input%20Classic?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/input-classic.jpg"
+  },
+  {
+    "name": "Movento® SC 100",
+    "description": "Insektizid/Akarizid zur Bekämpfung von Erdbeermilben an Erdbeeren  und div. Gemüsekulturen im Gewächshaus",
+    "category": "Insektizid",
+    "wirkstoff": "100 g/l Spirotetramat\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                80518072\n                                Karton 4 x 3 l Kan",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "100 g/l",
+        "name": "Spirotetramat",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Vollsystemische Wirkung schützt den Neuzuwachs und erfasst zusätzlich versteckt lebende Insekten",
+      "Neuer Wirkungsmechanismus für eine optimale Bekämpfung von Schadinsekten",
+      "Das günstige Nützlingsprofil trägt zur indirekten Bekämpfung von Schadinsekten bei"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "80518072",
+        "verpackungsgroesse": "Karton 4 x 3 l Kanister",
+        "paletteneinheit": "60"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=579&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Movento%20SC%20100?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/movento-sc-100.jpg"
+  },
+  {
+    "name": "Propulse®",
+    "description": "Spritzmittel gegen pilzliche Krankheitserreger in Raps, Mais, Kartoffel, Zuckerrübe und Sojabohne",
+    "category": "Fungizid",
+    "wirkstoff": "125 g/l Fluopyram\n                            \n                            \n                                125 g",
+    "formulierung": "Suspoemulsion",
+    "wirkstoffe": [
+      {
+        "amount": "125 g/l",
+        "name": "Fluopyram",
+        "safener": false
+      },
+      {
+        "amount": "125 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Top Wirkungsgrade in Raps (Sklerotinia, Alternatria), Kartoffel (Alternaria) und Zuckerrübe (u.a. Cercospora)",
+      "Flexibler Anwendungszeitraum",
+      "Ertragsabsicherung durch besseren Schutz"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "85803468",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=596&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Propulse?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/propulse.jpg"
+  },
+  {
+    "name": "Luna® Sensation",
+    "description": "Fungizid gegen pilzliche Krankheiten an Erdbeeren, Pfirsich, Tomate, Gemüsepaprika, Aubergine, Salaten, Möhre, Spargel und Hopfen",
+    "category": "Fungizid",
+    "wirkstoff": "250 g/l Fluopyram\n                            \n                            \n                                250 g",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "250 g/l",
+        "name": "Fluopyram",
+        "safener": false
+      },
+      {
+        "amount": "250 g/l",
+        "name": "Trifloxystrobin",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Anwenderfreundliche Flüssigformulierung",
+      "Gutes Preis-Leistungsverhältnis",
+      "Wirkstoffkombination für das Resistenzmanagement zur nachhaltigen Krankheitsbekämpfung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "79684525",
+        "verpackungsgroesse": "Karton 12 x 1 l Flasche",
+        "paletteneinheit": "60"
+      },
+      {
+        "artikelnummer": "79634242",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=597&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Luna%20Sensation?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/luna-sensation.jpg"
+  },
+  {
+    "name": "Cerone® 660",
+    "description": "Wachstumsregler zur Halmfestigung von Weizen, Winter- und Sommergerste sowie Winterroggen und Wintertriticale -",
+    "category": "Wachstumsregler",
+    "wirkstoff": "660 g/l Ethephon\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                80984537\n                                Karton 12 x 1 l Flasche",
+    "formulierung": "Wasserlösliches Konzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "660 g/l",
+        "name": "Ethephon",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Reduziert das Risiko von Lager-Getreide sowie Ährenknicken und Auswuchs",
+      "Sichert dadurch Ertrag und Qualität des Getreides",
+      "Lange Bestandsbeobachtung bis zur Anwendungs-Entscheidung möglich",
+      "Ideal kombinierbar mit Fungizidbehandlungen",
+      "auch in Winter- und Sommerweizen!"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "80984537",
+        "verpackungsgroesse": "Karton 12 x 1 l Flasche",
+        "paletteneinheit": "60"
+      },
+      {
+        "artikelnummer": "80942389",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=598&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Cerone%20660?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/cerone-660.jpg"
+  },
+  {
+    "name": "Aspect®",
+    "description": "Herbizid zur Bekämpfung von Unkräutern im Mais mit Blatt- und Bodenwirkung im Nachauflauf",
+    "category": "Herbizid",
+    "wirkstoff": "333 g/l Terbuthylazin\n                            \n                            \n                                200 g",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "333 g/l",
+        "name": "Terbuthylazin",
+        "safener": false
+      },
+      {
+        "amount": "200 g/l",
+        "name": "Flufenacet",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Sehr verträglich",
+      "Kombination von starken Wirkstoffen",
+      "Flüssig",
+      "Hervorragender Mischpartner für Laudis",
+      "Die Zulassung von Aspect® endet am 07. Juni 2025.",
+      "Die Abverkaufsfrist endet am 07. Dezember 2025.",
+      "Die Aufbrauchfrist endet am 07. Dezember 2026."
+    ],
+    "gebinde": [],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=600&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Aspect?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/aspect.jpg"
+  },
+  {
+    "name": "Husar® Plus",
+    "description": "Herbizid zur Bekämpfung von Gemeinem Windhalm, Weidelgras-Arten, Rispen-Arten und einjährigen zweikeimblättrigen Unkräutern in Wintergetreide (Winterweichweizen, -triticale, -roggen und Dinkel) und Sommergetreide (Sommerweichweizen, -gerste und -hartweizen)",
+    "category": "Herbizid",
+    "wirkstoff": "50 g/l Iodosulfuron-methyl-natrium\n                            \n                            \n                                7, ,5 g/l Mesosulfuron-methyl\n                            \n                            \n                                250 g",
+    "formulierung": "Ölige Dispersion",
+    "wirkstoffe": [
+      {
+        "amount": "50 g/l",
+        "name": "Iodosulfuron-methyl-natrium",
+        "safener": false
+      },
+      {
+        "amount": "7,5 g/l",
+        "name": "Mesosulfuron-methyl",
+        "safener": false
+      },
+      {
+        "amount": "250 g/l",
+        "name": "Mefenpyr-diethyl",
+        "safener": true
+      }
+    ],
+    "eigenschaften": [
+      "Stark gegen Windhalm, Rispen, Weidelgräser und Flughafer",
+      "Breite Wirkung gegen die wichtigsten Unkräuter",
+      "Vielseitig einsetzbar - in Winter- und Sommergetreide",
+      "Schnell regenfest"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "in Husar Plus + Mero",
+        "verpackungsgroesse": "1 l Flasche",
+        "paletteneinheit": ""
+      },
+      {
+        "artikelnummer": "in Husar Plus + Mero",
+        "verpackungsgroesse": "3 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=601&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Husar%20Plus?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/husar-plus.jpg"
+  },
+  {
+    "name": "Biopower®",
+    "description": "Zusatzstoff auf Fettalkoholethersulfat, Natriumsalz-Basis",
+    "category": "Herbizid, Zusatzstoff",
+    "wirkstoff": "",
+    "formulierung": "Wasserlösliches Konzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "27 %",
+        "name": "Fettalkoholethersulfat, Natriumsalz",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Bewährter Formulierungshilfsstoff zur Leistungssteigerung von Herbiziden"
+    ],
+    "gebinde": [],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=604&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Biopower?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/biopower.jpg"
+  },
+  {
+    "name": "Decis® forte",
+    "description": "Spritzmittel gegen beißende und saugende Insekten im Ackerbau und Grünland.",
+    "category": "Insektizid",
+    "wirkstoff": "100 g/l Deltamethrin\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                79655754\n                                Karton 12 x 1 l Fla",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "100 g/l",
+        "name": "Deltamethrin",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "ein besonders breites Wirkungsspektrum",
+      "die Zulassung in allen wichtigen Ackerbaukulturen",
+      "die schnelle knock-down Wirkung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "79655754",
+        "verpackungsgroesse": "Karton 12 x 1 l Flasche",
+        "paletteneinheit": "60"
+      },
+      {
+        "artikelnummer": "79663102",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=618&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Decis%20forte?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/decis-forte.jpg"
+  },
+  {
+    "name": "Laudis® Aspect® Pack",
+    "description": "Herbizidkombination gegen Unkräuter und Hirsen im Mais",
+    "category": "Herbizid",
+    "wirkstoff": "44 g/l Tembotrione\n                            \n                            \n                                22 g, 333 g/l Terbuthylazin\n                            \n                            \n                                200 g",
+    "formulierung": "Ölige Dispersion",
+    "wirkstoffe": [
+      {
+        "amount": "44 g/l",
+        "name": "Tembotrione",
+        "safener": false
+      },
+      {
+        "amount": "22 g/l",
+        "name": "Isoxadifen-ethyl",
+        "safener": true
+      },
+      {
+        "amount": "333 g/l",
+        "name": "Terbuthylazin",
+        "safener": false
+      },
+      {
+        "amount": "200 g/l",
+        "name": "Flufenacet",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Perfekte Kombination von Blatt- und Bodenwirkung",
+      "Vorhandene und nachlaufende Hirsen werden sicher erfasst",
+      "Sagenhafte Verträglichkeit bleibt erhalten",
+      "Schnelle Stoppwirkung und lang anhaltender Schutz vor Nachläufern",
+      "Die Zulassung von Aspect® endet am 07. Juni 2025.",
+      "Die Abverkaufsfrist endet am 07. Dezember 2025.",
+      "Die Aufbrauchfrist endet am 07. Dezember 2026."
+    ],
+    "gebinde": [],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=635&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Laudis%20Aspect%20Pack?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/laudis-aspect-pack.jpg"
+  },
+  {
+    "name": "Husar® Plus Pack (Husar® Plus + Mero®)",
+    "description": "Herbizid-Zusatzstoff-Kombination zur Bekämpfung von Gemeinem Windhalm, Weidelgras-Arten, Rispengras-Arten und einjährigen zweikeimblättrigen Unkräutern in Wintergetreide (außer Wintergerste und Winterhafer) und Sommergetreide (außer Hafer)",
+    "category": "Herbizid, Zusatzstoff",
+    "wirkstoff": "50 g/l Iodosulfuron-methyl-natrium\n                            \n                            \n                                7, ,5 g/l Mesosulfuron-methyl\n                            \n                            \n                                250 g",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "81 %",
+        "name": "Rapsölmethylester",
+        "safener": false
+      },
+      {
+        "amount": "50 g/l",
+        "name": "Iodosulfuron-methyl-natrium",
+        "safener": false
+      },
+      {
+        "amount": "7,5 g/l",
+        "name": "Mesosulfuron-methyl",
+        "safener": false
+      },
+      {
+        "amount": "250 g/l",
+        "name": "Mefenpyr-diethyl",
+        "safener": true
+      }
+    ],
+    "eigenschaften": [
+      "Stark gegen Windhalm, Rispen, Weidelgräser und Flughafer",
+      "Breite Wirkung gegen die wichtigsten Unkräuter",
+      "Vielseitig einsetzbar - in Winter- und Sommergetreide",
+      "Schnell regenfest"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "80261284",
+        "verpackungsgroesse": "Karton 2 x (1 l + 5 l) Flasche/Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "79999054",
+        "verpackungsgroesse": "Karton 3 l + 3 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=654&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Husar%20Plus%20Pack?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/husar-plus-pack-husar-plus-mero.jpg"
+  },
+  {
+    "name": "Variano® Xpro",
+    "description": "Fungizid zur Bekämpfung von pilzlichen Krankheiten im Getreide",
+    "category": "Fungizid",
+    "wirkstoff": "40 g/l Bixafen\n                            \n                            \n                                50 g, 100 g/l Prothioconazol",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "40 g/l",
+        "name": "Bixafen",
+        "safener": false
+      },
+      {
+        "amount": "50 g/l",
+        "name": "Fluoxastrobin",
+        "safener": false
+      },
+      {
+        "amount": "100 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "80947933",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=658&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Variano%20Xpro?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/variano-xpro.jpg"
+  },
+  {
+    "name": "Atlantis® Flex",
+    "description": "Herbizid zur Nachauflaufanwendung gegen Ungräser und einjährige zweikeimblättrige Unkräuter in Winterweichweizen, -roggen, -triticale, -hartweizen und Dinkel",
+    "category": "Herbizid",
+    "wirkstoff": "45 g/kg Mesosulfuron-methyl\n                            \n                            \n                                67, ,5 g/kg Propoxycarbazone, 90 g/kg Mefenpyr-diethyl",
+    "formulierung": "Wasserdispergierbares Granulat",
+    "wirkstoffe": [
+      {
+        "amount": "45 g/kg",
+        "name": "Mesosulfuron-methyl",
+        "safener": false
+      },
+      {
+        "amount": "67,5 g/kg",
+        "name": "Propoxycarbazone (als Natrium-Salz)",
+        "safener": false
+      },
+      {
+        "amount": "90 g/kg",
+        "name": "Mefenpyr-diethyl",
+        "safener": true
+      }
+    ],
+    "eigenschaften": [
+      "Die stärkste Atlantis-Generation aller Zeiten",
+      "Starke und zuverlässige Wirkung gegen Ackerfuchsschwanz und andere Gräser",
+      "4 % Mehrwirkung auf Ackerfuchsschwanz als sein Vorgänger",
+      "Ideal zur Erst- oder Nachbehandlung im Frühjahr",
+      "Breite Zulassung, auch in Dinkel einsetzbar"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "in Atlantis Flex Pack",
+        "verpackungsgroesse": "1,5 kg Kanister",
+        "paletteneinheit": ""
+      },
+      {
+        "artikelnummer": "in Atlantis Flex Pack",
+        "verpackungsgroesse": "3 kg Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=682&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Atlantis%20Flex?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/atlantis-flex.jpg"
+  },
+  {
+    "name": "Serenade® ASO",
+    "description": "Biologisches Produkt zur Befallsminderung von pilzlichen Krankheiten im Gemüse-, Obst-, Acker-, Wein-, Hopfen- und Zierpflanzenbau",
+    "category": "Fungizid",
+    "wirkstoff": "13,96 g/l Bacillus amyloliquefaciens Stamm QST 713",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "13,96 g/l",
+        "name": "Bacillus amyloliquefaciens Stamm QST 713 (vorm. Bacillus subtilis)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "In Spritzfolgen ideal zur Rückstandsoptimierung geeignet",
+      "Neuer Wirkungsmechanismus mit geringer Resistenzgefahr",
+      "Sehr gute Pflanzenverträglichkeit und somit in empfindlichen Kulturen einsetzbar",
+      "Flüssige Formulierung ist leicht dosierbar"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "91542298",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=687&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Serenade%20ASO?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/serenade-aso.jpg"
+  },
+  {
+    "name": "Ascra® Xpro",
+    "description": "Fungizid zur Bekämpfung von pilzlichen Krankheiten in allen Getreidearten",
+    "category": "Fungizid",
+    "wirkstoff": "130 g/l Prothioconazol\n                            \n                            \n                                65 g, 65 g/l Fluopyram",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "130 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      },
+      {
+        "amount": "65 g/l",
+        "name": "Bixafen",
+        "safener": false
+      },
+      {
+        "amount": "65 g/l",
+        "name": "Fluopyram",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Schnelle Stopp-Wirkung und hohe Kurativleistung erstmals mit Fluopyram im Getreide",
+      "Breite Dauerwirkung durch Kombination von drei leistungsstarken Wirkstoffen",
+      "Integriertes Resistenzmanagement durch unterschiedliche Wirkstoffeigenschaften",
+      "Hohe Stresstoleranz und sehr gute Photosyntheseleistung",
+      "Optimale Benetzung und schnelle Regenfestigkeit dank moderner Xpro-Leafshield-Formulierung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "81780099",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "91215637",
+        "verpackungsgroesse": "Karton 2 x 10 l Kanister",
+        "paletteneinheit": "36"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=688&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Ascra%20Xpro?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/ascra-xpro.jpg"
+  },
+  {
+    "name": "SIVANTO® prime",
+    "description": "Wasserlösliches Konzentrat gegen zahlreiche Schadinsekten im Obst-, Gemüse-, Acker- und Zierpflanzenbau",
+    "category": "Insektizid",
+    "wirkstoff": "200 g/l Flupyradifurone\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                80892756\n                                Karton 12 x 1 l",
+    "formulierung": "Wasserlösliches Konzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "200 g/l",
+        "name": "Flupyradifurone",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "SIVANTO prime erreicht durch seine translaminaren und systemischen Eigenschaften auch versteckt sitzende Schädlinge",
+      "Hervorragende Wirksamkeit durch schnelle Anfangswirkung und lange Wirkungsdauer",
+      "Neonikotinoid-resistente Schädlinge werden durch die neue Butenolid-Chemie gut bekämpft"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "80892756",
+        "verpackungsgroesse": "Karton 12 x 1 l Flasche",
+        "paletteneinheit": "60"
+      },
+      {
+        "artikelnummer": "91463878",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=693&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/SIVANTO%20prime?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/sivanto-prime.jpg"
+  },
+  {
+    "name": "MaisTer® power Aspect® Pack",
+    "description": "Herbizidkombination zur Bekämpfung von Ungräsern und Unkräutern in Mais",
+    "category": "Herbizid",
+    "wirkstoff": "30,0 g/l Foramsulfuron, 9,77 g/l Thiencarbazone, 0,85 g/l Iodosulfuron",
+    "formulierung": "Ölige Dispersion",
+    "wirkstoffe": [
+      {
+        "amount": "30,0 g/l",
+        "name": "Foramsulfuron (als Natrium-Salz 31,5 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "9,77 g/l",
+        "name": "Thiencarbazone (als Methylester 10 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "0,85 g/l",
+        "name": "Iodosulfuron (als Methylester-Na 1 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "15 g/l",
+        "name": "Cyprosulfamide",
+        "safener": true
+      },
+      {
+        "amount": "333 g/l",
+        "name": "Terbuthylazin",
+        "safener": false
+      },
+      {
+        "amount": "200 g/l",
+        "name": "Flufenacet",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "sicher gegen Hirsen, Knöteriche u.v.m.",
+      "erfasst auch viele Problemunkräuter/-gräser",
+      "passt sich dem Problem an",
+      "Die Zulassung von Aspect® endet am 07. Juni 2025.",
+      "Die Abverkaufsfrist endet am 07. Dezember 2025.",
+      "Die Aufbrauchfrist endet am 07. Dezember 2026."
+    ],
+    "gebinde": [],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=704&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/MaisTer%20power%20Aspect%20Pack?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/maister-power-aspect-pack.jpg"
+  },
+  {
+    "name": "Luna® Max",
+    "description": "Fungizid gegen Echten Mehltau an Keltertrauben",
+    "category": "Fungizid",
+    "wirkstoff": "75 g/l Fluopyram\n                            \n                            \n                                200 g",
+    "formulierung": "Suspoemulsion",
+    "wirkstoffe": [
+      {
+        "amount": "75 g/l",
+        "name": "Fluopyram",
+        "safener": false
+      },
+      {
+        "amount": "200 g/l",
+        "name": "Spiroxamine",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Sehr gute Dauerwirkung auch bei hohem Infektionsdruck zur Blüte",
+      "Systemizität schützt witterungsunabhängig auch bei starkem Zuwachs",
+      "Kurative Eigenschaften für hervorragenden Schutz bei latenten Infektionen",
+      "Aktives Resistenzmanagement durch unterschiedliche Wirkmechanismen"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "84987441",
+        "verpackungsgroesse": "Karton 12 x 1 l Flasche",
+        "paletteneinheit": "60"
+      },
+      {
+        "artikelnummer": "84907073",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=706&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Luna%20Max?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/luna-max.jpg"
+  },
+  {
+    "name": "Luna® Care",
+    "description": "Fungizid zur Bekämpfung von Schorf, Echtem Mehltau, Laubkrankheit und Obstbaumkrebs an Apfel und Birne",
+    "category": "Fungizid",
+    "wirkstoff": "621,2 g/kg Fosetyl-Al, 50 g/kg Fluopyram\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße",
+    "formulierung": "Wasserdispergierbares Granulat",
+    "wirkstoffe": [
+      {
+        "amount": "621,2 g/kg",
+        "name": "Fosetyl-Al (als Aluminium-Salz 666 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "50 g/kg",
+        "name": "Fluopyram",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Durchschlagende direkte Wirkung und Stärkung der pflanzeneigenen Abwehrkräfte",
+      "Ausgeprägte Dauerwirkung schafft mehr Sicherheit in der Schorfkontrolle und spart Überfahrten ein",
+      "Ein breites Wirkungsspektrum ermöglicht die Bekämpfung mehrerer Erreger gleichzeitig"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "81701385",
+        "verpackungsgroesse": "6 kg Sack",
+        "paletteneinheit": "141"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=713&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Luna%20Care?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/luna-care.jpg"
+  },
+  {
+    "name": "Prosper® TEC",
+    "description": "Fungizid gegen Echten Mehltau an Weinreben",
+    "category": "Fungizid",
+    "wirkstoff": "300 g/l Spiroxamine\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                86280949\n                                Karton 12 x 1 l Flas",
+    "formulierung": "Kapselsuspension",
+    "wirkstoffe": [
+      {
+        "amount": "300 g/l",
+        "name": "Spiroxamine",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Eigene Wirkstoffgruppe und somit keine Kreuzresistenz zu anderen Wirkstoffen in Reben",
+      "Hemmt frühe und latente Oidium-Infektionen vor der Blüte",
+      "Optimierte Formulierung für noch mehr Leistung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "86280949",
+        "verpackungsgroesse": "Karton 12 x 1 l Flasche",
+        "paletteneinheit": "60"
+      },
+      {
+        "artikelnummer": "84492892",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=730&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Prosper%20TEC?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/prosper-tec.jpg"
+  },
+  {
+    "name": "Atlantis® Flex Pack (Atlantis® Flex + Biopower®)",
+    "description": "Herbizid-Zusatzstoff-Kombination zur Nachauflaufanwendung gegen Ungräser und Einjährige zweikeimblättrige Unkräuter in Winterweichweizen, -roggen, -triticale, -hartweizen und Dinkel",
+    "category": "Herbizid, Zusatzstoff",
+    "wirkstoff": "45 g/kg Mesosulfuron-methyl\n                            \n                            \n                                67, ,5 g/kg Propoxycarbazone",
+    "formulierung": "Wasserlösliches Konzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "27 %",
+        "name": "Fettalkoholethersulfat, Natriumsalz",
+        "safener": false
+      },
+      {
+        "amount": "45 g/kg",
+        "name": "Mesosulfuron-methyl",
+        "safener": false
+      },
+      {
+        "amount": "67,5 g/kg",
+        "name": "Propoxycarbazone (als Natrium-Salz)",
+        "safener": false
+      },
+      {
+        "amount": "90 g/kg",
+        "name": "Mefenpyr-diethyl",
+        "safener": true
+      }
+    ],
+    "eigenschaften": [
+      "Die stärkste Atlantis-Generation aller Zeiten",
+      "Starke und zuverlässige Wirkung gegen Ackerfuchsschwanz und andere Gräser",
+      "4 % Mehrwirkung auf Ackerfuchsschwanz als sein Vorgänger",
+      "Ideal zur Erst- oder Nachbehandlung im Frühjahr",
+      "Breite Zulassung, auch in Dinkel einsetzbar",
+      "Der Zusatz von Biopower verbessert die Wirkstoffaufnahme"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "81689555",
+        "verpackungsgroesse": "Karton 2 x (1,5 kg + 5 l) Kanister",
+        "paletteneinheit": "32"
+      },
+      {
+        "artikelnummer": "81757968",
+        "verpackungsgroesse": "Karton 3 kg + 2 x 5 l Kanister",
+        "paletteneinheit": "48"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=732&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Atlantis%20Flex%20Pack?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/atlantis-flex-pack-atlantis-flex-biopower.jpg"
+  },
+  {
+    "name": "Input® Triple",
+    "description": "Fungizid gegen ein breites Spektrum pilzlicher Krankheitserreger in Getreide",
+    "category": "Fungizid",
+    "wirkstoff": "160 g/l Prothioconazol\n                            \n                            \n                                200 g, 40 g/l Proquinazid",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "160 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      },
+      {
+        "amount": "200 g/l",
+        "name": "Spiroxamine",
+        "safener": false
+      },
+      {
+        "amount": "40 g/l",
+        "name": "Proquinazid",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Breites Wirkungsspektrum: Besonders stark gegen Mehltau, Halmbruch, Septoria",
+      "Starke Dauerwirkung mit 3-fach-Wirkstoffkombination",
+      "Einfach und flexibel einsetzbare Fertigformulierung",
+      "Integriertes Resistenzmanagement"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "85834258",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "91215645",
+        "verpackungsgroesse": "Karton 2 x 10 l Kanister",
+        "paletteneinheit": "36"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=734&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Input%20Triple?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/input-triple.jpg"
+  },
+  {
+    "name": "Roundup®PowerFlex",
+    "description": "Herbizid zur Bekämpfung von ein- und zweikeimblättrigen Unkräutern im Freiland im Ackerbau und auf Grünland, im Forst und Zierpflanzenbau, Wein- und Obstbau sowie auf Wegen und Plätzen (Nichtkulturland)",
+    "category": "Herbizid",
+    "wirkstoff": "480 g/l Glyphosat",
+    "formulierung": "Wasserlösliches Konzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "480 g/l",
+        "name": "Glyphosat (als Kalium-Salz 588 g/l)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Sehr gute Wirkung auch bei ungünstigen Bedingungen",
+      "Breiter Zulassungsumfang",
+      "Regenfestigkeit nach 1 Stunde"
+    ],
+    "gebinde": [],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=748&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/RoundupPowerFlex?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/rounduppowerflex.jpg"
+  },
+  {
+    "name": "Roundup® REKORD",
+    "description": "Nichtselektives Herbizid zur Anwendung im Freiland in Ackerbau- und Gemüsekulturen, auf Grünland, auf Stilllegungsflächen, im Obst- und Weinbau sowie auf Nichtkulturland ohne Holzgewächse und im Zierpflanzenbau",
+    "category": "Herbizid",
+    "wirkstoff": "720 g/kg Glyphosat",
+    "formulierung": "Wasserlösliches Granulat",
+    "wirkstoffe": [
+      {
+        "amount": "720 g/kg",
+        "name": "Glyphosat (als Ammonium-Salz 792 g/kg)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Hoher Wirkstoffgehalt von 720 g/kg",
+      "Wurzeltiefe Wirkung ohne Wiederaustrieb",
+      "Minimaler Verpackungsabfall, einfache Handhabung, geringer Platzbedarf",
+      "Hervorragende Wirkung bei unterschiedlichen Bedingungen"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "12314927",
+        "verpackungsgroesse": "10 kg Sack",
+        "paletteneinheit": "55"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=749&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Roundup%20REKORD?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/roundup-rekord.jpg"
+  },
+  {
+    "name": "FLiPPER®",
+    "description": "Insektizid und Akarizid gegen Blattläuse, Spinnmilben und Weiße Fliegen im Obst- und Gemüsebau",
+    "category": "Insektizid, Akarizid",
+    "wirkstoff": "479,8 g/l Fettsäuren",
+    "formulierung": "Emulsion, Öl in Wasser",
+    "wirkstoffe": [
+      {
+        "amount": "479,8 g/l",
+        "name": "Fettsäuren (C7 - C20) als Kalium Salz",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Neues Insektizid/Akarizid: Sehr gut für Spritzfolgen zur Rückstandsoptimierung geeignet",
+      "Geringe Resistenzgefahr: Ideal für das Resistenzmanagment",
+      "Flüssige Formulierung: Leicht dosierbar",
+      "Anwendung ist nicht rückstandsrelevant",
+      "FIBL-Listung: Für den ökologischen Landbau geeignet"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "87359999",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=757&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/FLiPPER?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/flipper.jpg"
+  },
+  {
+    "name": "Incelo®",
+    "description": "",
+    "category": "Herbizid",
+    "wirkstoff": "45 g/kg Mesosulfuron, 15 g/kg Thiencarbazone, 95,5 g/kg Mefenpyr",
+    "formulierung": "Wasserdispergierbares Granulat",
+    "wirkstoffe": [
+      {
+        "amount": "45 g/kg",
+        "name": "Mesosulfuron (als Methylester-Na 47 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "15 g/kg",
+        "name": "Thiencarbazone (als Methylester-Na 15,8 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "95,5 g/kg",
+        "name": "Mefenpyr (als Diethylester 112,5 g/kg)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "In Incelo Komplett erhältlich",
+      "Kombinierte Blatt- und Bodenwirkung",
+      "Gute Verträglichkeit im Getreide",
+      "Starke Wirkung auf Ungräser und breite Wirkung auf Dikotyle",
+      "Neuer Wirkstoff im Getreide: Thiencarbazone - Verstärkungseffekt auf Mesosulfuron"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "in Incelo Komplett",
+        "verpackungsgroesse": "1,5 kg Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=758&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Incelo?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/incelo.jpg"
+  },
+  {
+    "name": "Betanal® Tandem®",
+    "description": "Herbizid zur Bekämpfung von Unkräutern in Zucker- und Futterrüben",
+    "category": "Herbizid",
+    "wirkstoff": "190 g/l Ethofumesat\n                            \n                            \n                                200 g",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "190 g/l",
+        "name": "Ethofumesat",
+        "safener": false
+      },
+      {
+        "amount": "200 g/l",
+        "name": "Phenmedipham",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Schutz von Anfang an",
+      "Im Pack mit Öl: Durchdringt auch dickere Wachsschichten zuverlässig und schnell",
+      "Gute Basiswirkung bei Problemunkräutern"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "in Betanal Tandem Pack",
+        "verpackungsgroesse": "5 l Kanister",
+        "paletteneinheit": ""
+      },
+      {
+        "artikelnummer": "in Betanal Tandem Pack",
+        "verpackungsgroesse": "Karton 10 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=769&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Betanal%20Tandem?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/betanal-tandem.jpg"
+  },
+  {
+    "name": "Betanal® Tandem® Pack (Betanal® Tandem® + Mero®)",
+    "description": "Herbizid-Zusatzstoff-Kombination zur Bekämpfung von Unkräutern in Zucker- und Futterrüben",
+    "category": "Herbizid, Zusatzstoff",
+    "wirkstoff": "190 g/l Ethofumesat\n                            \n                            \n                                200 g",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "81 %",
+        "name": "Rapsölmethylester",
+        "safener": false
+      },
+      {
+        "amount": "190 g/l",
+        "name": "Ethofumesat",
+        "safener": false
+      },
+      {
+        "amount": "200 g/l",
+        "name": "Phenmedipham",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Schutz von Anfang an",
+      "Im Pack mit Öl: Durchdringt auch dickere Wachsschichten zuverlässig und schnell",
+      "Gute Basiswirkung bei Problemunkräutern"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "87314375",
+        "verpackungsgroesse": "Karton 5 l + 5 l Kanister",
+        "paletteneinheit": "80"
+      },
+      {
+        "artikelnummer": "91241573",
+        "verpackungsgroesse": "Karton 10 l + 10 l Kanister",
+        "paletteneinheit": "36"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=771&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Betanal%20Tandem%20Pack?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/betanal-tandem-pack-betanal-tandem-mero.jpg"
+  },
+  {
+    "name": "Mateno® Duo",
+    "description": "Herbizid zur Bekämpfung von Gemeinem Windhalm, Einjährigem Rispengras und Einjährigen zweikeimblättrigen Unkräutern in Wintergetreide im Vor- und Nachauflauf im Herbst",
+    "category": "Herbizid",
+    "wirkstoff": "500 g/l Aclonifen\n                            \n                            \n                                100 g",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "500 g/l",
+        "name": "Aclonifen",
+        "safener": false
+      },
+      {
+        "amount": "100 g/l",
+        "name": "Diflufenican",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Neue Wirkstoffklasse im Getreide: HRAC S - SDS",
+      "Unverbrauchter, leistungsstarker Wirkmechanismus im Getreide",
+      "Hemmt die Carotinoidsynthese",
+      "Additiveffekt zu Diflufenican und Flufenacet",
+      "Breite Wirkung gegen Unkräuter"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "im Mateno Trio Set",
+        "verpackungsgroesse": "2,45 l Kanister",
+        "paletteneinheit": ""
+      },
+      {
+        "artikelnummer": "im Mateno Trio Set",
+        "verpackungsgroesse": "4,9 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=772&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Mateno%20Duo?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/mateno-duo.jpg"
+  },
+  {
+    "name": "Pacifica® Plus",
+    "description": "",
+    "category": "Herbizid",
+    "wirkstoff": "9,31 g/kg Iodosulfuron, 50 g/kg Amidosulfuron, 29,16 g/kg Mesosulfuron",
+    "formulierung": "Wasserdispergierbares Granulat",
+    "wirkstoffe": [
+      {
+        "amount": "9,31 g/kg",
+        "name": "Iodosulfuron (als Methylester-Na 10 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "50 g/kg",
+        "name": "Amidosulfuron (als Natrium-Salz 53 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "29,16 g/kg",
+        "name": "Mesosulfuron (als Methylester-Na 31,324 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "86,58 g/kg",
+        "name": "Mefenpyr (- Safener (als Diethylester 90 g/kg))",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "in Pacifica Plus Pack",
+        "verpackungsgroesse": "2,5 kg Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=778&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Pacifica%20Plus?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/pacifica-plus.jpg"
+  },
+  {
+    "name": "Pacifica® Plus Pack (Pacifica® Plus + Biopower®)",
+    "description": "Herbizid-Zusatzstoffkombination zur Nachauflaufanwendung im Frühjahr gegen Ungräser und einjährige zweikeimblättrige Unkräuter in Winterweichweizen",
+    "category": "Herbizid, Zusatzstoff",
+    "wirkstoff": "9,31 g/kg Iodosulfuron, 50 g/kg Amidosulfuron",
+    "formulierung": "Wasserlösliches Konzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "27 %",
+        "name": "Fettalkoholethersulfat, Natriumsalz",
+        "safener": false
+      },
+      {
+        "amount": "9,31 g/kg",
+        "name": "Iodosulfuron (als Methylester-Na 10 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "50 g/kg",
+        "name": "Amidosulfuron (als Natrium-Salz 53 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "29,16 g/kg",
+        "name": "Mesosulfuron (als Methylester-Na 31,324 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "86,58 g/kg",
+        "name": "Mefenpyr (- Safener (als Diethylester 90 g/kg))",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "84067032",
+        "verpackungsgroesse": "Karton 2 x (2,5 kg + 5 l) Kanister",
+        "paletteneinheit": "32"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=779&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Pacifica%20Plus%20Pack?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/pacifica-plus-pack-pacifica-plus-biopower.jpg"
+  },
+  {
+    "name": "Mateno® Forte Set (Mateno® Duo + Cadou® SC)",
+    "description": "Herbizidkombination für den Herbst zur Bekämpfung von Ungräsern wie  z.B. Ackerfuchsschwanz und Windhalm sowie Unkräutern im Vor- und Nachauflauf des Wintergetreides",
+    "category": "Herbizid",
+    "wirkstoff": "508,8 g/l Flufenacet\n                            \n                            \n                                500 g, 100 g/l Diflufenican",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "508,8 g/l",
+        "name": "Flufenacet",
+        "safener": false
+      },
+      {
+        "amount": "500 g/l",
+        "name": "Aclonifen",
+        "safener": false
+      },
+      {
+        "amount": "100 g/l",
+        "name": "Diflufenican",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Neue Wirkstoffklasse im Getreide",
+      "Wirkungsstarker Standard in der Gräserkontrolle",
+      "Breite Wirkung gegen einjährige zweikeimblättrige Unkräuter",
+      "Maximales Resistenzmanagement durch ALS- und ACCase-freien Wirkstoff",
+      "Einsatz im Vor- und Nachauflauf möglich Zugelassen in den wichtigsten Wintergetreidekulturen",
+      "Die Zulassung von Cadou® SC endet am 05. Juni 2025.",
+      "Die Abverkaufsfrist endet am 05. Dezember 2025 (6 Monate nach Zulassungsende).",
+      "Die Aufbrauchfrist endet am 05. Dezember 2026 (18 Monate nach Zulassungsende)."
+    ],
+    "gebinde": [],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=780&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Mateno%20Forte%20Set?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/mateno-forte-set-mateno-duo-cadou-sc.jpg"
+  },
+  {
+    "name": "Delaro® Forte",
+    "description": "Fungizid zur Bekämpfung von pilzlichen Krankheiten im Getreide",
+    "category": "Fungizid",
+    "wirkstoff": "93,3 g/l Prothioconazol\n                            \n                            \n                                107 g, 80 g/l Trifloxystrobin",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "93,3 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      },
+      {
+        "amount": "107 g/l",
+        "name": "Spiroxamine",
+        "safener": false
+      },
+      {
+        "amount": "80 g/l",
+        "name": "Trifloxystrobin",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Neue Wirkstoffkombination mit starker Leistung",
+      "Dank Leafshield Technologie hervorragend formuliert",
+      "Positive pflanzenphysiologische Effekte",
+      "Sicheres Resistenzmanagement"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "87329097",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "91215602",
+        "verpackungsgroesse": "Karton 2 x 10 l Kanister",
+        "paletteneinheit": "36"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=782&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Delaro%20Forte?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/delaro-forte.jpg"
+  },
+  {
+    "name": "Inixio® Plus Pack (Inixio® Plus + Biopower®)",
+    "description": "Herbizid-Zusatzstoffkombination zur Nachauflaufanwendung im Frühjahr gegen Ungräser und einjährige zweikeimblättrige Unkräuter in Winterweichweizen",
+    "category": "Herbizid, Zusatzstoff",
+    "wirkstoff": "9,31 g/kg Iodosulfuron, 50 g/kg Amidosulfuron",
+    "formulierung": "Wasserlösliches Konzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "27 %",
+        "name": "Fettalkoholethersulfat, Natriumsalz",
+        "safener": false
+      },
+      {
+        "amount": "9,31 g/kg",
+        "name": "Iodosulfuron (als Methylester-Na 10 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "50 g/kg",
+        "name": "Amidosulfuron (als Natrium-Salz 53 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "29,16 g/kg",
+        "name": "Mesosulfuron (als Methylester-Na 31,324 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "86,58 g/kg",
+        "name": "Mefenpyr (- Safener (als Diethylester 90 g/kg))",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "88651197",
+        "verpackungsgroesse": "Karton 2 x (2,5 kg + 5 l) Kanister",
+        "paletteneinheit": "32"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=793&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Inixio%20Plus%20Pack?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/inixio-plus-pack-inixio-plus-biopower.jpg"
+  },
+  {
+    "name": "Silvron®",
+    "description": "Fungizid zur Bekämpfung von pilzlichen Krankheiten in allen Getreidearten",
+    "category": "Fungizid",
+    "wirkstoff": "100 g/l Bixafen\n                            \n                            \n                                100 g",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "100 g/l",
+        "name": "Bixafen",
+        "safener": false
+      },
+      {
+        "amount": "100 g/l",
+        "name": "Fluopyram",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Wirkungsstarkes Kombinationsprodukt gegen Septoria und Rostarten mit langer Dauerwirkung",
+      "Zwei sich ergänzende SDHI-Wirkstoffe enthalten",
+      "Hervorragender Packpartner für die Krankheitsbekämpfung in Getreide",
+      "Optimale Benetzung und schnelle Regenfestigkeit dank moderner Leafshield-Formulierung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "in Jessico Duo Pack",
+        "verpackungsgroesse": "3 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=796&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Silvron?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/silvron.jpg"
+  },
+  {
+    "name": "Incelo® Komplett (Incelo® + Biopower® und Husar® OD)",
+    "description": "Herbizid-Zusatzstoff-Kombination zur Bekämpfung von Ungräsern und Unkräutern in Winterweizen und Wintertriticale",
+    "category": "Herbizid, Zusatzstoff",
+    "wirkstoff": "100 g/l Iodosulfuron-methyl-natrium\n                            \n                            \n                                300 g",
+    "formulierung": "Ölige Dispersion",
+    "wirkstoffe": [
+      {
+        "amount": "100 g/l",
+        "name": "Iodosulfuron-methyl-natrium",
+        "safener": false
+      },
+      {
+        "amount": "300 g/l",
+        "name": "Mefenpyr-diethyl",
+        "safener": true
+      },
+      {
+        "amount": "27 %",
+        "name": "Fettalkoholethersulfat, Natriumsalz",
+        "safener": false
+      },
+      {
+        "amount": "45 g/kg",
+        "name": "Mesosulfuron (als Methylester-Na 47 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "15 g/kg",
+        "name": "Thiencarbazone (als Methylester-Na 15,8 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "95,5 g/kg",
+        "name": "Mefenpyr (als Diethylester 112,5 g/kg)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Wirksam: Effektiv gegen Schadgräser wie Ackerfuchsschwanz & Weidelgras",
+      "Vielseitig: Breit einsetzbar gegen viele wichtige Unkräuter, inkl. Klettenlabkraut",
+      "Innovativ: Kraftvolle Leistung durch die neue Herbizid-Lösung mit Thiencarbazone",
+      "Gute Verträglichkeit im Getreide"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "92149247",
+        "verpackungsgroesse": "Karton 1,5 kg + 5 l + 500 ml Kanister/Flaschen",
+        "paletteneinheit": "60"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=799&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Incelo%20Komplett?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/incelo-komplett-incelo-biopower-und-husar-od.jpg"
+  },
+  {
+    "name": "Merlin® Flexx",
+    "description": "Herbizid zur Bekämpfung von Hühnerhirse und Einjährigen zweikeimblättrigen Unkräutern in Mais im Vor- und frühen Nachauflauf und in Mohn im Vorlauf",
+    "category": "Herbizid",
+    "wirkstoff": "240 g/l Isoxaflutole\n                            \n                            \n                                240 g",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "240 g/l",
+        "name": "Isoxaflutole",
+        "safener": false
+      },
+      {
+        "amount": "240 g/l",
+        "name": "Cyprosulfamide",
+        "safener": true
+      }
+    ],
+    "eigenschaften": [
+      "Herbizid für den Vorauflauf und frühen Nachauflauf",
+      "Unkraut- und Hirsenwirkung insbesondere über den Boden",
+      "Terbuthylazin-frei"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "in MaisTer power Flexx",
+        "verpackungsgroesse": "1 l Flasche",
+        "paletteneinheit": ""
+      },
+      {
+        "artikelnummer": "in MaisTer power Flexx",
+        "verpackungsgroesse": "2 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=805&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Merlin%20Flexx?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/merlin-flexx.jpg"
+  },
+  {
+    "name": "Delion®",
+    "description": "Delion ist ein Nachauflaufherbizid zur Bekämpfung von Einjährigen zweikeimblättrigen Unkräutern im Mais.",
+    "category": "Herbizid",
+    "wirkstoff": "480 g/l Dicamba, 577,9 g/l Dimethylamin-Salz",
+    "formulierung": "Wasserlösliches Konzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "480 g/l",
+        "name": "Dicamba (577,9 g/l Dimethylamin-Salz)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Zumischpartner zu Laudis OD, als \"Anspitzer\" gegen schwer bekämpfbare Unkräuter",
+      "Ideal zur Nachauflaufbehandlung gegen schwer bekämpfbare Unkräuter wie Disteln oder Winden",
+      "Auch spät noch Einsetzbar (bis BBCH 16)",
+      "Schnelle Wirkung bei wüchsiger Witterung und ausreichend Blattmasse"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "im Laudis Plus",
+        "verpackungsgroesse": "1 l Flasche",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=807&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Delion?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/delion.jpg"
+  },
+  {
+    "name": "Laudis® Plus (Laudis® + Delion®)",
+    "description": "Herbizidkombination gegen Unkräuter und Hirsen im Mais",
+    "category": "Herbizid",
+    "wirkstoff": "44 g/l Tembotrione\n                            \n                            \n                                22 g, 480 g/l Dicamba, 577,9 g/l Dimethylamin-Salz",
+    "formulierung": "Ölige Dispersion",
+    "wirkstoffe": [
+      {
+        "amount": "44 g/l",
+        "name": "Tembotrione",
+        "safener": false
+      },
+      {
+        "amount": "22 g/l",
+        "name": "Isoxadifen-ethyl",
+        "safener": true
+      },
+      {
+        "amount": "480 g/l",
+        "name": "Dicamba (577,9 g/l Dimethylamin-Salz)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Unglaublich stark gegen fast alle Hirsearten!",
+      "Sehr breites Wirkungsspektrum, auch gegen Spezialunkräuter wie Winden, Kletten oder Disteln.",
+      "In allen Sorten verträglich!",
+      "Sehr schnell regenfest!"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "90428904",
+        "verpackungsgroesse": "Karton 3 x (5 l + 1 l) Kanister, Flasche",
+        "paletteneinheit": "32"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=809&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Laudis%20Plus?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/laudis-plus-laudis-delion.jpg"
+  },
+  {
+    "name": "Inixio® Plus",
+    "description": "",
+    "category": "Herbizid",
+    "wirkstoff": "9,31 g/kg Iodosulfuron, 50 g/kg Amidosulfuron, 29,16 g/kg Mesosulfuron",
+    "formulierung": "Wasserdispergierbares Granulat",
+    "wirkstoffe": [
+      {
+        "amount": "9,31 g/kg",
+        "name": "Iodosulfuron (als Methylester-Na 10 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "50 g/kg",
+        "name": "Amidosulfuron (als Natrium-Salz 53 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "29,16 g/kg",
+        "name": "Mesosulfuron (als Methylester-Na 31,324 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "86,58 g/kg",
+        "name": "Mefenpyr (- Safener (als Diethylester 90 g/kg))",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "in Inixio Plus Pack",
+        "verpackungsgroesse": "2,5 kg Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=826&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Inixio%20Plus?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/inixio-plus.jpg"
+  },
+  {
+    "name": "Roundup® Future",
+    "description": "Herbizid zur Bekämpfung von ein- und zweikeimblättrigen Unkräutern im Freiland im Ackerbau, Grünland, Forst, Zierpflanzen-, Wein-, Obst- und Gemüsebau sowie auf Wegen und Plätzen (Nichtkulturland)",
+    "category": "Herbizid",
+    "wirkstoff": "500 g/l Glyphosat",
+    "formulierung": "Wasserlösliches Konzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "500 g/l",
+        "name": "Glyphosat (als Kalium-Salz 613 g/l)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Sehr gute Wirkung auch bei ungünstigen Bedingungen",
+      "Breiter Zulassungsumfang",
+      "Regenfestigkeit nach 1 Stunde",
+      "Kurze Wartezeit bis zur Bodenbearbeitung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "30241108",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "30241110",
+        "verpackungsgroesse": "15 l Kanister",
+        "paletteneinheit": "48"
+      },
+      {
+        "artikelnummer": "30241085",
+        "verpackungsgroesse": "640 l Container",
+        "paletteneinheit": "1"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=839&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Roundup%20Future?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/roundup-future.jpg"
+  },
+  {
+    "name": "AMBITION® AKTIVATOR",
+    "description": "",
+    "category": "Dünger, Pflanzenhilfsmittel",
+    "wirkstoff": "",
+    "formulierung": "",
+    "wirkstoffe": [],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "90952247",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=840&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/AMBITION%20AKTIVATOR?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/ambition-aktivator.jpg"
+  },
+  {
+    "name": "Merlin® Duo",
+    "description": "Herbizid zur Bekämpfung von Hühnerhirse und Einjährigen zweikeimblättrigen Unkräutern in Mais im Vor- und frühen Nachauflauf",
+    "category": "Herbizid",
+    "wirkstoff": "375 g/l Terbuthylazin\n                            \n                            \n                                50 g, 50 g/l Cyprosulfamide",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "375 g/l",
+        "name": "Terbuthylazin",
+        "safener": false
+      },
+      {
+        "amount": "50 g/l",
+        "name": "Isoxaflutole",
+        "safener": false
+      },
+      {
+        "amount": "50 g/l",
+        "name": "Cyprosulfamide",
+        "safener": true
+      }
+    ],
+    "eigenschaften": [
+      "Herbizid für den Vorauflauf und frühen Nachauflauf",
+      "Gute Unkraut- und Hirsenwirkung insbesondere über den Boden",
+      "Doppelte Dauerwirkung durch Isoxaflutole und Terbuthylazin",
+      "Bekämpft sowohl aufgelaufene als auch nachkeimende Schadpflanzen"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "in Merlin Duo Pack",
+        "verpackungsgroesse": "3 l Kanister",
+        "paletteneinheit": ""
+      },
+      {
+        "artikelnummer": "in Merlin Duo Pack",
+        "verpackungsgroesse": "5 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=841&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Merlin%20Duo?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/merlin-duo.jpg"
+  },
+  {
+    "name": "Cayunis®",
+    "description": "",
+    "category": "Fungizid",
+    "wirkstoff": "75 g/l Bixafen\n                            \n                            \n                                150 g, 100 g/l Trifloxystrobin",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "75 g/l",
+        "name": "Bixafen",
+        "safener": false
+      },
+      {
+        "amount": "150 g/l",
+        "name": "Spiroxamine",
+        "safener": false
+      },
+      {
+        "amount": "100 g/l",
+        "name": "Trifloxystrobin",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Wirkungsstarkes Kombinationsprodukt gegen Septoria, Rostarten und Mehltau mit langer Dauerwirkung",
+      "Breite Dauerwirkung durch drei sich ergänzende Wirkstoffe mit unterschiedlichen Wirkungsweisen",
+      "Hervorragender Packpartner für die Krankheitsbekämpfung in Getreide",
+      "Optimale Benetzung und schnelle Regenfestigkeit dank moderner Leafshield-Formulierung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "in Cayunis Packs",
+        "verpackungsgroesse": "3 l Kanister",
+        "paletteneinheit": ""
+      },
+      {
+        "artikelnummer": "in Cayunis Xpro Set",
+        "verpackungsgroesse": "Karton 5 l Kanister",
+        "paletteneinheit": "40"
+      },
+      {
+        "artikelnummer": "in Cayunis Packs",
+        "verpackungsgroesse": "10 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=843&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Cayunis?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/cayunis.jpg"
+  },
+  {
+    "name": "Durano® MAX",
+    "description": "Nicht-selektives Herbizid zur Bekämpfung von ein- und mehrjährigen Ungräsern (insbesondere der Quecke) und Unkräutern",
+    "category": "Herbizid",
+    "wirkstoff": "360 g/l Glyphosat, 485,39 g/l Isopropylamin-Salz",
+    "formulierung": "Wasserlösliches Konzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "360 g/l",
+        "name": "Glyphosat (485,39 g/l Isopropylamin-Salz)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Regenfest nach 3 Stunden",
+      "Tallowaminfrei"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "91228712",
+        "verpackungsgroesse": "Kanister 20 l",
+        "paletteneinheit": "32"
+      },
+      {
+        "artikelnummer": "91228720",
+        "verpackungsgroesse": "Container 640 l",
+        "paletteneinheit": "1"
+      },
+      {
+        "artikelnummer": "91228828",
+        "verpackungsgroesse": "Container 1000 l",
+        "paletteneinheit": "1"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=844&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Durano%20MAX?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/durano-max.jpg"
+  },
+  {
+    "name": "Jessico® One",
+    "description": "Systemisches Fungizid zur Bekämpfung von Blatt- und Abreifekrankheiten in Weizen, Roggen und Triticale.",
+    "category": "Fungizid",
+    "wirkstoff": "50 g/l Fenpicoxamid\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                in Jessico Duo Pack  und Cayunis Duo",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "50 g/l",
+        "name": "Fenpicoxamid",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Leistungsstarkes Produkt gegen Septoria mit langer Dauerwirkung",
+      "Neuartige Wirkungsweise (Quinone-Inside-Inhibitor)",
+      "Hervorragender Packpartner für die Krankheitsbekämpfung in Getreide"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "in Jessico Duo Pack und Cayunis Duo",
+        "verpackungsgroesse": "5 l Kanister",
+        "paletteneinheit": ""
+      },
+      {
+        "artikelnummer": "in Prediview One",
+        "verpackungsgroesse": "4,5 l Kanister",
+        "paletteneinheit": ""
+      },
+      {
+        "artikelnummer": "in Prediview One",
+        "verpackungsgroesse": "10 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=845&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Jessico%20One?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/jessico-one.jpg"
+  },
+  {
+    "name": "Cello® Forte",
+    "description": "Fungizid zur Bekämpfung von pilzlichen Krankheiten im Getreide",
+    "category": "Fungizid",
+    "wirkstoff": "93,3 g/l Prothioconazol\n                            \n                            \n                                107 g, 80 g/l Trifloxystrobin",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "93,3 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      },
+      {
+        "amount": "107 g/l",
+        "name": "Spiroxamine",
+        "safener": false
+      },
+      {
+        "amount": "80 g/l",
+        "name": "Trifloxystrobin",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Neue Wirkstoffkombination mit starker Leistung",
+      "Dank Leafshield Technologie hervorragend formuliert",
+      "Positive pflanzenphysiologische Effekte",
+      "Sicheres Resistenzmanagement"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "91266193",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=846&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Cello%20Forte?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/cello-forte.jpg"
+  },
+  {
+    "name": "Kalenkoa® Star",
+    "description": "",
+    "category": "Herbizid",
+    "wirkstoff": "41,87 g/kg Mesosulfuron, 21,7 g/kg Thiencarbazone, 8,39 g/kg Iodosulfuron",
+    "formulierung": "Wasserdispergierbares Granulat",
+    "wirkstoffe": [
+      {
+        "amount": "41,87 g/kg",
+        "name": "Mesosulfuron (als Methylester-Na 47 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "21,7 g/kg",
+        "name": "Thiencarbazone (als Methylester-Na 23,8 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "8,39 g/kg",
+        "name": "Iodosulfuron (als Methylester-Na 9 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "114,7 g/l",
+        "name": "Mefenpyr ((als Diethylester 135 g/kg)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "in Kalenkoa Star Pack",
+        "verpackungsgroesse": "1,5 kg Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=850&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Kalenkoa%20Star?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/kalenkoa-star.jpg"
+  },
+  {
+    "name": "Itineris® Kombi",
+    "description": "",
+    "category": "Herbizid",
+    "wirkstoff": "345 g/l Tembotrione\n                            \n                            \n                                65, ,55 g/l Thiencarbazone, 108,1 g/l Isoxadifen",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "345 g/l",
+        "name": "Tembotrione",
+        "safener": false
+      },
+      {
+        "amount": "65,55 g/l",
+        "name": "Thiencarbazone (als Methylester 68 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "108,1 g/l",
+        "name": "Isoxadifen (als Ethylester 134 g/l)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Breite Hirse- und Unkrautwirkung",
+      "Terbuthylazin-frei",
+      "Zwei Wirkmechanismen zum proaktiven Resistenzmanagement"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "in Itineris Kombi Pack",
+        "verpackungsgroesse": "1,45 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=856&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Itineris%20Kombi?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/itineris-kombi.jpg"
+  },
+  {
+    "name": "Auxo® Plus",
+    "description": "",
+    "category": "Herbizid",
+    "wirkstoff": "345 g/l Tembotrione\n                            \n                            \n                                65, ,55 g/l Thiencarbazone, 108,1 g/l Isoxadifen",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "345 g/l",
+        "name": "Tembotrione",
+        "safener": false
+      },
+      {
+        "amount": "65,55 g/l",
+        "name": "Thiencarbazone (als Methylester 68 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "108,1 g/l",
+        "name": "Isoxadifen (als Ethylester 134 g/l)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Breite Hirse- und Unkrautwirkung",
+      "Terbuthylazin-frei",
+      "Zwei Wirkmechanismen zum proaktiven Resistenzmanagement"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "in Auxo Plus Pack",
+        "verpackungsgroesse": "1,45 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=857&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Auxo%20Plus?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/auxo-plus.jpg"
+  },
+  {
+    "name": "Itineris® Kombi Pack (Itineris® Kombi + Mero®)",
+    "description": "Herbizidkombination zur Bekämpfung von Einjährigen einkeimblättrigen und Einjährigen zweikeimblättrigen Unkräutern in Mais",
+    "category": "Herbizid, Zusatzstoff",
+    "wirkstoff": "345 g/l Tembotrione\n                            \n                            \n                                65, ,55 g/l Thiencarbazone",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "81 %",
+        "name": "Rapsölmethylester",
+        "safener": false
+      },
+      {
+        "amount": "345 g/l",
+        "name": "Tembotrione",
+        "safener": false
+      },
+      {
+        "amount": "65,55 g/l",
+        "name": "Thiencarbazone (als Methylester 68 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "108,1 g/l",
+        "name": "Isoxadifen (als Ethylester 134 g/l)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Breite Hirse- und Unkrautwirkung",
+      "Terbuthylazin-frei",
+      "Zwei Wirkmechanismen zum proaktiven Resistenzmanagement"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "91287638",
+        "verpackungsgroesse": "Karton 1,45 l + 2 x 5 l Kanister",
+        "paletteneinheit": "48"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=860&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Itineris%20Kombi%20Pack?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/itineris-kombi-pack-itineris-kombi-mero.jpg"
+  },
+  {
+    "name": "Auxo® Plus Pack (Auxo® Plus + Mero®)",
+    "description": "Herbizidkombination zur Bekämpfung von Einjährigen einkeimblättrigen und Einjährigen zweikeimblättrigen Unkräutern in Mais",
+    "category": "Herbizid, Zusatzstoff",
+    "wirkstoff": "345 g/l Tembotrione\n                            \n                            \n                                65, ,55 g/l Thiencarbazone",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "81 %",
+        "name": "Rapsölmethylester",
+        "safener": false
+      },
+      {
+        "amount": "345 g/l",
+        "name": "Tembotrione",
+        "safener": false
+      },
+      {
+        "amount": "65,55 g/l",
+        "name": "Thiencarbazone (als Methylester 68 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "108,1 g/l",
+        "name": "Isoxadifen (als Ethylester 134 g/l)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Breite Hirse- und Unkrautwirkung",
+      "Terbuthylazin-frei",
+      "Zwei Wirkmechanismen zum proaktiven Resistenzmanagement"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "91339743",
+        "verpackungsgroesse": "Karton 1,45 l + 2 x 5 l Kanister",
+        "paletteneinheit": "48"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=861&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Auxo%20Plus%20Pack?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/auxo-plus-pack-auxo-plus-mero.jpg"
+  },
+  {
+    "name": "Jessico® Duo Pack (Jessico® One + Silvron®)",
+    "description": "",
+    "category": "Fungizid",
+    "wirkstoff": "100 g/l Bixafen\n                            \n                            \n                                100 g, 50 g/l Fenpicoxamid",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "100 g/l",
+        "name": "Bixafen",
+        "safener": false
+      },
+      {
+        "amount": "100 g/l",
+        "name": "Fluopyram",
+        "safener": false
+      },
+      {
+        "amount": "50 g/l",
+        "name": "Fenpicoxamid",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Leistungsstarke Packlösung gegen Septoria und Rostarten",
+      "Breite Dauerwirkung durch Kombination von drei leistungsstarken Wirkstoffen mit unterschiedlichen Wirkungsweisen",
+      "Hervorragende Packlösung für die wirkungsvolle Krankheitsbekämpfung in Getreide",
+      "Optimale Benetzung und schnelle Regenfestigkeit dank moderner Leafshield-Formulierung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "91320430",
+        "verpackungsgroesse": "Karton 2 x 5 l + 2 x 3 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=862&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Jessico%20Duo%20Pack?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/jessico-duo-pack-jessico-one-silvron.jpg"
+  },
+  {
+    "name": "Kalenkoa® Star Pack (Kalenkoa® Star + Biopower®)",
+    "description": "Herbizid-Zusatstoff-Kombination",
+    "category": "Herbizid, Zusatzstoff",
+    "wirkstoff": "41,87 g/kg Mesosulfuron, 21,7 g/kg Thiencarbazone",
+    "formulierung": "Wasserlösliches Konzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "27 %",
+        "name": "Fettalkoholethersulfat, Natriumsalz",
+        "safener": false
+      },
+      {
+        "amount": "41,87 g/kg",
+        "name": "Mesosulfuron (als Methylester-Na 47 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "21,7 g/kg",
+        "name": "Thiencarbazone (als Methylester-Na 23,8 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "8,39 g/kg",
+        "name": "Iodosulfuron (als Methylester-Na 9 g/kg)",
+        "safener": false
+      },
+      {
+        "amount": "114,7 g/l",
+        "name": "Mefenpyr ((als Diethylester 135 g/kg)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "91320414",
+        "verpackungsgroesse": "Karton 2 x 1,5 kg + 2 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=863&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Kalenkoa%20Star%20Pack?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/kalenkoa-star-pack-kalenkoa-star-biopower.jpg"
+  },
+  {
+    "name": "Fluva® 100",
+    "description": "Herbizid für die Nachauflaufanwendung in Mais gegen Einjährige zweikeimblättrige Unkräuter und Hühnerhirse",
+    "category": "Herbizid",
+    "wirkstoff": "100 g/l Mesotrione\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                in Merlin Duo Pack\n                                 1 l Flasch",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "100 g/l",
+        "name": "Mesotrione",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Herbizid für den Nachauflauf",
+      "Sehr gute Blattwirkung durch Wirkstoff Mesotrione",
+      "Zuverlässige Wirkung auch bei langsam auflaufenden Unkrautarten",
+      "Guter Tankmischungspartner"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "in Merlin Duo Pack",
+        "verpackungsgroesse": "1 l Flasche",
+        "paletteneinheit": ""
+      },
+      {
+        "artikelnummer": "in Merlin Duo Pack",
+        "verpackungsgroesse": "5 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=866&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Fluva%20100?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/fluva-100.jpg"
+  },
+  {
+    "name": "MaisTer® power Flexx (MaisTer® power + Merlin® Flexx)",
+    "description": "Herbizidkombination zur Bekämpfung von Ungräsern und Unkräutern in Mais",
+    "category": "Herbizid",
+    "wirkstoff": "30,0 g/l Foramsulfuron, 9,77 g/l Thiencarbazone, 0,85 g/l Iodosulfuron",
+    "formulierung": "Ölige Dispersion",
+    "wirkstoffe": [
+      {
+        "amount": "30,0 g/l",
+        "name": "Foramsulfuron (als Natrium-Salz 31,5 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "9,77 g/l",
+        "name": "Thiencarbazone (als Methylester 10 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "0,85 g/l",
+        "name": "Iodosulfuron (als Methylester-Na 1 g/l)",
+        "safener": false
+      },
+      {
+        "amount": "15 g/l",
+        "name": "Cyprosulfamide",
+        "safener": true
+      },
+      {
+        "amount": "240 g/l",
+        "name": "Isoxaflutole",
+        "safener": false
+      },
+      {
+        "amount": "240 g/l",
+        "name": "Cyprosulfamide",
+        "safener": true
+      }
+    ],
+    "eigenschaften": [
+      "Hervorragende Gräser- und Unkrautkontrolle",
+      "Dauerwirkung durch TBA-freien Bodenpartner",
+      "2 Wirkstoffgruppen zum Resistenzmanagement"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "91463193",
+        "verpackungsgroesse": "Karton 5 l + 1 l Kanister",
+        "paletteneinheit": "115"
+      },
+      {
+        "artikelnummer": "91423434",
+        "verpackungsgroesse": "Karton 10 l + 2 l Kanister",
+        "paletteneinheit": "36"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=867&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/MaisTer%20power%20Flexx?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/maister-power-flexx-maister-power-merlin-flexx.jpg"
+  },
+  {
+    "name": "Merlin® Duo Pack (Merlin® Duo + Fluva® 100)",
+    "description": "Herbizidkombination zur Bekämpfung von Hirsen und Unkräutern in Mais",
+    "category": "Herbizid",
+    "wirkstoff": "375 g/l Terbuthylazin\n                            \n                            \n                                50 g, 50 g/l Cyprosulfamide, 100 g/l Mesotri",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "375 g/l",
+        "name": "Terbuthylazin",
+        "safener": false
+      },
+      {
+        "amount": "50 g/l",
+        "name": "Isoxaflutole",
+        "safener": false
+      },
+      {
+        "amount": "50 g/l",
+        "name": "Cyprosulfamide",
+        "safener": true
+      },
+      {
+        "amount": "100 g/l",
+        "name": "Mesotrione",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Breite Unkraut- und Hirsenwirkung",
+      "Gute Residualwirkung durch Isoxaflutole und Terbuthylazin",
+      "Wirkung auf ALS-resistente Biotypen"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "91560458",
+        "verpackungsgroesse": "Karton 2 x 3 l + 2 x 1 l Kanister/Flasche",
+        "paletteneinheit": "65"
+      },
+      {
+        "artikelnummer": "91558720",
+        "verpackungsgroesse": "Karton 3 x 5 l + 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=868&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Merlin%20Duo%20Pack?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/merlin-duo-pack-merlin-duo-fluva-100.jpg"
+  },
+  {
+    "name": "COFENO®",
+    "description": "Herbizid für die Anwendung in Getreide, Kartoffeln, Futtererbsen, Ackerbohnen, Sonnenblumen, Mohn, Gräser, Speiselinsen und Gemüsekulturen",
+    "category": "Herbizid",
+    "wirkstoff": "800 g/l Prosulfocarb\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinheit\n                        \n                            \n                                in Mateno Trio Set\n                                 5",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "800 g/l",
+        "name": "Prosulfocarb",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "in Mateno Trio Set",
+        "verpackungsgroesse": "5,25 l Kanister",
+        "paletteneinheit": ""
+      },
+      {
+        "artikelnummer": "in Mateno Trio Set",
+        "verpackungsgroesse": "10,5 l Kanister",
+        "paletteneinheit": ""
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=872&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/COFENO?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/cofeno.jpg"
+  },
+  {
+    "name": "Prediview® One (Cayunis® + Jessico® One)",
+    "description": "Fungizid gegen pilzliche Krankheiten in Weizen, Roggen und Triticale",
+    "category": "Fungizid",
+    "wirkstoff": "75 g/l Bixafen\n                            \n                            \n                                150 g, 100 g/l Trifloxystrobin\n                            \n                            \n                                50 g",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "75 g/l",
+        "name": "Bixafen",
+        "safener": false
+      },
+      {
+        "amount": "150 g/l",
+        "name": "Spiroxamine",
+        "safener": false
+      },
+      {
+        "amount": "100 g/l",
+        "name": "Trifloxystrobin",
+        "safener": false
+      },
+      {
+        "amount": "50 g/l",
+        "name": "Fenpicoxamid",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Leistungsstarke Packlösung gegen Septoria, Rostarten und Mehltau",
+      "Breite Dauerwirkung durch Kombination von vier leistungsstarken Wirkstoffen mit unterschiedlichen Wirkungsweisen",
+      "Hervorragende Packlösung für die wirkungsvolle Krankheitsbekämpfung in Weizen, Roggen und Triricale",
+      "Optimale Benetzung und schnelle Regenfestigkeit dank moderner Leafshield (Cayunis) und i-Q4 (Jessico One) Formulierung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "92310846",
+        "verpackungsgroesse": "Karton 3 l + 4,5 l Kanister",
+        "paletteneinheit": "80"
+      },
+      {
+        "artikelnummer": "92277938",
+        "verpackungsgroesse": "Karton 10 l + 5 l + 10 l Kanister",
+        "paletteneinheit": "24"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=873&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Prediview%20One?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/prediview-one-cayunis-jessico-one.jpg"
+  },
+  {
+    "name": "Mateno® Trio Set (Mateno® Duo + COFENO®)",
+    "description": "Herbizidkombination zur Bekämpfung von Weidelgras, Gemeinem Windhalm, Ackerfuchsschwanz und einjährigen zweikeimblättrigen Unkräutern in Wintergetreide im Vor- und Nachauflauf im Herbst",
+    "category": "Herbizid",
+    "wirkstoff": "500 g/l Aclonifen\n                            \n                            \n                                100 g, 800 g/l Prosulfocarb",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "500 g/l",
+        "name": "Aclonifen",
+        "safener": false
+      },
+      {
+        "amount": "100 g/l",
+        "name": "Diflufenican",
+        "safener": false
+      },
+      {
+        "amount": "800 g/l",
+        "name": "Prosulfocarb",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "91831990",
+        "verpackungsgroesse": "Karton 2,45 l + 2 x 5,25 l Kanister",
+        "paletteneinheit": "48"
+      },
+      {
+        "artikelnummer": "91913164",
+        "verpackungsgroesse": "Karton 4,9 l + 2 x 10,5 l Kanister",
+        "paletteneinheit": "24"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=874&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Mateno%20Trio%20Set?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/mateno-trio-set-mateno-duo-cofeno.jpg"
+  },
+  {
+    "name": "Bariton®",
+    "description": "Saatgutbehandlungsmittel zum Schutz von Weizen, Roggen und Triticale vor pilzlichen Krankheiten",
+    "category": "Beizmittel",
+    "wirkstoff": "37,5 g/l Fluoxastrobin\n                            \n                            \n                                37, ,5 g/l Prothioconazol\n                            \n                    \n                \n            \n\n            \n                \n                    \n                        \n                            Artikelnummer\n                            Verpackungsgröße\n                            Paletteneinhei",
+    "formulierung": "Suspensionskonzentrat zur Saatgutbehandlung",
+    "wirkstoffe": [
+      {
+        "amount": "37,5 g/l",
+        "name": "Fluoxastrobin",
+        "safener": false
+      },
+      {
+        "amount": "37,5 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Wirtschaftlicher Basisschutz in Weizen, Roggen und Triticale"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "05954206",
+        "verpackungsgroesse": "200 l Fass",
+        "paletteneinheit": "4"
+      },
+      {
+        "artikelnummer": "85356895",
+        "verpackungsgroesse": "1000 l Container",
+        "paletteneinheit": "1"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=875&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Bariton?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/bariton.jpg"
+  },
+  {
+    "name": "VYNYTY® CARPOCAPSA PRESS",
+    "description": "Pheromon zur Kontrolle des Apfelwicklers",
+    "category": "Insektizid",
+    "wirkstoff": "",
+    "formulierung": "Verdampfende Wirkstoffe enthaltendes Produk",
+    "wirkstoffe": [
+      {
+        "amount": "100 g/kg",
+        "name": "(E,E)-8,10-Dodecadien-1-ol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Kein Einsammeln und entsorgen von Dispensern",
+      "Biologisches Polymergel ist natürlich abbaubar",
+      "Permanente Diffusion für optimale Wirksamkeit",
+      "Einfache Lagerung bei Raumtemperatur (0 und 30 °C)",
+      "Anwendung von \"VYNYTY Carpocapsa Press\" mit Applikator \"VYNYTY Pherojet\" mit Nachlaufstopp-Funktion für eine exakte und zeitsparende Ausbringung (separat bestellen)"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "66044889",
+        "verpackungsgroesse": "4 x 312 g",
+        "paletteneinheit": "516"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=876&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/VYNYTY%20CARPOCAPSA%20PRESS?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/vynyty-carpocapsa-press.jpg"
+  },
+  {
+    "name": "Redigo® Pro",
+    "description": "",
+    "category": "Beizmittel",
+    "wirkstoff": "150 g/l Prothioconazol\n                            \n                            \n                                20 g",
+    "formulierung": "Suspensionskonzentrat zur Saatgutbehandlung",
+    "wirkstoffe": [
+      {
+        "amount": "150 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      },
+      {
+        "amount": "20 g/l",
+        "name": "Tebuconazol",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Zugelassen in allen relevanten Getreidearten",
+      "Hervorragende Verarbeitbarkeit gute Fließfähigkeit und niedrigste Staubwerte (in Kombination mit Inteco®)",
+      "Guter Wachstumsstart: Das Produkt unterstützt ein gesundes Wachstum im Frühjahr, wodurch die Voraussetzungen für eine erfolgreiche Ernte geschaffen werden"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "92381999",
+        "verpackungsgroesse": "Karton 15 l Kanister",
+        "paletteneinheit": "48"
+      },
+      {
+        "artikelnummer": "92075316",
+        "verpackungsgroesse": "Fass 200 l",
+        "paletteneinheit": "4"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=878&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Redigo%20Pro?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/redigo-pro.jpg"
+  },
+  {
+    "name": "Cayunis® Xpro Set (Cayunis® + Siltra® Xpro)",
+    "description": "Fungizid gegen pilzliche Krankheiten in Weizen, Gerste, Roggen und Triticale",
+    "category": "Fungizid",
+    "wirkstoff": "60 g/l Bixafen\n                            \n                            \n                                200 g, 75 g/l Bixafen\n                            \n                            \n                                150 g",
+    "formulierung": "Emulsionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "60 g/l",
+        "name": "Bixafen",
+        "safener": false
+      },
+      {
+        "amount": "200 g/l",
+        "name": "Prothioconazol",
+        "safener": false
+      },
+      {
+        "amount": "75 g/l",
+        "name": "Bixafen",
+        "safener": false
+      },
+      {
+        "amount": "150 g/l",
+        "name": "Spiroxamine",
+        "safener": false
+      },
+      {
+        "amount": "100 g/l",
+        "name": "Trifloxystrobin",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [
+      "Leistungsstarke Packlösung gegen Septoria, Rostarten und Ramularia",
+      "Breite Dauerwirkung durch Kombination von vier leistungsstarken Wirkstoffen mit unterschiedlichen Wirkungsweisen",
+      "Hervorragende Packlösung für die wirkungsvolle Krankheitsbekämpfung in Getreide",
+      "Optimale Benetzung und schnelle Regenfestigkeit dank moderner Leafshield-Formulierung"
+    ],
+    "gebinde": [
+      {
+        "artikelnummer": "92170734",
+        "verpackungsgroesse": "Karton 2 x 5 l + 2 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=879&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Cayunis%20Xpro%20Set?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/cayunis-xpro-set-cayunis-siltra-xpro.jpg"
+  },
+  {
+    "name": "Serenade® Soil Activ",
+    "description": "",
+    "category": "Fungizid",
+    "wirkstoff": "974,5 g/l Bacillus amyloliquefaciens Stamm QST 713",
+    "formulierung": "Suspensionskonzentrat",
+    "wirkstoffe": [
+      {
+        "amount": "974,5 g/l",
+        "name": "Bacillus amyloliquefaciens Stamm QST 713 (vorm. Bacillus subtilis)",
+        "safener": false
+      }
+    ],
+    "eigenschaften": [],
+    "gebinde": [
+      {
+        "artikelnummer": "89151686",
+        "verpackungsgroesse": "Karton 4 x 5 l Kanister",
+        "paletteneinheit": "40"
+      }
+    ],
+    "image_url": "https://pim.bayercropscience.de/productimage.image?image=880&folder=1000x500&type=productimage&index=1",
+    "source_url": "https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Serenade%20Soil%20Activ?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3",
+    "local_image": "public/images/products/serenade-soil-activ.jpg"
+  }
+]

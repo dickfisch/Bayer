@@ -355,16 +355,16 @@
     {
       "label": "BeratungStart.jsx",
       "file_type": "code",
-      "source_file": "src/pages/BeratungStart.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/BeratungStart.jsx",
       "source_location": "L1",
-      "id": "src_pages_beratungstart_jsx",
+      "id": "users_raphaelschneider_meine_beratung_src_pages_beratungstart_jsx",
       "community": 3,
       "norm_label": "beratungstart.jsx"
     },
     {
       "label": "BeratungStart()",
       "file_type": "code",
-      "source_file": "src/pages/BeratungStart.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/BeratungStart.jsx",
       "source_location": "L18",
       "id": "beratungstart_beratungstart",
       "community": 3,
@@ -4679,12 +4679,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/BeratungStart.jsx",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/BeratungStart.jsx",
       "source_location": "L18",
       "weight": 1.0,
-      "_src": "src_pages_beratungstart_jsx",
+      "_src": "users_raphaelschneider_meine_beratung_src_pages_beratungstart_jsx",
       "_tgt": "beratungstart_beratungstart",
-      "source": "src_pages_beratungstart_jsx",
+      "source": "users_raphaelschneider_meine_beratung_src_pages_beratungstart_jsx",
       "target": "beratungstart_beratungstart",
       "confidence_score": 1.0
     },

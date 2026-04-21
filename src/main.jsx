@@ -8,6 +8,8 @@ import Home from './pages/Home'
 import BeratungStart from './pages/BeratungStart'
 import Beratung from './pages/Beratung'
 import AgrarMagazinDemo from './pages/AgrarMagazinDemo'
+import Produkte from './pages/Produkte'
+import Produkte3D from './pages/Produkte3D'
 import { TransitionProvider } from './context/TransitionContext'
 
 
@@ -46,6 +48,8 @@ function AppRoutes() {
         <Route path="/beratung-start" element={<BeratungStart />} />
         <Route path="/beratung" element={<Beratung />} />
         <Route path="/agrar-magazin-demo" element={<AgrarMagazinDemo />} />
+        <Route path="/produkte" element={<Produkte />} />
+        <Route path="/produkte-3d" element={<Produkte3D />} />
       </Routes>
     </>
   )

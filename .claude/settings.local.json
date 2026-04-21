@@ -22,7 +22,28 @@
       "Bash(git -C /Users/raphaelschneider/meine-beratung diff --stat)",
       "Bash(git -C /Users/raphaelschneider/meine-beratung log -3 --stat)",
       "Bash(graphify update *)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "WebFetch(domain:agrar.bayer.de)",
+      "Bash(pip install *)",
+      "Bash(python -m playwright install chromium)",
+      "Bash(pip3 install *)",
+      "Bash(.venv/bin/pip install *)",
+      "Bash(.venv/bin/python -m playwright install chromium)",
+      "Bash(timeout 90 .venv/bin/python scrape_bayer.py)",
+      "Bash(.venv/bin/python scrape_bayer.py)",
+      "Bash(.venv/bin/python *)",
+      "Bash(tee scrape_bayer.log)",
+      "Bash(grep -v '\\\\.\\\\\\(jpg\\\\|png\\\\|webp\\\\\\)$')",
+      "Bash(xargs rm *)",
+      "Bash(npm install *)",
+      "Bash(mkdir -p /tmp/video-frames)",
+      "Bash(ffmpeg -i \"/Users/raphaelschneider/Downloads/ScreenRecording_04-21-2026 16-57-28_1.mov\" -vf \"fps=2\" /tmp/video-frames/frame_%03d.jpg)",
+      "Bash(sips --help)",
+      "Bash(/usr/bin/osascript -e 'tell application \"QuickTime Player\" *)",
+      "Bash(node *)",
+      "Bash(curl -sL \"https://agrar.bayer.de/Pflanzenschutz/Pflanzenschutzmittel/Inteco?r=MzlkMjJkNzQtMTA2YS00ZTg4LWJiOGQtNzY2MTYxNDY1NzU3\" -A \"Mozilla/5.0\")",
+      "Bash(ps -p 59415 -o pid,etime,stat)",
+      "Bash(ps *)"
     ]
   }
 }

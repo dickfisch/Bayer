@@ -1,7 +1,7 @@
 # Graph Report - /Users/raphaelschneider/meine-beratung  (2026-04-21)
 
 ## Corpus Check
-- 19 files · ~660,968 words
+- 19 files · ~660,967 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -87,7 +87,7 @@
 - `Main JSX Script Module` --conceptually_related_to--> `React + Vite Project Setup`  [INFERRED]
   index.html → README.md
 - `usePageTransition()` --calls--> `BeratungStart()`  [INFERRED]
-  /Users/raphaelschneider/meine-beratung/src/context/TransitionContext.jsx → src/pages/BeratungStart.jsx
+  /Users/raphaelschneider/meine-beratung/src/context/TransitionContext.jsx → /Users/raphaelschneider/meine-beratung/src/pages/BeratungStart.jsx
 - `usePageTransition()` --calls--> `Home()`  [INFERRED]
   /Users/raphaelschneider/meine-beratung/src/context/TransitionContext.jsx → /Users/raphaelschneider/meine-beratung/src/pages/Home.jsx
 - `usePageTransition()` --calls--> `TransitionLink()`  [INFERRED]

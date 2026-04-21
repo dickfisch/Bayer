@@ -1,0 +1,920 @@
+.produkte3d-page {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.produkte3d-back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 50;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #222;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 8px 24px -12px rgba(0, 0, 0, 0.18);
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.produkte3d-back:hover {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.18);
+  transform: translateX(-2px);
+}
+
+.produkte3d-back:active {
+  transform: translateX(-2px) scale(0.96);
+}
+
+.produkte3d-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.produkte3d-title {
+  position: relative;
+  z-index: 2;
+  margin-top: 40px;
+  margin-bottom: 8px;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.produkte3d-title-main {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 800;
+  font-size: clamp(26px, 3.6vw, 46px);
+  letter-spacing: 0.02em;
+  background: linear-gradient(90deg, #5a4861 0%, #b8274a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.produkte3d-scene {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1600px;
+  perspective-origin: 50% 50%;
+  padding: 20px 4vw;
+  overflow: hidden;
+}
+
+.produkte3d-plane {
+  --cols: 12;
+  --rows: 8;
+  width: min(1400px, 92vw);
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  gap: clamp(3px, 0.5vw, 10px);
+  transform-style: preserve-3d;
+  transition:
+    filter 260ms ease,
+    opacity 260ms ease,
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: filter, opacity;
+}
+
+.produkte3d-plane.is-transitioning {
+  filter: blur(14px);
+  opacity: 0.35;
+  transform: scale(0.94);
+}
+
+.produkte3d-cell {
+  --cell-transform: none;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.04),
+    0 4px 12px -6px rgba(0, 0, 0, 0.14);
+  padding: 8%;
+  box-sizing: border-box;
+  transform: var(--cell-transform);
+  opacity: 0;
+  animation: produkte3d-pop 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transition:
+    transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+  will-change: transform;
+  backface-visibility: hidden;
+  contain: layout paint;
+}
+
+.produkte3d-cell:hover {
+  transform: var(--cell-transform) translateZ(180px) scale(1.35);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.08),
+    0 24px 48px -14px rgba(0, 0, 0, 0.28);
+  z-index: 9999 !important;
+}
+
+.produkte3d-plane.no-hover-expand .produkte3d-cell:hover {
+  transform: var(--cell-transform);
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.04),
+    0 4px 12px -6px rgba(0, 0, 0, 0.14);
+  z-index: auto !important;
+}
+
+.produkte3d-cell img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@keyframes produkte3d-pop {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.produkte3d-cell.is-exiting {
+  animation: produkte3d-fly-out 760ms cubic-bezier(0.32, 0, 0.4, 0.3) forwards;
+  pointer-events: none;
+  transition:
+    transform 760ms cubic-bezier(0.32, 0, 0.4, 0.3),
+    box-shadow 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.produkte3d-cell.is-exiting:hover {
+  transform: var(--cell-transform);
+}
+
+@keyframes produkte3d-fly-out {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.produkte3d-filters {
+  position: relative;
+  z-index: 5;
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+  margin: 16px 0 28px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 999px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.04),
+    0 10px 30px -10px rgba(0, 0, 0, 0.18);
+}
+
+/* ── CTA-Bar variant (oberer Abschnitt) ── */
+.produkte3d-ctabar-wrap {
+  position: relative;
+  z-index: 5;
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 24px;
+  margin: 16px 0 28px;
+}
+
+.produkte3d-ctabar {
+  width: min(880px, 88vw);
+}
+
+/* Erscheint nur wenn < 5 Produkte gefiltert sind */
+.produkte3d-compare-bar {
+  width: min(440px, 44vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  background: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(255, 255, 255, 0.52) 40%,
+    rgba(255, 255, 255, 0.38) 70%,
+    rgba(210, 225, 255, 0.45) 100%
+  );
+  backdrop-filter: blur(28px) saturate(200%) brightness(1.12);
+  -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.12);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.10),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+  animation: produkte3d-compare-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.produkte3d-compare-label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #222;
+}
+
+@keyframes produkte3d-compare-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.produkte3d-compare-bar:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.produkte3d-compare-bar:active {
+  transform: translateY(0);
+}
+
+/* ── Produkt-Vergleich-Layer ── */
+.produkte3d-vergleich-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(15, 15, 20, 0.35);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: produkte3d-overlay-fade 280ms ease forwards;
+}
+
+.produkte3d-vergleich-panel {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.35);
+  padding: 56px 32px 32px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: produkte3d-vergleich-in 380ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes produkte3d-vergleich-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.produkte3d-vergleich-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 160ms ease, border-color 160ms ease;
+  z-index: 2;
+}
+
+.produkte3d-vergleich-close:hover {
+  background: #f4f4f4;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.produkte3d-vergleich-grid {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 160px repeat(5, minmax(0, 1fr));
+  grid-template-rows: auto auto auto auto auto 1fr;
+  column-gap: 20px;
+  row-gap: 14px;
+  align-items: start;
+}
+
+.produkte3d-vergleich-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.produkte3d-vergleich-labelcol-head {
+  /* leere Ecke über der Label-Spalte */
+}
+
+.produkte3d-vergleich-image {
+  width: 100%;
+  height: 26vh;
+  max-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  border-radius: 14px;
+  padding: 14px;
+  box-sizing: border-box;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 12px 30px -14px rgba(0, 0, 0, 0.18);
+}
+
+.produkte3d-vergleich-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.produkte3d-vergleich-name {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #111;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.produkte3d-vergleich-label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  padding-top: 4px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.produkte3d-vergleich-cell {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #222;
+  padding-top: 4px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  min-width: 0;
+}
+
+.produkte3d-vergleich-cell--desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.produkte3d-vergleich-chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.produkte3d-vergleich-chips li {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  background: #f2f2f2;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 3px 10px;
+  border-radius: 14px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+.produkte3d-vergleich-wirkstoffe {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.produkte3d-vergleich-wirkstoffe li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.produkte3d-vergleich-wirkstoffe .amount {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: #111;
+}
+
+.produkte3d-vergleich-wirkstoffe .name {
+  color: #333;
+}
+
+.produkte3d-vergleich-wirkstoffe .safener {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5a4a00;
+  background: #fff1b8;
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+
+/* Keine Style-Änderung bei Hover/Focus/Auswahl auf den Dropdowns und dem Alle-Button */
+.produkte3d-ctabar .beratung-nav-kultur-select,
+.produkte3d-ctabar .beratung-nav-kultur-select:hover,
+.produkte3d-ctabar .beratung-nav-kultur-select:focus,
+.produkte3d-ctabar .beratung-nav-kultur-select:focus-visible,
+.produkte3d-ctabar .beratung-nav-kultur-select:active,
+.produkte3d-ctabar .produkte3d-ctabar-all,
+.produkte3d-ctabar .produkte3d-ctabar-all:hover,
+.produkte3d-ctabar .produkte3d-ctabar-all:focus,
+.produkte3d-ctabar .produkte3d-ctabar-all:focus-visible,
+.produkte3d-ctabar .produkte3d-ctabar-all:active {
+  border-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  outline: none;
+  box-shadow: none;
+}
+
+/* "Alle"-Button innerhalb der Glass-Bar — optisch wie die Selects */
+.cta-sticky-inner .produkte3d-ctabar-all {
+  /* stretch to same height as dropdowns */
+  height: 100%;
+  align-self: stretch;
+  /* half the width of a dropdown */
+  flex: 0 0 50%;
+  max-width: 135px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 0 18px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.cta-sticky-inner .produkte3d-ctabar-all:hover {
+  border-color: #888;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.cta-sticky-inner .produkte3d-ctabar-all:active {
+  background: rgba(245, 245, 245, 0.95);
+}
+
+.produkte3d-pill {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #333;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease;
+  white-space: nowrap;
+}
+
+.produkte3d-pill:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.produkte3d-pill.is-active {
+  background: #111;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .produkte3d-title-main {
+    font-size: 24px;
+  }
+  .produkte3d-pill {
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+}
+
+/* ── Produkt-Detail-Panel ── */
+.produkte3d-detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(15, 15, 20, 0.28);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  animation: produkte3d-overlay-fade 280ms ease forwards;
+}
+
+@keyframes produkte3d-overlay-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.produkte3d-detail-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -24px 0 60px -20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  padding: 32px 36px 28px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: produkte3d-panel-in 480ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes produkte3d-panel-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.produkte3d-detail-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.produkte3d-detail-close:hover {
+  background: #f4f4f4;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Großes Hero-Bild oben */
+.produkte3d-detail-image {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 42vh;
+  max-height: 440px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  border-radius: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 16px 36px -16px rgba(0, 0, 0, 0.2);
+}
+
+.produkte3d-detail-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.produkte3d-detail-titlebar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 2px;
+}
+
+.produkte3d-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+}
+
+.produkte3d-detail-category {
+  color: #666;
+}
+
+.produkte3d-detail-formulierung {
+  color: #333;
+  font-weight: 500;
+}
+
+.produkte3d-detail-info {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.produkte3d-detail-name {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 800;
+  font-size: clamp(22px, 2.2vw, 30px);
+  color: #111;
+  margin: 0;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+.produkte3d-detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.produkte3d-detail-label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.produkte3d-detail-value {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  color: #222;
+}
+
+.produkte3d-detail-description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #333;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.produkte3d-detail-link {
+  align-self: flex-start;
+  margin-top: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.produkte3d-detail-link:hover {
+  color: #555;
+}
+
+/* Eigenschaften — Chips */
+.produkte3d-detail-chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.produkte3d-detail-chip {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  background: #f2f2f2;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Wirkstoffe — strukturierte Liste */
+.produkte3d-detail-wirkstoffe {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.produkte3d-detail-wirkstoff {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  color: #222;
+}
+
+.produkte3d-detail-wirkstoff-amount {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: #111;
+  min-width: 72px;
+  font-size: 13px;
+}
+
+.produkte3d-detail-wirkstoff-name {
+  color: #333;
+}
+
+.produkte3d-detail-wirkstoff-badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5a4a00;
+  background: #fff1b8;
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+
+/* Gebinde-Tabelle */
+.produkte3d-detail-gebinde {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+.produkte3d-detail-gebinde thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #888;
+  padding: 4px 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.produkte3d-detail-gebinde tbody td {
+  padding: 5px 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: #222;
+}
+
+.produkte3d-detail-gebinde tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* PDF-Liste (statisch) — horizontal Chips */
+.produkte3d-detail-pdflist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.produkte3d-detail-pdfitem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 999px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  color: #333;
+  max-width: 100%;
+}
+
+.produkte3d-detail-pdflabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 180px;
+}
+
+.produkte3d-detail-pdficon {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background: #c33;
+  padding: 2px 5px;
+  border-radius: 3px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 900px) {
+  .produkte3d-detail-panel {
+    width: 92vw;
+    padding: 48px 28px 60px;
+  }
+  .produkte3d-detail-wirkstoff {
+    flex-wrap: wrap;
+  }
+  .produkte3d-detail-gebinde {
+    font-size: 12px;
+  }
+}

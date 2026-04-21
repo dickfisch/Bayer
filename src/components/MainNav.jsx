@@ -234,7 +234,7 @@ function MainNav() {
                     <option value="hopfen">Hopfen</option>
                   </select>
                   <hr className="mega-divider" style={{ marginTop: '32px' }} />
-                  <div className="mega-col-title"><a href="#" style={{ fontWeight: '700', color: '#1a1a1a', textDecoration: 'none' }}>Produkte A-Z</a></div>
+                  <div className="mega-col-title"><TransitionLink to="/produkte-3d" style={{ fontWeight: '700', color: '#1a1a1a', textDecoration: 'none' }}>Produkte A-Z</TransitionLink></div>
                 </div>
                 <div className="mega-col">
                   <div className="mega-col-title">Pflanzenschutzmittel</div>
@@ -444,7 +444,7 @@ function MainNav() {
                   <ChevronRight />
                 </button>
               </li>
-              <li><a className="mobile-drawer-item mobile-drawer-item--plain" href="#">Produkte A-Z</a></li>
+              <li><TransitionLink className="mobile-drawer-item mobile-drawer-item--plain" to="/produkte-3d" onClick={closeMobileMenu}>Produkte A-Z</TransitionLink></li>
               <li>
                 <button className="mobile-drawer-item" onClick={() => setActivePanel('pflanzenschutzmittel')}>
                   Pflanzenschutzmittel
