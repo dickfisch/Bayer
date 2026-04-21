@@ -1460,30 +1460,27 @@ textInput.addEventListener("keydown", (e) => {
 
 
 // ---------- Greeting ----------
-function greet() {
-  const greetText =
-    "Servus. Schön dass du da bist. Womit kann ich dir heute weiterhelfen?";
-  addMessage("ai", greetText);
-  speak(greetText);
-}
+const GREET_TEXT = "Servus. Schön dass du da bist. Womit kann ich dir heute weiterhelfen?";
 
 // ---------- Boot ----------
 initRecognition();
-// Warm up voices
-if ("speechSynthesis" in window) {
-  window.speechSynthesis.getVoices();
-}
+if ("speechSynthesis" in window) window.speechSynthesis.getVoices();
 initVoiceIndicator();
 initParticles();
 
-setTimeout(greet, 400);
+// Orb startet: Hinweis zeigen, auf Klick warten
+setTimeout(() => {
+  pendingSpeech = GREET_TEXT;
+  setOrbTapHint(true);
+}, 400);
 
-// Orb-Klick: gepufferte Begrüßung abspielen
+// Orb-Klick: Begrüßung anzeigen + sprechen
 document.getElementById("orb").addEventListener("click", () => {
   if (pendingSpeech) {
     const t = pendingSpeech;
     pendingSpeech = null;
     setOrbTapHint(false);
+    addMessage("ai", t);
     speak(t);
   }
 });
