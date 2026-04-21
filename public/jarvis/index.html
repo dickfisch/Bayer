@@ -623,7 +623,7 @@
 <script>
 // ---------- Config ----------
 const MODEL = "claude-sonnet-4-5";
-const API_URL = "https://api.anthropic.com/v1/messages";
+const API_URL = "/api/chat";
 
 const SYSTEM_PROMPT = `Du bist ein KI-Agrarberater für Bayer CropScience DACH. Du sprichst mit Landwirten über Pflanzenschutz, Saatgut, Resistenzmanagement und Anwendungsempfehlungen.
 
@@ -871,10 +871,7 @@ async function callClaude(userText) {
   const response = await fetchWithRetry(API_URL, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-      "anthropic-dangerous-direct-browser-access": "true"
+      "Content-Type": "application/json"
     },
     body: JSON.stringify(body)
   });

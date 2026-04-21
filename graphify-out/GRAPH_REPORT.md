@@ -1,11 +1,11 @@
 # Graph Report - /Users/raphaelschneider/meine-beratung  (2026-04-21)
 
 ## Corpus Check
-- 16 files · ~660,470 words
+- 17 files · ~660,542 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 292 nodes · 307 edges · 55 communities detected
+- 294 nodes · 308 edges · 56 communities detected
 - Extraction: 74% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 32 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
@@ -65,6 +65,7 @@
 - [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 54|Community 54]]
+- [[_COMMUNITY_Community 55|Community 55]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Husar Plus` - 17 edges
@@ -293,11 +294,11 @@ Nodes (0):
 
 ### Community 49 - "Community 49"
 Cohesion: 1.0
-Nodes (2): Bayer Corporate Logo (Bayer Cross), Bayer Brand Identity
+Nodes (0): 
 
 ### Community 50 - "Community 50"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Bayer Corporate Logo (Bayer Cross), Bayer Brand Identity
 
 ### Community 51 - "Community 51"
 Cohesion: 1.0
@@ -305,13 +306,17 @@ Nodes (0):
 
 ### Community 52 - "Community 52"
 Cohesion: 1.0
-Nodes (1): Person
+Nodes (0): 
 
 ### Community 53 - "Community 53"
 Cohesion: 1.0
-Nodes (1): Wirksamkeitskontrolle
+Nodes (1): Person
 
 ### Community 54 - "Community 54"
+Cohesion: 1.0
+Nodes (1): Wirksamkeitskontrolle
+
+### Community 55 - "Community 55"
 Cohesion: 1.0
 Nodes (1): Isometric Stacked Layers (Hero Image)
 
@@ -322,27 +327,29 @@ Nodes (1): Isometric Stacked Layers (Hero Image)
 ## Knowledge Gaps
 - **92 isolated node(s):** `Root DOM Element (#root)`, `Favicon (SVG)`, `Vite React Plugin (@vitejs/plugin-react)`, `Vite React SWC Plugin (@vitejs/plugin-react-swc)`, `Rationale: React Compiler Disabled by Default` (+87 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 44`** (2 nodes): `Button()`, `Button.jsx`
+- **Thin community `Community 44`** (2 nodes): `JarvisWidget()`, `JarvisWidget.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 45`** (2 nodes): `Card()`, `Card.jsx`
+- **Thin community `Community 45`** (2 nodes): `Button()`, `Button.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 46`** (2 nodes): `Label()`, `Label.jsx`
+- **Thin community `Community 46`** (2 nodes): `Card()`, `Card.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 47`** (2 nodes): `TileCard.jsx`, `TileCard()`
+- **Thin community `Community 47`** (2 nodes): `Label()`, `Label.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 48`** (2 nodes): `PageHeader()`, `PageHeader.jsx`
+- **Thin community `Community 48`** (2 nodes): `TileCard.jsx`, `TileCard()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 49`** (2 nodes): `Bayer Corporate Logo (Bayer Cross)`, `Bayer Brand Identity`
+- **Thin community `Community 49`** (2 nodes): `PageHeader()`, `PageHeader.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 50`** (1 nodes): `vite.config.js`
+- **Thin community `Community 50`** (2 nodes): `Bayer Corporate Logo (Bayer Cross)`, `Bayer Brand Identity`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 51`** (1 nodes): `eslint.config.js`
+- **Thin community `Community 51`** (1 nodes): `vite.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 52`** (1 nodes): `Person`
+- **Thin community `Community 52`** (1 nodes): `eslint.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 53`** (1 nodes): `Wirksamkeitskontrolle`
+- **Thin community `Community 53`** (1 nodes): `Person`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 54`** (1 nodes): `Isometric Stacked Layers (Hero Image)`
+- **Thin community `Community 54`** (1 nodes): `Wirksamkeitskontrolle`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 55`** (1 nodes): `Isometric Stacked Layers (Hero Image)`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions

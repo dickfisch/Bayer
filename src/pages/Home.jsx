@@ -9,6 +9,7 @@ import Card from '../components/ui/Card'
 import Label from '../components/ui/Label'
 import PageHeader from '../components/ui/PageHeader'
 import TileCard from '../components/ui/TileCard'
+import JarvisWidget from '../components/JarvisWidget'
 
 const THEMEN_CARDS = [
   { title: 'Winterweizen',        icon: '/icons_website_dummy_video.svg',   sub: 'Mehr erfahren', image: '/wetter_back_2.jpg',  text: 'Flufencet-Verbot: Letzte Chance für Cadou SC und neue Lösungen für Landwirte.' },
@@ -814,6 +815,8 @@ function Home() {
   return (
     <>
       <MainNav />
+
+      <JarvisWidget />
 
       {/* Sticky Beratungs-Bar */}
       <AnimatePresence>

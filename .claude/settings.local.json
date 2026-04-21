@@ -15,7 +15,14 @@
       "Bash(sed -n '5499,5708p' src/index.css)",
       "Bash(npm run *)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/)",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(git -C /Users/raphaelschneider/meine-beratung log --all --oneline -20 -- public/code_3.svg src/index.css src/pages/Home.jsx)",
+      "Bash(git -C /Users/raphaelschneider/meine-beratung log --oneline -p -- public/code_3.svg)",
+      "Bash(git -C /Users/raphaelschneider/meine-beratung status)",
+      "Bash(git -C /Users/raphaelschneider/meine-beratung diff --stat)",
+      "Bash(git -C /Users/raphaelschneider/meine-beratung log -3 --stat)",
+      "Bash(graphify update *)",
+      "Bash(git *)"
     ]
   }
 }
