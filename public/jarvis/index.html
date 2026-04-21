@@ -548,7 +548,6 @@
     <span class="dot"></span><span id="statusText">Bereit</span>
     <span class="voice-sep">·</span>
     <select id="voiceSelect" class="voice-select" title="Stimme auswählen"></select>
-    <span class="key-reset" id="resetKeyBtn" title="API Key ändern">· Key ändern</span>
   </div>
 </header>
 
@@ -608,15 +607,6 @@
   </button>
 </div>
 
-<div class="modal" id="apiModal">
-  <div class="modal-box">
-    <h2>Stimme aktivieren</h2>
-    <p>ElevenLabs API Key für menschliche Stimme (optional). Ohne Key wird die Browser-Stimme verwendet.</p>
-    <input type="password" id="elevenKeyInput" placeholder="sk_..." />
-    <button id="saveKeyBtn">Speichern</button>
-    <div class="modal-hint">ElevenLabs: elevenlabs.io (optional)</div>
-  </div>
-</div>
 
 <script>
 // ---------- Config ----------
@@ -661,7 +651,6 @@ Schlecht: "Gegen Septoria tritici im Winterweizen empfehle ich folgende Fungizid
 Gut: "Gegen Septoria hast du bei Bayer vor allem Input Classic und Ascra Xpro – solide Azol-SDHI-Mischungen. Was brauchst du denn – eher ne frühe Absicherung oder den Abschluss ins Fahnenblatt? Dann kann ich dir das genauer sagen."`;
 
 // ---------- State ----------
-let elevenKey = localStorage.getItem("elevenlabs_api_key") || "";
 // Adam – tiefe, natürliche männliche Stimme (Multilingual v2 spricht flüssig Deutsch)
 let ELEVEN_VOICE_ID = localStorage.getItem("elevenlabs_voice_id") || "pNInz6obpgDQGcFmaJgB"; // Adam
 const ELEVEN_MODEL = "eleven_multilingual_v2";
@@ -714,8 +703,6 @@ const micBtn = document.getElementById("micBtn");
 const sendBtn = document.getElementById("sendBtn");
 const textInput = document.getElementById("textInput");
 const statusText = document.getElementById("statusText");
-const apiModal = document.getElementById("apiModal");
-const saveKeyBtn = document.getElementById("saveKeyBtn");
 
 // ---------- Orb state ----------
 function setOrbState(state, label) {
@@ -993,7 +980,7 @@ async function speak(text) {
   setOrbState("speaking");
 
   // Priorität 1: ElevenLabs (menschlich)
-  if (elevenKey) {
+  {
     try {
       await speakElevenLabs(cleaned);
       updateVoiceIndicator("eleven", "Adam (ElevenLabs)");
@@ -1036,12 +1023,11 @@ function buildVoiceDropdown() {
   // ElevenLabs-Gruppen (nur aktiv, wenn Key vorhanden)
   const mkGroup = (label, voices) => {
     const g = document.createElement("optgroup");
-    g.label = label + (elevenKey ? "" : " – ElevenLabs-Key fehlt");
+    g.label = label;
     voices.forEach(v => {
       const o = document.createElement("option");
       o.value = v.id;
       o.textContent = `${v.name} – ${v.desc}`;
-      if (!elevenKey) o.disabled = true;
       g.appendChild(o);
     });
     sel.appendChild(g);
@@ -1050,7 +1036,7 @@ function buildVoiceDropdown() {
   mkGroup("Weibliche Stimmen (ElevenLabs)", ELEVEN_VOICES.female);
 
   // Aktuelle Auswahl setzen
-  const useBrowser = !elevenKey || localStorage.getItem("voice_mode") === "browser";
+  const useBrowser = localStorage.getItem("voice_mode") === "browser";
   sel.value = useBrowser ? "__browser__" : ELEVEN_VOICE_ID;
   updateVoiceIndicator(useBrowser ? "browser" : "eleven");
 }
@@ -1068,7 +1054,7 @@ function handleVoiceChange() {
     updateVoiceIndicator("eleven");
     // Kurze Sprach-Vorschau, damit der User die neue Stimme hört
     const voice = [...ELEVEN_VOICES.male, ...ELEVEN_VOICES.female].find(v => v.id === val);
-    if (voice && elevenKey) {
+    if (voice) {
       speak(`Hallo, ich bin ${voice.name}. So klinge ich.`);
     }
   }
@@ -1118,15 +1104,13 @@ function speakBrowser(text) {
 }
 
 async function speakElevenLabs(text) {
-  const url = `https://api.elevenlabs.io/v1/text-to-speech/${ELEVEN_VOICE_ID}?output_format=mp3_44100_128`;
-  const res = await fetch(url, {
+  const res = await fetch("/api/tts", {
     method: "POST",
     headers: {
-      "xi-api-key": elevenKey,
-      "Content-Type": "application/json",
-      "Accept": "audio/mpeg"
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({
+      voiceId: ELEVEN_VOICE_ID,
       text,
       model_id: ELEVEN_MODEL,
       voice_settings: {
@@ -1134,7 +1118,7 @@ async function speakElevenLabs(text) {
         similarity_boost: 0.80,
         style: 0.30,
         use_speaker_boost: true,
-        speed: ELEVEN_SPEED       // zügigeres Sprechtempo
+        speed: ELEVEN_SPEED
       }
     })
   });
@@ -1428,28 +1412,9 @@ textInput.addEventListener("keydown", (e) => {
 });
 
 // ---------- API Modal ----------
-function showApiModal() { apiModal.classList.add("show"); }
-function hideApiModal() { apiModal.classList.remove("show"); }
 
-const elevenKeyInput = document.getElementById("elevenKeyInput");
 
-saveKeyBtn.addEventListener("click", () => {
-  const clean = (s) => (s || "").replace(/[\s"'`\u200B-\u200D\uFEFF]/g, "");
-  const ek = clean(elevenKeyInput.value);
-  if (ek) {
-    elevenKey = ek;
-    localStorage.setItem("elevenlabs_api_key", ek);
-  }
-  hideApiModal();
-});
 
-document.getElementById("resetKeyBtn").addEventListener("click", () => {
-  elevenKeyInput.value = elevenKey || "";
-  showApiModal();
-});
-elevenKeyInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") saveKeyBtn.click();
-});
 
 // ---------- Greeting ----------
 function greet() {
