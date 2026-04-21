@@ -376,7 +376,7 @@
       "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
       "source_location": "L1",
       "id": "users_raphaelschneider_meine_beratung_src_pages_beratung_jsx",
-      "community": 17,
+      "community": 12,
       "norm_label": "beratung.jsx"
     },
     {
@@ -385,7 +385,7 @@
       "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
       "source_location": "L30",
       "id": "beratung_beratungnav",
-      "community": 17,
+      "community": 12,
       "norm_label": "beratungnav()"
     },
     {
@@ -394,7 +394,7 @@
       "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
       "source_location": "L210",
       "id": "beratung_pos",
-      "community": 17,
+      "community": 12,
       "norm_label": "pos()"
     },
     {
@@ -403,7 +403,7 @@
       "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
       "source_location": "L267",
       "id": "beratung_seasonviewmodal",
-      "community": 17,
+      "community": 12,
       "norm_label": "seasonviewmodal()"
     },
     {
@@ -412,8 +412,17 @@
       "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
       "source_location": "L444",
       "id": "beratung_beratung",
-      "community": 17,
+      "community": 12,
       "norm_label": "beratung()"
+    },
+    {
+      "label": "ToolsSection()",
+      "file_type": "code",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
+      "source_location": "L2074",
+      "id": "beratung_toolssection",
+      "community": 12,
+      "norm_label": "toolssection()"
     },
     {
       "label": "Home.jsx",
@@ -673,7 +682,7 @@
       "author": null,
       "contributor": null,
       "notes": "SVG vector graphic, 400x495.64px, generated with Adobe Illustrator 30.3.0",
-      "community": 12,
+      "community": 13,
       "norm_label": "code_1.svg",
       "id": "code_1_svg_file"
     },
@@ -687,7 +696,7 @@
       "author": null,
       "contributor": null,
       "notes": "Two white diagonal slash shapes (path elements) forming a '//' symbol",
-      "community": 12,
+      "community": 13,
       "norm_label": "double slash icon",
       "id": "code_1_double_slash_icon"
     },
@@ -701,7 +710,7 @@
       "author": null,
       "contributor": null,
       "notes": "The '//' double-slash is universally recognized as the code comment syntax in languages like JavaScript, C, C++, Java, etc.",
-      "community": 12,
+      "community": 13,
       "norm_label": "code comment symbol",
       "id": "code_1_code_comment_symbol"
     },
@@ -715,7 +724,7 @@
       "author": null,
       "contributor": null,
       "notes": "Icon used to represent software development, coding, or technical services",
-      "community": 12,
+      "community": 13,
       "norm_label": "programming / coding icon",
       "id": "code_1_programming_icon"
     },
@@ -729,7 +738,7 @@
       "author": null,
       "contributor": null,
       "notes": "Both path shapes use fill #ffffff (white), implying display on a dark or colored background",
-      "community": 12,
+      "community": 13,
       "norm_label": "white fill (#fff)",
       "id": "code_1_white_fill"
     },
@@ -743,7 +752,7 @@
       "author": null,
       "contributor": null,
       "notes": "Tool used to create and export this SVG (generator comment in file header)",
-      "community": 12,
+      "community": 13,
       "norm_label": "adobe illustrator 30.3.0",
       "id": "code_1_adobe_illustrator"
     },
@@ -1619,7 +1628,7 @@
       "author": null,
       "contributor": null,
       "description": "SVG asset containing the React framework logo, using the iconify--logos icon set. Rendered in React brand cyan color (#00D8FF), depicting the characteristic atomic orbital symbol.",
-      "community": 13,
+      "community": 14,
       "norm_label": "react logo svg",
       "id": "react_logo_svg"
     },
@@ -1633,7 +1642,7 @@
       "author": null,
       "contributor": null,
       "description": "JavaScript frontend UI library developed by Meta. The project uses React as its primary frontend framework, as evidenced by the presence of the React logo asset.",
-      "community": 13,
+      "community": 14,
       "norm_label": "react framework",
       "id": "react_framework"
     },
@@ -1647,7 +1656,7 @@
       "author": null,
       "contributor": null,
       "description": "The official React brand cyan color (#00D8FF) used in the logo SVG fill. Part of the React visual identity.",
-      "community": 13,
+      "community": 14,
       "norm_label": "react brand color #00d8ff",
       "id": "react_brand_color"
     },
@@ -1661,7 +1670,7 @@
       "author": null,
       "contributor": null,
       "description": "The SVG uses the iconify--logos CSS class, indicating it originates from the Iconify icon library's logos collection, a common source of brand/framework logos for web projects.",
-      "community": 13,
+      "community": 14,
       "norm_label": "iconify logos icon set",
       "id": "react_iconify_logos"
     },
@@ -1675,7 +1684,7 @@
       "author": null,
       "contributor": null,
       "description": "The React logo depicts an atom with three elliptical orbits and a nucleus, symbolizing the component-based, modular architecture of the React library. The nucleus corresponds to the central circle at viewBox coordinates (128, 113.668).",
-      "community": 13,
+      "community": 14,
       "norm_label": "react atomic orbital symbol",
       "id": "react_atomic_symbol"
     },
@@ -1689,7 +1698,7 @@
       "author": null,
       "contributor": null,
       "description": "Static SVG file placed in src/assets/, the standard Vite/React project directory for static assets imported directly by components. Width 35.93px, height 32px, viewBox 256x228.",
-      "community": 13,
+      "community": 14,
       "norm_label": "svg static asset",
       "id": "react_svg_asset"
     },
@@ -2301,7 +2310,7 @@
       "author": null,
       "contributor": null,
       "description": "Website header/hero image showing two people (a man and a woman) standing in a lush green agricultural field. The man is holding up a plant sample and pointing, while the woman looks on. In the background, a green tractor (appears to be a Fendt) is visible operating in the field, likely spraying crops. The setting is a large open farmland under bright daylight. A decorative quotation mark graphic overlay appears on the right side of the image. The image evokes themes of agricultural consulting, crop advisory, field inspection, and farming expertise.",
-      "community": 14,
+      "community": 15,
       "norm_label": "heroimage",
       "id": "key_header_01_hero_image"
     },
@@ -2315,7 +2324,7 @@
       "author": null,
       "contributor": null,
       "description": "Lush green crop field, likely sugar beet or similar broadleaf crop, extending into the background. Flat, open landscape typical of Northern European farmland.",
-      "community": 14,
+      "community": 15,
       "norm_label": "agriculturalfield",
       "id": "key_header_01_agricultural_field"
     },
@@ -2329,7 +2338,7 @@
       "author": null,
       "contributor": null,
       "description": "Green tractor (Fendt brand) visible in the background of the field, appearing to be equipped with a sprayer or field equipment. Represents active farm operations.",
-      "community": 14,
+      "community": 15,
       "norm_label": "tractor",
       "id": "key_header_01_tractor"
     },
@@ -2343,7 +2352,7 @@
       "author": null,
       "contributor": null,
       "description": "A man in a checkered shirt and dark jacket holding up a plant sample and pointing toward the field, apparently explaining or advising. Represents an agricultural consultant or agronomist role.",
-      "community": 14,
+      "community": 15,
       "norm_label": "agriculturalconsultant",
       "id": "key_header_01_consultant_advisor"
     },
@@ -2357,7 +2366,7 @@
       "author": null,
       "contributor": null,
       "description": "A woman in a white shirt and dark jacket standing next to the consultant, listening and observing. Represents a farmer, landowner, or client receiving field consultation.",
-      "community": 14,
+      "community": 15,
       "norm_label": "farmerorclient",
       "id": "key_header_01_farmer_client"
     },
@@ -2371,7 +2380,7 @@
       "author": null,
       "contributor": null,
       "description": "A green plant (likely a broadleaf crop such as sugar beet or rapeseed) held up by the consultant for examination. Symbolizes crop inspection and agronomic analysis.",
-      "community": 14,
+      "community": 15,
       "norm_label": "plantsample",
       "id": "key_header_01_plant_sample"
     },
@@ -3239,7 +3248,7 @@
       "author": null,
       "contributor": null,
       "description": "Low-angle photograph of a maize/corn (Zea mays) field taken at golden hour with warm backlighting. Plants are at an early vegetative growth stage (approx. V6\u2013V8, 6\u20138 leaf stage). Long, narrow, bright green leaves point upward; the leaf tips (Maisspitzen) are prominently visible. Faint tassel precursors are discernible at the tops of the most advanced plants. The crop stand is dense and uniform, consistent with a plant breeding or certified seed production field. A forested hillside is visible in the background.",
-      "community": 15,
+      "community": 16,
       "norm_label": "maiszuchtung \u2013 maisspitzen (photograph)",
       "id": "maiszuechtung_maisspitzen_image"
     },
@@ -3253,7 +3262,7 @@
       "author": null,
       "contributor": null,
       "description": "The crop species depicted: maize (Zea mays), a major cereal crop. Shown at early vegetative stage with characteristic rolled/arching leaves.",
-      "community": 15,
+      "community": 16,
       "norm_label": "maize / corn (zea mays)",
       "id": "maiszuechtung_maisspitzen_crop_maize"
     },
@@ -3267,7 +3276,7 @@
       "author": null,
       "contributor": null,
       "description": "The plants appear to be at approximately the V6\u2013V8 leaf stage of maize development. No ears or fully formed tassels are visible; small tassel precursors are faintly discernible at the shoot apex of advanced plants.",
-      "community": 15,
+      "community": 16,
       "norm_label": "vegetative growth stage v6\u2013v8",
       "id": "maiszuechtung_maisspitzen_growth_stage"
     },
@@ -3281,7 +3290,7 @@
       "author": null,
       "contributor": null,
       "description": "The pointed leaf tips of young maize plants \u2014 'Maisspitzen' \u2014 are the visual focus of the image. They are elongated, bright green, and oriented upward, backlit by strong sunlight.",
-      "community": 15,
+      "community": 16,
       "norm_label": "maisspitzen (maize leaf tips)",
       "id": "maiszuechtung_maisspitzen_leaf_tips"
     },
@@ -3295,7 +3304,7 @@
       "author": null,
       "contributor": null,
       "description": "A dense, uniform stand of maize plants in an outdoor field, with a forested hillside visible in the background. The uniformity of the stand suggests a plant breeding trial or seed production field (Maisz\u00fcchtung = maize breeding).",
-      "community": 15,
+      "community": 16,
       "norm_label": "maize field / breeding plot",
       "id": "maiszuechtung_maisspitzen_field_setting"
     },
@@ -3309,7 +3318,7 @@
       "author": null,
       "contributor": null,
       "description": "The photograph is taken with strong warm backlighting consistent with golden hour (sunrise or sunset). The light accentuates the translucency and bright green color of the maize leaves and creates a visually striking agricultural scene.",
-      "community": 15,
+      "community": 16,
       "norm_label": "golden hour backlighting",
       "id": "maiszuechtung_maisspitzen_lighting"
     },
@@ -4183,7 +4192,7 @@
         ],
         "description": "Brand logo and visual identity for re:soil, a soil health / regenerative agriculture product or initiative"
       },
-      "community": 16,
+      "community": 17,
       "norm_label": "re:soil (brand)",
       "id": "leitbild_resoil_resoil_brand"
     },
@@ -4203,7 +4212,7 @@
         "language": "de",
         "purpose": "guiding principle / brand promise"
       },
-      "community": 16,
+      "community": 17,
       "norm_label": "tagline: starker boden. starke pflanzen.",
       "id": "leitbild_resoil_tagline"
     },
@@ -4222,7 +4231,7 @@
         "visual_representation": "cross-section of rich dark soil",
         "domain": "agriculture / regenerative farming"
       },
-      "community": 16,
+      "community": 17,
       "norm_label": "soil health (bodengesundheit)",
       "id": "leitbild_resoil_soil_health"
     },
@@ -4241,7 +4250,7 @@
         "visual_representation": "seedling sprouting from soil",
         "domain": "agriculture / plant vitality"
       },
-      "community": 16,
+      "community": 17,
       "norm_label": "plant growth (pflanzenwachstum)",
       "id": "leitbild_resoil_plant_growth"
     },
@@ -4260,7 +4269,7 @@
         "inferred_from": "brand name re:soil + tagline + visual imagery",
         "description": "Broader thematic domain: restoring and regenerating soil for sustainable plant and food production"
       },
-      "community": 16,
+      "community": 17,
       "norm_label": "regenerative agriculture",
       "id": "leitbild_resoil_regenerative_agriculture"
     },
@@ -4285,7 +4294,7 @@
           "dark green leaf/arc graphic elements"
         ]
       },
-      "community": 16,
+      "community": 17,
       "norm_label": "visual identity / leitbild image",
       "id": "leitbild_resoil_visual_identity"
     },
@@ -4695,6 +4704,18 @@
       "_tgt": "beratung_beratung",
       "source": "users_raphaelschneider_meine_beratung_src_pages_beratung_jsx",
       "target": "beratung_beratung",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/raphaelschneider/meine-beratung/src/pages/Beratung.jsx",
+      "source_location": "L2074",
+      "weight": 1.0,
+      "_src": "users_raphaelschneider_meine_beratung_src_pages_beratung_jsx",
+      "_tgt": "beratung_toolssection",
+      "source": "users_raphaelschneider_meine_beratung_src_pages_beratung_jsx",
+      "target": "beratung_toolssection",
       "confidence_score": 1.0
     },
     {

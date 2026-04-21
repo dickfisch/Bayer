@@ -1,11 +1,11 @@
-# Graph Report - /Users/raphaelschneider/meine-beratung  (2026-04-20)
+# Graph Report - /Users/raphaelschneider/meine-beratung  (2026-04-21)
 
 ## Corpus Check
-- 16 files · ~654,892 words
+- 16 files · ~654,977 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 291 nodes · 306 edges · 55 communities detected
+- 292 nodes · 307 edges · 55 communities detected
 - Extraction: 74% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 32 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
@@ -144,28 +144,28 @@ Cohesion: 0.33
 Nodes (0): 
 
 ### Community 12 - "Community 12"
-Cohesion: 0.4
-Nodes (5): Adobe Illustrator 30.3.0, Code Comment Symbol, Double Slash Icon, Programming / Coding Icon, White Fill (#fff)
+Cohesion: 0.33
+Nodes (0): 
 
 ### Community 13 - "Community 13"
 Cohesion: 0.4
-Nodes (6): React Atomic Orbital Symbol, React Brand Color #00D8FF, React Framework, Iconify Logos Icon Set, React Logo SVG, SVG Static Asset
+Nodes (5): Adobe Illustrator 30.3.0, Code Comment Symbol, Double Slash Icon, Programming / Coding Icon, White Fill (#fff)
 
 ### Community 14 - "Community 14"
+Cohesion: 0.4
+Nodes (6): React Atomic Orbital Symbol, React Brand Color #00D8FF, React Framework, Iconify Logos Icon Set, React Logo SVG, SVG Static Asset
+
+### Community 15 - "Community 15"
 Cohesion: 0.67
 Nodes (6): AgriculturalField, AgriculturalConsultant, FarmerOrClient, HeroImage, PlantSample, Tractor
 
-### Community 15 - "Community 15"
+### Community 16 - "Community 16"
 Cohesion: 0.53
 Nodes (6): Maize / Corn (Zea mays), Maize Field / Breeding Plot, Vegetative Growth Stage V6–V8, Maiszüchtung – Maisspitzen (Photograph), Maisspitzen (Maize Leaf Tips), Golden Hour Backlighting
 
-### Community 16 - "Community 16"
+### Community 17 - "Community 17"
 Cohesion: 0.8
 Nodes (6): Plant Growth (Pflanzenwachstum), Regenerative Agriculture, re:soil (Brand), Soil Health (Bodengesundheit), Tagline: Starker Boden. Starke Pflanzen., Visual Identity / Leitbild Image
-
-### Community 17 - "Community 17"
-Cohesion: 0.4
-Nodes (0): 
 
 ### Community 18 - "Community 18"
 Cohesion: 0.6
