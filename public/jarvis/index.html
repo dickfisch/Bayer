@@ -610,13 +610,11 @@
 
 <div class="modal" id="apiModal">
   <div class="modal-box">
-    <h2>Anthropic API Key</h2>
-    <p>Gib deinen Anthropic API Key ein, um mit dem KI-Agrarberater zu sprechen. Der Key bleibt lokal im Browser gespeichert und wird nicht übertragen.</p>
-    <input type="password" id="apiKeyInput" placeholder="sk-ant-..." />
-    <p style="margin-top:6px;">ElevenLabs API Key (optional, für menschliche Stimme):</p>
+    <h2>Stimme aktivieren</h2>
+    <p>ElevenLabs API Key für menschliche Stimme (optional). Ohne Key wird die Browser-Stimme verwendet.</p>
     <input type="password" id="elevenKeyInput" placeholder="sk_..." />
-    <button id="saveKeyBtn">Verbinden</button>
-    <div class="modal-hint">Anthropic: console.anthropic.com · ElevenLabs: elevenlabs.io (optional)</div>
+    <button id="saveKeyBtn">Speichern</button>
+    <div class="modal-hint">ElevenLabs: elevenlabs.io (optional)</div>
   </div>
 </div>
 
@@ -663,7 +661,6 @@ Schlecht: "Gegen Septoria tritici im Winterweizen empfehle ich folgende Fungizid
 Gut: "Gegen Septoria hast du bei Bayer vor allem Input Classic und Ascra Xpro – solide Azol-SDHI-Mischungen. Was brauchst du denn – eher ne frühe Absicherung oder den Abschluss ins Fahnenblatt? Dann kann ich dir das genauer sagen."`;
 
 // ---------- State ----------
-let apiKey = localStorage.getItem("anthropic_api_key") || "";
 let elevenKey = localStorage.getItem("elevenlabs_api_key") || "";
 // Adam – tiefe, natürliche männliche Stimme (Multilingual v2 spricht flüssig Deutsch)
 let ELEVEN_VOICE_ID = localStorage.getItem("elevenlabs_voice_id") || "pNInz6obpgDQGcFmaJgB"; // Adam
@@ -718,7 +715,6 @@ const sendBtn = document.getElementById("sendBtn");
 const textInput = document.getElementById("textInput");
 const statusText = document.getElementById("statusText");
 const apiModal = document.getElementById("apiModal");
-const apiKeyInput = document.getElementById("apiKeyInput");
 const saveKeyBtn = document.getElementById("saveKeyBtn");
 
 // ---------- Orb state ----------
@@ -790,10 +786,7 @@ async function fetchWithRetry(url, options) {
 
       // Harte Fehler → NICHT retryen, direkt werfen
       if (response.status === 401) {
-        localStorage.removeItem("anthropic_api_key");
-        apiKey = "";
-        showApiModal();
-        throw new Error("API Key ungültig. Bitte neuen Key eingeben.");
+        throw new Error("Serverfehler: API Key ungültig (401).");
       }
       if (response.status === 400 || response.status === 403 || response.status === 404) {
         throw new Error(`API Fehler (${response.status}): ${errTxt}`);
@@ -1354,7 +1347,6 @@ function renderParticles() {
 async function send(text) {
   text = (text || "").trim();
   if (!text) return;
-  if (!apiKey) { showApiModal(); return; }
 
   addMessage("user", text);
   textInput.value = "";
@@ -1436,39 +1428,26 @@ textInput.addEventListener("keydown", (e) => {
 });
 
 // ---------- API Modal ----------
-function showApiModal() { apiModal.classList.add("show"); apiKeyInput.focus(); }
+function showApiModal() { apiModal.classList.add("show"); }
 function hideApiModal() { apiModal.classList.remove("show"); }
 
 const elevenKeyInput = document.getElementById("elevenKeyInput");
 
 saveKeyBtn.addEventListener("click", () => {
-  // strip whitespace, quotes, and invisible unicode characters that sneak in on paste
   const clean = (s) => (s || "").replace(/[\s"'`\u200B-\u200D\uFEFF]/g, "");
-  const k = clean(apiKeyInput.value);
-  if (!k) return;
-  if (!k.startsWith("sk-ant-")) {
-    alert("Anthropic Key sollte mit 'sk-ant-' beginnen. Bitte prüfen.");
-    return;
-  }
-  apiKey = k;
-  localStorage.setItem("anthropic_api_key", k);
-
   const ek = clean(elevenKeyInput.value);
   if (ek) {
     elevenKey = ek;
     localStorage.setItem("elevenlabs_api_key", ek);
   }
-
   hideApiModal();
-  if (conversation.length === 0) greet();
 });
 
 document.getElementById("resetKeyBtn").addEventListener("click", () => {
-  apiKeyInput.value = apiKey || "";
   elevenKeyInput.value = elevenKey || "";
   showApiModal();
 });
-apiKeyInput.addEventListener("keydown", (e) => {
+elevenKeyInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") saveKeyBtn.click();
 });
 
@@ -1489,11 +1468,7 @@ if ("speechSynthesis" in window) {
 initVoiceIndicator();
 initParticles();
 
-if (!apiKey) {
-  showApiModal();
-} else {
-  setTimeout(greet, 400);
-}
+setTimeout(greet, 400);
 </script>
 </body>
 </html>
