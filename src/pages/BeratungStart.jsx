@@ -16,7 +16,7 @@ const KULTUREN = [
 ]
 
 function BeratungStart() {
-  const { triggerTransition } = usePageTransition()
+  const { triggerWeiterTransition } = usePageTransition()
   const [plz, setPlz] = useState('')
   const [kultur, setKultur] = useState('')
 
@@ -26,7 +26,8 @@ function BeratungStart() {
     sessionStorage.setItem('nav_plz', plz)
     sessionStorage.setItem('nav_kultur', kultur)
     window.dispatchEvent(new CustomEvent('nav-context-update', { detail: { plz, kultur } }))
-    triggerTransition('/beratung', e.clientX || 0, e.clientY || 0, { plz, kultur })
+    const rect = e.currentTarget.getBoundingClientRect()
+    triggerWeiterTransition('/beratung', rect, { plz, kultur })
   }
 
   const canSubmit = plz.length === 5 && kultur !== ''
