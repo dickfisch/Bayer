@@ -18,18 +18,21 @@ export default function JarvisWidget() {
       {open && (
         <div className="jarvis-overlay" onClick={() => setOpen(false)}>
           <div className="jarvis-modal" onClick={e => e.stopPropagation()}>
-            <button
-              type="button"
-              className="jarvis-close"
-              aria-label="Schließen"
-              onClick={() => setOpen(false)}
-            >
-              ✕
-            </button>
+            <div className="jarvis-modal-bar">
+              <button
+                type="button"
+                className="jarvis-close"
+                aria-label="Schließen"
+                onClick={() => setOpen(false)}
+              >
+                ✕
+              </button>
+            </div>
             <iframe
               src="/jarvis/index.html"
               className="jarvis-iframe"
               title="Jarvis KI"
+              allow="autoplay; microphone"
             />
           </div>
         </div>
