@@ -1973,8 +1973,8 @@ function Beratung() {
                   <div className="video-duration">11:03</div>
                 </div>
                 <div className="video-body">
-                  <div className="video-meta-row"><div className="video-category">Aus der Praxis</div><div className="video-date">03.10.2025</div></div>
                   <div className="video-title">Hier steht eine längere Überschrift</div>
+                  <div className="video-meta-row"><div className="video-date">03.10.2025</div><span className="video-meta-sep">,&nbsp;</span><div className="video-category">Aus der Praxis</div></div>
                 </div>
               </div>
               <div className="video-card">
@@ -1984,8 +1984,8 @@ function Beratung() {
                   <div className="video-duration">11:03</div>
                 </div>
                 <div className="video-body">
-                  <div className="video-meta-row"><div className="video-category">Aus der Praxis</div><div className="video-date">03.10.2025</div></div>
                   <div className="video-title">Hier steht eine längere Überschrift</div>
+                  <div className="video-meta-row"><div className="video-date">03.10.2025</div><span className="video-meta-sep">,&nbsp;</span><div className="video-category">Aus der Praxis</div></div>
                 </div>
               </div>
               <div className="video-card">
@@ -1995,13 +1995,13 @@ function Beratung() {
                   <div className="video-duration">11:03</div>
                 </div>
                 <div className="video-body">
-                  <div className="video-meta-row"><div className="video-category">Aus der Praxis</div><div className="video-date">03.10.2025</div></div>
                   <div className="video-title">Hier steht eine längere Überschrift</div>
+                  <div className="video-meta-row"><div className="video-date">03.10.2025</div><span className="video-meta-sep">,&nbsp;</span><div className="video-category">Aus der Praxis</div></div>
                 </div>
               </div>
             </div>
             <div className="videos-footer-row">
-              <a href="#">Weitere Videos auf Agrar TV &#8594;</a>
+              <a href="#" className="videos-footer-cta">Weitere Videos ansehen <span className="videos-footer-arrow">&#8594;</span> <strong>Agrar TV</strong></a>
               <a href="#">Premeo learn &amp; earn &#8594;</a>
             </div>
           </div>
@@ -2010,7 +2010,7 @@ function Beratung() {
         {/* ── TERMINE ── */}
         <section className="screen-section" id="termine">
           <div className="section-inner">
-            <div className="section-tag">85665 (Umkreis 50 km)</div>
+            <div className="section-tag">85665 (Umkreis <strong>50 km</strong>)</div>
             <div className="section-heading">Termine in<br />ihrer Region</div>
             <div className="filter-row" style={{marginTop:'22px'}}>
               {chips.map((chip, i) => (
@@ -2025,8 +2025,8 @@ function Beratung() {
               <div className="event-card">
                 <div className="event-img"><img src="https://static.wixstatic.com/media/8a20aa_8329fb339a3f41e4bfcab1a6bdcb8f59~mv2.jpg" alt="Feldtag" loading="lazy" /></div>
                 <div className="event-body">
-                  <div className="event-cat">Feldtag</div>
                   <div className="event-title">Neue Herausforderungen im Getreide- und Mais ...</div>
+                  <div className="event-cat">Feldtag</div>
                   <div className="event-location-row"><span className="event-location-label">Ort</span><span>85447, Grucking</span></div>
                   <div className="event-footer"><span className="event-date">03.04.2026</span><div className="event-arrow">&#8594;</div></div>
                 </div>
@@ -2034,8 +2034,8 @@ function Beratung() {
               <div className="event-card">
                 <div className="event-img"><img src="https://static.wixstatic.com/media/8a20aa_8329fb339a3f41e4bfcab1a6bdcb8f59~mv2.jpg" alt="Feldtag" loading="lazy" /></div>
                 <div className="event-body">
-                  <div className="event-cat">Feldtag</div>
                   <div className="event-title">Hier steht eine längere Überschrift</div>
+                  <div className="event-cat">Feldtag</div>
                   <div className="event-location-row"><span className="event-location-label">Ort</span><span>85447, Grucking</span></div>
                   <div className="event-footer"><span className="event-date">03.10.2025</span><div className="event-arrow">&#8594;</div></div>
                 </div>
@@ -2043,8 +2043,8 @@ function Beratung() {
               <div className="event-card">
                 <div className="event-img"><img src="https://static.wixstatic.com/media/8a20aa_8329fb339a3f41e4bfcab1a6bdcb8f59~mv2.jpg" alt="Feldtag Online" loading="lazy" /></div>
                 <div className="event-body">
-                  <div className="event-cat">Feldtag</div>
                   <div className="event-title">Hier steht eine längere Überschrift</div>
+                  <div className="event-cat">Feldtag</div>
                   <div className="event-location-row"><span className="event-location-label">Ort</span><span>Online</span></div>
                   <div className="event-footer"><span className="event-date">03.10.2025</span><div className="event-arrow">&#8594;</div></div>
                 </div>
@@ -2052,8 +2052,8 @@ function Beratung() {
               <div className="event-card">
                 <div className="event-img"><img src="https://static.wixstatic.com/media/8a20aa_8329fb339a3f41e4bfcab1a6bdcb8f59~mv2.jpg" alt="Feldtag Online" loading="lazy" /></div>
                 <div className="event-body">
-                  <div className="event-cat">Feldtag</div>
                   <div className="event-title">Hier steht eine längere Überschrift</div>
+                  <div className="event-cat">Feldtag</div>
                   <div className="event-location-row"><span className="event-location-label">Ort</span><span>Online</span></div>
                   <div className="event-footer"><span className="event-date">03.10.2025</span><div className="event-arrow">&#8594;</div></div>
                 </div>
@@ -2063,33 +2063,47 @@ function Beratung() {
         </section>
 
         {/* ── TOOLS ── */}
-        <section className="tools-section" id="tools">
-          <div className="tools-section-label">Wichtige Tools</div>
-          <div className="tools-grid">
-            <div className="tool-card">
-              <img className="tool-card-img" src="https://static.wixstatic.com/media/8a20aa_814a095165fb4ff990088bcd5b0165f2~mv2.jpg" alt="Resistenzmanagement" loading="lazy" />
-              <div className="tool-card-overlay">
-                <div className="tool-tag">Resistenzmanagement</div>
-                <div className="tool-title">Ist der Wirkstoff noch<br />wirksam? Jetzt prüfen.</div>
-                <button className="tool-btn">Resistenz bestimmen</button>
-              </div>
-              <div className="tool-help">Hilfe</div>
-            </div>
-            <div className="tool-card">
-              <img className="tool-card-img" src="https://static.wixstatic.com/media/8a20aa_3632aded684c4b18a0abf35223791592~mv2.jpg" alt="Diagnose" loading="lazy" />
-              <div className="tool-card-overlay">
-                <div className="tool-tag">Diagnose</div>
-                <div className="tool-title">Schaderreger bestimmen.<br />Passende Lösung finden.</div>
-                <button className="tool-btn">Diagnose starten</button>
-              </div>
-              <div className="tool-help">Hilfe</div>
-            </div>
-          </div>
-        </section>
+        <ToolsSection />
 
         <Footer />
       </div>
     </>
+  )
+}
+
+function ToolsSection() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
+  const yLeft  = useTransform(scrollYProgress, [0, 1], [60, -60])
+  const yRight = useTransform(scrollYProgress, [0, 1], [-40, 40])
+
+  return (
+    <section className="tools-section" id="tools" ref={ref}>
+      <div className="tools-grid">
+        <motion.div className="tool-card" style={{ y: yLeft, scale: 1.07, transformOrigin: 'top center' }}>
+          <img className="tool-card-img" src="https://static.wixstatic.com/media/8a20aa_814a095165fb4ff990088bcd5b0165f2~mv2.jpg" alt="Resistenzmanagement" loading="lazy" />
+          <div className="tool-card-overlay">
+            <div className="tool-tag">Resistenzmanagement</div>
+            <div className="tool-title">Ist der Wirkstoff noch<br />wirksam? Jetzt prüfen.</div>
+            <Button variant="white" className="tool-btn">Resistenz bestimmen</Button>
+          </div>
+          <div className="tool-help">Hilfe</div>
+        </motion.div>
+        <motion.div className="tool-card" style={{ y: yRight, scale: 0.92, transformOrigin: 'top center' }}>
+          <img className="tool-card-img" src="https://static.wixstatic.com/media/8a20aa_3632aded684c4b18a0abf35223791592~mv2.jpg" alt="Diagnose" loading="lazy" />
+          <svg className="tool-card-deco" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 495.64" aria-hidden="true">
+            <path fill="none" stroke="white" strokeWidth="2" d="M142.02,9.9c-37.09.62-68.97,26.78-76.69,63.21L10.78,329.71h49.76c37.69,0,70.24-26.36,78.06-63.2L193.13,9.9h-51.11Z"/>
+            <path fill="none" stroke="white" strokeWidth="2" d="M342.06,9.9c-37.09.62-68.95,26.78-76.69,63.21l-88.49,416.32h49.76c37.69,0,70.24-26.37,78.07-63.21L393.19,9.9h-51.13Z"/>
+          </svg>
+          <div className="tool-card-overlay">
+            <div className="tool-tag">Diagnose</div>
+            <div className="tool-title">Schaderreger bestimmen.<br />Passende Lösung finden.</div>
+            <Button variant="white" className="tool-btn">Diagnose starten</Button>
+          </div>
+          <div className="tool-help">Hilfe</div>
+        </motion.div>
+      </div>
+    </section>
   )
 }
 
