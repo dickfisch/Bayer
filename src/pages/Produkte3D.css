@@ -98,17 +98,16 @@
   grid-template-rows: repeat(var(--rows), 1fr);
   gap: clamp(3px, 0.5vw, 10px);
   transform-style: preserve-3d;
+  transform: translate3d(0, 0, 0);
   transition:
     filter 260ms ease,
-    opacity 260ms ease,
-    transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: filter, opacity;
+    opacity 260ms ease;
+  will-change: transform, filter, opacity;
 }
 
 .produkte3d-plane.is-transitioning {
   filter: blur(14px);
   opacity: 0.35;
-  transform: scale(0.94);
 }
 
 .produkte3d-cell {
@@ -121,17 +120,12 @@
   justify-content: center;
   border-radius: 10px;
   background: #fff;
-  box-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.04),
-    0 4px 12px -6px rgba(0, 0, 0, 0.14);
   padding: 8%;
   box-sizing: border-box;
   transform: var(--cell-transform);
   opacity: 0;
   animation: produkte3d-pop 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  transition:
-    transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
   cursor: pointer;
   will-change: transform;
   backface-visibility: hidden;
@@ -140,17 +134,11 @@
 
 .produkte3d-cell:hover {
   transform: var(--cell-transform) translateZ(180px) scale(1.35);
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.08),
-    0 24px 48px -14px rgba(0, 0, 0, 0.28);
   z-index: 9999 !important;
 }
 
 .produkte3d-plane.no-hover-expand .produkte3d-cell:hover {
   transform: var(--cell-transform);
-  box-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.04),
-    0 4px 12px -6px rgba(0, 0, 0, 0.14);
   z-index: auto !important;
 }
 

@@ -380,6 +380,64 @@ function Produkte3DSection({ products, variant = 'legacy', onSelectProduct }) {
   const [displayed, setDisplayed] = useState([])
   const [exitingSet, setExitingSet] = useState(() => new Set())
   const displayedRef = useRef([])
+  const sceneRef = useRef(null)
+  const planeRef = useRef(null)
+
+  useEffect(() => {
+    const scene = sceneRef.current
+    const plane = planeRef.current
+    if (!scene || !plane) return
+
+    let rafId = null
+    let targetX = 0
+    let targetY = 0
+    let currentX = 0
+    let currentY = 0
+    let rect = scene.getBoundingClientRect()
+
+    function updateRect() {
+      rect = scene.getBoundingClientRect()
+    }
+    function onMove(e) {
+      const cx = rect.left + rect.width / 2
+      const cy = rect.top + rect.height / 2
+      const hw = rect.width / 2
+      const hh = rect.height / 2
+      const nx = (e.clientX - cx) / hw
+      const ny = (e.clientY - cy) / hh
+      targetX = nx < -1 ? -1 : nx > 1 ? 1 : nx
+      targetY = ny < -1 ? -1 : ny > 1 ? 1 : ny
+    }
+    function onLeave() {
+      targetX = 0
+      targetY = 0
+    }
+    function tick() {
+      currentX += (targetX - currentX) * 0.12
+      currentY += (targetY - currentY) * 0.12
+      const rx = (currentY * -5).toFixed(3)
+      const ry = (currentX * 7).toFixed(3)
+      const tx = (currentX * 18).toFixed(2)
+      const ty = (currentY * 12).toFixed(2)
+      plane.style.transform =
+        'translate3d(' + tx + 'px,' + ty + 'px,0) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)'
+      rafId = requestAnimationFrame(tick)
+    }
+
+    scene.addEventListener('mousemove', onMove, { passive: true })
+    scene.addEventListener('mouseleave', onLeave)
+    window.addEventListener('scroll', updateRect, { passive: true })
+    window.addEventListener('resize', updateRect)
+    rafId = requestAnimationFrame(tick)
+
+    return () => {
+      scene.removeEventListener('mousemove', onMove)
+      scene.removeEventListener('mouseleave', onLeave)
+      window.removeEventListener('scroll', updateRect)
+      window.removeEventListener('resize', updateRect)
+      if (rafId) cancelAnimationFrame(rafId)
+    }
+  }, [])
 
   useEffect(() => {
     if (variant !== 'cta') {
@@ -456,8 +514,9 @@ function Produkte3DSection({ products, variant = 'legacy', onSelectProduct }) {
         <span className="produkte3d-title-main">PFLANZENSCHUTZMITTEL A–Z</span>
       </div>
 
-      <div className="produkte3d-scene">
+      <div className="produkte3d-scene" ref={sceneRef}>
         <div
+          ref={planeRef}
           className={`produkte3d-plane ${transitioning ? 'is-transitioning' : ''} ${renderList.length < 18 ? 'no-hover-expand' : ''}`}
           style={{ '--cols': cols, '--rows': rows }}
         >

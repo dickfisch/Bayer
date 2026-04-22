@@ -1,12 +1,12 @@
-# Graph Report - /Users/raphaelschneider/meine-beratung  (2026-04-21)
+# Graph Report - /Users/raphaelschneider/meine-beratung  (2026-04-22)
 
 ## Corpus Check
-- 19 files · ~660,967 words
+- 24 files · ~1,125,181 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 298 nodes · 310 edges · 58 communities detected
-- Extraction: 74% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 32 edges (avg confidence: 0.86)
+- 330 nodes · 348 edges · 63 communities detected
+- Extraction: 77% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 32 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -68,6 +68,11 @@
 - [[_COMMUNITY_Community 55|Community 55]]
 - [[_COMMUNITY_Community 56|Community 56]]
 - [[_COMMUNITY_Community 57|Community 57]]
+- [[_COMMUNITY_Community 58|Community 58]]
+- [[_COMMUNITY_Community 59|Community 59]]
+- [[_COMMUNITY_Community 60|Community 60]]
+- [[_COMMUNITY_Community 61|Community 61]]
+- [[_COMMUNITY_Community 62|Community 62]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Husar Plus` - 17 edges
@@ -79,7 +84,7 @@
 7. `Icons SVG Sprite` - 6 edges
 8. `Bayer Cross Logo` - 6 edges
 9. `Podcast Episode 2 Thumbnail` - 6 edges
-10. `React Logo SVG` - 5 edges
+10. `main()` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Page Title: Bayer Agrar Deutschland` --conceptually_related_to--> `React + Vite Project Setup`  [AMBIGUOUS]
@@ -123,176 +128,176 @@ Cohesion: 0.2
 Nodes (12): Manufacturer, GHSPictogram, GHSPictogram, HazardStatement, HazardStatement, HazardStatement, HazardStatement, ProductCategory (+4 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.33
-Nodes (9): Bluesky Icon, Social Media Icons Category, UI Icons Category, Discord Icon, Documentation Icon, GitHub Icon, Social / Person Icon, Icons SVG Sprite (+1 more)
+Cohesion: 0.25
+Nodes (2): localSrc(), ProduktDetailPanel()
 
 ### Community 7 - "Community 7"
 Cohesion: 0.33
-Nodes (9): Agricultural Field, Environmental Impact of Herbicide Use, Flufenacet Ban, Flufenacet (Herbicide), Herbicide Application, Pesticide Regulation / Policy, Sustainable Agriculture, Tractor with Boom Sprayer (+1 more)
+Nodes (9): Bluesky Icon, Social Media Icons Category, UI Icons Category, Discord Icon, Documentation Icon, GitHub Icon, Social / Person Icon, Icons SVG Sprite (+1 more)
 
 ### Community 8 - "Community 8"
+Cohesion: 0.33
+Nodes (9): Agricultural Field, Environmental Impact of Herbicide Use, Flufenacet Ban, Flufenacet (Herbicide), Herbicide Application, Pesticide Regulation / Policy, Sustainable Agriculture, Tractor with Boom Sprayer (+1 more)
+
+### Community 9 - "Community 9"
+Cohesion: 0.5
+Nodes (7): clean(), collect_product_urls(), download_image(), main(), scrape_product(), slugify(), wait_for_page()
+
+### Community 10 - "Community 10"
+Cohesion: 0.36
+Nodes (4): buildDiamondRows(), buildRectRows(), Produkte(), splitIntoRows()
+
+### Community 11 - "Community 11"
 Cohesion: 0.43
 Nodes (7): Adobe Illustrator (Authoring Tool), Bonus / Reward Concept, Pink-Red Linear Gradient Fill, Hexagon Shape, BONUS Label Text, Number 80, Bonus Icon SVG
 
-### Community 9 - "Community 9"
+### Community 12 - "Community 12"
 Cohesion: 0.43
 Nodes (7): Bayer Cross Logo, Circular Cross Emblem, Brand Color: Cyan Blue (#00BCFF), Brand Color: Dark Blue (#10384F), Brand Color: Lime Green (#89D329), SVG Vector Format, BAYER Letterforms in Cross Layout
 
-### Community 10 - "Community 10"
+### Community 13 - "Community 13"
 Cohesion: 0.48
 Nodes (7): Agriculture / Grain Field Topic, Field Trial Marker 'UK', Podcast Guest (Female, White Shirt), Podcast Host (Male, Headphones, OSCA Recorder), OSCA Mobile Recording Device, Outdoor Field Podcast Recording, Podcast Episode 2 Thumbnail
 
-### Community 11 - "Community 11"
+### Community 14 - "Community 14"
 Cohesion: 0.33
 Nodes (0): 
 
-### Community 12 - "Community 12"
+### Community 15 - "Community 15"
 Cohesion: 0.33
 Nodes (0): 
 
-### Community 13 - "Community 13"
+### Community 16 - "Community 16"
 Cohesion: 0.4
 Nodes (5): Adobe Illustrator 30.3.0, Code Comment Symbol, Double Slash Icon, Programming / Coding Icon, White Fill (#fff)
 
-### Community 14 - "Community 14"
+### Community 17 - "Community 17"
 Cohesion: 0.4
 Nodes (6): React Atomic Orbital Symbol, React Brand Color #00D8FF, React Framework, Iconify Logos Icon Set, React Logo SVG, SVG Static Asset
 
-### Community 15 - "Community 15"
+### Community 18 - "Community 18"
 Cohesion: 0.67
 Nodes (6): AgriculturalField, AgriculturalConsultant, FarmerOrClient, HeroImage, PlantSample, Tractor
 
-### Community 16 - "Community 16"
+### Community 19 - "Community 19"
 Cohesion: 0.53
 Nodes (6): Maize / Corn (Zea mays), Maize Field / Breeding Plot, Vegetative Growth Stage V6–V8, Maiszüchtung – Maisspitzen (Photograph), Maisspitzen (Maize Leaf Tips), Golden Hour Backlighting
 
-### Community 17 - "Community 17"
+### Community 20 - "Community 20"
 Cohesion: 0.8
 Nodes (6): Plant Growth (Pflanzenwachstum), Regenerative Agriculture, re:soil (Brand), Soil Health (Bodengesundheit), Tagline: Starker Boden. Starke Pflanzen., Visual Identity / Leitbild Image
 
-### Community 18 - "Community 18"
+### Community 21 - "Community 21"
 Cohesion: 0.6
 Nodes (5): Graph Report (GRAPH_REPORT.md), Graphify Knowledge Graph, Graphify Output Directory (graphify-out/), Rule: Run graphify update after code changes, Wiki Index (graphify-out/wiki/index.md)
 
-### Community 19 - "Community 19"
+### Community 22 - "Community 22"
 Cohesion: 0.4
 Nodes (5): Tool: Adobe Illustrator 30.3.0, Visual Motif: Stylized Barcode / Vertical Stripes, UI Element: Decorative Banner Graphic, Brand Color: Green #649f1f, SVG Graphic: code_3
 
-### Community 20 - "Community 20"
+### Community 23 - "Community 23"
 Cohesion: 0.6
 Nodes (5): Bonus Points Program (Bonuspunkte), BONUS Typography, Hexagon Badge Shape, Premeo Brand, Premeo Bonuspunkte SVG Asset
 
-### Community 21 - "Community 21"
+### Community 24 - "Community 24"
 Cohesion: 0.5
 Nodes (5): CornField, CornLeaf, Image, OvercastSky, Rain
 
-### Community 22 - "Community 22"
+### Community 25 - "Community 25"
 Cohesion: 0.5
 Nodes (5): Agricultural Consulting Scene, Crop Plant Inspection, Farmer / Client, Field Advisors (Bayer), Rapeseed Field
 
-### Community 23 - "Community 23"
+### Community 26 - "Community 26"
 Cohesion: 0.4
 Nodes (5): Visual Appearance, Photo Background, Clothing / Attire, Person (Advisor/Consultant), Portrait Photo
 
-### Community 24 - "Community 24"
+### Community 27 - "Community 27"
 Cohesion: 0.7
 Nodes (5): BackgroundImage, Person, OutdoorAgriSetting, Smartphone, AgriculturalTractor
 
-### Community 25 - "Community 25"
+### Community 28 - "Community 28"
 Cohesion: 0.6
 Nodes (5): Image, Person, Object, Vehicle, Theme
 
-### Community 26 - "Community 26"
+### Community 29 - "Community 29"
 Cohesion: 0.5
 Nodes (5): Bayer Company Logo, Female Advisor, Gray Studio Background, Portrait Photo, White Collared Shirt
 
-### Community 27 - "Community 27"
+### Community 30 - "Community 30"
 Cohesion: 0.7
 Nodes (5): Lightbulb Illustration Poster, Podcast Recording Equipment, Podcast Host or Guest (Male, Young Adult), Podcast Recording Studio, Podcast Thumbnail (Episode 1)
 
-### Community 28 - "Community 28"
+### Community 31 - "Community 31"
 Cohesion: 0.4
 Nodes (5): Agrochemical, Bayer, Grain Crop Protection, Herbicide, huSAR Plus Herbicide
 
-### Community 29 - "Community 29"
-Cohesion: 0.5
-Nodes (0): 
-
-### Community 30 - "Community 30"
-Cohesion: 0.5
-Nodes (0): 
-
-### Community 31 - "Community 31"
-Cohesion: 0.5
-Nodes (4): Adobe Illustrator (Generator), Logo Mark / Brand Visual, Parallelogram Shape, code_2.svg Graphic
-
 ### Community 32 - "Community 32"
 Cohesion: 0.5
-Nodes (4): Dummy Video Icon (SVG), Invisible Bounding Box, Circle Border Shape, Play Arrow Shape
+Nodes (0): 
 
 ### Community 33 - "Community 33"
 Cohesion: 0.5
-Nodes (4): Vite, Dark Mode Support, Vite Logo, SVG Asset
+Nodes (0): 
 
 ### Community 34 - "Community 34"
-Cohesion: 0.67
-Nodes (4): Bayer, Premeo Bonus Reward Box, Premeo Bonus Program, Tagline: Verlass dich drauf.
+Cohesion: 0.5
+Nodes (0): 
 
 ### Community 35 - "Community 35"
-Cohesion: 0.67
-Nodes (4): AgriculturalField, ConsultingScene, HeroImage, Tractor
+Cohesion: 0.5
+Nodes (4): Adobe Illustrator (Generator), Logo Mark / Brand Visual, Parallelogram Shape, code_2.svg Graphic
 
 ### Community 36 - "Community 36"
 Cohesion: 0.5
-Nodes (4): Agricultural Landscape, Corn Field, Golden Hour Sky, Tree Line / Forest Edge
+Nodes (4): Dummy Video Icon (SVG), Invisible Bounding Box, Circle Border Shape, Play Arrow Shape
 
 ### Community 37 - "Community 37"
-Cohesion: 0.83
-Nodes (4): Agricultural Field / Potato Crop, Bayer CropScience, BCS Kartoffelbestand (Potato Field), Potato Plant (Solanum tuberosum)
+Cohesion: 0.5
+Nodes (4): Vite, Dark Mode Support, Vite Logo, SVG Asset
 
 ### Community 38 - "Community 38"
 Cohesion: 0.67
-Nodes (0): 
+Nodes (4): Bayer, Premeo Bonus Reward Box, Premeo Bonus Program, Tagline: Verlass dich drauf.
 
 ### Community 39 - "Community 39"
 Cohesion: 0.67
-Nodes (3): Dummy/Placeholder Asset, Sun Weather Concept, Weather Icon SVG (Sun)
+Nodes (4): AgriculturalField, ConsultingScene, HeroImage, Tractor
 
 ### Community 40 - "Community 40"
-Cohesion: 1.0
-Nodes (3): Dummy Magazine Icon (SVG), Header/Title Box, Newspaper / Magazine
+Cohesion: 0.5
+Nodes (4): Agricultural Landscape, Corn Field, Golden Hour Sky, Tree Line / Forest Edge
 
 ### Community 41 - "Community 41"
-Cohesion: 0.67
-Nodes (3): Bayer Logo, Person, Portrait Photo
+Cohesion: 0.83
+Nodes (4): Agricultural Field / Potato Crop, Bayer CropScience, BCS Kartoffelbestand (Potato Field), Potato Plant (Solanum tuberosum)
 
 ### Community 42 - "Community 42"
-Cohesion: 1.0
-Nodes (3): Bayer Logo, Person, Portrait Photo
+Cohesion: 0.67
+Nodes (0): 
 
 ### Community 43 - "Community 43"
 Cohesion: 0.67
-Nodes (3): Corn Cob (Maize), Maize Husk (Leaf Sheaths), Maize Kernel
+Nodes (0): 
 
 ### Community 44 - "Community 44"
-Cohesion: 1.0
-Nodes (0): 
+Cohesion: 0.67
+Nodes (3): Dummy/Placeholder Asset, Sun Weather Concept, Weather Icon SVG (Sun)
 
 ### Community 45 - "Community 45"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (3): Dummy Magazine Icon (SVG), Header/Title Box, Newspaper / Magazine
 
 ### Community 46 - "Community 46"
-Cohesion: 1.0
-Nodes (0): 
+Cohesion: 0.67
+Nodes (3): Bayer Logo, Person, Portrait Photo
 
 ### Community 47 - "Community 47"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (3): Bayer Logo, Person, Portrait Photo
 
 ### Community 48 - "Community 48"
-Cohesion: 1.0
-Nodes (0): 
+Cohesion: 0.67
+Nodes (3): Corn Cob (Maize), Maize Husk (Leaf Sheaths), Maize Kernel
 
 ### Community 49 - "Community 49"
 Cohesion: 1.0
@@ -308,7 +313,7 @@ Nodes (0):
 
 ### Community 52 - "Community 52"
 Cohesion: 1.0
-Nodes (2): Bayer Corporate Logo (Bayer Cross), Bayer Brand Identity
+Nodes (0): 
 
 ### Community 53 - "Community 53"
 Cohesion: 1.0
@@ -320,13 +325,33 @@ Nodes (0):
 
 ### Community 55 - "Community 55"
 Cohesion: 1.0
-Nodes (1): Person
+Nodes (0): 
 
 ### Community 56 - "Community 56"
 Cohesion: 1.0
-Nodes (1): Wirksamkeitskontrolle
+Nodes (0): 
 
 ### Community 57 - "Community 57"
+Cohesion: 1.0
+Nodes (2): Bayer Corporate Logo (Bayer Cross), Bayer Brand Identity
+
+### Community 58 - "Community 58"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 59 - "Community 59"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 60 - "Community 60"
+Cohesion: 1.0
+Nodes (1): Person
+
+### Community 61 - "Community 61"
+Cohesion: 1.0
+Nodes (1): Wirksamkeitskontrolle
+
+### Community 62 - "Community 62"
 Cohesion: 1.0
 Nodes (1): Isometric Stacked Layers (Hero Image)
 
@@ -337,33 +362,33 @@ Nodes (1): Isometric Stacked Layers (Hero Image)
 ## Knowledge Gaps
 - **92 isolated node(s):** `Root DOM Element (#root)`, `Favicon (SVG)`, `Vite React Plugin (@vitejs/plugin-react)`, `Vite React SWC Plugin (@vitejs/plugin-react-swc)`, `Rationale: React Compiler Disabled by Default` (+87 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 44`** (2 nodes): `handler()`, `tts.js`
+- **Thin community `Community 49`** (2 nodes): `handler()`, `tts.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 45`** (2 nodes): `handler()`, `chat.js`
+- **Thin community `Community 50`** (2 nodes): `handler()`, `chat.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 46`** (2 nodes): `JarvisWidget()`, `JarvisWidget.jsx`
+- **Thin community `Community 51`** (2 nodes): `JarvisWidget()`, `JarvisWidget.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 47`** (2 nodes): `Button()`, `Button.jsx`
+- **Thin community `Community 52`** (2 nodes): `Button()`, `Button.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 48`** (2 nodes): `Card()`, `Card.jsx`
+- **Thin community `Community 53`** (2 nodes): `Card()`, `Card.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 49`** (2 nodes): `Label()`, `Label.jsx`
+- **Thin community `Community 54`** (2 nodes): `Label()`, `Label.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 50`** (2 nodes): `TileCard.jsx`, `TileCard()`
+- **Thin community `Community 55`** (2 nodes): `TileCard.jsx`, `TileCard()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 51`** (2 nodes): `PageHeader()`, `PageHeader.jsx`
+- **Thin community `Community 56`** (2 nodes): `PageHeader()`, `PageHeader.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 52`** (2 nodes): `Bayer Corporate Logo (Bayer Cross)`, `Bayer Brand Identity`
+- **Thin community `Community 57`** (2 nodes): `Bayer Corporate Logo (Bayer Cross)`, `Bayer Brand Identity`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 53`** (1 nodes): `vite.config.js`
+- **Thin community `Community 58`** (1 nodes): `vite.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 54`** (1 nodes): `eslint.config.js`
+- **Thin community `Community 59`** (1 nodes): `eslint.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 55`** (1 nodes): `Person`
+- **Thin community `Community 60`** (1 nodes): `Person`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 56`** (1 nodes): `Wirksamkeitskontrolle`
+- **Thin community `Community 61`** (1 nodes): `Wirksamkeitskontrolle`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 57`** (1 nodes): `Isometric Stacked Layers (Hero Image)`
+- **Thin community `Community 62`** (1 nodes): `Isometric Stacked Layers (Hero Image)`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
